@@ -19,6 +19,7 @@ Options
     --timeout SECONDS     Per-request timeout (default: 30)
     --concurrency N       Parallel download workers (default: 8)
     --quiet               Suppress per-file progress
+    --insecure            Skip TLS certificate verification
 
 Output
 ------
@@ -278,7 +279,7 @@ def safe_filename(url: str, n: int) -> str:
     return f"{base}__{h}{ext}" if ext else f"{base}__{h}"
 
 
-def fetch(session: requests.Session, url: str, timeout: int, retries: int = 3):
+def fetch(session: requests.Session, url: str, timeout: int, retries: int = 3, verify: bool = True):
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; modern-design.md-scraper/1.0)",
         "Accept": "*/*",
@@ -286,7 +287,9 @@ def fetch(session: requests.Session, url: str, timeout: int, retries: int = 3):
     last_err: Exception | None = None
     for attempt in range(retries):
         try:
-            r = session.get(url, headers=headers, timeout=timeout, allow_redirects=True)
+            r = session.get(
+                url, headers=headers, timeout=timeout, allow_redirects=True, verify=verify
+            )
             r.raise_for_status()
             return r.content, r.headers.get("Content-Type", ""), r.url
         except Exception as e:  # noqa: BLE001
@@ -421,6 +424,7 @@ def scrape(
     timeout: int = 30,
     concurrency: int = 8,
     quiet: bool = False,
+    verify_ssl: bool = True,
 ) -> dict:
     out = Path("tmp") / slug
     out.mkdir(parents=True, exist_ok=True)
@@ -429,6 +433,11 @@ def scrape(
 
     base_netloc = domain_of(url)
     session = requests.Session()
+    if not verify_ssl:
+        session.verify = False
+        import urllib3
+
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     manifest: dict = {
         "site": url,
         "slug": slug,
@@ -489,7 +498,7 @@ def scrape(
         if not no_domain_limit and domain_of(u) and domain_of(u) != base_netloc:
             return []
         seen.add((u, d))
-        result = fetch(session, u, timeout=timeout)
+        result = fetch(session, u, timeout=timeout, verify=verify_ssl)
         if not result:
             err_payload = {"url": u, "error": "fetch failed", "via": via, "depth": d}
             return [("err", err_payload)]
@@ -582,6 +591,11 @@ def main():
     p.add_argument("--timeout", type=int, default=30, help="Per-request timeout (seconds)")
     p.add_argument("--concurrency", type=int, default=8, help="Parallel download workers")
     p.add_argument("--quiet", action="store_true", help="Suppress per-file progress")
+    p.add_argument(
+        "--insecure",
+        action="store_true",
+        help="Skip TLS certificate verification (for sites with broken CDN certs)",
+    )
     args = p.parse_args()
     scrape(
         args.url,
@@ -593,6 +607,7 @@ def main():
         timeout=args.timeout,
         concurrency=args.concurrency,
         quiet=args.quiet,
+        verify_ssl=not args.insecure,
     )
 
 
