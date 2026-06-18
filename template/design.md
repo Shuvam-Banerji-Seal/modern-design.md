@@ -1,10 +1,11 @@
-# design.md — <site-name>
+# <site-name> — design.md
 
 > A structured design specification of **<original URL>**, written so a
 > human or agent can reconstruct its look-and-feel without seeing the
 > original site.
 >
 > **Status:** Draft · **Last updated:** YYYY-MM-DD · **Author:** <handle>
+> **Source dump:** `tmp/<site-slug>/` (gitignored)
 
 ---
 
@@ -17,6 +18,7 @@ original site.
 **Category:** SaaS / Docs / Marketing / E-commerce / Design tool / Other
 **Primary surface observed:** Homepage + <list other pages>
 **Tone:** e.g. confident, technical, playful, minimal
+**Framework detected (if any):** Next.js / Nuxt / Astro / SvelteKit / Vite SPA / none
 
 ---
 
@@ -28,15 +30,19 @@ original site.
 | --- | --- | --- | --- |
 | Background (base) | `--bg-base` | `#XXXXXX` | Closest name |
 | Background (elevated) | `--bg-elevated` | `#XXXXXX` | |
+| Background (subtle) | `--bg-subtle` | `#XXXXXX` | |
 | Text (primary) | `--text-primary` | `#XXXXXX` | |
 | Text (secondary) | `--text-secondary` | `#XXXXXX` | |
 | Text (muted) | `--text-muted` | `#XXXXXX` | |
 | Accent | `--accent` | `#XXXXXX` | |
 | Accent (hover) | `--accent-hover` | `#XXXXXX` | |
 | Border | `--border` | `#XXXXXX` | |
-| Success / Warning / Error | — | `#XXXXXX` / `#XXXXXX` / `#XXXXXX` | |
+| Success | — | `#XXXXXX` | |
+| Warning | — | `#XXXXXX` | |
+| Error / Destructive | — | `#XXXXXX` | |
 
-Add rows as needed. Note dark-mode variants if the site supports them.
+Note dark-mode variants if the site supports them. Add `rgba()` /
+`hsl()` rows as needed; do not collapse them to hex.
 
 ### Typography
 
@@ -48,11 +54,13 @@ Add rows as needed. Note dark-mode variants if the site supports them.
 | Body L | `<stack>` | 400 | `1.125rem` | 1.6 | `0` |
 | Body | `<stack>` | 400 | `1rem` | 1.6 | `0` |
 | Body S / caption | `<stack>` | 400 | `0.875rem` | 1.5 | `0` |
+| Label / button | `<stack>` | 500 | `0.875rem` | 1.2 | `0.005em` |
 | Mono | `<stack>` | 400 | `0.9em` | 1.5 | `0` |
 
 `<stack>` examples: `"Inter Variable", "Inter", system-ui, sans-serif`,
 `"JetBrains Mono", ui-monospace, monospace`. Note if the site uses a
-self-hosted variable font vs. a system stack.
+self-hosted variable font vs. a system stack, and the source (Google
+Fonts, Adobe Fonts, self-hosted in `tmp/<slug>/fonts/`).
 
 ### Spacing & radius
 
@@ -79,16 +87,15 @@ self-hosted variable font vs. a system stack.
 - **Vertical rhythm:** baseline grid of `8px`
 
 Describe the homepage's primary layout in 2–3 short paragraphs (hero,
-section sequence, footer treatment). Reference sections by their H2 in the
-"Components" chapter.
+section sequence, footer treatment). Reference sections by their H2 in
+the "Components" chapter.
 
 ---
 
 ## Components
 
 For each major component: purpose, anatomy, states, and any responsive
-behavior. Aim for 6–12 components. Suggested starting list — keep, drop,
-or add as needed.
+behavior. Aim for 6–12 components. Keep, drop, or add as observed.
 
 ### Button
 - **Variants:** primary, secondary, ghost, destructive
@@ -124,7 +131,95 @@ or add as needed.
 - **Enter:** fade backdrop 150ms, scale dialog 0.96→1.0 200ms ease-out
 - **Exit:** reverse, 120ms
 
-### (Add or remove components as appropriate.)
+### (Add or remove components as observed.)
+
+---
+
+## JavaScript & Libraries
+
+Every JS library, framework, or tool detected in the dump. Note the
+detection source: a script-tag filename in the HTML, a chunk under
+`_next/static/...` or `/_astro/...`, a package.json, a UMD global, etc.
+
+| Library | Version (if visible) | Detection | Notes |
+| --- | --- | --- | --- |
+| Next.js | 14.x | `_next/static/chunks/...` | App router |
+| GSAP | 3.12 | `gsap.min.js` | Used for hero scroll |
+| Three.js | r160 | `three.module.js` | WebGL 3D scene |
+| Lottie | 5.12 | `lottie.min.js` | Loading animations |
+| Framer Motion | 11.x | `framer-motion` ESM | |
+| Tailwind CSS | 3.4 | presence of utility classes | JIT |
+
+---
+
+## Animations (Catalog)
+
+A specific catalog of every animation in the codebase. The sub-agent
+searches every CSS file for `@keyframes` and every JS file for
+animation-library calls.
+
+### CSS @keyframes
+
+| Name | Where (file:line) | Duration | Easing | Trigger |
+| --- | --- | --- | --- | --- |
+| `fadeInUp` | `css/hero__abc.css:42` | 600ms | `ease-out` | page load |
+| `marquee` | `css/marquee__def.css:11` | 30s | `linear` | infinite |
+| `pulse` | `css/badge__ghi.css:88` | 2s | `ease-in-out` | on hover |
+
+### JS-driven animations
+
+| Library | Animation / timeline | Trigger | Notes |
+| --- | --- | --- | --- |
+| GSAP | `hero-intro` | DOMContentLoaded | pins for 2s |
+| Lottie | `loading.json` | page transition | 60 frames, loops |
+| Framer Motion | `<motion.div>` variants | scroll-in-view | stagger 60ms |
+
+### Page transitions
+
+- Crossfade 200ms between routes (Next.js `app/template.tsx`).
+- No transition on direct-link first paint.
+
+---
+
+## Assets
+
+Inventory of every asset in the dump. Group by type, reference local
+paths, sizes, and source URLs. Do not duplicate the manifest — pull
+from it.
+
+### 3D models
+
+| Local path | Format | Size | Source URL | Notes |
+| --- | --- | --- | --- | --- |
+| `tmp/<slug>/models/hero__abc.glb` | glTF binary | 4.2 MB | `https://…/hero.glb` | hero scene |
+
+If no 3D assets: write `N/A — no 3D assets observed in the dump`.
+
+### Fonts
+
+| Family | Weights | Format(s) | Source | Self-hosted? |
+| --- | --- | --- | --- | --- |
+| Inter | 400, 500, 600, 700 | woff2 | Google Fonts | no |
+| Display Serif | 400, 700 | woff2 | `tmp/<slug>/fonts/…` | yes |
+
+### Images
+
+| Local path | Type | Dimensions | Size | Source URL | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `tmp/<slug>/images/og__abc.png` | PNG | 1200×630 | 142 KB | `https://…/og.png` | OG image |
+
+### SVGs & icons
+
+- **Inline SVGs observed in HTML:** count + role (logo, illustration, icon)
+- **Standalone SVG files in dump:** list each
+- **Icon system:** name the library (Lucide / Phosphor / Heroicons /
+  custom sprite) and where it lives
+
+### Audio & video
+
+| Local path | Type | Notes |
+| --- | --- | --- |
+| `tmp/<slug>/media/intro__abc.mp4` | MP4 H.264 | muted, autoplay hero |
 
 ---
 
@@ -165,7 +260,7 @@ or add as needed.
 
 ## Information Architecture
 
-List the top-level routes you observed and what each is for. Example:
+List the top-level routes you observed and what each is for.
 
 - `/` — marketing homepage
 - `/product` — product overview
@@ -194,13 +289,12 @@ For each, one sentence on its purpose and primary component.
 
 ## Sources
 
-Every URL you actually opened while writing this. Group by purpose if it
-helps.
+Every URL you actually opened while writing this.
 
 - Homepage — https://example.com/
 - Product page — https://example.com/product
 - Docs — https://example.com/docs
-- ...
+- …
 
 ---
 

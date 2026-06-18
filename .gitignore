@@ -14,6 +14,16 @@ build/
 .next/
 .nuxt/
 
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+uv.lock.local
+
 # Logs
 *.log
 npm-debug.log*
@@ -41,3 +51,6 @@ pnpm-debug.log*
 .claude/
 .agents/
 AGENTS.local.md
+
+# Phase-1 site dumps — never committed (see AGENTS.md §4)
+tmp/
