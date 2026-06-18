@@ -57,7 +57,16 @@ folder name is the site's slug; the file is always `design.md`.
 
 | Website | `design.md` | Category |
 | --- | --- | --- |
-| _(none yet — be the first!)_ | — | — |
+| [Lusion](https://lusion.co) | [lusion/design.md](./websites/lusion/design.md) | Interactive / 3D Studio |
+| [Bruno Simon](https://bruno-simon.com) | [bruno-simon/design.md](./websites/bruno-simon/design.md) | Interactive / 3D Studio |
+| [Resn](https://resn.co.nz) | [resn/design.md](./websites/resn/design.md) | Interactive / 3D Studio |
+| [Immersive Garden](https://immersive-g.com) | [immersive-g/design.md](./websites/immersive-g/design.md) | Interactive / 3D Studio |
+| [North Kingdom](https://www.northkingdom.com) | [northkingdom/design.md](./websites/northkingdom/design.md) | Interactive / 3D Studio |
+| [FIELD](https://field.io) | [field/design.md](./websites/field/design.md) | Interactive / 3D Studio |
+| [Obys Agency](https://obys.agency) | [obys/design.md](./websites/obys/design.md) | Design / Portfolio |
+| [Basement](https://basement.studio) | [basement/design.md](./websites/basement/design.md) | Design Studio |
+| [Dogstudio](https://dogstudio.co) | [dogstudio/design.md](./websites/dogstudio/design.md) | Interactive / 3D Studio |
+| [Make Me Pulse](https://makemepulse.com) | [makemepulse/design.md](./websites/makemepulse/design.md) | Interactive / 3D Studio |
 
 > Adding an entry is a single pull request. See [`AGENTS.md`](./AGENTS.md)
 > for the full workflow and authoring rules.
