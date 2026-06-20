@@ -67,6 +67,32 @@ folder name is the site's slug; the file is always `design.md`.
 | [Basement](https://basement.studio) | [basement/design.md](./websites/basement/design.md) | Design Studio |
 | [Dogstudio](https://dogstudio.co) | [dogstudio/design.md](./websites/dogstudio/design.md) | Interactive / 3D Studio |
 | [Make Me Pulse](https://makemepulse.com) | [makemepulse/design.md](./websites/makemepulse/design.md) | Interactive / 3D Studio |
+| [Active Theory](https://activetheory.net) | [active-theory/design.md](./websites/active-theory/design.md) | Interactive / 3D Studio |
+| [UNIT9](https://unit9.com) | [unit9/design.md](./websites/unit9/design.md) | Production / Interactive |
+| [Locomotive](https://locomotive.ca/en) | [locomotive/design.md](./websites/locomotive/design.md) | Digital Agency |
+| [Stink Studios](https://www.stinkstudios.com) | [stinkstudios/design.md](./websites/stinkstudios/design.md) | Creative Studio |
+| [Hello Monday](https://www.hellomonday.com) | [hellomonday/design.md](./websites/hellomonday/design.md) | Creative Agency |
+| [Aristide Benoist](https://aristidebenoist.com) | [aristidebenoist/design.md](./websites/aristidebenoist/design.md) | Motion / Interaction |
+| [Zhenya Rynzhuk](https://zhenyary.com) | [zhenyary/design.md](./websites/zhenyary/design.md) | Art Direction / Portfolio |
+| [Niccolò Miranda](https://niccolomiranda.com) | [niccolomiranda/design.md](./websites/niccolomiranda/design.md) | Designer / Portfolio |
+| [ToyFight](https://toyfight.co) | [toyfight/design.md](./websites/toyfight/design.md) | Creative Agency |
+| [fffuel](https://fffuel.co) | [fffuel/design.md](./websites/fffuel/design.md) | Tool Collection |
+| [Sequence](https://sequence.xyz) | [sequence/design.md](./websites/sequence/design.md) | Web3 / Developer Tool |
+| [Wonderland](https://wonderland.studio) | [wonderland/design.md](./websites/wonderland/design.md) | Brand / Digital Studio |
+| [BASIC](https://basicagency.com) | [basicagency/design.md](./websites/basicagency/design.md) | Digital Agency |
+| [Bureau Cool](https://bureau.cool) | [bureau-cool/design.md](./websites/bureau-cool/design.md) | Design Studio |
+| [Oui Will](https://ouiwill.com) | [ouiwill/design.md](./websites/ouiwill/design.md) | Creative Agency |
+| [EPIC Agency](https://www.epic.net) | [epic/design.md](./websites/epic/design.md) | Branding / Web Agency |
+| [Garden Eight](https://garden-eight.com) | [garden-eight/design.md](./websites/garden-eight/design.md) | Creative Studio |
+| [K72](https://k72.ca) | [k72/design.md](./websites/k72/design.md) | Agency |
+| [Monks / MediaMonks](https://media.monks.com) | [media-monks/design.md](./websites/media-monks/design.md) | Global Creative Agency |
+| [Firewatch](https://firewatchgame.com) | [firewatchgame/design.md](./websites/firewatchgame/design.md) | Indie Game Marketing |
+| [Tendril](https://tendril.ca) | [tendril/design.md](./websites/tendril/design.md) | Motion Design Studio |
+| [Awwwards](https://www.awwwards.com/websites/web-interactive/) | [awwwards/design.md](./websites/awwwards/design.md) | Web Design Gallery |
+| [The FWA](https://thefwa.com) | [thefwa/design.md](./websites/thefwa/design.md) | Web Design Gallery |
+| [Godly](https://godly.website) | [godly/design.md](./websites/godly/design.md) | Web Design Gallery |
+| [SiteInspire](https://www.siteinspire.com) | [siteinspire/design.md](./websites/siteinspire/design.md) | Web Design Gallery |
+| [CSS Design Awards](https://www.cssdesignawards.com) | [cssdesignawards/design.md](./websites/cssdesignawards/design.md) | Web Design Gallery |
 
 > Adding an entry is a single pull request. See [`AGENTS.md`](./AGENTS.md)
 > for the full workflow and authoring rules.
