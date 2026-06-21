@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tendril — Motion Design Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/tendril/style.css">
+</head>
+<body class="init">
+
+  <header class="header" id="site-header" smoothscroll="fixed" scroll="header">
+    <div class="container">
+      <a href="#" class="logo" id="logo" aria-label="Homepage">
+        <svg viewBox="0 0 192 192" width="40" height="40" aria-hidden="true">
+          <rect x="0" y="0" width="192" height="192" fill="#000"/>
+          <path d="M48 32 H112 V52 H90 V160 H70 V52 H48 Z" fill="#fff"/>
+          <circle cx="142" cy="64" r="22" fill="#fff"/>
+          <path d="M48 110 Q48 160 96 160 Q144 160 144 110 V96 H164 V112 Q164 184 96 184 Q28 184 28 112 V110 Z" fill="#fff"/>
+        </svg>
+      </a>
+
+      <nav class="nav nav-primary" aria-label="Primary">
+        <a href="#work" style="--index:0">Work</a>
+        <a href="#studio" style="--index:1">Studio</a>
+        <a href="#careers" style="--index:2">Careers</a>
+        <a href="#contact" style="--index:3">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false" action="menu">
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+
+    <div class="nav-container" id="nav-container">
+      <nav class="mobile-nav" aria-label="Mobile primary">
+        <a href="#work" style="--index:0">Work</a>
+        <a href="#studio" style="--index:1">Studio</a>
+        <a href="#careers" style="--index:2">Careers</a>
+        <a href="#contact" style="--index:3">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div data-scroll id="smoothscroll">
+      <div class="page padding-bottom" controller="homepage">
+
+        <section class="splash" id="homepage-splash" aria-hidden="true">
+          <div class="reel-placeholder">
+            <div class="reel-mark" aria-hidden="true">
+              <svg viewBox="0 0 100 100" width="64" height="64">
+                <circle cx="50" cy="50" r="44" stroke="#fff" stroke-width="1.5" fill="none"/>
+                <polygon points="42,32 42,68 72,50" fill="#fff"/>
+              </svg>
+            </div>
+            <p class="reel-label">Showreel — full bleed</p>
+          </div>
+        </section>
+
+        <section class="hero" id="homepage-hero">
+          <div class="container">
+            <h1 class="h1 fade-in">Most innovation goes unseen — not because it is small, but because it lives somewhere the eye cannot reach. We make the invisible impossible to miss.</h1>
+          </div>
+        </section>
+
+        <section class="blocks flowing-blocks" id="work">
+          <div class="container">
+
+            <div class="block-row layout_below">
+              <a href="#" class="block size_3c position_2" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="16:9" data-label="Apex Athlete — 16:9 reel"></div>
+                  <figcaption class="para">
+                    <strong>Apex Athlete</strong>
+                    <p><span>A flagship motion identity for a global sportswear launch — minimal, monochrome, exact.</span></p>
+                    <small>Direction · Tendril Studio</small>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+
+            <div class="block-row layout_right">
+              <a href="#" class="block size_2c position_1" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="1:1" data-label="Northstar — 1:1 still"></div>
+                  <figcaption class="para">
+                    <strong>Northstar</strong>
+                    <p><span>Brand-system rollout for a quiet banking product.</span></p>
+                    <small>Identity · Tendril</small>
+                  </figcaption>
+                </figure>
+              </a>
+              <span class="block size_1c spacer" aria-hidden="true"></span>
+            </div>
+
+            <div class="block-row layout_below">
+              <a href="#" class="block size_1c position_1" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="1:1" data-label="Helio — 1:1 still"></div>
+                  <figcaption class="para">
+                    <strong>Helio Cosmetics</strong>
+                    <p><span>Editorial product loops for a luxury fragrance house.</span></p>
+                    <small>Direction</small>
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="#" class="block size_2c position_3" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="16:9" data-label="Polaris Robotics — 16:9 reel"></div>
+                  <figcaption class="para">
+                    <strong>Polaris Robotics</strong>
+                    <p><span>Launch film and identity for a humanoid robotics platform.</span></p>
+                    <small>Direction · Tendril</small>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+
+            <div class="block-row layout_below">
+              <a href="#" class="block size_3c position_2" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="16:9" data-label="Showreel 2026 — 16:9 reel"></div>
+                  <figcaption class="para">
+                    <strong>Studio Reel 2026</strong>
+                    <p><span>The annual reel — a quiet argument for clarity over noise.</span></p>
+                    <small>Direction · Tendril</small>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+
+            <div class="block-row layout_right">
+              <a href="#" class="block size_2c position_1" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="1:1" data-label="Quartz — 1:1 still"></div>
+                  <figcaption class="para">
+                    <strong>Quartz Watches</strong>
+                    <p><span>Macro product cinema for a Swiss watchmaker.</span></p>
+                    <small>Direction</small>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+
+            <div class="block-row layout_below">
+              <a href="#" class="block size_2c position_1" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="16:9" data-label="Meridian — 16:9 reel"></div>
+                  <figcaption class="para">
+                    <strong>Meridian Apparel</strong>
+                    <p><span>Seasonal campaign for a technical outfitter.</span></p>
+                    <small>Direction · Tendril</small>
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="#" class="block size_1c position_4" aria-label="-ignore-">
+                <figure scroll="reveal" class="revealable">
+                  <div class="media-placeholder" data-aspect="1:1" data-label="Vellum — 1:1 still"></div>
+                  <figcaption class="para">
+                    <strong>Vellum Press</strong>
+                    <p><span>A book imprint breathes into motion.</span></p>
+                    <small>Identity</small>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="about" id="studio">
+          <div class="container">
+            <h2 class="h2 fade-in">A motion studio parked between two coasts.</h2>
+            <p class="para fade-in">We build images that move, brands that breathe, and systems that keep working long after the launch lights dim. The reel is the argument; the studio is the workshop. We work in small teams, we ship in deliberate pieces, and we let the work do the loud talking.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <footer class="footer" id="site-footer">
+        <div class="container">
+
+          <div class="footer-intro">
+            <svg class="footer-mark" viewBox="0 0 42 42" width="42" height="42" aria-hidden="true">
+              <g fill="none" stroke="#000" stroke-width="1">
+                <circle cx="21" cy="21" r="6"/>
+                <circle cx="21" cy="9" r="6"/>
+                <circle cx="21" cy="33" r="6"/>
+                <circle cx="9" cy="21" r="6"/>
+                <circle cx="33" cy="21" r="6"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="30" cy="12" r="6"/>
+                <circle cx="12" cy="30" r="6"/>
+                <circle cx="30" cy="30" r="6"/>
+              </g>
+            </svg>
+
+            <h2 class="h1 footer-hello">
+              <div class="rotator" id="hello-rotator">
+                <span class="active">Hello!</span>
+                <span>Hola!</span>
+                <span>Shalom!</span>
+                <span>Aloha!</span>
+                <span>Bonjour!</span>
+                <span>Kon'nichiwa!</span>
+              </div>
+            </h2>
+            <p class="para footer-tagline">Want to make something impossible to miss? Drop us a note at studio@example.co.</p>
+          </div>
+
+          <ul class="footer-locations" id="contact">
+            <li>
+              <h3>Toronto</h3>
+              <p class="time">
+                <span class="clock" id="clock-toronto" data-tz="America/Toronto"></span>
+              </p>
+              <address>123 Example Street, Toronto, ON M6J 3G4</address>
+            </li>
+            <li>
+              <h3>São Paulo</h3>
+              <p class="time">
+                <span class="clock" id="clock-sao-paulo" data-tz="America/Sao_Paulo"></span>
+              </p>
+              <address>Rua Exemplo 456, São Paulo, SP 01234-000</address>
+            </li>
+          </ul>
+
+          <form class="newsletter" id="newsletter" action="#" method="post">
+            <p class="newsletter-label">Newsletter — quiet, infrequent.</p>
+            <fieldset>
+              <input type="email" name="email" class="form-input para" placeholder="your@email" required>
+              <input type="hidden" name="action" value="newsletter">
+              <button type="submit" class="para newsletter-submit">Sign up</button>
+            </fieldset>
+            <span class="error" aria-live="polite"></span>
+          </form>
+
+          <div class="footer-copyright">
+            <p class="copy">&copy; 2026 Tendril Studio</p>
+            <ul class="socials">
+              <li><a href="#" rel="noopener">Vimeo</a></li>
+              <li><a href="#" rel="noopener">Twitter</a></li>
+              <li><a href="#" rel="noopener">Instagram</a></li>
+              <li><a href="#" rel="noopener">Behance</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="../../js/tendril/script.js" defer></script>
+</body>
+</html>

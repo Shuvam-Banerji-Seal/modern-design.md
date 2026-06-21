@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recent — Design Inspiration</title>
+  <meta name="description" content="A gallery of recent design work from across the web, updated daily." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/godly/style.css" />
+</head>
+<body>
+  <noscript><style>.feed-grid{opacity:1!important}</style></noscript>
+
+  <!-- Outer shell: horizontal flex on lg, stacked on mobile -->
+  <div class="shell">
+    <!-- ─────────────── Sidebar ─────────────── -->
+    <aside class="sidebar" aria-label="Site navigation">
+      <!-- Row 1: brand mark + live counter, on mobile two columns -->
+      <div class="sidebar-row-top">
+        <a class="brand" href="/" aria-label="Recent">
+          <!-- Brand mark: 28x28, viewBox 0 0 32 32 -->
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="currentColor" d="M7 6h12a8 8 0 0 1 0 16H13v8H7V6Zm6 6v4h6a2 2 0 0 0 0-4h-6Z" />
+            <rect fill="currentColor" x="7" y="24" width="18" height="3" />
+          </svg>
+        </a>
+
+        <!-- Live online counter with ping dot -->
+        <span class="live-count" aria-label="47 online now">
+          <span class="live-dot" aria-hidden="true">
+            <span class="live-dot-ring"></span>
+            <span class="live-dot-core"></span>
+          </span>
+          <span class="live-count-num">47</span>
+          <span class="live-count-label">online</span>
+        </span>
+      </div>
+
+      <!-- Filter nav -->
+      <nav class="filter-nav" aria-label="Filter gallery">
+        <ul class="filter-list">
+          <li><a href="#" class="filter-link is-active" data-filter="all" aria-current="page">All</a></li>
+          <li><a href="#" class="filter-link" data-filter="x">Best of X</a></li>
+          <li><a href="#" class="filter-link" data-filter="websites">Websites</a></li>
+          <li><a href="#" class="filter-link" data-filter="app-store-screenshots">App Screenshots</a></li>
+          <li><a href="#" class="filter-link" data-filter="app-icons">App Icons</a></li>
+          <li><a href="#" class="filter-link" data-filter="info">Info</a></li>
+        </ul>
+      </nav>
+
+      <!-- Description + subscribe + copyright, pushed to bottom on lg -->
+      <div class="sidebar-bottom">
+        <p class="sidebar-copy">
+          The best of recent design found on the Internet, updated daily.
+        </p>
+        <p class="sidebar-copy">
+          <button id="open-modal" class="subscribe-inline" aria-haspopup="dialog" aria-controls="subscribe-dialog" aria-expanded="false">
+            Subscribe
+          </button>
+          to a weekly email digest joining 474 people today.
+        </p>
+        <p class="copyright">© Recent</p>
+      </div>
+    </aside>
+
+    <!-- ─────────────── Feed column ─────────────── -->
+    <main class="feed" aria-label="Gallery">
+      <!-- Sort bar: sticky top-0 with z-index 20 -->
+      <div class="sort-bar">
+        <span class="last-updated" id="last-updated">Last updated just now</span>
+
+        <button id="sort-trigger" class="sort-btn" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="sort-listbox">
+          <span class="sort-btn-label">Recent</span>
+          <!-- Sort double-chevron: viewBox 61 5 12 14, stroke 1.25 -->
+          <svg class="sort-chevron" viewBox="61 5 12 14" aria-hidden="true">
+            <path d="M67 7l-4 4" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M67 17l4-4" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <ul id="sort-listbox" class="sort-listbox" role="listbox" aria-label="Sort order" hidden>
+          <li role="option" aria-selected="true" tabindex="0" data-value="recent">Recent</li>
+          <li role="option" tabindex="-1" data-value="liked">Most liked</li>
+          <li role="option" tabindex="-1" data-value="discussed">Most discussed</li>
+        </ul>
+      </div>
+
+      <!-- Masonry feed: CSS columns responsive -->
+      <div class="feed-grid" id="feed-grid">
+
+        <!-- Card 1: website, landscape 16:9 -->
+        <article class="card" data-category="websites">
+          <button class="card-zoom" aria-label="Aurora Studio — landing page">
+            <span class="card-media" style="--ar: 16/9;">
+              <span class="placeholder placeholder-aurora" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View aurora.studio on X">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#7c5cff;--g2:#21d4fd;"></span>
+            <span class="pill-name">aurora.studio</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Card 2: app icon tile (square) -->
+        <article class="card" data-category="app-icons">
+          <button class="card-zoom" aria-label="Pillow — sleep tracker">
+            <span class="card-media card-icon" style="--ar: 1/1;">
+              <span class="icon-squircle" style="--g1:#3a4a6c;--g2:#1a2540;" aria-hidden="true">
+                <span class="icon-glyph icon-glyph-crescent"></span>
+              </span>
+            </span>
+          </button>
+          <span class="badge-rating" aria-label="4.4 stars from 95.5K ratings">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="star">
+              <path fill="currentColor" d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z" />
+            </svg>
+            4.4
+            <span class="rating-count">(95.5K)</span>
+          </span>
+        </article>
+
+        <!-- Card 3: portrait (app screenshot) -->
+        <article class="card" data-category="app-store-screenshots">
+          <button class="card-zoom" aria-label="Numo — planner">
+            <span class="card-media" style="--ar: 1242/2688;">
+              <span class="placeholder placeholder-numo" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View Numo on the App Store">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#ff7a59;--g2:#ffb86b;"></span>
+            <span class="pill-name">Numo</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Card 4: landscape website -->
+        <article class="card" data-category="websites">
+          <button class="card-zoom" aria-label="Tikhon Belousko — portfolio">
+            <span class="card-media" style="--ar: 1440/2012;">
+              <span class="placeholder placeholder-tikhon" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View tikhon.io">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#111;--g2:#444;"></span>
+            <span class="pill-name">tikhon.io</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Card 5: landscape, x post -->
+        <article class="card" data-category="x">
+          <button class="card-zoom" aria-label="Lance — drawing thread">
+            <span class="card-media" style="--ar: 2400/1350;">
+              <span class="placeholder placeholder-lance" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View @lancedraws on X">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#ffb86b;--g2:#ff7a59;"></span>
+            <span class="pill-name">Lance</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+          <span class="slides-badge" aria-label="5 slides">5</span>
+        </article>
+
+        <!-- Card 6: app icon tile -->
+        <article class="card" data-category="app-icons">
+          <button class="card-zoom" aria-label="Open — minimalist reader">
+            <span class="card-media card-icon" style="--ar: 1/1;">
+              <span class="icon-squircle" style="--g1:#fafafa;--g2:#e8e8e8;" aria-hidden="true">
+                <span class="icon-glyph icon-glyph-bookmark" style="color:#111"></span>
+              </span>
+            </span>
+          </button>
+        </article>
+
+        <!-- Card 7: portrait screenshot -->
+        <article class="card" data-category="app-store-screenshots">
+          <button class="card-zoom" aria-label="Open — onboarding">
+            <span class="card-media" style="--ar: 1284/2778;">
+              <span class="placeholder placeholder-open" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View Open on the App Store">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#fafafa;--g2:#dcdcdc;"></span>
+            <span class="pill-name">Open</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Card 8: landscape website -->
+        <article class="card" data-category="websites">
+          <button class="card-zoom" aria-label="Borys — design journal">
+            <span class="card-media" style="--ar: 16/9;">
+              <span class="placeholder placeholder-borys" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View @bptrz on X">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#0d9488;--g2:#0f766e;"></span>
+            <span class="pill-name">Borys</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Card 9: portrait, x post -->
+        <article class="card" data-category="x">
+          <button class="card-zoom" aria-label="Joran Entjes — typography piece">
+            <span class="card-media" style="--ar: 4/5;">
+              <span class="placeholder placeholder-joran" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View @JoranEntjes on X">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#1f2937;--g2:#374151;"></span>
+            <span class="pill-name">Joran Entjes</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Card 10: app icon tile -->
+        <article class="card" data-category="app-icons">
+          <button class="card-zoom" aria-label="Manus — agent workspace">
+            <span class="card-media card-icon" style="--ar: 1/1;">
+              <span class="icon-squircle" style="--g1:#0a0a0a;--g2:#262626;" aria-hidden="true">
+                <span class="icon-glyph icon-glyph-m" style="color:#fff"></span>
+              </span>
+            </span>
+          </button>
+          <span class="badge-rating" aria-label="4.7 stars from 12.3K ratings">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="star">
+              <path fill="currentColor" d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z" />
+            </svg>
+            4.7
+            <span class="rating-count">(12.3K)</span>
+          </span>
+        </article>
+
+        <!-- Card 11: landscape website -->
+        <article class="card" data-category="websites">
+          <button class="card-zoom" aria-label="Henry Labs — product site">
+            <span class="card-media" style="--ar: 16/9;">
+              <span class="placeholder placeholder-henry" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View henrylabs.com">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#f43f5e;--g2:#e11d48;"></span>
+            <span class="pill-name">henrylabs.com</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+          <span class="slides-badge" aria-label="3 slides">3</span>
+        </article>
+
+        <!-- Card 12: portrait, x post -->
+        <article class="card" data-category="x">
+          <button class="card-zoom" aria-label="Daksh — pixel study">
+            <span class="card-media" style="--ar: 3/4;">
+              <span class="placeholder placeholder-daksh" aria-hidden="true"></span>
+            </span>
+          </button>
+          <a class="pill pill-creator" href="#" target="_blank" rel="noreferrer" aria-label="View @dakshpixelup on X">
+            <span class="pill-avatar" aria-hidden="true" style="--g1:#84cc16;--g2:#65a30d;"></span>
+            <span class="pill-name">Daksh</span>
+          </a>
+          <a class="fab" href="#" target="_blank" rel="noreferrer" aria-label="View post">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12 L12 4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              <path d="M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            </svg>
+          </a>
+        </article>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ─────────────── Subscribe modal (portal-style) ─────────────── -->
+  <div id="modal-root" class="modal-root" hidden>
+    <div class="scrim" data-close></div>
+
+    <div id="subscribe-dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <button class="dialog-close" data-close aria-label="Close dialog">
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <!-- Two overlapping circles: black circle (flash) + white circle (brand mark) -->
+      <div class="dialog-header">
+        <div class="circle circle-black" aria-hidden="true">
+          <!-- Lightning / flash, viewBox 0 0 64 64 -->
+          <svg viewBox="0 0 64 64" class="flash">
+            <path fill="currentColor" d="M36 4 L14 36 H28 L24 60 L50 26 H36 L40 4 Z" />
+          </svg>
+        </div>
+        <div class="circle circle-white" aria-hidden="true">
+          <!-- Brand mark, viewBox 0 0 32 32 -->
+          <svg viewBox="0 0 32 32" class="brand-mark-lg">
+            <path fill="currentColor" d="M7 6h12a8 8 0 0 1 0 16H13v8H7V6Zm6 6v4h6a2 2 0 0 0 0-4h-6Z" />
+            <rect fill="currentColor" x="7" y="24" width="18" height="3" />
+          </svg>
+        </div>
+      </div>
+
+      <h2 id="dialog-title" class="dialog-title">Godly is now Recent</h2>
+
+      <p class="dialog-body">
+        We&rsquo;ve expanded the gallery to cover websites, app icons, and
+        App Store screenshots alongside posts from X.
+      </p>
+      <p class="dialog-body dialog-body-tight">
+        Same daily rhythm, broader scope.
+      </p>
+
+      <form id="subscribe-form" class="dialog-form" novalidate>
+        <input
+          id="email-input"
+          class="dialog-input"
+          type="email"
+          placeholder="design@god.com"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="dialog-submit" id="dialog-submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../js/godly/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en" data-bg="black">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Garden Eight — a small studio for considered work</title>
+  <meta name="description" content="A design spec recreation of the Garden Eight homepage. Near-monochrome palette, two families of type, and slow reveal motion.">
+
+  <!-- Real values from design.md: TWKLausanne is commercial, Inter is the closest
+       free analog. gunsan is a hand-drawn display serif; Cormorant Garamond Italic
+       at weight 600 with tight line-height is the closest Google Fonts stand-in. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/garden-eight/style.css">
+</head>
+<body class="is-loading-a">
+
+  <div id="__app" data-bg="black">
+
+    <div class="Sc">
+
+      <!-- WebGL background canvas slot (static fallback for showcase) -->
+      <div class="js-canvas js-sp" aria-hidden="true">
+        <div class="Sd" aria-hidden="true"></div>
+      </div>
+
+      <div class="Sw">
+
+        <main class="Pc s-body" data-page-name="home">
+
+          <!-- Page hero: centered 3-line wordmark in serif -->
+          <section class="Ph">
+            <p class="description f-s" data-bg="white">
+              <span>A small studio for considered</span><br>
+              <span>interactive work.</span>
+            </p>
+
+            <div class="site-title" aria-label="Placeholder hero wordmark">
+              <div class="h1 clip-y" aria-hidden="true">
+                <div class="p o" data-str="what">
+                  <div class="w t js-c" data-d="0"><span>Quiet</span></div>
+                </div>
+                <div class="p o" data-str="canwe">
+                  <div class="w t js-c" data-d="1"><span>considered</span></div>
+                  <div class="w t js-c" data-d="2"><span>forms</span></div>
+                </div>
+                <div class="p o" data-str="make">
+                  <div class="w t js-c" data-d="3"><span>made</span></div>
+                  <div class="w t js-c" data-d="4"><span>well</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Page body: intro paragraph + case-study marquee + View Cases -->
+          <section class="Pb">
+
+            <p class="intro clip-y" data-bg="white">
+              <span class="p t" data-d="0">A small group of makers</span>
+              <span class="p t" data-d="1">working between brand,</span>
+              <span class="p t" data-d="2">web, and quiet technology.</span>
+            </p>
+
+            <div class="pickup-wrap">
+              <div class="pickup-ul js-iv">
+
+                <article class="pickup-li" data-shown="0">
+                  <a class="pickup-a" href="#" aria-label="Photographer portfolio">
+                    <div class="cases-h1 mq clip-y" aria-hidden="true">
+                      <div class="l" aria-hidden="true"><span>Soft</span></div>
+                      <span class="thumb" data-shown="0">
+                        <span class="b"></span>
+                        <span class="case-label">01</span>
+                      </span>
+                      <div class="l" aria-hidden="true"><span>Light</span></div>
+                      <div class="l" aria-hidden="true"><span>Studio</span></div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="pickup-li" data-shown="0">
+                  <a class="pickup-a" href="#" aria-label="Quiet archive project">
+                    <div class="cases-h1 mq clip-y" aria-hidden="true">
+                      <div class="l" aria-hidden="true"><span>Slow</span></div>
+                      <span class="thumb" data-shown="0">
+                        <span class="b"></span>
+                        <span class="case-label">02</span>
+                      </span>
+                      <div class="l" aria-hidden="true"><span>Pages</span></div>
+                      <div class="l" aria-hidden="true"><span>Index</span></div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="pickup-li" data-shown="0">
+                  <a class="pickup-a" href="#" aria-label="Wood workshop identity">
+                    <div class="cases-h1 mq clip-y" aria-hidden="true">
+                      <div class="l" aria-hidden="true"><span>Hand</span></div>
+                      <span class="thumb" data-shown="0">
+                        <span class="b"></span>
+                        <span class="case-label">03</span>
+                      </span>
+                      <div class="l" aria-hidden="true"><span>Cut</span></div>
+                      <div class="l" aria-hidden="true"><span>Workshop</span></div>
+                    </div>
+                  </a>
+                </article>
+
+              </div>
+            </div>
+
+            <div class="hr" data-shown="0"><div></div></div>
+
+            <a class="ui-link-hn ui-link-wrap" href="#" data-n="3">
+              <span class="num">01</span>
+              <span class="a"><span class="t">View Cases</span><span class="b"></span></span>
+            </a>
+
+          </section>
+
+          <!-- Page footer: full-bleed about panel with inset video plate -->
+          <section class="Pf" data-bg="black">
+            <div class="Pf-body">
+
+              <div class="Pf-video">
+                <div class="a-mask js-gl-dom" data-gl-dom="about">
+                  <!-- poster is described in design.md as a WebP image; placeholder
+                       gradient is used so no live asset is fetched -->
+                  <div class="poster" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <div class="col-wrap Pf-editor">
+
+                <div class="col" data-n="4">
+                  <h2 class="slidein" data-shown="0">
+                    <span class="t" data-d="0">About</span>
+                    <span class="t" data-d="1">the studio</span>
+                  </h2>
+                </div>
+
+                <div class="col" data-n="4">
+                  <p class="editor js-iv-c" data-shown="0">
+                    We like work that asks a question first and
+                    answers it slowly. Small team, long timelines,
+                    quiet craft, no fireworks.
+                  </p>
+                  <a class="ui-link-bl a" href="#">
+                    <span class="t">About Us</span>
+                    <span class="b"></span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- Sub-mini footer -->
+          <footer class="Sm">
+
+            <div class="Sm-li _logo">
+              <svg class="tokyo-mon" viewBox="0 0 160 90" aria-label="Garden Eight mark">
+                <title>Garden Eight</title>
+                <!-- single hand-drawn-style path placeholder; not the live SVG -->
+                <path d="M10 70
+                         C 10 40, 30 20, 55 22
+                         C 75 24, 90 40, 88 58
+                         C 86 74, 70 82, 56 80
+                         C 46 79, 40 74, 40 66"
+                      fill="none" stroke="currentColor" stroke-width="1.4"
+                      stroke-linecap="round"/>
+                <path d="M62 60
+                         C 78 58, 92 64, 100 56
+                         C 110 46, 110 32, 100 26
+                         C 92 22, 80 26, 76 36"
+                      fill="none" stroke="currentColor" stroke-width="1.4"
+                      stroke-linecap="round"/>
+                <circle cx="118" cy="46" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="138" cy="60" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+
+            <div class="Sm-li _address f-xs">
+              <span class="Sm-b">©2022 Setagaya, Tokyo</span>
+            </div>
+
+            <div class="Sm-li _sns">
+              <a class="sns-link" href="#" aria-label="Instagram">IG</a>
+              <a class="sns-link" href="#" aria-label="Twitter">TW</a>
+              <a class="sns-link" href="#" aria-label="LinkedIn">IN</a>
+            </div>
+
+            <div class="Sm-li _mail">
+              <a class="ui-btn-mail o" href="#"
+                 data-name="hello" data-domain="garden-eight.example">
+                <span class="t">hello@garden-eight.example</span>
+                <span class="t copied-state">Copy to clipboard</span>
+                <span class="b"></span>
+              </a>
+            </div>
+
+          </footer>
+
+        </main>
+
+        <!-- Header / sticky nav -->
+        <header class="Hd">
+          <a class="ui-name" href="#" aria-label="Garden Eight home">
+            <span class="wordmark f-logo">Garden <span class="js-p">One</span></span>
+          </a>
+          <div class="ui-navi-r">
+            <a class="ui-menu" href="#nav" aria-controls="nav">
+              <span class="y"><span>CLOSE</span></span>
+              <span class="y"><span>MENU</span></span>
+            </a>
+          </div>
+        </header>
+
+        <!-- Slide-in full-screen nav (CSS-only, opened by :target) -->
+        <div id="nav" class="ui-navi-wrap">
+          <div class="ui-navi-bg" data-bg="white"></div>
+          <nav class="ui-navi">
+            <ul>
+              <li data-d="0"><a class="a" href="#"><span class="t">Home</span><span class="b"></span></a></li>
+              <li data-d="1"><a class="a" href="#"><span class="t">Cases</span><span class="b"></span></a></li>
+              <li data-d="2"><a class="a" href="#"><span class="t">About</span><span class="b"></span></a></li>
+              <li data-d="3"><a class="a" href="#"><span class="t">Archives</span><span class="b"></span></a></li>
+              <li data-d="4"><a class="a" href="#"><span class="t">Contact</span><span class="b"></span></a></li>
+              <li data-d="5"><a class="a" href="#"><span class="t">AI</span><span class="b"></span></a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Scroll progress disk (bottom-right) -->
+        <a class="ui-scroll" href="#" aria-label="Scroll">
+          <svg class="progress" viewBox="0 0 124 124" aria-hidden="true">
+            <path d="M62,2A60,60,0,1,1,2,62,60,60,0,0,1,62,2"
+                  fill="none" stroke="currentColor" stroke-width="4"
+                  stroke-linecap="round"/>
+          </svg>
+          <span class="arrow">
+            <svg class="bg" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="50" fill="currentColor"/>
+            </svg>
+            <svg class="path" viewBox="0 0 100 100" aria-hidden="true">
+              <use href="#i-arrow" fill="var(--col-black)"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Custom cursor -->
+        <div class="ui-cursor" data-cursor-type="none" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 100 100" aria-hidden="true">
+            <use href="#i-arrow" fill="var(--col-white)"/>
+          </svg>
+          <span class="bg"></span>
+        </div>
+
+        <!-- SVG sprite (real values from design.md) -->
+        <div class="As" aria-hidden="true">
+          <svg width="0" height="0" style="position:absolute">
+            <defs>
+              <symbol id="i-start" viewBox="0 0 53.84 53.72">
+                <path d="M26.92 0 L31.7 21.18 L53.84 26.92 L31.7 32.66 L26.92 53.72 L22.14 32.66 L0 26.92 L22.14 21.18 Z"
+                      fill="currentColor"/>
+              </symbol>
+              <symbol id="i-arrow" viewBox="0 0 100 100">
+                <path d="M50 8 L62 38 L92 38 L66 56 L78 86 L50 68 L22 86 L34 56 L8 38 L38 38 Z"
+                      fill="currentColor"/>
+              </symbol>
+              <symbol id="i-circle" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" fill="currentColor"/>
+              </symbol>
+            </defs>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/garden-eight/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>404 — page not found · modern-design.md</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff5b3a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .notfound {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 32px;
+    }
+    .notfound-inner {
+      max-width: 36rem;
+    }
+    .notfound .accent {
+      color: var(--accent-bright);
+    }
+    .notfound h1 {
+      font-size: clamp(56px, 12vw, 120px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .notfound p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      line-height: 1.55;
+    }
+    .notfound code {
+      font-family: var(--font-mono);
+      background: var(--bg-elevated);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .notfound-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .notfound-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      min-height: 44px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .notfound-actions a.primary {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+    }
+    .notfound-actions a.primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: #fff;
+    }
+    .notfound-actions a.secondary {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .notfound-actions a.secondary:hover {
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <main class="notfound" id="main">
+    <div class="notfound-inner">
+      <p class="hero-eyebrow"><span>404</span> · page not found</p>
+      <h1><span class="accent">Lost</span> in the design system.</h1>
+      <p>
+        That URL didn't match any of the
+        <code>36 design.md</code> entries — or any other page in this repo.
+        Here are the usual exits:
+      </p>
+      <div class="notfound-actions">
+        <a class="primary" href="./">Go to showcase</a>
+        <a class="secondary" href="https://github.com/Shuvam-Banerji-Seal/modern-design.md">Browse on GitHub</a>
+        <a class="secondary" href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

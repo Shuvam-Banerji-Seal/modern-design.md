@@ -1,0 +1,803 @@
+/* ==========================================================================
+   Bureau Cool — style.css
+   Implementation of websites/bureau-cool/design.md
+   Only external dep: Google Fonts (IBM Plex Serif, Space Mono).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design tokens — values verbatim from design.md (color table §Visual Language,
+   spacing scale §Spacing & radius, easings §Animations).
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Color tokens */
+  --color-greey:        #DEDEDE;
+  --color-neutral-200:  #EDEDED;
+  --color-white:        #FFFFFF;
+  --color-neutral-900:  #343434;
+  --color-black:        #000000;
+  --color-neutral-500:  #8E8E8E;
+  --color-neutral-400:  #B5B5B5;
+  --color-yellow-300:   #FDE047;
+  --color-red-600:      #DC2626;
+  --color-neutral-700:  #5E5E5E;
+
+  /* Translucent overlays (used in design.md, written here as solids + alpha) */
+  --overlay-scrim:        rgba(0, 0, 0, 0.20);
+  --overlay-scrim-50:     rgba(0, 0, 0, 0.50);
+  --overlay-scrim-80:     rgba(0, 0, 0, 0.80);
+  --overlay-scrim-90:     rgba(0, 0, 0, 0.90);
+  --overlay-pane-mid:     rgba(142, 142, 142, 0.60);
+  --overlay-pane-light:   rgba(222, 222, 222, 0.50);
+  --overlay-border:       rgba(229, 229, 229, 0.20);
+  --overlay-border-white: rgba(255, 255, 255, 0.20);
+
+  /* Spacing scale — 4px base (--spacing: .25rem) */
+  --spacing: 0.25rem;
+  --space-1:  calc(var(--spacing) * 1);    /* 4px */
+  --space-2:  calc(var(--spacing) * 2);    /* 8px */
+  --space-3:  calc(var(--spacing) * 3);    /* 12px */
+  --space-4:  calc(var(--spacing) * 4);    /* 16px */
+  --space-5:  calc(var(--spacing) * 5);    /* 20px */
+  --space-6:  calc(var(--spacing) * 6);    /* 24px */
+  --space-8:  calc(var(--spacing) * 8);    /* 32px */
+  --space-12: calc(var(--spacing) * 12);   /* 48px */
+  --space-16: calc(var(--spacing) * 16);   /* 64px */
+  --space-24: calc(var(--spacing) * 24);   /* 96px */
+  --space-28: calc(var(--spacing) * 28);   /* 112px */
+  --space-32: calc(var(--spacing) * 32);   /* 128px */
+  --space-40: calc(var(--spacing) * 40);   /* 160px */
+  --space-56: calc(var(--spacing) * 56);   /* 224px */
+  --space-60: calc(var(--spacing) * 60);   /* 240px */
+  --space-64: calc(var(--spacing) * 64);   /* 256px */
+
+  /* Container max widths */
+  --container-md:    28rem;
+  --container-lg:    32rem;
+  --container-2xl:   42rem;
+  --container-4xl:   56rem;
+  --container-6xl:   72rem;
+  --container-360:   90rem;   /* 1440px, design.md "md:max-w-360" */
+
+  /* Radii */
+  --radius-md: 0.375rem;      /* 6px */
+  --radius-lg: 0.5rem;        /* 8px */
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --drop-shadow-xl:  0 9px 7px rgba(0, 0, 0, 0.10);
+  --drop-shadow-2xl: 0 25px 25px rgba(0, 0, 0, 0.15);
+  --text-shadow-on-image: 0 0 5px rgba(0, 0, 0, 0.40);
+
+  /* Easings */
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --default-transition-duration: 150ms;
+
+  /* Font tokens — Google Fonts substitutes for the self-hosted originals.
+     "Space Mono" approximates ArialMonospaced-Bold.
+     "IBM Plex Serif" approximates Century Schoolbook Mono (bookish serif). */
+  --font-sans: "Space Mono", system-ui, sans-serif;
+  --font-serif: "IBM Plex Serif", serif;
+  --default-font-family: var(--font-sans);
+}
+
+/* --------------------------------------------------------------------------
+   Reset / globals — matches design.md §Implementation Notes.
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--default-font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* design.md §Implementation Notes: user-select: none is intentional */
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-greey);
+  color: var(--color-black);
+  font-family: var(--default-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  /* design.md §Implementation Notes: overscroll-behavior: contain on body */
+  overscroll-behavior: contain;
+  min-height: 100vh;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 calc(var(--spacing) * 3) 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   .padding utility — design.md §Layout & Grid
+   mobile 12px, md+ 20px.
+   -------------------------------------------------------------------------- */
+
+.padding {
+  padding-left: calc(var(--spacing) * 3);
+  padding-right: calc(var(--spacing) * 3);
+}
+
+@media (min-width: 768px) {
+  .padding {
+    padding-left: calc(var(--spacing) * 5);
+    padding-right: calc(var(--spacing) * 5);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Skip link — design.md §Accessibility flags the lack of one; we add it.
+   -------------------------------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  z-index: 999;
+}
+
+.skip-link:focus {
+  left: calc(var(--spacing) * 3);
+  top: calc(var(--spacing) * 3);
+}
+
+/* --------------------------------------------------------------------------
+   Typography utilities — design.md §Typography
+   -------------------------------------------------------------------------- */
+
+/* .bigserif — display serif (Century Schoolbook Mono substitute: IBM Plex Serif) */
+.bigserif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 6.3vw;
+  line-height: 5.9vw;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* .bigsans — display sans (Arial Monospaced Bold substitute: Space Mono Bold) */
+.bigsans {
+  font-family: var(--font-sans);
+  font-weight: 700;        /* Space Mono has Bold; original is intrinsically Bold */
+  font-size: 6.1vw;
+  line-height: 5.8vw;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* .midserif — mid-size serif */
+.midserif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 5.4vw;
+  line-height: 5.7vw;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* .smallsans — body S sans */
+.smallsans {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.75rem;      /* 12px */
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* .smallserif — body S serif */
+.smallserif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 0.78rem;      /* 12.5px */
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .bigserif {
+    font-size: 5vw;
+    line-height: 1;
+  }
+  .bigsans {
+    font-size: 4.8vw;
+    line-height: 1;
+  }
+  .midserif {
+    font-size: 3.5vw;
+    line-height: 3.7vw;
+  }
+  .smallsans {
+    font-size: 0.875rem;   /* 14px */
+  }
+  .smallserif {
+    font-size: 0.89rem;    /* 14.2px */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   HERO — design.md §Section-by-section layout map (#start)
+   Full viewport, content anchored top-left.
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: var(--color-greey);
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.brand {
+  position: relative;
+  max-width: 90vw;
+  margin: 0;
+  padding-top: calc(var(--spacing) * 4);
+}
+
+.brand .bigserif {
+  margin: 0;
+}
+
+.brand .bigsans {
+  margin: calc(var(--spacing) * 2) 0 0 0;
+  color: var(--color-black);
+}
+
+@media (min-width: 640px) {
+  .brand {
+    max-width: 80vw;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Nav pill button — design.md §Components > Pill button (nav)
+   -------------------------------------------------------------------------- */
+
+.nav-pills {
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 6);
+  position: relative;
+  z-index: 80;
+}
+
+.pill {
+  position: relative;
+  display: inline-block;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);   /* 4 × 10 mobile */
+  cursor: pointer;
+  transition: transform var(--default-transition-duration) var(--ease-out);
+}
+
+.pill-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--color-greey);
+  border: 1px solid var(--color-black);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color var(--default-transition-duration) var(--ease-out),
+              background var(--default-transition-duration) var(--ease-out);
+}
+
+.pill-label {
+  position: relative;
+  z-index: 20;
+  display: inline-block;
+  line-height: 1;
+  transition: transform var(--default-transition-duration) var(--ease-out);
+}
+
+@media (min-width: 768px) {
+  .pill {
+    padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3) calc(var(--spacing) * 0.5) calc(var(--spacing) * 3);
+  }
+
+  .pill:hover {
+    transform: scale(0.9999);
+  }
+
+  .pill:hover .pill-label {
+    transform: scale(0.95);
+  }
+
+  .pill:hover .pill-bg {
+    border-color: var(--overlay-border-white);
+  }
+
+  .pill:focus-visible .pill-bg {
+    outline: 2px solid var(--color-yellow-300);
+    outline-offset: 2px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Marquee — design.md §Components > Marquee strip / Marquee ticker
+   Uses `moveleftright` keyframes + `blink` caret.
+   -------------------------------------------------------------------------- */
+
+.marquee {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--spacing) * 8);
+  overflow: hidden;
+  width: 100%;
+  pointer-events: none;
+}
+
+.marquee-track {
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--spacing) * 8);
+  white-space: nowrap;
+  animation: moveleftright 6s linear infinite;
+  will-change: transform, opacity;
+}
+
+.marquee-text {
+  display: inline-block;
+  color: var(--color-black);
+  position: relative;
+}
+
+/* design.md §Animations > moveleftright
+   translate(0) -> translate(-30%) -> translate(0) -> translate(30%) -> translate(0)
+   with opacity dips to 0.5 at 25% and 75%. */
+@keyframes moveleftright {
+  0%   { transform: translateX(0);     opacity: 1; }
+  25%  { transform: translateX(-30%);  opacity: 0.5; }
+  50%  { transform: translateX(0);     opacity: 1; }
+  75%  { transform: translateX(30%);   opacity: 0.5; }
+  100% { transform: translateX(0);     opacity: 1; }
+}
+
+/* design.md §Animations > blink
+   1.5s linear infinite cursor / caret blink. */
+@keyframes blink {
+  0%,  50%   { opacity: 1; }
+  51%, 99%   { opacity: 0.3; }
+  100%       { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   WORK LIST — design.md §Components > Project list entry / Image card
+   -------------------------------------------------------------------------- */
+
+.work {
+  position: relative;
+  padding: 0;
+}
+
+.work-list {
+  position: relative;
+  margin-bottom: var(--space-40);    /* mb-40 = 160px */
+  overflow-x: hidden;
+  max-width: 100vw;
+  padding-left: calc(var(--spacing) * 3);
+  padding-right: calc(var(--spacing) * 3);
+}
+
+@media (min-width: 768px) {
+  .work-list {
+    margin-bottom: var(--space-64);  /* mb-64 = 256px */
+    padding-left: calc(var(--spacing) * 5);
+    padding-right: calc(var(--spacing) * 5);
+  }
+}
+
+.project {
+  position: relative;
+  margin-bottom: var(--space-28);    /* mb-28 = 112px */
+}
+
+@media (min-width: 768px) {
+  .project {
+    margin-bottom: var(--space-60);  /* mb-60 = 240px */
+  }
+}
+
+.project-tag {
+  display: inline-block;
+  margin-bottom: calc(var(--spacing) * 12);  /* mb-12 = 48px */
+  color: var(--color-neutral-500);
+}
+
+.project-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+}
+
+.project-dot {
+  position: absolute;
+  top: 0.375rem;       /* top-1.5 = 6px on mobile */
+  left: calc(-1 * calc(var(--spacing) * 4));
+  width: 1rem;          /* 16px */
+  height: 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-black);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .project-dot {
+    top: 1rem;          /* md:top-4 = 16px */
+    width: 1.5rem;      /* md:w-6 = 24px */
+    height: 1.5rem;
+    left: calc(-1 * calc(var(--spacing) * 6));
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-dot {
+    width: 2rem;        /* lg:w-8 = 32px */
+    height: 2rem;
+  }
+}
+
+.project-title {
+  margin: 0;
+  max-width: var(--container-md);
+  position: relative;
+}
+
+/* .basic-hover — design.md §Components > Pill button / Press row
+   Link hover: opacity 0.5 → 1 on grey-hover.
+   design.md §Motion > specific behaviors */
+.basic-hover {
+  display: inline-block;
+  transition: opacity var(--default-transition-duration) var(--ease-in-out);
+  opacity: 1;
+}
+
+.basic-hover:hover {
+  opacity: 0.5;
+}
+
+.basic-hover:focus-visible {
+  outline: 2px solid var(--color-yellow-300);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   INFORMATION — design.md §Section-by-section (#information)
+   -------------------------------------------------------------------------- */
+
+.information {
+  position: relative;
+  margin-top: var(--space-32);
+}
+
+.info-b {
+  margin-bottom: calc(var(--spacing) * 9);  /* mb-9 = 36px */
+  width: 95vw;
+  max-width: var(--container-360);
+}
+
+@media (min-width: 768px) {
+  .info-b {
+    width: 88vw;
+  }
+}
+
+.info-s {
+  margin-bottom: calc(var(--spacing) * 5);
+  max-width: var(--container-lg);
+  text-transform: none;
+}
+
+.contact-row {
+  margin-bottom: var(--space-20);
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--spacing) * 6);
+}
+
+@media (min-width: 768px) {
+  .contact-row {
+    margin-bottom: var(--space-32);
+  }
+}
+
+.contact-link {
+  display: inline-block;
+}
+
+/* info grid — stacks mobile, 3-col at md */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--spacing) * 8);
+  margin-bottom: var(--space-20);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-bottom: var(--space-32);
+    width: 75%;
+  }
+}
+
+.info-col-title {
+  margin: 0 0 calc(var(--spacing) * 3) 0;
+  color: var(--color-neutral-500);
+}
+
+.info-list li {
+  line-height: 1.4;
+}
+
+/* .blockt — design.md §Components > Information card */
+.blockt {
+  max-width: var(--container-2xl);
+}
+
+.internship {
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .internship {
+    margin-bottom: var(--space-56);
+  }
+}
+
+.internship h2 {
+  display: block;
+  text-transform: uppercase;
+  margin: 0 0 calc(var(--spacing) * 3) 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.internship p {
+  padding-bottom: calc(var(--spacing) * 3);
+  text-transform: none;
+}
+
+.internship-link {
+  display: inline-block;
+  margin-top: calc(var(--spacing) * 2);
+}
+
+/* --------------------------------------------------------------------------
+   FEATURES / PRESS list — design.md §Components > Press row
+   date column 96px mobile / 192px md.
+   -------------------------------------------------------------------------- */
+
+.features {
+  margin-bottom: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+.feature-row {
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--spacing) * 4);
+  line-height: 1.25;
+  flex-wrap: wrap;
+}
+
+.feature-date {
+  display: inline-block;
+  width: 6rem;          /* w-24 = 96px */
+  flex: 0 0 6rem;
+  color: var(--color-neutral-500);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .feature-date {
+    width: 12rem;       /* md:w-48 = 192px */
+    flex: 0 0 12rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--overlay-border);
+  padding-top: calc(var(--spacing) * 6);
+  padding-bottom: calc(var(--spacing) * 6);
+  color: var(--color-neutral-500);
+  margin-top: var(--space-32);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   DRAG HANDLE — design.md §Components > Draggable hero card
+   Created in JS; styled here. parent: fixed z-80 top-0 left-0
+   backface-hidden pointer-events-none; child: md:cursor-grab.
+   -------------------------------------------------------------------------- */
+
+.drag-handle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  width: 360px;
+  height: 202.5px;
+  pointer-events: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 0s; /* JS writes translate3d directly */
+}
+
+.drag-handle-frame {
+  position: absolute;
+  inset: 0;
+  background: var(--color-neutral-900);
+  border-radius: var(--radius-md);
+  box-shadow: var(--drop-shadow-2xl);
+  pointer-events: auto;
+  cursor: grab;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: calc(var(--spacing) * 3);
+  opacity: 0.85;
+}
+
+.drag-handle:hover .drag-handle-frame,
+.drag-handle.is-grabbing .drag-handle-frame {
+  opacity: 1;
+  cursor: grabbing;
+}
+
+.drag-handle-label {
+  color: var(--color-white);
+  text-shadow: var(--text-shadow-on-image);
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* Resize affordance edges — design.md §Components > Resize affordance edges */
+.drag-handle-frame::before,
+.drag-handle-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: transparent;
+  pointer-events: auto;
+}
+.drag-handle-frame::before {
+  left: 0;
+  cursor: w-resize;
+}
+.drag-handle-frame::after {
+  right: 0;
+  cursor: e-resize;
+}
+
+/* --------------------------------------------------------------------------
+   SCROLL REVEALS — design.md §Motion > Section reveal on scroll
+   Implemented in JS via IntersectionObserver; visual treatment here.
+   Respects prefers-reduced-motion (JS short-circuits the observer).
+   -------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(calc(var(--spacing) * 6));
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Z-INDEX SCALE — design.md §Layout & Grid
+   -------------------------------------------------------------------------- */
+
+.hero           { z-index: 1; }
+.brand          { z-index: 10; }
+.nav-pills      { z-index: 80; }
+.project-dot    { z-index: 20; }
+.drag-handle    { z-index: 80; }
+
+/* --------------------------------------------------------------------------
+   Print — neutralise the heavy editorial look on paper.
+   -------------------------------------------------------------------------- */
+
+@media print {
+  html, body {
+    background: #fff;
+    color: #000;
+    user-select: text;
+  }
+  .marquee, .pill, .skip-link { display: none; }
+}

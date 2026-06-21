@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>makemepulse — Global Creative Studio</title>
+  <meta name="description" content="A digital creative studio building platforms, immersive 3D experiences and branded games." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/makemepulse/style.css" />
+</head>
+<body data-scroll-container>
+  <!-- SVG sprite (icon system from design.md) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 22 20">
+        <path d="M1 10h20M14 3l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 128 128">
+        <circle cx="64" cy="64" r="64" fill="currentColor"/>
+        <path d="M52 42l34 22-34 22z" fill="#000"/>
+      </symbol>
+      <symbol id="i-submit" viewBox="0 0 80 80">
+        <path d="M40 4 L48 36 L76 40 L48 44 L40 76 L32 44 L4 40 L32 36 Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-pause" viewBox="0 0 20 20">
+        <rect x="2" y="2" width="6" height="16" fill="currentColor"/>
+        <rect x="12" y="2" width="6" height="16" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-drag" viewBox="0 0 23 20">
+        <path d="M3 4h17M3 10h17M3 16h17" stroke="currentColor" stroke-width="2"/>
+      </symbol>
+      <symbol id="i-handle" viewBox="0 0 20 20">
+        <circle cx="5" cy="5" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="5" r="1.5" fill="currentColor"/>
+        <circle cx="5" cy="15" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="15" r="1.5" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-filters" viewBox="0 0 16 7">
+        <path d="M0 3.5h16" stroke="currentColor" stroke-width="1"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Custom cursor (design.md: position-fixed via JS) -->
+  <span class="cursor-type" aria-hidden="true">
+    <span class="cursor-type__backdrop"></span>
+  </span>
+
+  <!-- Spinner (design.md: spinner-translate / spinner-scale keyframes) -->
+  <div class="spinner" id="page-spinner" aria-hidden="true">
+    <span class="spinner__bar"></span>
+  </div>
+  <div class="nuxt-progress" id="nuxt-progress" aria-hidden="true"></div>
+
+  <!-- Header / Nav (design.md: grid-template-columns: auto 1fr) -->
+  <header class="app-header" role="banner">
+    <div class="app-header__navbar" id="navbar">
+      <div class="app-header__brand" aria-label="makemepulse home">
+        <a href="#" class="logo-mmp logo-mmp--logotype" aria-label="makemepulse">
+          <svg viewBox="0 0 179 26" width="120" height="17" aria-hidden="true">
+            <g fill="currentColor">
+              <text x="0" y="20" font-family="'DM Serif Display', serif" font-size="22" font-weight="300" letter-spacing="-0.5">makemepulse</text>
+            </g>
+            <g>
+              <circle cx="153" cy="18" r="2.4" class="fill-primary"/>
+              <circle cx="160" cy="18" r="2.4" class="fill-primary"/>
+              <circle cx="167" cy="18" r="2.4" class="fill-secondary"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <nav class="app-header__nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#work" class="nav-link" data-text="Work"><span><u>Work</u></span></a></li>
+          <li><a href="#play" class="nav-link" data-text="Play"><span><u>Play</u></span></a></li>
+          <li><a href="#what-we-do" class="nav-link" data-text="What we do"><span><u>What we do</u></span></a></li>
+          <li><a href="#who-we-are" class="nav-link" data-text="Who we are"><span><u>Who we are</u></span></a></li>
+          <li><a href="#news" class="nav-link" data-text="News"><span><u>News</u></span></a></li>
+          <li><a href="#contact" class="nav-link" data-text="Contact"><span><u>Contact</u></span></a></li>
+        </ul>
+      </nav>
+      <button class="app-header__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main role="main" data-scroll-section>
+    <h1 class="sr-only">makemepulse — Global Creative Studio</h1>
+
+    <!-- 1. Hero (design.md: module--hero-with-type) -->
+    <section class="module module--hero-with-type theme-dark" id="hero">
+      <div class="module__bg bg-black-noise" aria-hidden="true"></div>
+      <div class="module__inner container">
+        <div class="hero-headline gsap-hidden">
+          <div class="hero-headline__caption hero-headline__caption--left">
+            <span class="cap-small">— Paris · London —</span>
+            <p class="paragraph-xsmall">We turn <u>aesthetics</u> into experiences.</p>
+          </div>
+          <div class="hero-headline__heading">
+            <span class="word gsap-hidden">Global</span>
+            <span class="word gsap-hidden">Creative</span>
+            <span class="word gsap-hidden">Studio<i class="dot dot--hero" aria-hidden="true"><span class="dot__inner"></span></i></span>
+          </div>
+          <div class="hero-headline__caption hero-headline__caption--right">
+            <p class="paragraph-xsmall"><u>Tech</u> that's light as air.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="cap-small">Scroll</span>
+        <span class="hero-scroll-hint__line"></span>
+      </div>
+    </section>
+
+    <!-- 2. Projects grid (design.md: module--grid, 18-col, --color-primary per card) -->
+    <section class="module module--grid theme-light" id="work">
+      <div class="container">
+        <header class="grid-header">
+          <span class="cap-small">— Selected work —</span>
+          <h2 class="title-medium">A handful of recent chapters.</h2>
+        </header>
+        <div class="grid grid-18">
+          <!-- Card 1: Brunello Cucinelli (warm beige #CAC0A8) -->
+          <article class="card card--case_study col-span-18 col-2/18 lg:col-1/18 lg:col-span-12" style="--color-primary:#CAC0A8;">
+            <div class="card__caption">
+              <span class="cap-small" style="color:var(--color-primary)">— Case study</span>
+              <h3 class="title-small"><u>Quiet luxury, rendered in 3D.</u></h3>
+              <p class="paragraph-medium">A digital storefront for an Italian house — a quiet, slow walk through woven textures.</p>
+            </div>
+            <div class="card__image">
+              <span class="image-reveal">
+                <span class="image-reveal__mask" style="--aspect-ratio:304/480;">
+                  <div class="embed-responsive" style="background:linear-gradient(135deg,#CAC0A8 0%,#8E7E5A 60%,#3D3520 100%);">
+                    <span class="ph-label">Brunello Cucinelli</span>
+                  </div>
+                </span>
+              </span>
+            </div>
+            <div class="card__legend">
+              <span class="paragraph-xsmall gsap-hidden">— Atelier · 2025</span>
+            </div>
+            <div class="card__baseline">
+              <span class="paragraph-small gsap-hidden">A digital testimony by makemepulse.</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Benno's Light (light cream) -->
+          <article class="card card--case_study col-span-18 col-2/18 lg:col-9/18 lg:col-span-8" style="--color-primary:#F1EDE7;">
+            <div class="card__caption">
+              <span class="cap-small" style="color:var(--color-primary)">— Case study</span>
+              <h3 class="title-small"><u>A light in the darkness.</u></h3>
+              <p class="paragraph-medium">An XR memorial for the Claims Conference — history, walked through.</p>
+            </div>
+            <div class="card__image">
+              <span class="image-reveal">
+                <span class="image-reveal__mask" style="--aspect-ratio:304/480;">
+                  <div class="embed-responsive" style="background:radial-gradient(ellipse at 30% 40%,#F1EDE7 0%,#776857 50%,#1A1410 100%);">
+                    <span class="ph-label">Benno's Light</span>
+                  </div>
+                </span>
+              </span>
+            </div>
+            <div class="card__legend">
+              <span class="paragraph-xsmall gsap-hidden">— XR Memorial · 2024</span>
+            </div>
+            <div class="card__baseline">
+              <span class="paragraph-small gsap-hidden">A digital testimony by makemepulse.</span>
+            </div>
+          </article>
+
+          <!-- Card 3: McDonald's Rösti Fall (forest #4C7036) -->
+          <article class="card card--case_study col-span-18 col-2/18 lg:col-1/18 lg:col-span-10" style="--color-primary:#4C7036;">
+            <div class="card__caption">
+              <span class="cap-small" style="color:var(--color-primary)">— Case study</span>
+              <h3 class="title-small"><u>From loyalty program to entertainment.</u></h3>
+              <p class="paragraph-medium">A mobile game that turns a stamp card into a storybook.</p>
+            </div>
+            <div class="card__image">
+              <span class="image-reveal">
+                <span class="image-reveal__mask" style="--aspect-ratio:304/480;">
+                  <div class="embed-responsive" style="background:linear-gradient(180deg,#4C7036 0%,#2C4B22 70%,#0E1A09 100%);">
+                    <span class="ph-label">Rösti Fall</span>
+                  </div>
+                </span>
+              </span>
+            </div>
+            <div class="card__legend">
+              <span class="paragraph-xsmall gsap-hidden">— Mobile game · 2023</span>
+            </div>
+            <div class="card__baseline">
+              <span class="paragraph-small gsap-hidden">From loyalty program to entertainment platform.</span>
+            </div>
+          </article>
+
+          <!-- Highlighted card: full-bleed -->
+          <article class="card card--case_study card--case_study--highlight col-span-18 is-highlight" style="--color-primary:#896FFF;">
+            <div class="card__image">
+              <span class="image-reveal">
+                <span class="image-reveal__mask" style="--aspect-ratio:624/1120;">
+                  <div class="embed-responsive" style="background:linear-gradient(120deg,#896FFF 0%,#33256E 50%,#0B0719 100%);">
+                    <span class="ph-label ph-label--light">Three.js Conf · Paris</span>
+                  </div>
+                </span>
+              </span>
+            </div>
+            <div class="card__caption">
+              <span class="cap-small" style="color:var(--color-primary)">— Sponsor</span>
+              <h3 class="title-medium"><u>Sponsoring the 3D web.</u></h3>
+              <p class="paragraph-medium">We help put Three.js Conf on stage each year, because the people building the platform deserve a room of their own.</p>
+            </div>
+            <div class="card__baseline">
+              <span class="paragraph-small gsap-hidden">A digital testimony by makemepulse.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Showreel (design.md: module--video-player, dark theme) -->
+    <section class="module module--video-player theme-dark" id="showreel">
+      <div class="module__bg bg-black-noise" aria-hidden="true"></div>
+      <div class="container">
+        <header class="showreel-header">
+          <span class="cap-small">— Showreel —</span>
+          <h2 class="title-medium">Twenty-five minutes of recent work.</h2>
+        </header>
+        <div class="video-frame" id="video-frame">
+          <div class="video-frame__poster" style="background:radial-gradient(ellipse at center,#1a1a1a 0%,#000 80%);">
+            <span class="ph-label ph-label--light">Showreel · 2025</span>
+          </div>
+          <button class="video-player__btn--play" aria-label="Play showreel">
+            <svg class="icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+          </button>
+          <span class="cursor-type cursor-type--video" aria-hidden="true">
+            <svg viewBox="0 0 128 128" width="128" height="128">
+              <circle cx="64" cy="64" r="60" fill="#fff"/>
+              <path d="M52 42l34 22-34 22z" fill="#000"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Makemeplay CTA (design.md: module--makemeplay, clip-path reveal) -->
+    <section class="module module--makemeplay" id="play">
+      <div class="makemeplay-strip has-top-color" aria-hidden="true"></div>
+      <div class="makemeplay-clip" id="makemeplay-clip">
+        <div class="makemeplay-bg" aria-hidden="true"></div>
+        <div class="container makemeplay-inner">
+          <h2 class="title">We also do games.</h2>
+          <div class="makemeplay-meta">
+            <p class="cap-small">— Gaming is the future of experience —</p>
+            <p class="paragraph-medium">We make games with heart. We make games that deliver. Discover our spin-off platform where play meets craft.</p>
+          </div>
+          <a href="#" class="cta cta--makemeplay">
+            <span class="cta__label">Discover <u>makemeplay</u>.</span>
+            <span class="cta__arrow">
+              <svg viewBox="0 0 128 128" width="64" height="64" aria-hidden="true">
+                <g transform="rotate(-15 64 64)">
+                  <circle cx="64" cy="64" r="50" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <path d="M48 64h32M68 52l12 12-12 12" fill="none" stroke="currentColor" stroke-width="2"/>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="makemeplay-strip has-bottom-color" aria-hidden="true"></div>
+    </section>
+
+    <!-- 5. What-We-Do discovery block (design.md: module--discover-wwd, light theme) -->
+    <section class="module module--discover-wwd theme-light" id="what-we-do">
+      <div class="module__bg bg-gray-light-noise" aria-hidden="true"></div>
+      <div class="container discover-grid">
+        <div class="field field--image">
+          <span class="image-reveal">
+            <span class="image-reveal__mask" style="--aspect-ratio:280/400;">
+              <div class="embed-responsive" style="background:linear-gradient(160deg,#E8E1D2 0%,#A89B7E 60%,#3D3520 100%);">
+                <span class="ph-label">Studio portrait</span>
+              </div>
+            </span>
+          </span>
+        </div>
+        <div class="field field--text">
+          <span class="cap-small">— What we do</span>
+          <h2 class="title-medium">Design, code, ship.<br/>Repeat at speed.</h2>
+          <p class="paragraph-medium">We build platforms, immersive 3D, AR/VR, and branded games — under one roof, with one team, from sketch to deploy.</p>
+          <a href="#" class="link-big"><u>Explore our craft.</u></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Who-We-Are discovery block (design.md: module--discover-wwa, dark theme) -->
+    <section class="module module--discover-wwa theme-dark" id="who-we-are">
+      <div class="module__bg bg-black-noise" aria-hidden="true"></div>
+      <div class="container discover-grid">
+        <div class="field field--text">
+          <span class="cap-small">— Who we are</span>
+          <h2 class="title-medium">A studio of sixty-two, between Paris and London.</h2>
+          <p class="paragraph-medium">Engineers, designers, art directors, producers, writers — gathered around the conviction that taste and rigor are the same muscle.</p>
+          <a href="#" class="link-big link-big--inverse"><u>Meet the team.</u></a>
+        </div>
+        <div class="field field--image">
+          <span class="image-reveal">
+            <span class="image-reveal__mask" style="--aspect-ratio:536/720;">
+              <div class="embed-responsive" style="background:radial-gradient(ellipse at 70% 30%,#3a3a3a 0%,#0a0a0a 70%);">
+                <span class="ph-label ph-label--light">Studio group · 2025</span>
+              </div>
+            </span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Blog / News (design.md: module--blog, dark, black-noise) -->
+    <section class="module module--blog theme-dark" id="news">
+      <div class="module__bg bg-black-noise" aria-hidden="true"></div>
+      <div class="container">
+        <header class="blog-header">
+          <span class="cap-small">— News</span>
+          <h2 class="title-medium">Recent dispatches.</h2>
+        </header>
+        <div class="grid grid-14 blog-grid">
+          <article class="blog-card col-2/14 col-span-12 lg:col-1/14 lg:col-span-4">
+            <time class="blog-card__time" datetime="2026-05-12">12 . 05 . 26</time>
+            <h3 class="title-small"><u>Light in the darkness: a powerful XR experience.</u></h3>
+            <p class="paragraph-small">A new chapter in the Claims Conference series — an XR walk-through of memory itself.</p>
+            <span class="image-reveal">
+              <span class="image-reveal__mask image-reveal__mask--rounded" style="--aspect-ratio:16/9;">
+                <div class="embed-responsive" style="background:linear-gradient(135deg,#1a1a1a,#3a3a3a);">
+                  <span class="ph-label ph-label--light">XR walk</span>
+                </div>
+              </span>
+            </span>
+          </article>
+
+          <article class="blog-card col-2/14 col-span-12 lg:col-1/14 lg:col-span-4">
+            <time class="blog-card__time" datetime="2026-04-02">02 . 04 . 26</time>
+            <h3 class="title-small"><u>Inducted into the FWA Hall of Fame.</u></h3>
+            <p class="paragraph-small">A quiet recognition of the work we've shipped over the last two decades.</p>
+            <span class="image-reveal">
+              <span class="image-reveal__mask image-reveal__mask--rounded" style="--aspect-ratio:16/9;">
+                <div class="embed-responsive" style="background:linear-gradient(45deg,#896FFF,#33256E);">
+                  <span class="ph-label ph-label--light">FWA · 2026</span>
+                </div>
+              </span>
+            </span>
+          </article>
+
+          <article class="blog-card col-2/14 col-span-12 lg:col-1/14 lg:col-span-4">
+            <time class="blog-card__time" datetime="2026-02-18">18 . 02 . 26</time>
+            <h3 class="title-small"><u>Sponsoring Three.js Conf · Paris.</u></h3>
+            <p class="paragraph-small">Putting the people who build the platform we love on a stage of their own.</p>
+            <span class="image-reveal">
+              <span class="image-reveal__mask image-reveal__mask--rounded" style="--aspect-ratio:16/9;">
+                <div class="embed-responsive" style="background:linear-gradient(135deg,#0E1A09,#4C7036);">
+                  <span class="ph-label ph-label--light">three.js conf</span>
+                </div>
+              </span>
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Newsletter (design.md: module--newsletter, light gray noise) -->
+    <section class="module module--newsletter theme-light" id="newsletter">
+      <div class="module__bg bg-gray-light-noise" aria-hidden="true"></div>
+      <div class="module__bg module__bg--decor" aria-hidden="true"></div>
+      <div class="container">
+        <div class="grid grid-14 newsletter-grid">
+          <div class="newsletter-headline col-2/14 col-span-12 lg:col-3/14 lg:col-span-10">
+            <span class="cap-small">— Newsletter</span>
+            <h2 class="title-small">Give an email, <u>get the newsletter.</u></h2>
+            <p class="paragraph-medium">A monthly note on what we're building, what we're reading, and what we're watching.</p>
+          </div>
+          <form class="newsletter-form col-2/14 col-span-12 lg:col-1/14 lg:col-span-14" novalidate>
+            <div class="form-field" data-value="">
+              <label for="nl-email">Your email</label>
+              <input type="email" id="nl-email" name="email" autocomplete="email" required />
+              <button type="submit" class="btn-submit" aria-label="Subscribe">
+                <svg class="icon-submit" aria-hidden="true"><use href="#i-submit"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. Footer (design.md: grid-cols-14 lg:grid-cols-5) -->
+  <footer class="app-footer theme-dark" id="contact">
+    <div class="module__bg bg-black-noise" aria-hidden="true"></div>
+    <div class="container">
+      <div class="grid grid-14 lg:grid-col-5 footer-grid">
+
+        <section class="footer-col col-1/14 col-span-14 lg:col-span-1" aria-labelledby="ftr-offices">
+          <h3 class="footer-title" id="ftr-offices"><button aria-expanded="false" aria-controls="offices-panel">Offices</button></h3>
+          <div id="offices-panel" class="footer-panel">
+            <address class="footer-city">
+              <span class="cap-small">— Paris</span>
+              <p class="paragraph-xsmall">38 rue Legendre<br/>75017 Paris</p>
+            </address>
+            <address class="footer-city">
+              <span class="cap-small">— London</span>
+              <p class="paragraph-xsmall">Becket House, 1 Lambeth Palace Road<br/>London SE1 7EU</p>
+            </address>
+          </div>
+        </section>
+
+        <section class="footer-col col-1/14 col-span-14 lg:col-span-1" aria-labelledby="ftr-business">
+          <h3 class="footer-title" id="ftr-business"><button aria-expanded="false" aria-controls="business-panel">Business</button></h3>
+          <ul id="business-panel" class="footer-panel footer-list">
+            <li><a href="mailto:france@example.com"><u>france@example.com</u></a></li>
+            <li><a href="mailto:uk@example.com"><u>uk@example.com</u></a></li>
+            <li><a href="mailto:eastcoast@example.com"><u>eastcoast@example.com</u></a></li>
+            <li><a href="mailto:midwest@example.com"><u>midwest@example.com</u></a></li>
+            <li><a href="mailto:westcoast@example.com"><u>westcoast@example.com</u></a></li>
+          </ul>
+        </section>
+
+        <section class="footer-col col-1/14 col-span-14 lg:col-span-1" aria-labelledby="ftr-say">
+          <h3 class="footer-title" id="ftr-say"><button aria-expanded="false" aria-controls="say-panel">Say Hi</button></h3>
+          <div id="say-panel" class="footer-panel">
+            <p class="paragraph-xsmall"><u>Reach out using our cool contact form.</u></p>
+          </div>
+        </section>
+
+        <section class="footer-col col-1/14 col-span-14 lg:col-span-1" aria-labelledby="ftr-contact">
+          <h3 class="footer-title" id="ftr-contact"><button aria-expanded="false" aria-controls="contact-panel">Contact</button></h3>
+          <div id="contact-panel" class="footer-panel">
+            <p class="paragraph-xsmall"><u>+33 1 84 80 21 50</u></p>
+            <p class="paragraph-xsmall"><u>+44 20 7946 0421</u></p>
+          </div>
+        </section>
+
+        <section class="footer-col col-1/14 col-span-14 lg:col-span-1" aria-labelledby="ftr-follow">
+          <h3 class="footer-title" id="ftr-follow"><button aria-expanded="false" aria-controls="follow-panel">Follow Us</button></h3>
+          <ul id="follow-panel" class="footer-panel socials">
+            <li><a href="#" rel="noopener" target="_blank"><u>LinkedIn</u></a></li>
+            <li><a href="#" rel="noopener" target="_blank"><u>Instagram</u></a></li>
+            <li><a href="#" rel="noopener" target="_blank"><u>X</u></a></li>
+            <li><a href="#" rel="noopener" target="_blank"><u>Behance</u></a></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <hr class="footer-rule" aria-hidden="true" />
+
+      <div class="grid grid-14 footer-bottom">
+        <div class="col-1/14 col-span-12 lg:col-1/14 lg:col-span-4 footer-newsletter-inline">
+          <form class="newsletter-form newsletter-form--inline" novalidate>
+            <div class="form-field" data-value="">
+              <label for="ftr-email">Your email</label>
+              <input type="email" id="ftr-email" name="email" autocomplete="email" required />
+              <button type="submit" class="icon-arrow" aria-label="Subscribe">
+                <svg aria-hidden="true" width="20" height="20"><use href="#i-arrow"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+        <p class="col-1/14 col-span-12 lg:col-1/14 lg:col-span-4 paragraph-xsmall footer-copy">© 2026 makemepulse · Global Creative Studio.</p>
+        <div class="col-1/14 col-span-12 lg:col-1/14 lg:col-span-4 footer-brand">
+          <a href="#" class="logo-mmp logo-mmp--logogram" aria-label="makemepulse">
+            <svg viewBox="0 0 160 40" width="48" height="12" aria-hidden="true">
+              <circle cx="20" cy="20" r="6" class="fill-primary" fill="#fff"/>
+              <circle cx="40" cy="20" r="6" class="fill-primary" fill="#fff"/>
+              <circle cx="60" cy="20" r="6" class="fill-secondary" fill="#896fff"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/makemepulse/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web &amp; Interactive — design.md showcase</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../css/awwwards/style.css" />
+</head>
+<body class="page page--gallery">
+
+  <!-- 1. EU location ribbon (visually hidden helper, present in markup) -->
+  <div class="eu-location sr-only" aria-hidden="true">
+    You appear to be browsing from the European Union.
+  </div>
+
+  <!-- 2. Promo marquee (top of page) -->
+  <aside class="marquee-top marquee-top--gray" aria-label="Site promotion">
+    <a class="item-link" href="#" aria-label="Open the Creative Pass landing page"></a>
+    <div class="marquee-top__viewport">
+      <div class="marquee-top__wrapper is-visible" id="marquee">
+        <div class="marquee-top__item">
+          <strong>The Creative Pass</strong>
+          <svg class="marquee-top__ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+            <path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Stream every course library for one low monthly price.</span>
+        </div>
+        <div class="marquee-top__item" aria-hidden="true">
+          <strong>The Creative Pass</strong>
+          <svg class="marquee-top__ico" viewBox="0 0 20 20" width="14" height="14">
+            <path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Stream every course library for one low monthly price.</span>
+        </div>
+        <div class="marquee-top__item" aria-hidden="true">
+          <strong>The Creative Pass</strong>
+          <svg class="marquee-top__ico" viewBox="0 0 20 20" width="14" height="14">
+            <path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Stream every course library for one low monthly price.</span>
+        </div>
+        <div class="marquee-top__item" aria-hidden="true">
+          <strong>The Creative Pass</strong>
+          <svg class="marquee-top__ico" viewBox="0 0 20 20" width="14" height="14">
+            <path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Stream every course library for one low monthly price.</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 3. Sticky header -->
+  <header class="header" id="header">
+    <div class="inner header__inner">
+
+      <a class="header__logo" href="#" aria-label="Awwwards">
+        <svg viewBox="0 0 110 24" width="96" height="22" aria-hidden="true">
+          <text x="0" y="19" font-family="Inter Tight, sans-serif" font-weight="600" font-size="22" fill="#222" letter-spacing="-0.04em">awwwards</text>
+          <circle cx="103" cy="6" r="2" fill="#FA5D29"/>
+        </svg>
+      </a>
+
+      <nav class="nav-header" aria-label="Primary">
+        <ul class="nav-header__list">
+          <li class="nav-header__item has-dropdown">
+            <button class="nav-header__link" type="button" data-action="nav-toggle">Explore</button>
+          </li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Awards</a></li>
+          <li class="nav-header__item is-active"><a class="nav-header__link" href="#">Websites</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Collections</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Elements</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Academy</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Jobs</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Market</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Directory</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Conferences</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Magazine</a></li>
+          <li class="nav-header__item"><a class="nav-header__link" href="#">Shop</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" aria-label="Site search">
+        <svg class="search-form__icon" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14 14l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input class="search-form__input" type="search" placeholder="Search" aria-label="Search submissions" />
+      </form>
+
+      <div class="header__right">
+        <button class="btn btn--sm btn--outline" type="button">Sign in</button>
+        <button class="btn btn--sm btn--solid" type="button">Submit a site</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="page__main">
+
+    <!-- 4. Page title row (breadcrumb + H1 + count) -->
+    <section class="breadcrumb-filters">
+      <div class="inner breadcrumb-filters__inner">
+        <ul class="breadcrumb-filters__list">
+          <li class="breadcrumb-filters__crumb"><a href="#">Websites</a></li>
+        </ul>
+        <h1 class="breadcrumb-filters__title" data-count="10336">
+          Web &amp; Interactive
+          <span class="breadcrumb-filters__count js-count" aria-label="10,336 submissions">10&nbsp;336</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- 5. Filter bar -->
+    <section class="l-filters">
+      <div class="inner l-filters__inner">
+
+        <div class="l-filters__left">
+          <p class="l-filters__copy">
+            A curated slate of <em>Web &amp; Interactive</em> sites chosen for craft,
+            interaction and originality. Browse the latest, the honoured, and the
+            up-and-coming, all in one grid.
+          </p>
+          <button class="link-underlined js-readmore" type="button">Read more</button>
+
+          <div class="l-filters__extra sr-only" id="toggle-tag">
+            <p>
+              Every entry is reviewed by a panel of jurors. Voting runs daily;
+              winners are surfaced on a rolling basis. Use the filters to drill
+              down by recognition level, country of origin, sector, tag and the
+              dominant colour palette.
+            </p>
+          </div>
+        </div>
+
+        <div class="l-filters__right">
+          <ul class="breadcrumb-filters__grid" aria-label="Grid density">
+            <li><button class="grid-toggle" type="button" data-cols="2" aria-label="Two columns">
+              <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                <rect x="3" y="3" width="6" height="14" fill="currentColor"/>
+                <rect x="11" y="3" width="6" height="14" fill="currentColor"/>
+              </svg>
+            </button></li>
+            <li><button class="grid-toggle is-active" type="button" data-cols="3" aria-label="Three columns">
+              <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                <rect x="2" y="3" width="5" height="14" fill="currentColor"/>
+                <rect x="8" y="3" width="5" height="14" fill="currentColor"/>
+                <rect x="14" y="3" width="5" height="14" fill="currentColor"/>
+              </svg>
+            </button></li>
+            <li><button class="grid-toggle" type="button" data-cols="4" aria-label="Four columns">
+              <svg viewBox="0 0 22 20" width="14" height="14" aria-hidden="true">
+                <rect x="2" y="3"  width="4" height="14" fill="currentColor"/>
+                <rect x="7"  y="3"  width="4" height="14" fill="currentColor"/>
+                <rect x="12" y="3"  width="4" height="14" fill="currentColor"/>
+                <rect x="17" y="3"  width="4" height="14" fill="currentColor"/>
+              </svg>
+            </button></li>
+          </ul>
+
+          <ul class="nav-filters__list" id="filters" aria-label="Filters">
+            <li class="nav-filters__item js-filter">
+              <button class="nav-filters__btn" type="button">Awards
+                <svg class="ico-svg" viewBox="0 0 20 20" width="10" height="10" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav-filters__dropdown">
+                <ul class="nav-filters__sublist">
+                  <li><a href="#"><span>Sites of the Day</span></a></li>
+                  <li><a href="#"><span>Sites of the Month</span></a></li>
+                  <li><a href="#"><span>Sites of the Year</span></a></li>
+                  <li><a href="#"><span>Honorable Mentions</span></a></li>
+                  <li><a href="#"><span>Developer Awards</span></a></li>
+                  <li><a href="#"><span>Typography Honors</span></a></li>
+                  <li><a href="#"><span>Nominees</span></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-filters__item js-filter">
+              <button class="nav-filters__btn" type="button">Countries
+                <svg class="ico-svg" viewBox="0 0 20 20" width="10" height="10" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav-filters__dropdown">
+                <ul class="nav-filters__sublist">
+                  <li><a href="#"><span>United States</span></a></li>
+                  <li><a href="#"><span>United Kingdom</span></a></li>
+                  <li><a href="#"><span>Germany</span></a></li>
+                  <li><a href="#"><span>France</span></a></li>
+                  <li><a href="#"><span>Japan</span></a></li>
+                  <li><a href="#"><span>Brazil</span></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-filters__item js-filter">
+              <button class="nav-filters__btn" type="button">Categories
+                <svg class="ico-svg" viewBox="0 0 20 20" width="10" height="10" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav-filters__dropdown">
+                <ul class="nav-filters__sublist">
+                  <li><a href="#"><span>Web &amp; Interactive</span></a></li>
+                  <li><a href="#"><span>E-commerce</span></a></li>
+                  <li><a href="#"><span>Portfolio</span></a></li>
+                  <li><a href="#"><span>Editorial</span></a></li>
+                  <li><a href="#"><span>Agency</span></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-filters__item js-filter">
+              <button class="nav-filters__btn" type="button">Tags
+                <svg class="ico-svg" viewBox="0 0 20 20" width="10" height="10" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav-filters__dropdown">
+                <ul class="nav-filters__sublist">
+                  <li><a href="#"><span>Animation</span></a></li>
+                  <li><a href="#"><span>Typography</span></a></li>
+                  <li><a href="#"><span>WebGL / 3D</span></a></li>
+                  <li><a href="#"><span>Scroll-driven</span></a></li>
+                  <li><a href="#"><span>Minimal</span></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-filters__item js-filter">
+              <button class="nav-filters__btn" type="button">Colors
+                <svg class="ico-svg" viewBox="0 0 20 20" width="10" height="10" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav-filters__dropdown nav-filters__dropdown--colors">
+                <ul class="nav-filters__colorlist">
+                  <li><a href="#" class="nav-filters__color" style="--c:#FFFFFF" data-name="White"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#000000" data-name="Black"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#888888" data-name="Gray"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#F4ECD8" data-name="Cream"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#0E2A4A" data-name="Navy"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#D92E2E" data-name="Red"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#FA5D29" data-name="Orange"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#F2C200" data-name="Yellow"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#AAEEC4" data-name="Lime"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#1F8F4E" data-name="Green"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#74BCFF" data-name="Cyan"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#1F4FE0" data-name="Blue"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#502BD8" data-name="Indigo"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#6749D1" data-name="Violet"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#C93CB1" data-name="Magenta"></a></li>
+                  <li><a href="#" class="nav-filters__color" style="--c:#F5A5C5" data-name="Pink"></a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Card grid -->
+    <section class="grid-section">
+      <div class="inner">
+        <ul class="grid-cards" id="grid" data-cols="3">
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Lattice Bloom — site preview">
+                  <div class="thumb thumb--placeholder thumb--lattice" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Lattice Bloom</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">
+                      Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                        <path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">RG</div>
+                      <div class="avatar-name__name">R. Garcia</div>
+                      <div class="avatar-name__title">Studio Field</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--solid-black anim-shiny">Site of the day</li>
+                </ul>
+                <div class="card-site__byline">R. Garcia · ES</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Quiet Foundry — site preview">
+                  <div class="thumb thumb--placeholder thumb--quiet" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Quiet Foundry</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">MO</div>
+                      <div class="avatar-name__name">M. Okafor</div>
+                      <div class="avatar-name__title">Honest&Co</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--dev">Developer</li>
+                </ul>
+                <div class="card-site__byline">M. Okafor · UK</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Velvet Static — site preview">
+                  <div class="thumb thumb--placeholder thumb--velvet" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Velvet Static</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">SK</div>
+                      <div class="avatar-name__name">S. Khoury</div>
+                      <div class="avatar-name__title">Beirut Lab</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--small">Honorable</li>
+                </ul>
+                <div class="card-site__byline">S. Khoury · LB</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Order &amp; Chaos — site preview">
+                  <div class="thumb thumb--placeholder thumb--order" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Order &amp; Chaos</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">JT</div>
+                      <div class="avatar-name__name">J. Tan</div>
+                      <div class="avatar-name__title">Eight Bit North</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--solid-black">Site of the day</li>
+                </ul>
+                <div class="card-site__byline">J. Tan · SG</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Soft Carbon — site preview">
+                  <div class="thumb thumb--placeholder thumb--carbon" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Soft Carbon</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">NK</div>
+                      <div class="avatar-name__name">N. Klein</div>
+                      <div class="avatar-name__title">Studio Half</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--solid-black anim-shiny">Site of the day</li>
+                </ul>
+                <div class="card-site__byline">N. Klein · DE</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="North Drift — site preview">
+                  <div class="thumb thumb--placeholder thumb--north" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">North Drift</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">EA</div>
+                      <div class="avatar-name__name">E. Aalto</div>
+                      <div class="avatar-name__title">Helsinki Workshop</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--small">Honorable</li>
+                </ul>
+                <div class="card-site__byline">E. Aalto · FI</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Glasshouse Atlas — site preview">
+                  <div class="thumb thumb--placeholder thumb--glass" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Glasshouse Atlas</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">PD</div>
+                      <div class="avatar-name__name">P. Duarte</div>
+                      <div class="avatar-name__title">Ateliê 21</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--solid-black anim-shiny">Site of the day</li>
+                </ul>
+                <div class="card-site__byline">P. Duarte · BR</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Cold Type — site preview">
+                  <div class="thumb thumb--placeholder thumb--cold" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Cold Type</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">HM</div>
+                      <div class="avatar-name__name">H. Mori</div>
+                      <div class="avatar-name__title">Tokyo Type</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--dev">Developer</li>
+                </ul>
+                <div class="card-site__byline">H. Mori · JP</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col js-card">
+            <div class="card-site js-card-site">
+              <figure class="figure-rollover">
+                <a class="figure-rollover__link" href="#" aria-label="Paper Atlas — site preview">
+                  <div class="thumb thumb--placeholder thumb--paper" aria-hidden="true"></div>
+                </a>
+                <div class="figure-rollover__hover">
+                  <div class="figure-rollover__left">
+                    <span class="figure-rollover__eyebrow">Website</span>
+                    <span class="figure-rollover__row">Paper Atlas</span>
+                  </div>
+                  <div class="figure-rollover__center">
+                    <button class="btn-vote" type="button">Vote now
+                      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M5 4l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="figure-rollover__right">
+                    <div class="avatar-name">
+                      <div class="avatar-name__img" aria-hidden="true">FV</div>
+                      <div class="avatar-name__name">F. Vidal</div>
+                      <div class="avatar-name__title">Editorial House</div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-site__info">
+                <ul class="card-site__awards">
+                  <li class="budget-tag budget-tag--solid-black">Site of the day</li>
+                </ul>
+                <div class="card-site__byline">F. Vidal · FR</div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Loader sentinel -->
+        <div class="loader-grid" aria-hidden="true">
+          <div class="loader-grid__spinner"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. Back-to-top button -->
+  <button class="bt-nav bt-nav--right js-gototop is-hidden" type="button" aria-label="Back to top">
+    <span class="bt-nav__glyph">
+      <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+        <path d="M5 13l5-6 5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+
+  <!-- 8. Cookie banner -->
+  <aside class="cookies-popup is-show js-cookies" role="dialog" aria-label="Cookie consent">
+    <p>
+      We use cookies to remember your filters and to measure how the
+      gallery is used. By continuing you accept our cookie policy.
+    </p>
+    <button class="btn btn--sm btn--white js-accept-cookies" type="button">Accept cookies</button>
+  </aside>
+
+  <!-- 9. Footer -->
+  <footer class="footer" id="footer">
+    <div class="inner footer__inner">
+
+      <div class="footer__top">
+        <a class="footer__logo" href="#" aria-label="Awwwards home">
+          <svg viewBox="0 0 30 16" width="30" height="16" aria-hidden="true">
+            <text x="0" y="13" font-family="Inter Tight, sans-serif" font-weight="600" font-size="14" fill="#222" letter-spacing="-0.06em">aw</text>
+          </svg>
+        </a>
+
+        <div class="footer__grid">
+          <ul class="footer__menu">
+            <li><a href="#">Websites</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Elements</a></li>
+          </ul>
+          <ul class="footer__menu">
+            <li><a href="#">Academy</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Market</a></li>
+          </ul>
+          <ul class="footer__menu">
+            <li><a href="#">Directory</a></li>
+            <li><a href="#">Conferences</a></li>
+          </ul>
+          <ul class="footer__menu">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <ul class="footer__left">
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Legal terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+        <div class="footer__right">
+          <span class="footer__connect">Connect:</span>
+          <ul class="footer__social">
+            <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="5.5" r="0.9" fill="currentColor"/></svg></a></li>
+            <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="6" y="8" width="2" height="6" fill="currentColor"/><circle cx="7" cy="6" r="1" fill="currentColor"/><path d="M10 14v-6h2v1c.5-.7 1.2-1.2 2.2-1.2 1.6 0 2.8 1 2.8 3v3.2h-2V11c0-1-.4-1.5-1.3-1.5s-1.7.6-1.7 2V14h-2z" fill="currentColor"/></svg></a></li>
+            <li><a href="#" aria-label="Twitter"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M3 3l6.5 8L3 17h2l5-5.5L14 17h3l-6.8-8.5L17 3h-2l-4.7 5L6 3H3z" fill="currentColor"/></svg></a></li>
+            <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M11 18v-6h2l.3-2.5H11V8c0-.7.2-1.2 1.2-1.2H13.5V4.5c-.5-.1-1.2-.2-2-.2-2 0-3.5 1.2-3.5 3.5v1.7H6V12h2v6h3z" fill="currentColor"/></svg></a></li>
+            <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><rect x="2.5" y="5" width="15" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 7.5v5l4.5-2.5-4.5-2.5z" fill="currentColor"/></svg></a></li>
+            <li><a href="#" aria-label="TikTok"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M11 3v8.5a2 2 0 1 1-2-2V7.7a4 4 0 1 0 4 4V8.5a6 6 0 0 0 3 .8V7a4 4 0 0 1-3-1.5V3h-2z" fill="currentColor"/></svg></a></li>
+            <li><a href="#" aria-label="Pinterest"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 17l1.2-5.5m-.7-3a2 2 0 1 1 2.7 2.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../../js/awwwards/script.js" defer></script>
+</body>
+</html>

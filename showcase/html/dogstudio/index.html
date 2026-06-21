@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dogstudio — Multidisciplinary Creative Studio</title>
+  <meta name="description" content="A multidisciplinary creative studio building bold digital experiences.">
+  <link rel="stylesheet" href="../../css/dogstudio/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- SVG sprite (inlined; design.md specifies a custom sprite with these ids) -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="caret-right" viewBox="0 0 6 11">
+        <path d="M1 1l4 4.5L1 10" fill="none" stroke="currentColor" stroke-width="1"/>
+      </symbol>
+      <symbol id="caret-left" viewBox="0 0 6 11">
+        <path d="M5 1L1 5.5 5 10" fill="none" stroke="currentColor" stroke-width="1"/>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 8 13">
+        <path d="M1 1l5.5 5.5L1 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="chevron-left" viewBox="0 0 8 13">
+        <path d="M7 1L1.5 6.5 7 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="cross" viewBox="0 0 12 12">
+        <path d="M2 2l8 8M10 2l-8 8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Site loader -->
+  <div class="site-loader" id="siteLoader" aria-hidden="true">
+    <div class="site-loader-sprite" aria-hidden="true"></div>
+    <svg class="site-loader-ring" viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="site-loader-track" cx="50" cy="50" r="45" fill="none" stroke-width="2"/>
+      <circle class="site-loader-percent" cx="50" cy="50" r="45" fill="none" stroke-width="2"
+              transform="rotate(-90 50 50)"/>
+    </svg>
+  </div>
+
+  <!-- 3D scene placeholder (Three.js would render here per design.md) -->
+  <div class="dog-scene is-visible" aria-hidden="true">
+    <div class="scene-grain"></div>
+    <div class="scene-fallback">
+      <span class="scene-fallback-text">[ Three.js WebGL scene placeholder ]</span>
+    </div>
+  </div>
+
+  <!-- Site header -->
+  <header class="site-header" role="banner">
+    <a href="/" class="site-logo" aria-label="Dogstudio home">
+      <span class="logo-wordmark">DOGSTUDIO<span class="logo-dot">.</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#news" class="nav-link">
+        <svg class="caret-icon" aria-hidden="true"><use href="#caret-right"/></svg>
+        <span>All our news</span>
+      </a>
+      <a href="#cases" class="nav-link">
+        <svg class="caret-icon" aria-hidden="true"><use href="#caret-right"/></svg>
+        <span>All our cases</span>
+      </a>
+    </nav>
+    <button class="site-header-button" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">
+      <span class="button-bar button-bar--1"></span>
+      <span class="button-bar button-bar--2"></span>
+      <span class="button-bar button-bar--3"></span>
+    </button>
+  </header>
+
+  <!-- Volume toggle (fixed bottom-left per design.md) -->
+  <button class="site-volume" id="volumeButton" aria-label="Toggle ambient sound" aria-pressed="false">
+    <span class="pulsing-ui" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" class="volume-icon" aria-hidden="true">
+      <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/>
+      <path class="volume-wave" d="M15 8.5a4 4 0 010 7M18 5.5a8 8 0 010 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- Main content -->
+  <main role="main" data-router-wrapper>
+    <div data-router-view="home">
+      <h1 class="u-visually-hidden">Dogstudio</h1>
+
+      <!-- HERO -->
+      <section class="home-hero" id="hero">
+        <div class="center home-hero-center">
+          <div class="line line--revert js-in-view" data-line="revert">
+            <span class="line-anim"></span>
+          </div>
+          <p class="home-hero-title fx-parent">
+            <span class="fx-word">
+              <span class="fx-letter" style="--d:100ms">C</span><span class="fx-letter" style="--d:130ms">r</span><span class="fx-letter" style="--d:160ms">a</span><span class="fx-letter" style="--d:190ms">f</span><span class="fx-letter" style="--d:220ms">t</span><span class="fx-letter" style="--d:250ms">i</span><span class="fx-letter" style="--d:280ms">n</span><span class="fx-letter" style="--d:310ms">g</span>
+            </span>
+            <span class="fx-word">
+              <span class="fx-letter" style="--d:370ms">b</span><span class="fx-letter" style="--d:400ms">o</span><span class="fx-letter" style="--d:430ms">l</span><span class="fx-letter" style="--d:460ms">d</span>
+            </span>
+            <span class="fx-word">
+              <span class="fx-letter" style="--d:520ms">d</span><span class="fx-letter" style="--d:550ms">i</span><span class="fx-letter" style="--d:580ms">g</span><span class="fx-letter" style="--d:610ms">i</span><span class="fx-letter" style="--d:640ms">t</span><span class="fx-letter" style="--d:670ms">a</span><span class="fx-letter" style="--d:700ms">l</span>
+            </span>
+            <span class="fx-word">
+              <span class="fx-letter" style="--d:760ms">w</span><span class="fx-letter" style="--d:790ms">o</span><span class="fx-letter" style="--d:820ms">r</span><span class="fx-letter" style="--d:850ms">l</span><span class="fx-letter" style="--d:880ms">d</span><span class="fx-letter" style="--d:910ms">s</span><span class="fx-letter" style="--d:940ms">.</span>
+            </span>
+          </p>
+          <div class="line line--2 js-in-view" data-line="two">
+            <span class="line-anim"></span>
+          </div>
+          <a href="#showreel" class="link--under showreel-link js-show-showreel js-in-view" data-showreel-delay>
+            <span class="link-text">Watch our showreel</span>
+            <span class="link-underline"></span>
+          </a>
+        </div>
+        <aside class="home-hero-side">
+          <div class="home-hero-lead js-in-view" data-side-delay="lead">
+            <span>We are</span> <span>a multidisciplinary</span> <span>creative studio.</span>
+          </div>
+          <div class="home-hero-body js-in-view" data-side-delay="body">
+            <span>For over a decade — we have partnered</span>
+            <span>with bold brands to build distinctive</span>
+            <span>experiences across the digital canvas.</span>
+          </div>
+          <div class="home-hero-social js-in-view" data-side-delay="social">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Dribbble</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Newsletter</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- CASES -->
+      <section class="home-cases" id="cases">
+        <div class="home-cases-layout">
+          <div class="home-cases-column">
+            <div class="home-cases-head js-in-view">
+              <span class="eyebrow">Featured projects</span>
+            </div>
+            <ul class="home-cases-list" id="casesList">
+              <li class="case-row is-active" data-case="aurora">
+                <a href="#case-aurora">
+                  <span class="case-year">2024</span>
+                  <span class="case-name">Aurora &mdash; Flagship Brand</span>
+                </a>
+              </li>
+              <li class="case-row" data-case="lumen">
+                <a href="#case-lumen">
+                  <span class="case-year">2024</span>
+                  <span class="case-name">Lumen Pavilion</span>
+                </a>
+              </li>
+              <li class="case-row" data-case="northstar">
+                <a href="#case-northstar">
+                  <span class="case-year">2023</span>
+                  <span class="case-name">Northstar Studios</span>
+                </a>
+              </li>
+              <li class="case-row" data-case="pacific">
+                <a href="#case-pacific">
+                  <span class="case-year">2023</span>
+                  <span class="case-name">Pacific Pavilion</span>
+                </a>
+              </li>
+              <li class="case-row" data-case="vesper">
+                <a href="#case-vesper">
+                  <span class="case-year">2022</span>
+                  <span class="case-name">Vesper Museum</span>
+                </a>
+              </li>
+              <li class="case-row" data-case="marble">
+                <a href="#case-marble">
+                  <span class="case-year">2022</span>
+                  <span class="case-name">Marble Atelier</span>
+                </a>
+              </li>
+              <li class="case-row" data-case="vantage">
+                <a href="#case-vantage">
+                  <span class="case-year">2021</span>
+                  <span class="case-name">Vantage Tower</span>
+                </a>
+              </li>
+            </ul>
+            <span class="home-cases-rule js-in-view" data-cases-rule aria-hidden="true"></span>
+          </div>
+
+          <div class="home-cases-stage" id="casesStage">
+            <article class="home-cases-scene is-visible" data-case="aurora" style="--theme:#D79A21">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#D79A21">Brand &amp; Web</span>
+              <h3 class="case-scene-name">Aurora &mdash; Flagship Brand</h3>
+              <p class="case-scene-body">A long-form brand experience re-imagined across web, mobile, and stage &mdash; built to scale with the next decade of the festival.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+            <article class="home-cases-scene" data-case="lumen" style="--theme:#5FC4AA">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#5FC4AA">Interactive Install</span>
+              <h3 class="case-scene-name">Lumen Pavilion</h3>
+              <p class="case-scene-body">A real-time audiovisual environment built with shaders, sensors, and a custom score &mdash; installed for six weeks in Antwerp.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+            <article class="home-cases-scene" data-case="northstar" style="--theme:#58A5C4">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#58A5C4">Web Experience</span>
+              <h3 class="case-scene-name">Northstar Studios</h3>
+              <p class="case-scene-body">A studio site as a canvas &mdash; a single scrollytelling route, three.js scenes, and a publishing workflow that ships in days.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+            <article class="home-cases-scene" data-case="pacific" style="--theme:#FF2EBF">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#FF2EBF">Brand &amp; Identity</span>
+              <h3 class="case-scene-name">Pacific Pavilion</h3>
+              <p class="case-scene-body">A new identity system for a coastal research institute &mdash; typographic, generous, and engineered for archival use.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+            <article class="home-cases-scene" data-case="vesper" style="--theme:#FF66A0">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#FF66A0">Web Platform</span>
+              <h3 class="case-scene-name">Vesper Museum</h3>
+              <p class="case-scene-body">A museum site that breathes &mdash; slow transitions, deep type, and a CMS the curators actually want to use.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+            <article class="home-cases-scene" data-case="marble" style="--theme:#5BB27A">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#5BB27A">Spatial Design</span>
+              <h3 class="case-scene-name">Marble Atelier</h3>
+              <p class="case-scene-body">A bespoke showroom experience &mdash; tactile materials, animated case studies, and a content model for the next product launch.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+            <article class="home-cases-scene" data-case="vantage" style="--theme:#8558FF">
+              <div class="case-scene-bg" aria-hidden="true"></div>
+              <span class="case-headline-tag" style="color:#8558FF">Product Film</span>
+              <h3 class="case-scene-name">Vantage Tower</h3>
+              <p class="case-scene-body">A vertical product film cut for a flagship skyscraper &mdash; 35 floors, 35 vignettes, one continuous take across the city.</p>
+              <a href="#" class="link--caret">
+                <span class="link-text">Discover the case</span>
+                <svg class="link-caret" aria-hidden="true"><use href="#chevron-right"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="home-about">
+        <div class="home-about-background" aria-hidden="true"></div>
+        <div class="center home-about-center">
+          <span class="eyebrow eyebrow--about js-in-view">About the studio</span>
+          <p class="home-about-title fx-parent js-in-view" data-about-title>
+            <span class="fx-word">
+              <span class="fx-letter">B</span><span class="fx-letter">u</span><span class="fx-letter">i</span><span class="fx-letter">l</span><span class="fx-letter">d</span>
+            </span>
+            <span class="fx-word">
+              <span class="fx-letter">w</span><span class="fx-letter">i</span><span class="fx-letter">t</span><span class="fx-letter">h</span>
+            </span>
+            <span class="fx-word">
+              <span class="fx-letter">p</span><span class="fx-letter">u</span><span class="fx-letter">r</span><span class="fx-letter">p</span><span class="fx-letter">o</span><span class="fx-letter">s</span><span class="fx-letter">e</span><span class="fx-letter">.</span>
+            </span>
+          </p>
+          <div class="home-about-body">
+            <p class="js-in-view">We are a tight-knit crew of directors, designers, and engineers &mdash; based in Chicago, Amsterdam, and Paris &mdash; committed to making work that earns its place on the wall.</p>
+            <p class="js-in-view">From interactive installations to brand systems, we treat every project as a chance to set a new bar &mdash; for our partners, and for ourselves.</p>
+          </div>
+          <a href="#values" class="link--under home-about-link js-in-view">
+            <span class="link-text">Discover our values</span>
+            <span class="link-underline"></span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Cookie banner -->
+  <aside class="site-cookie" id="cookieBanner" aria-label="Cookie consent">
+    <p class="cookie-text">We use cookies to deliver our services and improve your experience. Read more in our policy.</p>
+    <div class="cookie-buttons">
+      <button class="cookie-button js-cookie-accept" type="button">Accept</button>
+      <button class="cookie-button js-cookie-deny" type="button">Deny</button>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="center footer-grid">
+      <div class="footer-cities">
+        <span class="footer-city">Chicago<span class="city-dot">.</span></span>
+        <span class="footer-city">Amsterdam<span class="city-dot">.</span></span>
+        <span class="footer-city">Paris<span class="city-dot">.</span></span>
+      </div>
+      <div class="footer-mark" aria-hidden="true">
+        <svg viewBox="0 0 30.67 54.43" class="baseline-svg">
+          <path d="M4 6 C12 0, 22 0, 26 8 C28 16, 24 24, 22 30 C20 36, 16 44, 14 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 22 C14 18, 20 22, 24 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 36 C10 34, 14 36, 16 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-pill">Facebook</a>
+        <a href="#" class="social-pill">Instagram</a>
+        <a href="#" class="social-pill">Dribbble</a>
+        <a href="#" class="social-pill">Twitter</a>
+      </div>
+      <div class="footer-bottom">
+        <a href="mailto:biz@example.com" class="footer-contact">We&rsquo;d love to hear from you &mdash; biz@example.com</a>
+        <a href="#" class="footer-privacy">Privacy</a>
+        <div class="language-switcher" role="group" aria-label="Language">
+          <button class="lang-chip is-active" type="button" aria-pressed="true">EN</button>
+          <button class="lang-chip" type="button" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Site menu overlay -->
+  <div class="site-menu" id="siteMenu" aria-hidden="true">
+    <div class="site-menu-back" aria-hidden="true"></div>
+    <div class="site-menu-panel">
+      <nav class="site-menu-nav" aria-label="Site sections">
+        <a href="#" class="menu-link">Studio</a>
+        <a href="#" class="menu-link">Cases</a>
+        <a href="#" class="menu-link">Careers</a>
+        <a href="#" class="menu-link">Values</a>
+        <a href="#" class="menu-link">Contact</a>
+      </nav>
+      <div class="site-menu-side">
+        <a href="#showreel" class="link--under menu-showreel js-show-showreel">
+          <span class="link-text">Watch our showreel</span>
+          <span class="link-underline"></span>
+        </a>
+        <div class="menu-social">
+          <a href="#" class="social-pill">Facebook</a>
+          <a href="#" class="social-pill">Instagram</a>
+          <a href="#" class="social-pill">Dribbble</a>
+          <a href="#" class="social-pill">Twitter</a>
+          <a href="#" class="social-pill">Newsletter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Showreel modal -->
+  <div class="showreel" id="showreel" aria-hidden="true" role="dialog" aria-label="Showreel">
+    <div class="showreel-backdrop" data-close-showreel aria-hidden="true"></div>
+    <div class="showreel-wrapper">
+      <button class="showreel-close" id="showreelClose" type="button" aria-label="Close showreel">
+        <svg class="cross-icon" aria-hidden="true"><use href="#cross"/></svg>
+      </button>
+      <div class="showreel-player">
+        <p class="showreel-placeholder">[ Showreel &mdash; Vimeo embed (placeholder) ]</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/dogstudio/script.js"></script>
+</body>
+</html>

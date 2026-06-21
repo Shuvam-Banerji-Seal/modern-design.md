@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oui Will — Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+  />
+  <link rel="stylesheet" href="../../css/ouiwill/style.css" />
+</head>
+<body data-page="home">
+  <div class="page-transition" data-loader>
+    <div class="page-transition__panel"></div>
+  </div>
+
+  <div class="cursor" data-cursor aria-hidden="true">
+    <div class="cursor__inner"></div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="site-mark" href="#" aria-label="Oui Will home" data-mark>
+        <span class="site-mark__glyph">O</span><span class="site-mark__glyph">U</span><span class="site-mark__glyph">I</span><span class="site-mark__glyph">W</span><span class="site-mark__glyph">I</span><span class="site-mark__glyph">L</span><span class="site-mark__glyph">L</span>
+      </a>
+      <button class="hamburger" type="button" aria-label="Open menu" data-menu-toggle>
+        <span class="hamburger__line"><span class="hamburger__strip hamburger__strip--enter"></span><span class="hamburger__strip hamburger__strip--leave"></span></span>
+        <span class="hamburger__line"><span class="hamburger__strip hamburger__strip--enter"></span><span class="hamburger__strip hamburger__strip--leave"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" data-menu aria-hidden="true">
+    <div class="menu__backdrop"></div>
+    <div class="menu__panel">
+      <nav class="menu__nav" aria-label="Primary">
+        <ul class="menu__list">
+          <li class="menu__item"><a class="menu__link" data-split-text href="#">Home</a></li>
+          <li class="menu__item"><a class="menu__link" data-split-text href="#about">Studio</a></li>
+          <li class="menu__item"><a class="menu__link" data-split-text href="#work">Work</a></li>
+          <li class="menu__item"><a class="menu__link" data-split-text href="#news">News</a></li>
+          <li class="menu__item"><a class="menu__link" data-split-text href="#">Careers</a></li>
+          <li class="menu__item"><a class="menu__link" data-split-text href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu__aside">
+        <a class="menu__mailto" href="mailto:hello@studio.example" data-split-text>hello@studio.example</a>
+        <p class="menu__promo">A residency for early-stage teams.</p>
+      </div>
+    </div>
+  </div>
+
+  <main class="scroll-content">
+    <section class="hero" data-section data-theme="dark" id="top">
+      <div class="hero__overlay" data-hero-overlay></div>
+      <div class="hero__inner">
+        <h1 class="hero__title" data-letter-split>
+          <span class="hero__word">Studio.</span>
+          <span class="hero__word">Brand.</span>
+          <span class="hero__word">Velocity.<sup>™</sup></span>
+        </h1>
+        <div class="hero__meta">
+          <a class="pill" data-pill href="mailto:hello@studio.example" data-split-text>
+            <span class="pill__ring"></span>
+            <span class="pill__fill"></span>
+            <span class="pill__label">Get in touch</span>
+            <span class="pill__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 14" width="20" height="14">
+                <line x1="0" y1="7" x2="20" y2="7" />
+                <line x1="11" y1="0.5" x2="20" y2="7" />
+                <line x1="11" y1="13.5" x2="20" y2="7" />
+              </svg>
+            </span>
+          </a>
+          <button class="circle-button" type="button" aria-label="Scroll to work" data-circle>
+            <span class="circle-button__ring" aria-hidden="true">
+              <svg viewBox="0 0 100 100" width="100" height="100">
+                <circle cx="50" cy="50" r="48" />
+              </svg>
+            </span>
+            <span class="circle-button__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 14" width="20" height="14">
+                <line x1="0" y1="7" x2="20" y2="7" />
+                <line x1="11" y1="0.5" x2="20" y2="7" />
+                <line x1="11" y1="13.5" x2="20" y2="7" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" data-section data-theme="dark" data-scroll>
+      <div class="intro__copy" data-multiline>
+        <p class="intro__eyebrow" data-split-text>Studio note</p>
+        <h2 class="intro__lede" data-split-text>Founded in 2013, our work has been recognized across the industry for the way it pairs brand thinking with product craft.</h2>
+        <p class="intro__body">We build alongside ambitious founders and operators. The practice is small, the bar is high, and the work is meant to outlast the launch window.</p>
+      </div>
+      <div class="intro__media" data-parallax="0.2">
+        <div class="intro__poster" data-parallax-inner></div>
+      </div>
+    </section>
+
+    <section class="clients" data-section data-theme="dark">
+      <ul class="clients__list" data-stagger>
+        <li class="clients__logo" data-stagger-item>Aurora</li>
+        <li class="clients__logo" data-stagger-item>Volt</li>
+        <li class="clients__logo" data-stagger-item>Lumen</li>
+        <li class="clients__logo" data-stagger-item>North</li>
+        <li class="clients__logo" data-stagger-item>Atlas</li>
+        <li class="clients__logo" data-stagger-item>Echo</li>
+        <li class="clients__logo" data-stagger-item>Mesa</li>
+        <li class="clients__logo" data-stagger-item>Drift</li>
+        <li class="clients__logo" data-stagger-item>Vela</li>
+        <li class="clients__logo" data-stagger-item>Forge</li>
+        <li class="clients__logo" data-stagger-item>Crisp</li>
+        <li class="clients__logo" data-stagger-item>Halo</li>
+      </ul>
+    </section>
+
+    <section class="work" data-section data-theme="dark" id="work">
+      <header class="work__head">
+        <p class="work__eyebrow" data-split-text>Selected work</p>
+        <h2 class="work__title" data-letter-split data-letter-split-size="display">Work</h2>
+      </header>
+      <ul class="work__grid">
+        <li class="work__tile work__tile--full" data-tile data-scroll>
+          <a class="work__link" href="#" aria-label="View Aurora case study">
+            <div class="work__media work__media--aurora" data-tile-media></div>
+            <div class="work__caption" data-multiline>
+              <p class="work__client" data-split-text>Aurora</p>
+              <h3 class="work__name" data-split-text>Brand system and product surface for an electric mobility launch.</h3>
+            </div>
+          </a>
+        </li>
+        <li class="work__tile" data-tile data-scroll>
+          <a class="work__link" href="#" aria-label="View Lumen case study">
+            <div class="work__media work__media--lumen" data-tile-media></div>
+            <div class="work__caption" data-multiline>
+              <p class="work__client" data-split-text>Lumen</p>
+              <h3 class="work__name" data-split-text>Direct-to-consumer storefront for a lighting startup.</h3>
+            </div>
+          </a>
+        </li>
+        <li class="work__tile" data-tile data-scroll>
+          <a class="work__link" href="#" aria-label="View Forge case study">
+            <div class="work__media work__media--forge" data-tile-media></div>
+            <div class="work__caption" data-multiline>
+              <p class="work__client" data-split-text>Forge</p>
+              <h3 class="work__name" data-split-text>Banking app redesign with a focus on speed and trust.</h3>
+            </div>
+          </a>
+        </li>
+        <li class="work__tile work__tile--full" data-tile data-scroll>
+          <a class="work__link" href="#" aria-label="View Halo case study">
+            <div class="work__media work__media--halo" data-tile-media></div>
+            <div class="work__caption" data-multiline>
+              <p class="work__client" data-split-text>Halo</p>
+              <h3 class="work__name" data-split-text>Wear OS companion app, glyph-led interface and motion language.</h3>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="work__more">
+        <a class="pill" data-pill href="#" data-split-text>
+          <span class="pill__ring"></span>
+          <span class="pill__fill"></span>
+          <span class="pill__label">View all work</span>
+          <span class="pill__arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 14" width="20" height="14">
+              <line x1="0" y1="7" x2="20" y2="7" />
+              <line x1="11" y1="0.5" x2="20" y2="7" />
+              <line x1="11" y1="13.5" x2="20" y2="7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="push push--light" data-section data-theme="light" id="about">
+      <div class="push__inner">
+        <h3 class="push__title" data-letter-split>Join the residency.</h3>
+        <p class="push__lede" data-multiline>A six-month program for early-stage teams who want a studio in their corner.</p>
+        <a class="pill" data-pill href="#" data-split-text>
+          <span class="pill__ring"></span>
+          <span class="pill__fill"></span>
+          <span class="pill__label">Apply</span>
+          <span class="pill__arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 14" width="20" height="14">
+              <line x1="0" y1="7" x2="20" y2="7" />
+              <line x1="11" y1="0.5" x2="20" y2="7" />
+              <line x1="11" y1="13.5" x2="20" y2="7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="awards" data-section data-theme="dark" data-scroll>
+      <div class="awards__number">
+        <span class="awards__count" data-letter-split>60+</span>
+      </div>
+      <ul class="awards__list">
+        <li class="awards__row" data-stagger-item><span class="awards__label">Industry recognition</span><span class="awards__count-row">21 × Awwwards</span></li>
+        <li class="awards__row" data-stagger-item><span class="awards__label">FWA honors</span><span class="awards__count-row">09 × FWA</span></li>
+        <li class="awards__row" data-stagger-item><span class="awards__label">CSS Design Awards</span><span class="awards__count-row">14 × CSSDA</span></li>
+        <li class="awards__row" data-stagger-item><span class="awards__label">Communication Arts</span><span class="awards__count-row">06 × Comm Arts</span></li>
+        <li class="awards__row" data-stagger-item><span class="awards__label">Webby Awards</span><span class="awards__count-row">11 × Webbys</span></li>
+      </ul>
+    </section>
+
+    <section class="news" data-section data-theme="dark" id="news">
+      <header class="news__head">
+        <h2 class="news__title" data-letter-split data-letter-split-size="display">News</h2>
+      </header>
+      <ul class="news__list">
+        <li class="news__item" data-stagger-item>
+          <a class="news__link" href="#">
+            <div class="news__thumb" data-tile-media></div>
+            <div class="news__meta">
+              <time class="news__date" datetime="2026-05-12">12 May 2026</time>
+              <h3 class="news__name" data-split-text>Notes from the residency: week six.</h3>
+            </div>
+          </a>
+        </li>
+        <li class="news__item" data-stagger-item>
+          <a class="news__link" href="#">
+            <div class="news__thumb" data-tile-media></div>
+            <div class="news__meta">
+              <time class="news__date" datetime="2026-04-02">02 Apr 2026</time>
+              <h3 class="news__name" data-split-text>Why the brief is the most important deliverable.</h3>
+            </div>
+          </a>
+        </li>
+        <li class="news__item" data-stagger-item>
+          <a class="news__link" href="#">
+            <div class="news__thumb" data-tile-media></div>
+            <div class="news__meta">
+              <time class="news__date" datetime="2026-02-18">18 Feb 2026</time>
+              <h3 class="news__name" data-split-text>Three things we learned shipping a banking app in nine weeks.</h3>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section data-theme="dark" id="contact">
+    <div class="site-footer__inner">
+      <a class="site-footer__mailto" href="mailto:hello@studio.example" data-split-text>hello@studio.example</a>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a class="site-footer__link" data-split-text href="#work">Work</a>
+        <a class="site-footer__link" data-split-text href="#news">News</a>
+        <a class="site-footer__link" data-split-text href="#">Careers</a>
+        <a class="site-footer__link" data-split-text href="#contact">Contact</a>
+      </nav>
+      <div class="site-footer__addresses">
+        <div class="site-footer__address">
+          <p class="site-footer__label" data-split-text>San Diego</p>
+          <p class="site-footer__line">350 10th Avenue</p>
+          <p class="site-footer__line">Suite 1100</p>
+          <p class="site-footer__line">CA 92101</p>
+        </div>
+        <div class="site-footer__address">
+          <p class="site-footer__label" data-split-text>Paris</p>
+          <p class="site-footer__line">12 rue Saint-Sabin</p>
+          <p class="site-footer__line">75011 Paris</p>
+        </div>
+        <div class="site-footer__address">
+          <p class="site-footer__label" data-split-text>The Residency</p>
+          <p class="site-footer__line">Applications open twice yearly.</p>
+          <p class="site-footer__line"><a class="site-footer__inline" href="#">Cohort schedule</a></p>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <p class="site-footer__mark">OUIWILL</p>
+        <ul class="site-footer__social">
+          <li><a class="site-footer__social-link" data-split-text href="#" data-rotate="-45">
+            <span class="site-footer__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 14" width="20" height="14">
+                <line x1="0" y1="7" x2="20" y2="7" />
+                <line x1="11" y1="0.5" x2="20" y2="7" />
+                <line x1="11" y1="13.5" x2="20" y2="7" />
+              </svg>
+            </span>
+            Twitter
+          </a></li>
+          <li><a class="site-footer__social-link" data-split-text href="#" data-rotate="-45">
+            <span class="site-footer__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 14" width="20" height="14">
+                <line x1="0" y1="7" x2="20" y2="7" />
+                <line x1="11" y1="0.5" x2="20" y2="7" />
+                <line x1="11" y1="13.5" x2="20" y2="7" />
+              </svg>
+            </span>
+            Instagram
+          </a></li>
+          <li><a class="site-footer__social-link" data-split-text href="#" data-rotate="-45">
+            <span class="site-footer__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 14" width="20" height="14">
+                <line x1="0" y1="7" x2="20" y2="7" />
+                <line x1="11" y1="0.5" x2="20" y2="7" />
+                <line x1="11" y1="13.5" x2="20" y2="7" />
+              </svg>
+            </span>
+            LinkedIn
+          </a></li>
+        </ul>
+        <p class="site-footer__legal"><a class="site-footer__legal-link" href="#">Terms</a><a class="site-footer__legal-link" href="#">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/ouiwill/script.js" defer></script>
+</body>
+</html>

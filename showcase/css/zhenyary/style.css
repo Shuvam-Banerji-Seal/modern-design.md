@@ -1,0 +1,756 @@
+/* =============================================================
+   Zhenya Rynzhuk — showcase rebuild
+   All design tokens lifted verbatim from
+   `websites/zhenyary/design.md` (§ Visual Language, § Typography,
+   § Layout & Grid, § Animations, § Motion & Interaction).
+   Font families: original site self-hosts Schnyder L and GT Walsheim.
+   For this build we use the closest Google-Fonts analogues
+   (Playfair Display, Inter) and keep the original family names in
+   the font-family stack so a designer can swap to the real WOFF2
+   without touching any other rule.
+   ============================================================= */
+
+/* ------------------------------------------------------------
+   1. Tokens (real values from design.md)
+   ------------------------------------------------------------ */
+:root {
+  /* Color */
+  --bg-base:       #DBD5C9; /* warm off-white / linen */
+  --bg-cool:       #F2F2F2; /* gems panel */
+  --bg-warm:       #DED5C4; /* tan variant */
+  --bg-cream:      #FFFFFF; /* work left pane */
+  --bg-cream-2:    #DBD5C9; /* alt work left pane */
+  --bg-red:        #F93700; /* signature red */
+  --text-primary:  #191919; /* near-black */
+  --text-muted:    #5E5B55; /* warm grey (socials default) */
+  --text-invert:   #FFFFFF; /* hero h1, contact on red */
+  --accent-red:    #F93700; /* active / hover / stars */
+  --accent-pink:   #F9DDDD; /* loader pink */
+  --bg-loader:     #000000;
+  --border:        #000000;
+  --progress:      #3B8070;
+
+  /* Typography — original families kept in the stack */
+  --ff-display: "Playfair Display", "Schnyder L", serif;
+  --ff-sans:    "Inter", "GT Walsheim", sans-serif;
+
+  /* Easing vocabulary from § Animations */
+  --ease-default:  cubic-bezier(.25, .46, .45, .94);
+  --ease-nav-color: cubic-bezier(.455, .03, .515, .955);
+  --ease-nav-leave: cubic-bezier(.55, .085, .68, .53);
+  --ease-social:    cubic-bezier(.215, .61, .355, 1);
+}
+
+/* ------------------------------------------------------------
+   2. Reset / base
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--ff-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.4px; /* 1.6 */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.no-touch { cursor: none; }
+
+a { color: inherit; text-decoration: none; }
+button { background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+ul { list-style: none; }
+em { font-style: italic; }
+img, svg { display: block; max-width: 100%; }
+
+/* ------------------------------------------------------------
+   3. Loader (§ Components > Loader)
+   ------------------------------------------------------------ */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--bg-loader);
+  pointer-events: none;
+  transition: opacity .8s var(--ease-default);
+}
+.loader.is-gone { opacity: 0; visibility: hidden; }
+
+.loader__bg { position: absolute; inset: 0; background: var(--bg-loader); }
+
+.loader__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%) translateX(-20000px);
+  transition: transform 1.4s var(--ease-default);
+}
+.loader__circle--red  { transform: translate(60px, -200px) translateX(-20000px); }
+.loader__circle--pink { transform: translate(60px, -160px) translateX(-20000px); }
+.loader.is-gone .loader__circle { transform: translate(900px, -200px); }
+.loader.is-gone .loader__circle--pink { transform: translate(370px, -160px); }
+
+.loader__greet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 1.1;
+  color: var(--text-invert);
+  transform: translate(-50%, calc(-50% + 350px));
+  opacity: 0;
+  transition: opacity .6s var(--ease-default);
+}
+.loader.is-gone .loader__greet { opacity: 0; }
+
+/* ------------------------------------------------------------
+   4. Custom cursor
+   ------------------------------------------------------------ */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 50;
+  transform: translate3d(-100px, -100px, 0);
+  mix-blend-mode: difference;
+}
+.cursor__ring { width: 100%; height: 100%; }
+
+/* ------------------------------------------------------------
+   5. Top nav
+   ------------------------------------------------------------ */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  padding: 5vh 0 5vh 4vw;
+  font-family: var(--ff-sans);
+}
+
+.topnav__mark {
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  width: 20px;
+  height: 21px;
+  transform: translateX(-50%);
+  transition: transform 1s var(--ease-default);
+}
+.topnav__mark svg { width: 100%; height: 100%; }
+
+.topnav__links {
+  display: flex;
+  gap: 2.4vw;
+  flex: 1;
+}
+
+.topnav__link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 31.68px; /* 2.2vw */
+  line-height: 31.7px; /* 1.0 */
+  color: var(--text-primary);
+  transition: color .4s var(--ease-nav-color);
+}
+.topnav.red .topnav__link,
+.topnav.red .topnav__mark svg path { color: var(--text-invert); stroke: var(--text-invert); }
+.topnav__link:hover { color: var(--accent-red); }
+
+.topnav__label { display: inline-block; }
+.topnav__caption {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  transition: letter-spacing .4s var(--ease-default) .2s;
+}
+.topnav__link:hover .topnav__caption { letter-spacing: 0.07vw; }
+
+.topnav__spacer { flex: 1; }
+
+/* ------------------------------------------------------------
+   6. Hero (§ Components > Hero)
+   ------------------------------------------------------------ */
+.home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+
+.home__portrait {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+.home__img {
+  position: relative;
+  width: 30vw;
+  aspect-ratio: 1070 / 1184;
+  background:
+    radial-gradient(ellipse at 50% 30%, #4a4a4a 0%, #1a1a1a 60%, #0a0a0a 100%);
+  filter: grayscale(1) contrast(1.1);
+  /* Simulated portrait silhouette so we do not use any real
+     asset from the live site. */
+  clip-path: polygon(50% 0, 80% 18%, 92% 50%, 88% 90%, 60% 100%, 40% 100%, 12% 90%, 8% 50%, 20% 18%);
+}
+
+.home__title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 100.8px;     /* 7vw */
+  line-height: 126px;     /* 1.25 */
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--text-invert);
+  text-transform: none;
+  mix-blend-mode: difference;
+}
+.home__title-half {
+  display: block;
+  overflow: hidden;
+}
+.home__title-half > span {
+  display: block;
+  transform: translateX(100%);
+  transition: transform 2s var(--ease-default);
+}
+.home__title-half--left  > span { transform: translateX(-100%); }
+.home__title-half--right > span { transform: translateX(100%); }
+.home.is-ready .home__title-half--left  > span { transform: translateX(0); }
+.home.is-ready .home__title-half--right > span { transform: translateX(0); }
+
+/* Showreel button */
+.home__play {
+  position: absolute;
+  left: 6vw;
+  bottom: 12vh;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4vw;
+  color: var(--text-invert);
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 25.92px;     /* 1.8vw */
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+.home__play-ring { width: 100px; height: 100px; flex: 0 0 100px; }
+
+/* Click hint with star */
+.home__hint {
+  position: absolute;
+  right: 6vw;
+  bottom: 12vh;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6vw;
+  color: var(--text-invert);
+  font-family: var(--ff-display);
+  font-size: 14px;
+  mix-blend-mode: difference;
+}
+.star {
+  width: 24px;
+  height: 24px;
+  animation: star 4s steps(3, end) infinite;
+  transform-origin: 50% 50%;
+}
+
+/* Hero footer */
+.hero-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--ff-sans);
+}
+
+.toggle {
+  position: relative;
+  padding: 0 4vw 3vh;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  transition: color .3s var(--ease-default);
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  left: 4vw;
+  right: 4vw;
+  bottom: 2vh;
+  height: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .7s var(--ease-default);
+}
+.toggle--red::after  { transform: scaleX(1); transform-origin: right center; }
+.toggle--nude::after { transform: scaleX(0); transform-origin: right center; }
+.toggle--nude.is-active::after { transform: scaleX(1); transform-origin: left center; }
+.toggle--red.is-active::after  { transform: scaleX(1); transform-origin: right center; }
+.toggle.is-active { color: var(--accent-red); }
+
+.socials {
+  display: flex;
+  gap: 2vw;
+  padding-bottom: 3vh;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--text-muted);
+}
+.socials a {
+  position: relative;
+  display: inline-block;
+  transition: color .4s var(--ease-social);
+}
+.socials a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .5s var(--ease-default);
+}
+.socials a:hover { color: var(--accent-red); }
+.socials a:hover::after { transform: scaleX(1); }
+.is-ready .socials a::after { transform: scaleX(1); }
+
+/* ------------------------------------------------------------
+   7. Gems / services (§ Components > Gems)
+   ------------------------------------------------------------ */
+.gems {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-cool);
+  padding: 1vh 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gems__caption {
+  position: absolute;
+  top: 2vh;
+  left: 6vw;
+  font-family: var(--ff-sans);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.gems__lines { margin-top: 4vh; }
+.gems__line {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 86.4px;     /* 6vw */
+  line-height: 95.9px;   /* 1.11 */
+  color: var(--text-primary);
+  padding: 1vw 0;
+}
+.gems__line + .gems__line { margin-top: 2vw; }
+.gems__line .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity .6s var(--ease-default), transform .6s var(--ease-default);
+}
+.gems.is-ready .gems__line .char { opacity: 1; transform: translateX(0); }
+.gems.is-ready .gems__line .char:nth-child(3n) { transition-delay: 0ms; }
+.gems.is-ready .gems__line .char:nth-child(3n+1) { transition-delay: 40ms; }
+.gems.is-ready .gems__line .char:nth-child(3n+2) { transition-delay: 80ms; }
+.gems__line .star-inline {
+  display: inline-block;
+  width: 1.6vw;
+  height: 1.6vw;
+  margin: 0 0.4vw;
+  vertical-align: middle;
+  color: var(--accent-red);
+}
+
+/* ------------------------------------------------------------
+   8. Works (§ Components > Works)
+   ------------------------------------------------------------ */
+.works { width: 100vw; }
+
+.work {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.work__pane {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6vw;
+}
+.work__pane--left   { background: var(--bg-cream); }
+.work__pane--linen  { background: var(--bg-cream-2); }
+.work__pane--cool   { background: var(--bg-warm); }
+.work__pane--right  { background: var(--bg-warm); }
+.work__pane--red    { background: var(--bg-red); }
+
+.work__img {
+  width: 50%;
+  margin: 20vh auto 0;
+  aspect-ratio: 484 / 536;
+  background:
+    linear-gradient(135deg, #d8d3c4 0%, #b8b1a1 60%, #847e6f 100%);
+  filter: contrast(1.05);
+}
+.work__img--a {
+  background:
+    linear-gradient(180deg, #f4eee2 0%, #cfc6b0 50%, #5b6f5e 100%);
+  clip-path: polygon(20% 0, 90% 10%, 100% 70%, 70% 100%, 10% 90%);
+}
+.work__img--b {
+  background:
+    linear-gradient(180deg, #efe7d6 0%, #b9a78a 60%, #2a2a2a 100%);
+  clip-path: polygon(15% 5%, 80% 0, 100% 60%, 70% 100%, 5% 80%);
+}
+
+.work__h3 {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 44.64px;     /* 3.1vw */
+  line-height: 40.2px;    /* 0.9 */
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-top: 4vw;
+}
+.work__type {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--text-muted);
+  margin-top: 1vw;
+}
+
+.work__letter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-sans);
+  font-weight: 300;
+  font-size: 144px;
+  line-height: 1;
+  color: var(--text-primary);
+  opacity: 0.18;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 1.2s var(--ease-default), opacity 1.2s var(--ease-default);
+}
+.work__letter--invert { color: var(--text-invert); opacity: 0.35; }
+
+.work__text {
+  position: relative;
+  z-index: 2;
+  width: 40%;
+  margin: 0 auto;
+}
+.work__text--invert { color: var(--text-invert); }
+
+.work__title {
+  font-family: var(--ff-sans);
+  font-weight: 400;
+  font-size: 25.92px;     /* 1.8vw */
+  line-height: 41.5px;    /* 1.6 */
+}
+.work__roles {
+  display: flex;
+  gap: 1vw;
+  margin-top: 2vw;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+}
+.work__roles--invert { color: var(--text-invert); }
+.work__intro {
+  margin-top: 2vw;
+  font-family: var(--ff-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.4px;
+}
+.work__link {
+  position: relative;
+  display: inline-block;
+  margin-top: 2vw;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0;
+}
+.work__link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 0.2vw;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .5s var(--ease-default);
+}
+.work__link:hover::after { transform: scaleX(1); }
+.work__link--invert { color: var(--text-invert); }
+.work__plus { margin-left: 0.3em; }
+
+/* ------------------------------------------------------------
+   9. WorksLink CTA
+   ------------------------------------------------------------ */
+.workslink {
+  width: 100vw;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg-base);
+}
+.workslink__a {
+  position: relative;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 158.4px;     /* 11vw */
+  line-height: 174.2px;   /* 1.1 */
+  letter-spacing: 0;
+  color: var(--text-primary);
+  padding-bottom: 0.4vw;
+}
+.workslink__a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 0.4vw;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .5s var(--ease-default);
+}
+.workslink.is-ready .workslink__a::after { transform: scaleX(1); }
+
+/* ------------------------------------------------------------
+   10. Thanks
+   ------------------------------------------------------------ */
+.thanks {
+  width: 100vw;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg-base);
+}
+.thanks__p {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 28.8px;      /* 2vw */
+  line-height: 31.7px;    /* 1.1 */
+  color: var(--text-primary);
+  max-width: 60vw;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   11. Contact (§ Components > Contact)
+   ------------------------------------------------------------ */
+.contact {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-red);
+  color: var(--text-invert);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+  padding: 1vh 6vw;
+}
+.contact__line {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 119.52px;    /* 8.3vw */
+  line-height: 131.5px;   /* 1.1 */
+  color: var(--text-invert);
+  padding: 1vh 6vw;
+  transform: translateY(100px) scaleY(1.5);
+  opacity: 0;
+  transition: transform .5s var(--ease-default), opacity .5s var(--ease-default);
+}
+.contact.is-ready .contact__line { transform: translateY(0) scaleY(1); opacity: 1; }
+.contact.is-ready .contact__line--mail { transition-delay: .15s; }
+.contact.is-ready .contact__line--face { transition-delay: 0s; }
+
+.contact__big { font: inherit; }
+.contact__big em { font-style: italic; }
+.contact__big--sm { font-size: 28.8px; line-height: 1.1; opacity: 0.85; }
+
+.contact__line--face { padding: 0 6vw; }
+.smiley {
+  width: 165px;
+  height: 165px;
+  animation: smiley 5s steps(5, end) infinite;
+  transform-origin: 50% 50%;
+}
+
+.contact__mail {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4vw;
+  color: var(--text-invert);
+  text-decoration: underline;
+  text-underline-offset: 0.2vw;
+  text-decoration-thickness: 0.2vw;
+}
+.contact__mail-text { position: relative; }
+.contact__mail-text::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -0.2vw;
+  height: 0.2vw;
+  background: var(--text-invert);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .5s var(--ease-default);
+}
+.contact.is-ready .contact__mail-text::after { transform: scaleX(1); }
+
+.contact__arrow {
+  width: 132px;
+  height: 89px;
+  opacity: 0;
+  transform: translateX(-3vw);
+  transition: transform .5s var(--ease-default), opacity .5s var(--ease-default);
+}
+.contact.is-ready .contact__arrow--a { opacity: 1; transform: translateX(0); transition-delay: 0ms; }
+.contact.is-ready .contact__arrow--b { opacity: 1; transform: translateX(0); transition-delay: .2s; }
+.contact.is-ready .contact__arrow--c { opacity: 1; transform: translateX(0); transition-delay: .3s; }
+
+/* ------------------------------------------------------------
+   12. Site footer
+   ------------------------------------------------------------ */
+.sitefoot {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  font-family: var(--ff-sans);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-muted);
+  background: var(--bg-base);
+}
+.sitefoot code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  background: rgba(0,0,0,0.05);
+  padding: 1px 4px;
+}
+
+/* ------------------------------------------------------------
+   13. Responsive motion (§ Motion > Responsive motion)
+   ------------------------------------------------------------ */
+@media (max-width: 1050px) {
+  .home__title      { font-size: 10vw; line-height: 1.1; }
+  .gems__line       { font-size: 12vw; line-height: 1; }
+  .work__letter     { display: none; }
+  .workslink__a     { font-size: 12vw; line-height: 1; }
+  .thanks__p        { font-size: 6vw; line-height: 1.1; max-width: 80vw; }
+  .thanks           { height: auto; padding: 10vh 0 20vh; }
+  .contact__line    { font-size: 10vw; line-height: 1.1; }
+  .hero-footer      { justify-content: center; gap: 4vw; }
+  .toggle           { display: none; }
+  .socials          { padding: 0 12vw 3vh; }
+}
+@media (max-width: 600px) {
+  .topnav           { display: none; }
+  .home__title      { font-size: 12vw; }
+  .workslink__a     { font-size: 12vw; }
+  .workslink__a::after { height: 2px; }
+  .contact__line    { font-size: 14vw; }
+  .contact__arrow   { width: 88px; height: 60px; }
+  .hero-footer      { flex-direction: column; align-items: center; }
+  .home__play       { left: 6vw; bottom: 16vh; font-size: 4vw; }
+  .home__hint       { display: none; }
+}
+
+/* ------------------------------------------------------------
+   14. Keyframes (verbatim from § Animations > CSS @keyframes)
+   ------------------------------------------------------------ */
+@keyframes blur {
+  0%   { transform: translate(-10%, 7%); }
+  33%  { transform: translate(7%, -3%); }
+  66%  { transform: translate(-3%, 7%); }
+  100% { transform: translate(-10%, 7%); }
+}
+
+@keyframes link {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes smiley {
+  0%   { transform: rotate(-15deg); }
+  25%  { transform: rotate(25deg); }
+  50%  { transform: rotate(45deg); }
+  75%  { transform: rotate(55deg); }
+  100% { transform: rotate(25deg); }
+}
+
+@keyframes star {
+  0%   { transform: rotate(0turn)   scale(1); }
+  50%  { transform: rotate(0.5turn) scale(1.2); }
+  100% { transform: rotate(1turn)   scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star, .smiley { animation: none; }
+  .home__title-half > span,
+  .gems__line .char,
+  .contact__line,
+  .contact__arrow { transition: opacity .2s linear; transform: none; }
+}

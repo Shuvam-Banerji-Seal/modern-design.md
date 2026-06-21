@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fffuel — tool index (design.md rebuild)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/fffuel/style.css">
+</head>
+<body>
+  <!-- Top promo bar: hsl(265,40%,10%) in light, hsl(265,40%,40%) in dark -->
+  <div class="topbar" role="complementary">
+    <a class="topbar__link" href="#" aria-label="External link">
+      <span aria-hidden="true">🔥</span>
+      a small thing we made — check it out
+    </a>
+  </div>
+
+  <!-- Header: right-aligned theme switch (Space Grotesk) -->
+  <header class="main-header">
+    <div class="main-header__inner">
+      <input type="checkbox" id="themeSwitch" class="theme-switch__input" checked aria-label="Color theme switcher">
+      <label for="themeSwitch" class="theme-switch__label" title="Toggle light / dark"></label>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section card: H1 with conic-gradient corner badge -->
+    <section class="section title" aria-labelledby="page-title">
+      <h1 id="page-title" class="title__h1">
+        fffuel is a small collection of color utilities and free
+        SVG makers for gradients, patterns, textures, shapes &amp;
+        backgrounds.
+      </h1>
+    </section>
+
+    <!-- Wave separator: four Bézier paths, currentColor stroke -->
+    <svg class="separator" width="300" viewBox="0 0 687 155" aria-hidden="true">
+      <path d="M0,77.5 C137,0 274,155 411,77.5 C548,0 685,155 822,77.5" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.1"/>
+      <path d="M0,77.5 C137,0 274,155 411,77.5 C548,0 685,155 822,77.5" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.2"/>
+      <path d="M0,77.5 C137,0 274,155 411,77.5 C548,0 685,155 822,77.5" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.6"/>
+      <path d="M0,77.5 C137,0 274,155 411,77.5 C548,0 685,155 822,77.5" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none" opacity="1"/>
+    </svg>
+
+    <!-- Two-column prose: emoji-led paragraphs, single column under 900px -->
+    <section class="columns" aria-label="About">
+      <p><span aria-hidden="true">🚀</span> A pocket library of in-browser generators for designers and front-end folks — open one, tweak a few sliders, copy the SVG.</p>
+      <p><span aria-hidden="true">🤹‍♂️</span> Every tool exposes a few knobs so the output stays yours, not a generic preset.</p>
+      <p><span aria-hidden="true">✨</span> SVG is small, scales to any size, and travels well across browsers, slides and screenshots.</p>
+      <p><span aria-hidden="true">🔧</span> Need a PNG instead? One-click rasterizer turns the result into a flat image at any DPI.</p>
+      <p><span aria-hidden="true">🖼️</span> Drop a generated SVG into a <code>background-image</code> and you've got a tileable cover in a line of CSS.</p>
+      <p><span aria-hidden="true">🎨</span> A few color helpers sit alongside — pick a swatch, build a ramp, encode the value.</p>
+    </section>
+
+    <!-- Tool index controls: search + category chips -->
+    <section class="more-tools" aria-labelledby="tools-heading">
+      <h2 id="tools-heading" class="visually-hidden">Tool index</h2>
+
+      <div class="controls">
+        <label class="search" for="tool-search">
+          <span class="visually-hidden">Filter tools by name</span>
+          <input id="tool-search" type="search" placeholder="Search tools…" autocomplete="off">
+        </label>
+
+        <ul class="chips" role="tablist" aria-label="Filter by category">
+          <li><button type="button" class="chip is-active" data-filter="all"      role="tab" aria-selected="true">All</button></li>
+          <li><button type="button" class="chip"            data-filter="color"    role="tab" aria-selected="false">Color</button></li>
+          <li><button type="button" class="chip"            data-filter="shape"    role="tab" aria-selected="false">Shape</button></li>
+          <li><button type="button" class="chip"            data-filter="pattern"  role="tab" aria-selected="false">Pattern</button></li>
+          <li><button type="button" class="chip"            data-filter="texture"  role="tab" aria-selected="false">Texture</button></li>
+          <li><button type="button" class="chip"            data-filter="motion"   role="tab" aria-selected="false">Motion</button></li>
+        </ul>
+      </div>
+
+      <!-- 16 tool cards in a CSS grid; each is a square w/ a generated gradient background -->
+      <ul class="grid" id="tool-grid">
+        <li><a class="tile" href="#" data-category="color"   data-name="aaarc"       title="abstract arc generator"><h3 class="tile__h3">aa<span>abstract arcs</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="shape"   data-name="bbbreath"    title="blurry edge generator"><h3 class="tile__h3">bb<span>soft breath</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="color"   data-name="cccanvas"    title="color surface"><h3 class="tile__h3">cc<span>color surface</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="shape"   data-name="dddrift"     title="drift line drawer"><h3 class="tile__h3">dd<span>drift lines</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="texture" data-name="fffield"     title="noise field"><h3 class="tile__h3">ff<span>noise field</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="texture" data-name="gggrit"      title="gritty overlay"><h3 class="tile__h3">gg<span>gritty overlay</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="color"   data-name="hhhaze"      title="color haze"><h3 class="tile__h3">hh<span>color haze</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="shape"   data-name="iimide"      title="isometric view"><h3 class="tile__h3">ii<span>isometric tile</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="motion"  data-name="lllift"      title="rising leaves"><h3 class="tile__h3">ll<span>rising leaves</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="texture" data-name="nnnudge"     title="noise nudge"><h3 class="tile__h3">nn<span>noise nudge</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="motion"  data-name="ooorbit"     title="orbit ring"><h3 class="tile__h3">oo<span>orbit ring</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="pattern" data-name="ppphase"     title="phase pattern"><h3 class="tile__h3">pp<span>phase pattern</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="pattern" data-name="qqquilt"     title="quilt grid"><h3 class="tile__h3">qq<span>quilt grid</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="motion"  data-name="rrripple"    title="ripple wave"><h3 class="tile__h3">rr<span>ripple wave</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="shape"   data-name="sssweep"     title="sweep shape"><h3 class="tile__h3">ss<span>sweep shape</span></h3></a></li>
+        <li><a class="tile" href="#" data-category="pattern" data-name="ttatlas"     title="atlas field"><h3 class="tile__h3">tt<span>atlas field</span></h3></a></li>
+      </ul>
+
+      <p class="empty" id="empty-state" hidden>No tools match — try a different search or category.</p>
+    </section>
+  </main>
+
+  <footer class="footer-wrapper" aria-label="Site footer">
+    <div class="font-bold font-sg footer__brand">©2026 rebuild from design.md</div>
+    <ul class="footer__social" aria-label="Social links">
+      <li>
+        <a class="pill round btn" href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="#fff"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="pill round btn" href="#" aria-label="Twitter">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+            <path d="M22 5.8c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1A4.1 4.1 0 0 0 12 8.6c0 .3 0 .6.1.9C8.4 9.4 5.1 7.7 3 5.1c-.4.7-.6 1.5-.6 2.3 0 1.6.8 3 2 3.8-.7 0-1.4-.2-2-.5v.1c0 2.1 1.4 3.8 3.3 4.2-.4.1-.8.2-1.2.2-.3 0-.6 0-.8-.1.6 1.7 2.1 2.9 4 2.9A8.3 8.3 0 0 1 2 19.8 11.7 11.7 0 0 0 8.3 21.7c7.6 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <p class="footer__links">
+      <a href="#">privacy</a>
+      <span aria-hidden="true">⟡</span>
+      <a href="#">terms</a>
+      <span aria-hidden="true">⟡</span>
+      <a href="#">license</a>
+    </p>
+  </footer>
+
+  <script src="../../js/fffuel/script.js" defer></script>
+</body>
+</html>

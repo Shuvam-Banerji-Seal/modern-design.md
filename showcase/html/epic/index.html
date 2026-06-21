@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Branding &amp; Web Studio — Showcase</title>
+  <meta name="description" content="A reconstructed showcase of a modern branding & web studio, built from a public design specification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/epic/style.css">
+</head>
+<body>
+
+  <h1 class="visually-hidden">Branding &amp; Web Studio Showcase</h1>
+
+  <!-- ─────────────────────────────────────────────────────────
+       Veil + sticky header (§Header)
+       ───────────────────────────────────────────────────────── -->
+  <div class="veil">
+    <div class="veil-overlay"></div>
+
+    <header class="header" id="siteHeader">
+      <div class="header__inner">
+        <a href="#" class="header__logo" aria-label="Home">
+          <svg viewBox="0 0 35 35" aria-hidden="true">
+            <path d="M22 9.45 17.27 6.6V1L3 9.45v11.25l4.76 2.78 4.76 -2.78 -4.76 -2.78V12.25l4.76 2.78L17.27 12.25v5.63L12.51 20.66 17.27 23.5 22 20.66V11.93z" fill="currentColor" />
+          </svg>
+        </a>
+
+        <span class="header__center section-label">Craft, Build, Share.</span>
+
+        <div class="header__right">
+          <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">EN / FR</button>
+          <button class="mega-menu-trigger" aria-controls="megaMenu" aria-expanded="false" aria-label="Open menu">+</button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────────────
+       Mega menu overlay (#323336)
+       ───────────────────────────────────────────────────────── -->
+  <div class="mega-menu" id="megaMenu" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="mega-menu__inner">
+      <ul class="mega-menu__primary">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Talk</a></li>
+      </ul>
+      <ul class="mega-menu__secondary">
+        <li><a href="#">Branding</a></li>
+        <li><a href="#">Web design</a></li>
+        <li><a href="#">Motion</a></li>
+        <li><a href="#">Editorial</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Studio</a></li>
+        <li><a href="#">Journal</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────────────
+       HERO with slogan
+       ───────────────────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero__stage">
+      <h2 class="slogan" id="slogan" aria-label="Craft, Build, Share">
+        <span class="slogan__word">Craft</span><span class="slogan__sep">,</span><span class="slogan__word">Build</span><span class="slogan__sep">,</span><span class="slogan__word">Share</span><span class="slogan__sep">.</span>
+      </h2>
+    </div>
+    <div class="hero__scroll-hint">Scroll</div>
+  </section>
+
+  <hr>
+
+  <!-- ─────────────────────────────────────────────────────────
+       SHOWREEL (§Showreel — embedded Vimeo placeholder)
+       ───────────────────────────────────────────────────────── -->
+  <section class="showreel">
+    <span class="section-label">Showreel</span>
+    <div class="showreel__frame">
+      <span class="showreel__placeholder">Reel — runtime capture (Vimeo)</span>
+      <button class="showreel__play" aria-label="Play reel">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ─────────────────────────────────────────────────────────
+       ABOUT (§About — pinned canvas + slogan scatter)
+       ───────────────────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <span class="section-label">About</span>
+    <div class="about__inner">
+      <div class="about__copy">
+        <h2>A studio for considered brands.</h2>
+        <p>
+          We design identities, build the platforms that carry them, and
+          shape the stories that travel between. Three words, repeated
+          often enough that they become a method.
+        </p>
+        <p style="margin-top: 18px;">
+          The work below is a paraphrase of what we do, drawn from a public
+          design specification. None of the visuals or copy belong to the
+          original studio; the tokens are.
+        </p>
+      </div>
+      <div class="about__canvas" aria-hidden="true">
+        <span class="about__canvas-glyph">A</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────
+       PROJECTS (case card grid)
+       ───────────────────────────────────────────────────────── -->
+  <section class="projects" id="work">
+    <div class="projects__head">
+      <span class="section-label">Selected work</span>
+      <a href="#" class="btn btn--default btn--no-outline">
+        <span class="btn__label">View all</span>
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <h3 class="projects__title">Cases, in order.</h3>
+
+    <div class="projects__grid" id="projectsGrid">
+      <article class="case-card" tabindex="0">
+        <div class="case-card__cover"><span>01 — Identity</span></div>
+        <h4 class="case-card__title">A quieter label</h4>
+        <div class="case-card__meta">
+          <span>Branding</span>
+          <span>2025</span>
+        </div>
+      </article>
+
+      <article class="case-card" tabindex="0">
+        <div class="case-card__cover"><span>02 — Platform</span></div>
+        <h4 class="case-card__title">Reading, re-built</h4>
+        <div class="case-card__meta">
+          <span>Web</span>
+          <span>2025</span>
+        </div>
+      </article>
+
+      <article class="case-card" tabindex="0">
+        <div class="case-card__cover"><span>03 — Editorial</span></div>
+        <h4 class="case-card__title">Long form, slow scroll</h4>
+        <div class="case-card__meta">
+          <span>Editorial</span>
+          <span>2024</span>
+        </div>
+      </article>
+
+      <article class="case-card" tabindex="0">
+        <div class="case-card__cover"><span>04 — Motion</span></div>
+        <h4 class="case-card__title">Frames that breathe</h4>
+        <div class="case-card__meta">
+          <span>Motion</span>
+          <span>2024</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────
+       CONTACT / large CTA
+       ───────────────────────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <span class="section-label contact__overline">Get in touch</span>
+    <div class="cta-title">
+      <span class="cta-title__line">Say</span>
+      <span class="cta-title__line">hello,</span>
+      <span class="cta-title__line">briefly.</span>
+    </div>
+
+    <div class="contact__actions">
+      <a href="mailto:hello@example.test" class="btn btn--default btn--solid">
+        <span class="btn__label">Write to us</span>
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <button class="cta-rounded cta-rounded--large" id="ringCta" aria-label="Open configurator demo">
+        <svg class="cta-rounded__svg" viewBox="0 0 156 156" aria-hidden="true">
+          <circle class="cta-rounded__ring cta-rounded__ring--bg" cx="78" cy="78" r="76"/>
+          <g class="cta-rounded__container">
+            <circle class="cta-rounded__ring" cx="78" cy="78" r="68"/>
+            <defs>
+              <path id="ringPath" d="M 78,78 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"/>
+            </defs>
+            <text class="cta-rounded__text">
+              <textPath href="#ringPath" startOffset="0">CUSTOMIZE THE STUDIO • CUSTOMIZE THE STUDIO • </textPath>
+            </text>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────
+       FOOTER
+       ───────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__columns">
+      <div class="footer-col">
+        <strong class="footer-col__title">Studio</strong>
+        <ul>
+          <li>Wiertzstraat, Li&egrave;ge</li>
+          <li>By appointment only</li>
+          <li><a href="#">Find us on a map</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <strong class="footer-col__title">Work with us</strong>
+        <ul>
+          <li><a href="#">Branding</a></li>
+          <li><a href="#">Web</a></li>
+          <li><a href="#">Motion</a></li>
+          <li><a href="mailto:hello@example.test">hello@example.test</a></li>
+          <li><a href="tel:+32000000000">+32 0 000 00 00</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <strong class="footer-col__title">Elsewhere</strong>
+        <ul>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press kit</a></li>
+        </ul>
+        <div class="footer__socials">
+          <a class="socials__link" href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v4H4zM4 10h4v10H4zM10 10h4v2c.7-1.3 2.2-2.3 4-2.3 3 0 4 2 4 5V20h-4v-4.5c0-1.4-.5-2.3-1.8-2.3-1.2 0-1.9.8-2.2 1.7V20h-4z"/></svg>
+          </a>
+          <a class="socials__link" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 3.5A4.5 4.5 0 1 1 7.5 13 4.5 4.5 0 0 1 12 8.5zm0 2A2.5 2.5 0 1 0 14.5 13 2.5 2.5 0 0 0 12 10.5zM17.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+          </a>
+          <a class="socials__link" href="#" aria-label="Dribbble">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.6 4.6A8 8 0 0 1 20 12c-.3 0-3.6-.3-7-.1-.2-.5-.4-.9-.6-1.4 3.7-1.5 5.4-3.6 5.6-3.9zM12 4a8 8 0 0 1 5.4 2.1c-.2.3-1.8 2.3-5.4 3.6C10.5 6.5 9 4.4 8.7 4.1A8 8 0 0 1 12 4zM7.5 5c.3.3 1.8 2.4 3.3 5.5C6.5 11.6 3.3 11.5 3 11.5A8 8 0 0 1 7.5 5zM3 13.1c.3 0 4.1.1 8.3-1 .2.5.4 1 .6 1.5-3.9 1.4-6 4.7-6.2 5A8 8 0 0 1 3 13.1zm4.6 6.5c.2-.3 2-3.3 5.6-4.9 1.3 3.4 1.8 6.2 1.9 6.9a8 8 0 0 1-7.5-2zm9.5 1c-.1-.5-.6-3.1-1.7-6.4 3.2-.5 6 .1 6.3.2a8 8 0 0 1-4.6 6.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; Showcase reconstruction — tokens from a public spec.</span>
+      <span>Made with restraint.</span>
+    </div>
+  </footer>
+
+  <!-- ─────────────────────────────────────────────────────────
+       Cookie bar (ghost)
+       ───────────────────────────────────────────────────────── -->
+  <aside class="cookiebar" id="cookiebar" hidden>
+    <span class="cookiebar__text">This showcase stores a preference to remember the cookie banner is dismissed.</span>
+    <div class="cookiebar__actions">
+      <button class="cookiebar__btn" data-cookie="deny">Deny</button>
+      <button class="cookiebar__btn cookiebar__btn--primary" data-cookie="accept">Accept</button>
+    </div>
+  </aside>
+
+  <!-- ─────────────────────────────────────────────────────────
+       Page transition overlay (Vue-style simplified)
+       ───────────────────────────────────────────────────────── -->
+  <div class="page-transition" id="pageTransition" aria-hidden="true">
+    <span class="page-transition__logo">A.</span>
+  </div>
+
+  <script src="../../js/epic/script.js" defer></script>
+</body>
+</html>

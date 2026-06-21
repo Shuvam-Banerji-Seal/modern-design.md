@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FWA Showcase — A Gallery of Cutting-Edge Web Design</title>
+  <meta name="description" content="A reverse-chronological gallery of awarded web projects, updated daily." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Inter:wght@300;400;500;700&display=swap">
+
+  <link rel="stylesheet" href="../../css/thefwa/style.css" />
+</head>
+<body>
+
+  <!-- ───────────── Sticky top header (61px, fixed) ───────────── -->
+  <header class="header-main" role="banner" aria-label="Site header">
+    <div class="header-main__inner">
+
+      <!-- Logo / burger cell -->
+      <div class="header-main__logo-area">
+        <button class="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="globalnav">
+          <span class="burger-icon" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+        </button>
+        <a class="header-main__logo" href="#" aria-label="FWA home">
+          <!-- 67×20 wordmark, CSS-only -->
+          <svg class="logo-mark" viewBox="0 0 67 20" aria-hidden="true">
+            <text x="0" y="16" font-family="Inter, sans-serif" font-weight="700"
+                  font-size="17" letter-spacing="0.06em" fill="#404040">FWA</text>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Search icon, centred -->
+      <div class="header-main__search-area">
+        <a class="search-trigger" href="#search" aria-label="Open search">
+          <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#404040" stroke-width="1.4"/>
+            <line x1="15.4" y1="15.4" x2="20" y2="20" stroke="#404040" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Promo slider, right (rotates 10 banners at 4s intervals) -->
+      <div class="header-main__promo-area" aria-label="Sponsor banner">
+        <div class="slider">
+          <div class="slider-slide slider-slide--active">
+            <span class="promo-label">MAKEMEPULSE — Independent digital craft studio</span>
+          </div>
+          <div class="slider-slide">
+            <span class="promo-label">FONTSHOP — Independent type for independent voices</span>
+          </div>
+          <div class="slider-slide">
+            <span class="promo-label">MEDIAMONKS — A creative production partner</span>
+          </div>
+          <div class="slider-slide">
+            <span class="promo-label">AKQA — Ideas that move the world forward</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter button -->
+      <button class="header-main__filter" aria-expanded="false" aria-controls="multiselect">
+        <span class="filter-label">Filters</span>
+        <span class="filter-count" aria-hidden="true">0</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ───────────── Slide-down context menu (globalnav) ───────────── -->
+  <nav class="globalnav" id="globalnav" aria-hidden="true" aria-label="Primary navigation">
+    <div class="globalnav__inner">
+
+      <div class="mainmenu">
+        <ul class="mainmenu__nav">
+          <li><a href="#" class="mainmenu__nav-link">Awards</a></li>
+          <li><a href="#" class="mainmenu__nav-link">Live Judging</a></li>
+          <li><a href="#" class="mainmenu__nav-link">Profiles</a></li>
+          <li><a href="#" class="mainmenu__nav-link">Editorial</a></li>
+          <li><a href="#" class="mainmenu__nav-link">Jobs</a></li>
+          <li><a href="#" class="mainmenu__nav-link">About</a></li>
+        </ul>
+      </div>
+
+      <aside class="globalnav-sidebar">
+        <h3 class="globalnav-sidebar__title">Featured Case</h3>
+        <div class="globalnav-sidebar__case">
+          <span class="placeholder-thumb placeholder-thumb--aurora"></span>
+          <p class="globalnav-sidebar__case-title">Project Aurora — A study in light and motion</p>
+          <p class="globalnav-sidebar__case-meta">Studio Northbeam · Website</p>
+        </div>
+
+        <h3 class="globalnav-sidebar__title">Recent Jobs</h3>
+        <ul class="globalnav-sidebar__jobs">
+          <li><a href="#">Senior Frontend Engineer · Studio Halftone</a></li>
+          <li><a href="#">Creative Director · Field &amp; Forge</a></li>
+          <li><a href="#">Motion Designer · Maison Parallèle</a></li>
+        </ul>
+      </aside>
+
+      <div class="globalnav-bottom">
+        <a class="button button--ghost" href="#">Submit a case</a>
+        <a class="button button--ghost" href="#">Sign in</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ───────────── Multiselect / filter panel ───────────── -->
+  <div class="multiselect" id="multiselect" aria-hidden="true">
+    <div class="multiselect__inner">
+
+      <div class="multiselect__group">
+        <h4 class="multiselect__group-title">Awards</h4>
+        <ul class="multiselect__list">
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="award" value="fotd"><span class="custom-checkbox__pseudo"></span><span>FWA of the Day</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="award" value="fotm"><span class="custom-checkbox__pseudo"></span><span>FWA of the Month</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="award" value="foty"><span class="custom-checkbox__pseudo"></span><span>FWA of the Year</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="award" value="pca"><span class="custom-checkbox__pseudo"></span><span>People's Choice</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="award" value="t100"><span class="custom-checkbox__pseudo"></span><span>Top 100</span></label></li>
+        </ul>
+      </div>
+
+      <div class="multiselect__group">
+        <h4 class="multiselect__group-title">Editorial</h4>
+        <ul class="multiselect__list">
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="editorial" value="agency"><span class="custom-checkbox__pseudo"></span><span>Agency spotlights</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="editorial" value="articles"><span class="custom-checkbox__pseudo"></span><span>Articles</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="editorial" value="pioneers"><span class="custom-checkbox__pseudo"></span><span>Digital pioneers</span></label></li>
+        </ul>
+
+        <h4 class="multiselect__group-title">Project types</h4>
+        <ul class="multiselect__list">
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="type" value="ai"><span class="custom-checkbox__pseudo"></span><span>AI</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="type" value="installation"><span class="custom-checkbox__pseudo"></span><span>Installation</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="type" value="website"><span class="custom-checkbox__pseudo"></span><span>Website</span></label></li>
+          <li><label class="custom-checkbox"><input type="checkbox" data-filter="type" value="other"><span class="custom-checkbox__pseudo"></span><span>Others</span></label></li>
+        </ul>
+      </div>
+
+      <div class="multiselect__group multiselect__group--date">
+        <h4 class="multiselect__group-title">Date</h4>
+        <ul class="multiselect__list multiselect__list--scroll">
+          <li><a href="#" data-filter="date" data-value="2026-06">June 2026</a></li>
+          <li><a href="#" data-filter="date" data-value="2026-05">May 2026</a></li>
+          <li><a href="#" data-filter="date" data-value="2026-04">April 2026</a></li>
+          <li><a href="#" data-filter="date" data-value="2026-03">March 2026</a></li>
+          <li><a href="#" data-filter="date" data-value="2026-02">February 2026</a></li>
+          <li><a href="#" data-filter="date" data-value="2026-01">January 2026</a></li>
+          <li><a href="#" data-filter="date" data-value="2025-12">December 2025</a></li>
+          <li><a href="#" data-filter="date" data-value="2025-11">November 2025</a></li>
+          <li><a href="#" data-filter="date" data-value="2025-10">October 2025</a></li>
+          <li><a href="#" data-filter="date" data-value="2025-09">September 2025</a></li>
+          <li><a href="#" data-filter="date" data-value="2025-08">August 2025</a></li>
+          <li><a href="#" data-filter="date" data-value="2025-07">July 2025</a></li>
+        </ul>
+      </div>
+
+      <div class="multiselect__footer">
+        <button class="button button--ghost" data-action="clear">Clear all</button>
+        <button class="button button--dark" data-action="apply">Apply</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ───────────── Main container — 14-column grid ───────────── -->
+  <main class="app-container" id="root">
+
+    <!-- FOTD Hero -->
+    <section class="timeline-hero" aria-label="FWA of the Day">
+      <div class="timeline-hero__inner">
+
+        <!-- Left column: details block (white) -->
+        <div class="timeline-hero__details">
+          <div class="timeline-hero__details-top">
+
+            <div class="timeline-hero__intro">
+              <span class="timeline-hero__intro-month">June</span>
+              <!-- The signature day number, 150px, weight 700, on pixel-text -->
+              <div class="pixel-text">
+                <span class="pixel-text__text">20</span>
+              </div>
+            </div>
+
+            <span class="timeline-hero__category">Website · Editorial</span>
+          </div>
+
+          <div class="timeline-hero__details-body">
+            <h1 class="timeline-hero__title">Project Aurora — A Study in Light and Motion</h1>
+            <p class="timeline-hero__excerpt">An exploratory archive of generative compositions built from daily photograms. Each page is composed in real time from light readings, scored against the time of capture and the position of the sun.</p>
+          </div>
+
+          <div class="timeline-hero__details-description">
+            <!-- Scorecard tile (4 quadrants) -->
+            <div class="timeline-hero__meta-scorecard" aria-label="Scorecard">
+              <div class="scorecard-cell">
+                <span class="scorecard-cell__number">94</span>
+                <span class="scorecard-cell__title">Avg Score</span>
+                <span class="tooltip" role="tooltip">The average score from FWA jurors.</span>
+              </div>
+              <div class="scorecard-cell">
+                <span class="scorecard-cell__number">01</span>
+                <span class="scorecard-cell__title">Days In</span>
+                <span class="tooltip" role="tooltip">Days in the public voting window.</span>
+              </div>
+              <div class="scorecard-cell">
+                <span class="scorecard-cell__number">—</span>
+                <span class="scorecard-cell__title">Day</span>
+                <span class="tooltip" role="tooltip">FWA of the Day.</span>
+              </div>
+              <div class="scorecard-cell">
+                <span class="scorecard-cell__number">—</span>
+                <span class="scorecard-cell__title">Month</span>
+                <span class="tooltip" role="tooltip">FWA of the Month candidates.</span>
+              </div>
+            </div>
+
+            <div class="timeline-hero__meta-credit">
+              <span class="meta-credit__label">By</span>
+              <a class="meta-credit__name" href="#">Studio Northbeam</a>
+              <button class="button button--credit">Credits</button>
+            </div>
+
+            <div class="timeline-hero__meta-more">
+              <button class="button button--go">
+                <span>Go</span>
+                <span class="arrow" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: screenshot + ribbon + play -->
+        <div class="timeline-hero__slider-holder">
+          <div class="timeline-hero__media">
+            <div class="placeholder-hero" aria-hidden="true">
+              <span class="placeholder-hero__caption">Aurora · Day 156 of 365</span>
+            </div>
+            <span class="pixel-pattern pixel-pattern--dark pixel-pattern--01" aria-hidden="true"></span>
+            <!-- FOTD ribbon top-left, 118×118 -->
+            <span class="ribbon ribbon--fotd ribbon--tl" aria-label="FWA of the Day">D</span>
+            <button class="coda-play" aria-label="Play video">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <polygon points="3,2 13,8 3,14" fill="#FFFFFF"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Down chevron that animates toward centre on scroll -->
+      <div class="timeline-hero__down__arrow" aria-hidden="true"></div>
+    </section>
+
+    <!-- Timeline of recent cases — 2-column grid -->
+    <section class="timeline" aria-label="Recent awarded sites">
+
+      <article class="timeline-case" data-award="fotd" data-type="website">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--coral"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <span class="ribbon ribbon--fotd ribbon--small ribbon--tl" aria-label="FWA of the Day">D</span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">88</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">03 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">19</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Coral Catalogue — An Index of Living Colour</h2>
+            <p class="timeline-case__profile">Studio Halftone</p>
+            <span class="timeline-case__details-award">Website</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="fotm" data-type="website">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--slate"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <span class="ribbon ribbon--fotm ribbon--small ribbon--tr" aria-label="FWA of the Month">M</span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">91</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">12 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">18</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Slate Index — A Reference for Editorial Type</h2>
+            <p class="timeline-case__profile">Field &amp; Forge</p>
+            <span class="timeline-case__details-award">Editorial</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="none" data-type="installation">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--forest"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">76</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">02 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">17</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Forest Cartography — Mapping a Living Canopy</h2>
+            <p class="timeline-case__profile">Maison Parallèle</p>
+            <span class="timeline-case__details-award">Installation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="pca" data-type="ai">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--sand"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <span class="ribbon ribbon--pca ribbon--small ribbon--bl" aria-label="People's Choice">P</span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">82</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">07 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">16</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Sand Reader — A Synthetic Dune Generator</h2>
+            <p class="timeline-case__profile">Residence Parallax</p>
+            <span class="timeline-case__details-award">AI</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="none" data-type="website">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--lilac"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">79</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">04 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">15</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Lilac Atlas — A Field Guide to Soft Botany</h2>
+            <p class="timeline-case__profile">Atelier Tidewater</p>
+            <span class="timeline-case__details-award">Website</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="fotd" data-type="website">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--ember"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <span class="ribbon ribbon--fotd ribbon--small ribbon--tl" aria-label="FWA of the Day">D</span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">85</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">01 day in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">14</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Ember Almanac — A Year of Slow Cooking</h2>
+            <p class="timeline-case__profile">House of Honey</p>
+            <span class="timeline-case__details-award">Editorial</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="foty" data-type="website">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--indigo"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <span class="ribbon ribbon--foty ribbon--small ribbon--br" aria-label="FWA of the Year">Y</span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">96</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">30 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">13</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Indigo Folio — A Print Quarterly Reimagined</h2>
+            <p class="timeline-case__profile">Studio Northbeam</p>
+            <span class="timeline-case__details-award">Editorial</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-case" data-award="none" data-type="other">
+        <div class="timeline-case__media-row">
+          <div class="timeline-case__glitter-img">
+            <div class="placeholder-thumb placeholder-thumb--moss"></div>
+            <span class="pixel-pattern pixel-pattern--dark" aria-hidden="true"></span>
+            <div class="timeline-case__glitter-img__buttons-container">
+              <button class="timeline-case__glitter-img__button-light">View</button>
+              <button class="timeline-case__glitter-img__button-dark">View</button>
+            </div>
+          </div>
+          <div class="timeline-case__glitter-scorecard">
+            <span class="glitter-scorecard__score">73</span>
+            <span class="glitter-scorecard__label">Avg Score</span>
+            <span class="glitter-scorecard__days">02 days in</span>
+            <span class="glitter-scorecard__label">Voting</span>
+          </div>
+        </div>
+        <div class="timeline-case__meta-row">
+          <div class="timeline-case__date">
+            <span class="timeline-case__date--day">12</span>
+            <span class="timeline-case__date--month">Jun</span>
+          </div>
+          <div class="timeline-case__details">
+            <h2 class="timeline-case__title">Mossbank Almanac — A Field Study in Quiet Design</h2>
+            <p class="timeline-case__profile">Residence Parallax</p>
+            <span class="timeline-case__details-award">Other</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Infinite-scroll trigger (load more) -->
+    <div class="infinitescroll-trigger" role="button" tabindex="0" aria-label="Load more cases">
+      <span class="infinitescroll-trigger__label">Load more</span>
+      <span class="infinitescroll-trigger__dots" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </span>
+    </div>
+
+  </main>
+
+  <!-- ───────────── Footer (60px tall, white) ───────────── -->
+  <footer class="footer-container" role="contentinfo">
+    <div class="footer-container__inner">
+
+      <div class="footer-container__column footer-container__column--logo">
+        <a class="footer-logo" href="#">
+          <svg viewBox="0 0 67 20" aria-hidden="true">
+            <text x="0" y="16" font-family="Inter, sans-serif" font-weight="700"
+                  font-size="17" letter-spacing="0.06em" fill="#404040">FWA</text>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-container__column footer-container__column--social">
+        <a href="#" class="footer-link">Twitter</a>
+        <a href="#" class="footer-link">LinkedIn</a>
+        <a href="#" class="footer-link">Instagram</a>
+        <a href="#" class="footer-link">The Kesey Signal</a>
+      </div>
+
+      <div class="footer-container__column footer-container__column--nav">
+        <a href="#" class="footer-link">Contact</a>
+        <a href="#" class="footer-link">Cookie Policy</a>
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Terms</a>
+      </div>
+
+      <div class="footer-container__sponsor">
+        <span class="sponsor-label">Sponsored by</span>
+        <span class="sponsor-name">MAKEMEPULSE</span>
+      </div>
+
+      <p class="footer-container__copyright">© MMXXVI — Independent since 2000.</p>
+
+    </div>
+  </footer>
+
+  <!-- ───────────── Cookie notice (fixed bottom, slides up) ───────────── -->
+  <aside class="cookie-notice" role="region" aria-label="Cookie notice" hidden>
+    <div class="cookie-notice__inner">
+      <p class="cookie-notice__copy">This site uses cookies to remember your filter selections and to measure traffic. See our <a href="#">Cookie Policy</a> for details.</p>
+      <button class="button button--ghost cookie-notice__dismiss">Accept</button>
+    </div>
+  </aside>
+
+  <!-- ───────────── Video modal (YouTube-style backdrop) ───────────── -->
+  <div class="youtube-overlay" aria-hidden="true" hidden>
+    <button class="youtube-overlay__close" aria-label="Close video">×</button>
+    <div class="youtube-overlay__frame"></div>
+  </div>
+
+  <script src="../../js/thefwa/script.js" defer></script>
+</body>
+</html>

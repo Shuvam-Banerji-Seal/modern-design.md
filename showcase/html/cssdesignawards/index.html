@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Design Awards &mdash; Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/cssdesignawards/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Sticky header -->
+<header class="header__main-wrapper" role="banner">
+  <div class="container header__inner">
+    <a class="header__site-logo" href="/" aria-label="CSS Design Awards">
+      <svg viewBox="0 0 164 25" width="164" height="25" aria-hidden="true">
+        <text x="0" y="19" font-family="Open Sans, sans-serif" font-size="18" font-weight="800" fill="#282828" letter-spacing="0.5">CSSDA</text>
+      </svg>
+    </a>
+
+    <div class="header__fade-slider" aria-label="Sponsor">
+      <a class="header__fade-slider__slide active" href="#" aria-label="Sponsor slide one">
+        <svg viewBox="0 0 150 75" width="150" height="75"><rect width="150" height="75" fill="#282828"/><text x="75" y="46" text-anchor="middle" font-family="Open Sans" font-size="14" font-weight="800" letter-spacing="3" fill="#F1EFE9">RED COLLAR</text></svg>
+      </a>
+      <a class="header__fade-slider__slide" href="#" aria-label="Sponsor slide two">
+        <svg viewBox="0 0 150 75" width="150" height="75"><rect width="150" height="75" fill="#F1EFE9"/><text x="75" y="46" text-anchor="middle" font-family="Open Sans" font-size="14" font-weight="800" letter-spacing="3" fill="#282828">MOBBIN</text></svg>
+      </a>
+      <a class="header__fade-slider__slide" href="#" aria-label="Sponsor slide three">
+        <svg viewBox="0 0 150 75" width="150" height="75"><rect width="150" height="75" fill="#9F67F7"/><text x="75" y="46" text-anchor="middle" font-family="Open Sans" font-size="11" font-weight="800" letter-spacing="3" fill="#F1EFE9">ADVERTISE</text></svg>
+      </a>
+    </div>
+
+    <div class="header__side-elements">
+      <a href="#" class="menu-hamburger" data-modal-open="header-main-menu" aria-label="Open menu">
+        <span class="menu-hamburger__bars" aria-hidden="true"></span>
+      </a>
+      <a href="#" class="search" data-modal-open="header-search" aria-label="Search">
+        <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="none" stroke="#282828" stroke-width="1.4"/>
+          <line x1="11.5" y1="11.5" x2="16" y2="16" stroke="#282828" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <a href="#" class="cust-btn">SUBMIT</a>
+    </div>
+  </div>
+</header>
+
+<div id="page">
+  <main id="main">
+
+    <!-- Category filter -->
+    <section class="filters" aria-label="Filter projects">
+      <div class="container filters__nav">
+        <button type="button" class="filters__trigger" data-drawer-open="all">All</button>
+        <button type="button" class="filters__trigger" data-drawer-open="nominees">Nominees</button>
+        <button type="button" class="filters__trigger" data-drawer-open="winners">Winners</button>
+        <button type="button" class="filters__trigger" data-drawer-open="ui">UI</button>
+        <button type="button" class="filters__trigger" data-drawer-open="ux">UX</button>
+        <button type="button" class="filters__trigger" data-drawer-open="inn">Innovation</button>
+      </div>
+      <div class="container">
+        <div class="filters__drawers" data-drawers>
+          <div class="filters__drawer" data-drawer="all">
+            <p class="filters__drawer__hint">Showing every project of the day, every nominee and every winner on a single page.</p>
+          </div>
+          <div class="filters__drawer" data-drawer="nominees">
+            <p class="filters__drawer__hint">Today&rsquo;s nominees only &mdash; fresh submissions that are still being voted on by the judge panel.</p>
+          </div>
+          <div class="filters__drawer" data-drawer="winners">
+            <p class="filters__drawer__hint">Awarded websites only &mdash; previous Website of the Day winners archived here.</p>
+          </div>
+          <div class="filters__drawer" data-drawer="ui">
+            <p class="filters__drawer__hint">Sort by user interface score &mdash; the strongest visual compositions first.</p>
+          </div>
+          <div class="filters__drawer" data-drawer="ux">
+            <p class="filters__drawer__hint">Sort by user experience score &mdash; clarity of interaction and information architecture.</p>
+          </div>
+          <div class="filters__drawer" data-drawer="inn">
+            <p class="filters__drawer__hint">Sort by innovation score &mdash; novel techniques, motion, layout or interaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Website of the Day -->
+    <section class="home-wotd" aria-label="Website of the Day">
+      <div class="container">
+        <h1 class="home-wotd__date">AWARDED 2026 JUN 19</h1>
+
+        <div class="home-wotd__middle">
+          <figure class="home-wotd__thumbnail">
+            <a href="#" aria-label="Featured website">
+              <span class="wotd-shot" style="--c1:#1f1f24;--c2:#3a3550;--c3:#7a6cff;"></span>
+            </a>
+          </figure>
+
+          <div class="home-wotd__side">
+            <img class="home-wotd__monogram" alt="" width="120" height="120"
+                 src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><circle cx='60' cy='60' r='58' fill='none' stroke='%23282828' stroke-width='2'/><text x='60' y='58' text-anchor='middle' font-family='Open Sans' font-size='14' font-weight='800' letter-spacing='2' fill='%23282828'>WOTD</text><text x='60' y='78' text-anchor='middle' font-family='Open Sans' font-size='10' font-weight='800' letter-spacing='2' fill='%23282828'>JUN 19</text></svg>">
+            <h3 class="home-wotd__title"><span>MONOLOG &mdash; BY HUY NGUYEN</span></h3>
+            <h4 class="home-wotd__subtitle"><span><a href="#">Huy Nguyen</a></span></h4>
+            <span class="home-wotd__meta">AUSTRALIA</span>
+          </div>
+        </div>
+
+        <div class="home-wotd__scores">
+          <div class="home-wotd__scores__top">
+            <div class="home-wotd__desc">
+              <p><em>A quiet one-page portfolio built around negative space, slow fades and a single serif cut for the closing line.</em></p>
+            </div>
+            <div class="home-wotd__judges">
+              <figure class="single-judge">
+                <span class="judge-avatar" style="--c1:#3b5bdb;--c2:#2c3a8a;"></span>
+                <figcaption class="single-judge__tooltip">
+                  <span class="single-judge__name">Sergey Dubovenko</span>
+                  <span class="single-judge__title">SENIOR JUDGE</span>
+                  <span class="single-judge__scores">UI 9.4 &middot; UX 9.2 &middot; INN 8.6</span>
+                </figcaption>
+              </figure>
+              <figure class="single-judge">
+                <span class="judge-avatar" style="--c1:#e07a5f;--c2:#9d4244;"></span>
+                <figcaption class="single-judge__tooltip">
+                  <span class="single-judge__name">Clement Merouani</span>
+                  <span class="single-judge__title">JUDGE</span>
+                  <span class="single-judge__scores">UI 9.1 &middot; UX 9.0 &middot; INN 8.4</span>
+                </figcaption>
+              </figure>
+              <figure class="single-judge">
+                <span class="judge-avatar" style="--c1:#81b29a;--c2:#3d5a4d;"></span>
+                <figcaption class="single-judge__tooltip">
+                  <span class="single-judge__name">Mattia Rinaudo</span>
+                  <span class="single-judge__title">JUDGE</span>
+                  <span class="single-judge__scores">UI 8.9 &middot; UX 9.3 &middot; INN 8.7</span>
+                </figcaption>
+              </figure>
+              <figure class="single-judge">
+                <span class="judge-avatar" style="--c1:#f2cc8f;--c2:#b8853a;"></span>
+                <figcaption class="single-judge__tooltip">
+                  <span class="single-judge__name">Aleksandr Kirshin</span>
+                  <span class="single-judge__title">JUDGE</span>
+                  <span class="single-judge__scores">UI 9.0 &middot; UX 8.8 &middot; INN 8.5</span>
+                </figcaption>
+              </figure>
+              <figure class="single-judge">
+                <span class="judge-avatar" style="--c1:#5e548e;--c2:#2e2154;"></span>
+                <figcaption class="single-judge__tooltip">
+                  <span class="single-judge__name">Radislav Eliseev</span>
+                  <span class="single-judge__title">JUDGE</span>
+                  <span class="single-judge__scores">UI 9.3 &middot; UX 9.1 &middot; INN 8.9</span>
+                </figcaption>
+              </figure>
+              <figure class="single-judge">
+                <span class="judge-avatar" style="--c1:#9d4edd;--c2:#5a189a;"></span>
+                <figcaption class="single-judge__tooltip">
+                  <span class="single-judge__name">Salva Carlino</span>
+                  <span class="single-judge__title">JUDGE</span>
+                  <span class="single-judge__scores">UI 8.8 &middot; UX 9.0 &middot; INN 8.2</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="home-wotd__scores__bottom">
+            <ul class="vote__list">
+              <li class="vote__item">
+                <span class="vote__cat">UI</span>
+                <span class="vote__circle" data-count="92">
+                  <span class="vote__circle__bar"></span>
+                  <span class="vote__circle__icon trophy"></span>
+                  <button class="vote__circle__button" type="button" aria-label="Vote UI"><span></span><span></span></button>
+                </span>
+                <span class="vote__score">9.2<small>/10</small></span>
+              </li>
+              <li class="vote__item">
+                <span class="vote__cat">UX</span>
+                <span class="vote__circle" data-count="90">
+                  <span class="vote__circle__bar"></span>
+                  <span class="vote__circle__icon trophy"></span>
+                  <button class="vote__circle__button" type="button" aria-label="Vote UX"><span></span><span></span></button>
+                </span>
+                <span class="vote__score">9.0<small>/10</small></span>
+              </li>
+              <li class="vote__item">
+                <span class="vote__cat">INN</span>
+                <span class="vote__circle" data-count="85">
+                  <span class="vote__circle__bar"></span>
+                  <span class="vote__circle__icon trophy"></span>
+                  <button class="vote__circle__button" type="button" aria-label="Vote Innovation"><span></span><span></span></button>
+                </span>
+                <span class="vote__score">8.5<small>/10</small></span>
+              </li>
+              <li class="vote__summary-item">
+                <span class="vote__cat">JPANEL</span>
+                <span class="vote__circle summary">
+                  <span class="vote__circle__bar" data-count="89"></span>
+                  <span class="vote__summary"><span>8.93</span></span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newest Nominees -->
+    <section class="home-projects" aria-label="Newest Nominees">
+      <div class="container">
+        <div class="home-projects__head">
+          <h2>NEWEST NOMINEES</h2>
+          <a href="#" class="cust-btn cust-btn--arrow">More</a>
+        </div>
+        <div class="projects__list">
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#0b132b;--c2:#1c2541;--c3:#3a506b;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta">
+                  <span class="sp__meta__category">NOMINEE</span>
+                  <span class="sp__meta__date">JUN 19</span>
+                </div>
+                <a class="sp__project-link" href="#" aria-label="Open source">
+                  <svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg>
+                </a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">Vote<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>YLEM &mdash; BY STUDIO YLEM</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+              <span class="sp__single-score">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+              <span class="sp__single-score">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#264653;--c2:#2a9d8f;--c3:#e9c46a;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta">
+                  <span class="sp__meta__category">NOMINEE</span>
+                  <span class="sp__meta__date">JUN 19</span>
+                </div>
+                <a class="sp__project-link" href="#" aria-label="Open source">
+                  <svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg>
+                </a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">Vote<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Flowty &mdash; Workflow for makers</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+              <span class="sp__single-score">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+              <span class="sp__single-score">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#1d3557;--c2:#457b9d;--c3:#a8dadc;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta">
+                  <span class="sp__meta__category">NOMINEE</span>
+                  <span class="sp__meta__date">JUN 19</span>
+                </div>
+                <a class="sp__project-link" href="#" aria-label="Open source">
+                  <svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg>
+                </a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">Vote<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Serotoninn &mdash; Studio site</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+              <span class="sp__single-score">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+              <span class="sp__single-score">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#A19D96"/></svg></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Previous WOTDs -->
+    <section class="home-projects" aria-label="Previous Winners">
+      <div class="container">
+        <div class="home-projects__head">
+          <h2>PREVIOUS WOTDS</h2>
+          <a href="#" class="cust-btn cust-btn--arrow">More</a>
+        </div>
+        <div class="projects__list">
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#22223b;--c2:#4a4e69;--c3:#9a8c98;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 18</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Volt &mdash; Voltlites brand</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 8.30</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#0f0e17;--c2:#a7a9be;--c3:#ff8906;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 17</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Artem Shcherbakov &mdash; Portfolio</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 8.12</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#011627;--c2:#2ec4b6;--c3:#e71d36;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 16</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Wembi &mdash; AI workspace</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 8.07</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#102542;--c2:#f87060;--c3:#cdd7d6;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 15</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>F40 Competizione &mdash; AC Motorsport</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 8.21</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#3d348b;--c2:#7678ed;--c3:#f7b801;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 14</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Hubtown &mdash; Property brand</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 7.94</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#1b1b1e;--c2:#4cb963;--c3:#fff2f2;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 13</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Produx &mdash; Product studio</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 8.05</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#001e1d;--c2:#159895;--c3:#b3e8e5;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 12</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Aramco &mdash; Shoot For The Future</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 7.88</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#2e0249;--c2:#a91079;--c3:#f5c1e0;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 11</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Yuta Abe &mdash; Portfolio 2026</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 8.18</span>
+            </div>
+          </article>
+
+          <article class="single-project" data-card>
+            <div class="single-project__thumbnail">
+              <span class="card-shot" style="--c1:#0c1821;--c2:#324a5f;--c3:#ccc9dc;"></span>
+              <div class="single-project__thumbnail__overlay">
+                <div class="single-project__meta"><span class="sp__meta__category">WOTD</span><span class="sp__meta__date">JUN 10</span></div>
+                <a class="sp__project-link" href="#" aria-label="Open source"><svg viewBox="0 0 20 20" width="20" height="20"><path fill="#CCCCCC" d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.28-7.28H11V3zM5 5h4V3H3v6h2V5zM3 17h14v-4h-2v2H5v-2H3v4z"/></svg></a>
+                <a class="sp__full-size-link" href="#" aria-label="Open project"></a>
+                <span class="sp__view-info">View<svg viewBox="0 0 23 8" width="22" height="8" aria-hidden="true"><path d="M0 3h20m0 0l-3-3m3 3l-3 3" stroke="#CCCCCC" fill="none" stroke-width="1"/></svg></span>
+              </div>
+            </div>
+            <h3 class="single-project__title"><span>Ten Years Away &mdash; Studio reel</span></h3>
+            <div class="single-project__scores">
+              <span class="sp__single-score active">UI<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">UX<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score active">INN<svg viewBox="0 0 17 15" width="12" height="11" class="sp__icon"><path d="M3 1h11v3l-3 4v6H6V8L3 4V1z" fill="#000"/></svg></span>
+              <span class="sp__single-score jpanel">JPANEL 7.96</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo banner -->
+    <div class="promo-sect">
+      <div class="container">
+        <a href="#" class="promo-sect__link" aria-label="Website of the Month &mdash; May 2026">
+          <span class="promo-shot" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main light">
+    <div class="container footer__inner">
+      <div class="flex-grid footer__copy">CSS DESIGN AWARDS &copy; 2009 &mdash; 2026</div>
+      <ul class="social-icons" aria-label="Social channels">
+        <li><a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 12 21" width="12" height="21"><path fill="#080808" d="M8 21v-9h3l1-4H8V6c0-1 .3-2 2-2h2V0h-3c-3 0-5 2-5 5v3H1v4h3v9h4z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="X">
+          <svg viewBox="0 0 512 463" width="28" height="21"><path fill="#080808" d="M389 0h93L307 198 512 463h-180L222 297 91 463H-2l188-281L-12 0h184l93 138L389 0z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 19 19" width="19" height="19"><path fill="#080808" d="M0 6h4v13H0V6zm2-6c1 0 2 1 2 2S3 4 2 4 0 3 0 2s1-2 2-2zm5 6h4v2c1-1 2-2 4-2 3 0 4 2 4 5v8h-4v-7c0-2-1-3-2-3s-2 1-2 3v7H7V6z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 21 21" width="21" height="21"><path fill="#080808" d="M5 0h11c3 0 5 2 5 5v11c0 3-2 5-5 5H5c-3 0-5-2-5-5V5c0-3 2-5 5-5zm0 2c-2 0-3 1-3 3v11c0 2 1 3 3 3h11c2 0 3-1 3-3V5c0-2-1-3-3-3H5zm6 3c3 0 6 3 6 6s-3 6-6 6-6-3-6-6 3-6 6-6zm0 2c-2 0-4 2-4 4s2 4 4 4 4-2 4-4-2-4-4-4zm5-2c1 0 1 0 1 1s0 1-1 1-1 0-1-1 0-1 1-1z"/></svg>
+        </a></li>
+      </ul>
+      <div class="flex-grid text-right">BE INSPIRED. BE INSPIRING.</div>
+    </div>
+  </footer>
+
+  <!-- Go to top -->
+  <div class="smsc-button-wrapper">
+    <a href="#" class="smsc-button" aria-label="Go to Top" data-gototop>
+      <svg viewBox="0 0 44 44" width="45" height="45" aria-hidden="true"><path fill="none" stroke="#282828" stroke-width="2" d="M22 6l16 16-16 16L6 22z"/><path stroke="#282828" stroke-width="2" fill="none" d="M22 30V14M16 20l6-6 6 6"/></svg>
+      <span>Go to Top</span>
+    </a>
+  </div>
+
+  <!-- Modal menu -->
+  <div class="modal header-modal-menu" data-modal="header-main-menu" aria-hidden="true">
+    <div class="modal__content">
+      <button type="button" class="modal__close" aria-label="Close menu">&times;</button>
+      <ul class="header__main-menu__list">
+        <li><a href="#" class="cust-btn">HOME</a></li>
+        <li><a href="#" class="cust-btn">NOMINEES</a></li>
+        <li><a href="#" class="cust-btn">WINNERS</a></li>
+        <li><a href="#" class="cust-btn">ABOUT</a></li>
+        <li><a href="#" class="cust-btn">JUDGES</a></li>
+        <li><a href="#" class="cust-btn">BLOG</a></li>
+        <li><a href="#" class="cust-btn">CONTACT</a></li>
+        <li><a href="#" class="cust-btn">TERMS / PRIVACY</a></li>
+      </ul>
+      <ul class="header__main-menu__add-on">
+        <li><a href="#" class="cust-btn">SUBMIT</a></li>
+        <li><a href="#" class="cust-btn" target="_blank" rel="noopener">JLogin</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal search -->
+  <div class="modal header-modal-search" data-modal="header-search" aria-hidden="true">
+    <div class="modal__content modal__content--search">
+      <button type="button" class="modal__close" aria-label="Close search">&times;</button>
+      <form id="frmSearch" role="search" onsubmit="return false;">
+        <input type="search" name="q" autofocus placeholder="SEARCH&hellip;" aria-label="Search">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/cssdesignawards/script.js"></script>
+</body>
+</html>

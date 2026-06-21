@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Immersive Garden — design.md showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/immersive-g/style.css">
+</head>
+<body>
+
+  <!-- Fixed header -->
+  <header class="headerBlock" data-header>
+    <a class="headerBlock__logo" href="#top" aria-label="Studio home">
+      <span class="headerBlock__logoMark">IG</span>
+      <span class="headerBlock__logoWord">Immersive&nbsp;Garden</span>
+    </a>
+    <nav class="headerBlock__menu" aria-label="Primary">
+      <ul>
+        <li><a href="#approach" class="basicButton">Approach</a></li>
+        <li><a href="#projects" class="basicButton">Projects</a></li>
+        <li><a href="#contact" class="basicButton">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="headerBlock__projectsBttn basicButton" data-cursor="View reel" type="button">
+      <span>See all projects</span>
+      <span class="wrapper__icon" aria-hidden="true">
+        <svg viewBox="0 0 25 45" width="12" height="22">
+          <path d="M12 2 L12 38 M4 30 L12 38 L20 30" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </span>
+    </button>
+  </header>
+
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor" data-cursor-root aria-hidden="true">
+    <span class="cursor__follow"></span>
+    <span class="cursor__ease"></span>
+    <span class="cursor__text"></span>
+  </div>
+
+  <!-- Scroll cursor (3 progress dots) -->
+  <aside class="scrollCursor" aria-hidden="true">
+    <span class="dot__default dot__default--1"></span>
+    <span class="dot__default dot__default--2"></span>
+    <span class="dot__default dot__default--3"></span>
+    <span class="dots__fast"></span>
+  </aside>
+
+  <main id="top" class="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero__text1" data-reveal="letter">
+        An immersive studio crafting three-dimensional digital worlds for the most considered brands.
+      </h1>
+      <div class="hero__scrollDown"><span>Scroll&nbsp;down</span></div>
+    </section>
+
+    <!-- Section label: Approach -->
+    <section class="textBlock align--center" id="approach">
+      <div class="textBlock__inner">
+        <p class="textBlock__text textBlock__text--1" data-reveal="fade">Our approach</p>
+        <p class="textBlock__text textBlock__text--2" data-reveal="letter">
+          We design quiet interfaces over loud spectacle. Restrained typography, considered motion, and three-dimensional craft in service of narrative.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project mosaic (12-col grid) -->
+    <section class="mosaic" id="projects" aria-label="Selected work">
+
+      <!-- Project block: Atelier Aurora -->
+      <article class="projectBlock" data-slug="atelier-aurora">
+        <div class="mediaBlock width__7 position__1" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--landscape" style="--tone:#a8a8a8">
+            <span class="mediaBlock__caption">Atelier Aurora — flagship experience</span>
+          </div>
+        </div>
+        <div class="mediaBlock width__4 position__9 textOnly" data-reveal="block">
+          <div class="mediaBlock__textCard">
+            <p class="type">Web Experience</p>
+            <p class="title">Atelier Aurora</p>
+            <p class="body">A six-scene guided walk through the maison's 1947 archive.</p>
+          </div>
+        </div>
+        <div class="mediaBlock width__4 position__2" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--portrait" style="--tone:#bfbfbf">
+            <span class="mediaBlock__caption">Atelier Aurora — detail</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project block: Verdant -->
+      <article class="projectBlock" data-slug="verdant">
+        <div class="mediaBlock width__6 position__3" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--landscape" style="--tone:#9d9d9d">
+            <span class="mediaBlock__caption">Verdant — interactive field guide</span>
+          </div>
+        </div>
+        <div class="mediaBlock width__5 position__7 textOnly" data-reveal="block">
+          <div class="mediaBlock__textCard">
+            <p class="type">Design · Tech · 3D</p>
+            <p class="title">Verdant</p>
+            <p class="body">A botanical index rendered as a slow, scroll-driven herbarium.</p>
+          </div>
+        </div>
+        <div class="mediaBlock width__3 position__10" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--portrait" style="--tone:#aaaaaa">
+            <span class="mediaBlock__caption">Verdant — plate</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section label: Mission -->
+      <section class="textBlock align--center">
+        <div class="textBlock__inner">
+          <p class="textBlock__text textBlock__text--1" data-reveal="fade">Our mission</p>
+          <p class="textBlock__text textBlock__text--2" data-reveal="letter">
+            To translate the gravity of physical objects into weightless, navigable spaces that reward return visits.
+          </p>
+        </div>
+      </section>
+
+      <!-- Project block: Cosmique -->
+      <article class="projectBlock" data-slug="cosmique">
+        <div class="mediaBlock width__8 position__2" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--landscape" style="--tone:#b1b1b1">
+            <span class="mediaBlock__caption">Cosmique 1947 — configurator reel</span>
+          </div>
+        </div>
+        <div class="mediaBlock width__3 position__11 textOnly" data-reveal="block">
+          <div class="mediaBlock__textCard">
+            <p class="type">E-Shop · 3D</p>
+            <p class="title">Cosmique 1947</p>
+            <p class="body">A real-time configured case for a haute horlogerie line.</p>
+          </div>
+        </div>
+        <div class="mediaBlock width__4 position__5" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--portrait" style="--tone:#949494">
+            <span class="mediaBlock__caption">Cosmique 1947 — calibre</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project block: Solstice -->
+      <article class="projectBlock" data-slug="solstice">
+        <div class="mediaBlock width__5 position__1" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--landscape" style="--tone:#acacac">
+            <span class="mediaBlock__caption">Solstice Range — campaign site</span>
+          </div>
+        </div>
+        <div class="mediaBlock width__6 position__7 textOnly" data-reveal="block">
+          <div class="mediaBlock__textCard">
+            <p class="type">Web Experience</p>
+            <p class="title">Solstice Range</p>
+            <p class="body">An editorial hub for a season of seven object launches.</p>
+          </div>
+        </div>
+        <div class="mediaBlock width__3 position__3" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--portrait" style="--tone:#c0c0c0">
+            <span class="mediaBlock__caption">Solstice Range — object</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project block: Couture Cloud -->
+      <article class="projectBlock" data-slug="couture-cloud">
+        <div class="mediaBlock width__7 position__4" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--landscape" style="--tone:#a3a3a3">
+            <span class="mediaBlock__caption">Couture Cloud — atelier in browser</span>
+          </div>
+        </div>
+        <div class="mediaBlock width__4 position__1 textOnly" data-reveal="block">
+          <div class="mediaBlock__textCard">
+            <p class="type">3D · Tech</p>
+            <p class="title">Couture Cloud</p>
+            <p class="body">A live WebGL atelier where every garment can be inspected at scale.</p>
+          </div>
+        </div>
+        <div class="mediaBlock width__3 position__9" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--portrait" style="--tone:#979797">
+            <span class="mediaBlock__caption">Couture Cloud — fitting</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project block: Atlas Bay -->
+      <article class="projectBlock" data-slug="atlas-bay">
+        <div class="mediaBlock width__6 position__2" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--landscape" style="--tone:#9a9a9a">
+            <span class="mediaBlock__caption">Atlas Bay — coastal survey</span>
+          </div>
+        </div>
+        <div class="mediaBlock width__5 position__9 textOnly" data-reveal="block">
+          <div class="mediaBlock__textCard">
+            <p class="type">Design · Web Experience</p>
+            <p class="title">Atlas Bay</p>
+            <p class="body">An interactive chart of shoreline change over the past decade.</p>
+          </div>
+        </div>
+        <div class="mediaBlock width__3 position__4" data-reveal="block">
+          <div class="mediaBlock__image mediaBlock__image--portrait" style="--tone:#b3b3b3">
+            <span class="mediaBlock__caption">Atlas Bay — coastline</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer (dark WebGL-equivalent panel) -->
+  <footer class="footer darkBg" id="contact">
+
+    <div class="footer__webgl" aria-hidden="true"></div>
+
+    <div class="footer__projects">
+      <div class="footer__projectsCtaWrapper">
+        <a href="#" class="underlinedButton underlinedButton--largeFooterBg" data-after="(51)">
+          <span class="underlinedButton__text">See all projects</span>
+          <span class="underlinedButton__line"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__contacts">
+      <a class="footer__email" href="mailto:hello@studio.example" data-cursor="Write to us">hello@studio.example</a>
+      <address class="footer__address">14 avenue Claude Vellefaux, 75010 Paris</address>
+      <ul class="footer__networks" aria-label="Social">
+        <li><a href="#" class="basicButton">X</a></li>
+        <li><a href="#" class="basicButton">Instagram</a></li>
+        <li><a href="#" class="basicButton">Linkedin</a></li>
+      </ul>
+      <a href="#" class="footer__newsletterOpen basicButton">Newsletter</a>
+    </div>
+  </footer>
+
+  <!-- Sound toggle -->
+  <button class="sound" data-cursor="Click to enable sound" type="button" aria-label="Toggle sound">
+    <span class="sound__dot"></span>
+    <span class="sound__labels"><span class="sound__label sound__label--on">On</span><span class="sound__label sound__label--off">Off</span></span>
+  </button>
+
+  <script src="../../js/immersive-g/script.js"></script>
+</body>
+</html>

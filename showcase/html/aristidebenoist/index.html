@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="Sample HTML/CSS/JS implementation of the Aristide Benoist portfolio — dark, editorial, monochrome-with-accent WebGL aesthetic recreated with CSS gradients and JS mouse tracking.">
+  <title>Aristide Benoist — Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/aristidebenoist/style.css">
+</head>
+<body>
+  <noscript>
+    <div class="iss-w">Please enable JavaScript to view this website.</div>
+  </noscript>
+
+  <main id="app">
+
+    <div class="bg-canvas" id="bg-canvas" aria-hidden="true">
+      <div class="bg-blob" id="bg-blob"></div>
+      <div class="bg-tint" id="bg-tint"></div>
+      <div class="bg-grid" id="bg-grid"></div>
+    </div>
+
+    <div id="load" class="load" aria-hidden="true">
+      <span><span>0</span></span><span><span>0</span></span><span><span>1</span></span>
+    </div>
+
+    <section class="hero" id="hero">
+      <div class="hero-pgn" id="hero-pgn">
+        <div class="pgn-a"><div>01</div></div>
+        <div class="pgn-b"><div>30</div></div>
+      </div>
+
+      <div class="hero-title">
+        <div class="t tt" id="t-top">
+          <span><span>H</span></span><span><span>O</span></span><span><span>U</span></span><span><span>S</span></span><span><span>E</span></span>
+        </div>
+        <div class="t tb" id="t-bot">
+          <span><span>G</span></span><span><span>U</span></span><span><span>C</span></span><span><span>C</span></span><span><span>I</span></span>
+        </div>
+      </div>
+
+      <div class="hero-info">
+        <div class="i-l">
+          <div><div>A</div><div>COMPLETED</div><div>FEBRUARY 2022</div></div>
+          <div><div>B</div><div>TYPE</div><div>PROMOTIONAL</div></div>
+          <div><div>C</div><div>ROLE</div><div>FULLSTACK DEV &amp; MOTION</div></div>
+          <div><div>D</div><div>CLIENT</div><div>MGM STUDIOS - WATSON DG</div></div>
+        </div>
+        <div class="i-r">
+          <div><div>EXPLORE BEHIND-THE-SCENES..</div></div>
+          <div><div>RIDLEY SCOTT'S HOUSE OF GUCCI..</div></div>
+        </div>
+      </div>
+
+      <a class="e line-w" href="#" id="cta-explore">
+        <div class="e-t"><div>EXPLORE<div class="line"><div></div><div></div></div></div></div>
+        <div class="e-l"><div></div></div>
+        <div class="e-s"><div>
+          <svg viewBox="0 0 14 14" aria-hidden="true">
+            <polygon points="7,11.042 6.08,11.042 6.08,7.889 2.958,7.889 2.958,6.096 6.08,6.096 6.08,2.958 7.921,2.958 7.921,6.096 11.042,6.096 11.042,7.889 7.921,7.889 7.921,11.042"/>
+          </svg>
+        </div></div>
+      </a>
+    </section>
+
+    <section class="projects" id="projects" aria-label="Selected work">
+      <div class="projects-intro">
+        <div class="pi-key">SELECTED WORK</div>
+        <div class="pi-line"></div>
+        <div class="pi-sub">30 CASE STUDIES · 2018 — 2026</div>
+      </div>
+      <ul class="cards" id="cards"></ul>
+    </section>
+
+    <section class="about" id="about" aria-label="About">
+      <div class="about-left">
+        <div class="about-name" aria-label="Aristide Benoist">
+          <span><span>A</span></span><span><span>R</span></span><span><span>i</span></span><span><span>S</span></span><span><span>T</span></span><span><span>i</span></span><span><span>D</span></span><span><span>E</span></span>
+        </div>
+        <div class="about-sub" id="about-sub">
+          <span><span>DEVELOPER · MOTION · INTERACTION</span></span>
+          <span><span>INDEPENDENT, WORKING WORLDWIDE</span></span>
+          <span><span>WITH COMPANIES, AGENCIES,</span></span>
+          <span><span>STARTUPS AND INDIVIDUALS..</span></span>
+        </div>
+      </div>
+
+      <div class="about-list" id="about-list">
+        <div class="a-li">
+          <div class="a-key">CLIENTS</div>
+          <ul>
+            <li style="top:0">A</li>
+            <li style="top:26px">BEAR GRYLLS</li>
+            <li style="top:52px">DRIBBBLE</li>
+            <li style="top:78px">FUSE PROJECT</li>
+            <li style="top:104px">GOOGLE</li>
+            <li style="top:130px">HIMS &amp; HERS</li>
+            <li style="top:156px">INSTAGRAM</li>
+            <li style="top:182px">JACQUES MARIE MAGE</li>
+            <li style="top:208px">MGM STUDIOS</li>
+            <li style="top:234px">NETFLIX</li>
+            <li style="top:260px">OBAMA FOUNDATION</li>
+            <li style="top:286px">RAPPI</li>
+            <li style="top:312px">SUPER FRIENDLY</li>
+            <li style="top:338px">TWITCH</li>
+            <li style="top:364px">WATSON DG</li>
+          </ul>
+        </div>
+        <div class="a-li">
+          <div class="a-key">AWWWARDS</div>
+          <ul>
+            <li style="top:0">SITE OF THE DAY 30×</li>
+            <li style="top:26px">DEVELOPER AWARD 27×</li>
+            <li style="top:52px">MOBILE EXCELLENCE 22×</li>
+            <li style="top:78px">MOBILE OF THE WEEK 6×</li>
+            <li style="top:104px">SITE OF THE MONTH 3×</li>
+            <li style="top:130px">INDEPENDENT OF THE YEAR 2×</li>
+          </ul>
+        </div>
+        <div class="a-li">
+          <div class="a-key">FWA</div>
+          <ul>
+            <li style="top:0">FWA OF THE DAY 22×</li>
+            <li style="top:26px">FWAWWWARD 2×</li>
+            <li style="top:52px">FWA OF THE MONTH 1×</li>
+          </ul>
+        </div>
+        <div class="a-li">
+          <div class="a-key">BEHANCE</div>
+          <ul>
+            <li style="top:0">INTERACTION 11×</li>
+            <li style="top:26px">GALLERY 7×</li>
+            <li style="top:52px">GRAPHIC DESIGN 1×</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-social" id="about-social">
+        <div><a href="#">EMAIL ↗</a></div>
+        <div><a href="#">INSTAGRAM ↗</a></div>
+        <div><a href="#">TWITTER ↗</a></div>
+        <div><a href="#">BEHANCE ↗</a></div>
+        <div><a href="#">DRIBBBLE ↗</a></div>
+        <div><a href="#">LINKEDIN ↗</a></div>
+        <div><a href="#">GITHUB ↗</a></div>
+      </div>
+
+      <div class="about-credit">DESIGN BY JW.S (JON WAY STUDIO) ↗</div>
+      <div class="about-rights">
+        <div>ALL RIGHTS RESERVED</div>
+        <div>ARISTIDE BENOIST 2026®</div>
+      </div>
+    </section>
+
+    <a class="p-btn" id="p" href="#projects">
+      <span id="p-s" class="p-s">
+        <svg viewBox="0 0 14 14" aria-hidden="true">
+          <polygon id="p-s-p" points="9.207,10.508 10.509,9.207 7.842,6.961 10.5,4.5 9.293,3.293 6.92,5.99 4.5,3.293 3.293,4.5 5.961,7.011 3.293,9.207 4.5,10.5 6.942,7.853 9.207,10.508"/>
+        </svg>
+      </span>
+      <span id="p-l" class="p-l"></span>
+      <span id="p-t" class="p-t">PROJECTS</span>
+    </a>
+
+    <a class="v-btn" id="v" href="#" target="_blank" rel="noopener">VISIT SITE ↗</a>
+
+    <footer class="site-footer" id="footer">
+      <div class="foot-left">
+        <span class="foot-key">SHOWCASE</span>
+        <span class="foot-line"></span>
+        <span class="foot-text">RECREATED FROM DESIGN.MD</span>
+      </div>
+      <div class="foot-right">
+        <span class="foot-text">HTML · CSS · JS</span>
+        <span class="foot-line"></span>
+        <span class="foot-text">2026</span>
+      </div>
+    </footer>
+
+    <nav id="nav" aria-label="Primary">
+      <a class="wordmark" id="n0" href="#">
+        <span><span>A</span></span><span><span>R</span></span><span><span>i</span></span><span><span>S</span></span><span><span>T</span></span><span><span>i</span></span><span><span>D</span></span><span><span>E</span></span>
+      </a>
+      <div class="n1" id="n1">
+        <a class="n1-link active" id="n1-0" href="#about">ABOUT</a>
+        <a class="n1-link" id="n1-1" href="#" hidden>CLOSE</a>
+      </div>
+      <a class="n2" id="n2" href="mailto:aristide.benoist@gmail.com">
+        <div>INDEPENDENT DEVELOPER</div>
+        <div>AVAILABLE NOW</div>
+      </a>
+      <div class="n3" id="n3">
+        <a class="n3-link" href="mailto:aristide.benoist@gmail.com">EMAIL ↗</a>
+        <a class="n3-link" href="https://www.instagram.com/aristidebenoist" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+        <a class="n3-link" href="https://twitter.com/AristideBenoist" target="_blank" rel="noopener">TWITTER ↗</a>
+      </div>
+    </nav>
+
+  </main>
+
+  <script src="../../js/aristidebenoist/script.js" defer></script>
+</body>
+</html>

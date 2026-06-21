@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://shuvam-banerji-seal.github.io/modern-design.md/sitemap.xml

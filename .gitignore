@@ -1,0 +1,62 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Node / build outputs (if anyone adds tooling)
+node_modules/
+dist/
+build/
+.cache/
+.turbo/
+.next/
+.nuxt/
+
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+uv.lock.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Large / raw media (commit only compressed assets under assets/<site>/)
+*.psd
+*.sketch
+*.fig
+*.ai
+*.raw
+*.mov
+*.mp4
+>1MB screenshots — compress before committing
+
+# Agent scratch
+.opencode/
+.claude/
+.agents/
+AGENTS.local.md
+
+# Phase-1 site dumps — never committed (see AGENTS.md §4)
+tmp/
+
+# Local Playwright MCP cache (not committed)
+.playwright-mcp/
+
+# Playwright MCP artifacts (screenshots, snapshots)
+.playwright-mcp/

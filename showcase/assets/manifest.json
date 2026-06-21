@@ -1,0 +1,290 @@
+[
+  {
+    "slug": "active-theory",
+    "name": "Active Theory",
+    "category": "Interactive / 3D",
+    "description": "Active Theory's site is a single-page WebGL portfolio for a Los-Angeles-based creative digital production studio founded in 2012. The visible \"page\" is a full-viewport 3D canvas (`#Stage`) that boots only after a JS feature-detect pass; if …",
+    "design_md": "../websites/active-theory/design.md",
+    "sample": "html/active-theory/index.html"
+  },
+  {
+    "slug": "aristidebenoist",
+    "name": "Aristide Benoist",
+    "category": "Interactive / 3D",
+    "description": "Aristide Benoist's personal site is a one-developer portfolio rendered almost entirely as a **single WebGL canvas plus a thin layer of overlay DOM**. The home page is a single-screen horizontal slider of 30 case studies; each case is a text…",
+    "design_md": "../websites/aristidebenoist/design.md",
+    "sample": "html/aristidebenoist/index.html"
+  },
+  {
+    "slug": "awwwards",
+    "name": "Awwwards",
+    "category": "Web Design Gallery",
+    "description": "Awwwards is a curated index of the web's best-designed sites, organized into vertical taxonomies (categories × tags × countries × awards). The observed page is the **Web & Interactive** category index — a long, infinitely-scrolling mosaic o…",
+    "design_md": "../websites/awwwards/design.md",
+    "sample": "html/awwwards/index.html"
+  },
+  {
+    "slug": "basement",
+    "name": "Basement",
+    "category": "Design Agency",
+    "description": "basement.studio is a Brooklyn/NYC-leaning interactive digital studio and \"branding powerhouse\" with an extremely technical, self-aware voice. The homepage is a single-page pitch: a fully interactive, spatial-audio 3D \"office\" scene (WebGL, …",
+    "design_md": "../websites/basement/design.md",
+    "sample": "html/basement/index.html"
+  },
+  {
+    "slug": "basicagency",
+    "name": "BASIC",
+    "category": "Design Agency",
+    "description": "BASIC/DEPT® is the working name of BASIC, a San Diego–based digital agency that does branding, experience design, and engineering. The site is a high-craft portfolio whose design language is built on a single sans-serif family, a near-monoc…",
+    "design_md": "../websites/basicagency/design.md",
+    "sample": "html/basicagency/index.html"
+  },
+  {
+    "slug": "bruno-simon",
+    "name": "Bruno Simon",
+    "category": "Interactive / 3D",
+    "description": "Bruno Simon's personal portfolio is a single-page WebGL application that turns the page itself into a 3D driving game. The viewport is a full-bleed `<canvas>` running a Three.js scene in which the visitor drives a small vehicle through a st…",
+    "design_md": "../websites/bruno-simon/design.md",
+    "sample": "html/bruno-simon/index.html"
+  },
+  {
+    "slug": "bureau-cool",
+    "name": "Bureau Cool",
+    "category": "Design Agency",
+    "description": "Bureau Cool is a boutique design studio that frames itself as a digital partner for brands, artists, and cultural institutions. The homepage is an editorial one-pager: a fixed-type \"title card\" sits above a vertical sequence of project refe…",
+    "design_md": "../websites/bureau-cool/design.md",
+    "sample": "html/bureau-cool/index.html"
+  },
+  {
+    "slug": "cssdesignawards",
+    "name": "CSS Design Awards",
+    "category": "Web Design Gallery",
+    "description": "CSS Design Awards is a curated **gallery / directory of websites that the community has recognized for excellence in CSS-driven design**. Each weekday the site publishes a \"Website of the Day\" (WOTD), judged by a rotating panel and surfaced…",
+    "design_md": "../websites/cssdesignawards/design.md",
+    "sample": "html/cssdesignawards/index.html"
+  },
+  {
+    "slug": "dogstudio",
+    "name": "Dogstudio",
+    "category": "Interactive / 3D",
+    "description": "Dogstudio is a multidisciplinary creative studio's marketing site. The home page is a single full-bleed dark canvas anchored by an interactive WebGL mascot (a stylised 3D dog) that reacts to the cursor and scroll. A tall serif wordmark anch…",
+    "design_md": "../websites/dogstudio/design.md",
+    "sample": "html/dogstudio/index.html"
+  },
+  {
+    "slug": "epic",
+    "name": "EPIC Agency",
+    "category": "Design Agency",
+    "description": "EPIC Agency is a Belgian (Wiertzstraat, Liège) branding and web agency. The homepage is a single-page marketing experience built around three movements — **\"Imagine, Build, Tell.\"** — set in a large display serif. The visual language pairs …",
+    "design_md": "../websites/epic/design.md",
+    "sample": "html/epic/index.html"
+  },
+  {
+    "slug": "fffuel",
+    "name": "fffuel",
+    "category": "Web3 / Tools",
+    "description": "fffuel.co is a free, single-page tool collection for designers and front-end developers, hosting roughly sixty small in-browser SVG generators and a handful of color utilities. The page is essentially a long, tile-based index: each tool get…",
+    "design_md": "../websites/fffuel/design.md",
+    "sample": "html/fffuel/index.html"
+  },
+  {
+    "slug": "field",
+    "name": "Field",
+    "category": "Interactive / 3D",
+    "description": "field.io is the marketing portfolio of FIELD.IO, a London / Berlin creative studio that describes itself as a \"Global Creative, Design + Innovation Studio.\" The site is a single-page application of long, scroll-driven storytelling built aro…",
+    "design_md": "../websites/field/design.md",
+    "sample": "html/field/index.html"
+  },
+  {
+    "slug": "firewatchgame",
+    "name": "Firewatch",
+    "category": "Indie Game",
+    "description": "The official marketing one-pager for the indie video game *Firewatch* by Campo Santo (published with Panic). It is a single scrollable page built around a full-bleed parallax key-art banner of the Wyoming wilderness, followed by buy CTAs, a…",
+    "design_md": "../websites/firewatchgame/design.md",
+    "sample": "html/firewatchgame/index.html"
+  },
+  {
+    "slug": "garden-eight",
+    "name": "Garden Eight",
+    "category": "Design Agency",
+    "description": "Garden Eight is the public site of a small digital design studio in Tokyo (東京都世田谷区北沢, Setagaya-ku). The product is a single-page-rendered brand showcase that the studio itself designed and built — every page is custom-coded, every interacti…",
+    "design_md": "../websites/garden-eight/design.md",
+    "sample": "html/garden-eight/index.html"
+  },
+  {
+    "slug": "godly",
+    "name": "Godly",
+    "category": "Web Design Gallery",
+    "description": "godly.website (now branded **Recent — Design Inspiration**) is a curated, browsable index of \"the best of recent design found on the Internet updated daily.\" It is not a portfolio of one studio; it is a *gallery / index* that surfaces tweet…",
+    "design_md": "../websites/godly/design.md",
+    "sample": "html/godly/index.html"
+  },
+  {
+    "slug": "hellomonday",
+    "name": "Hello Monday",
+    "category": "Design Agency",
+    "description": "Hello Monday is a creative studio that \"handcrafts digital (and magical) products, brands, and experiences.\" The homepage is a single full-bleed landing experience anchored by a serif hero \"Branding\" headline, a looping silent MP4 backgroun…",
+    "design_md": "../websites/hellomonday/design.md",
+    "sample": "html/hellomonday/index.html"
+  },
+  {
+    "slug": "immersive-g",
+    "name": "Immersive Garden",
+    "category": "Interactive / 3D",
+    "description": "Immersive Garden is a French interactive / WebGL studio whose own marketing site behaves like a portfolio reel: a long single-page experience that mixes a fixed full-bleed WebGL canvas, looping autoplay MP4 case tiles, scrollable project bl…",
+    "design_md": "../websites/immersive-g/design.md",
+    "sample": "html/immersive-g/index.html"
+  },
+  {
+    "slug": "k72",
+    "name": "K72",
+    "category": "Design Agency",
+    "description": "K72 is a French-Canadian creative agency based in Montréal. The homepage is a single full-bleed cinematic splash: a looping autoplaying background video, an oversized centred French punchline (\"L'étincelle qui génère la créativité\" — *the s…",
+    "design_md": "../websites/k72/design.md",
+    "sample": "html/k72/index.html"
+  },
+  {
+    "slug": "locomotive",
+    "name": "Locomotive",
+    "category": "Design Agency",
+    "description": "Locomotive is a Montreal-based digital agency (\"Locomotive®\") whose own marketing site is a high-craft, animation-heavy, single-page experience that showcases their work and a small set of merchandise. The aesthetic is editorial-minimal: ma…",
+    "design_md": "../websites/locomotive/design.md",
+    "sample": "html/locomotive/index.html"
+  },
+  {
+    "slug": "lusion",
+    "name": "Lusion",
+    "category": "Interactive / 3D",
+    "description": "Lusion is the marketing site for an award-winning 3D and interactive web studio. The experience is dominated by a continuously-rendered WebGL scene served by Three.js r158, layered behind an Astro-generated DOM and an extensive audio-reacti…",
+    "design_md": "../websites/lusion/design.md",
+    "sample": "html/lusion/index.html"
+  },
+  {
+    "slug": "makemepulse",
+    "name": "Make Me Pulse",
+    "category": "Interactive / 3D",
+    "description": "makemepulse is the marketing site of a Paris- and London-based digital creative studio that builds web platforms, immersive 3D / WebGL experiences, AR / VR pieces and branded games (the spin-off platform `play.makemepulse.com`). The site it…",
+    "design_md": "../websites/makemepulse/design.md",
+    "sample": "html/makemepulse/index.html"
+  },
+  {
+    "slug": "media-monks",
+    "name": "MediaMonks",
+    "category": "Design Agency",
+    "description": "media.monks.com is the global marketing site of **Monks** (formerly MediaMonks), the digital-monopoly subsidiary of S4 Capital. The page is a long-scroll Drupal 10.6.9 marketing site for a creative-and-tech agency: it sells services, showca…",
+    "design_md": "../websites/media-monks/design.md",
+    "sample": "html/media-monks/index.html"
+  },
+  {
+    "slug": "niccolomiranda",
+    "name": "Niccolò Miranda",
+    "category": "Portfolio",
+    "description": "The personal portfolio of Niccolò Miranda, a freelance digital art director / interactive designer / creative developer based in Amsterdam. The site is a single landing page built on Webflow, layered with two WebGL \"paper curtain\" shader ef…",
+    "design_md": "../websites/niccolomiranda/design.md",
+    "sample": "html/niccolomiranda/index.html"
+  },
+  {
+    "slug": "northkingdom",
+    "name": "North Kingdom",
+    "category": "Interactive / 3D",
+    "description": "North Kingdom is a Swedish creative agency that has positioned itself around the gaming industry. The site is a single-page-portfolio aesthetic: a full-viewport WebGL hero with a looping shield showreel, a tight grid of recent case studies,…",
+    "design_md": "../websites/northkingdom/design.md",
+    "sample": "html/northkingdom/index.html"
+  },
+  {
+    "slug": "obys",
+    "name": "Obys Agency",
+    "category": "Design Agency",
+    "description": "Obys.agency is the marketing site of Obys, a concept-driven design studio founded in 2018 by Olha Olianishyna and Viacheslav Olianishyn. The site itself is a portfolio piece: a single-page, full-viewport, hand-coded WebGL-driven experience …",
+    "design_md": "../websites/obys/design.md",
+    "sample": "html/obys/index.html"
+  },
+  {
+    "slug": "ouiwill",
+    "name": "Oui Will",
+    "category": "Design Agency",
+    "description": "Oui Will positions itself as a \"Digital. Brand. Accelerator.\" — a creative agency whose pitch is that good design drives measurable valuation. The site is a single-page-ish Web Component application that ships a flat black-on-white typograp…",
+    "design_md": "../websites/ouiwill/design.md",
+    "sample": "html/ouiwill/index.html"
+  },
+  {
+    "slug": "resn",
+    "name": "Resn",
+    "category": "Interactive / 3D",
+    "description": "Resn (resn.co.nz) is the public face of a New Zealand–based interactive studio. The site is a single, full-bleed WebGL \"drop\" experience rather than a conventional page: a black canvas, a small cluster of fixed round-corner shell buttons (D…",
+    "design_md": "../websites/resn/design.md",
+    "sample": "html/resn/index.html"
+  },
+  {
+    "slug": "sequence",
+    "name": "Sequence",
+    "category": "Web3 / Tools",
+    "description": "Sequence is the modular crypto-infrastructure platform that ships smart-contract wallets, 1-click cross-chain payments, and a multi-chain indexer behind a single developer API. The marketing site is a single-page Remix application rendered …",
+    "design_md": "../websites/sequence/design.md",
+    "sample": "html/sequence/index.html"
+  },
+  {
+    "slug": "siteinspire",
+    "name": "Siteinspire",
+    "category": "Web Design Gallery",
+    "description": "Siteinspire is a long-running, **curated gallery / index of the web's finest design and interactive work**, not a portfolio of its own. The single most important thing to know is that **the homepage is a directory**, not a product page: an …",
+    "design_md": "../websites/siteinspire/design.md",
+    "sample": "html/siteinspire/index.html"
+  },
+  {
+    "slug": "stinkstudios",
+    "name": "Stink Studios",
+    "category": "Design Agency",
+    "description": "Stink Studios is a globally-networked creative studio whose website reads as an opinionated, monochrome editorial portfolio. The visual language is strictly two-color (black-on-white in light mode, white-on-black in dark mode, with a flip-o…",
+    "design_md": "../websites/stinkstudios/design.md",
+    "sample": "html/stinkstudios/index.html"
+  },
+  {
+    "slug": "tendril",
+    "name": "Tendril",
+    "category": "Interactive / 3D",
+    "description": "Tendril is the public site of Tendril Studio, a Toronto- and São Paulo-based motion design and CGI shop whose reel includes campaigns for Louis Vuitton × F1, IBM z17, Figure humanoid robots, Hublot × Daniel Arsham, Alien: Earth, Riot Worlds…",
+    "design_md": "../websites/tendril/design.md",
+    "sample": "html/tendril/index.html"
+  },
+  {
+    "slug": "thefwa",
+    "name": "The FWA",
+    "category": "Web Design Gallery",
+    "description": "The FWA (Favourite Website Awards) is a long-running **gallery / index** of cutting-edge web design. Since 2000 it has collected one nominated site per day, a runner-up per month, and an overall winner per year. The site itself is not a CMS…",
+    "design_md": "../websites/thefwa/design.md",
+    "sample": "html/thefwa/index.html"
+  },
+  {
+    "slug": "toyfight",
+    "name": "ToyFight",
+    "category": "Design Agency",
+    "description": "ToyFight is the public site of ToyFight, a small creative studio based in the UK. It is a single-page-leaning marketing site built on Next.js (App Router) with a Prismic CMS behind it, and the entire visual identity is built around three cu…",
+    "design_md": "../websites/toyfight/design.md",
+    "sample": "html/toyfight/index.html"
+  },
+  {
+    "slug": "unit9",
+    "name": "Unit9",
+    "category": "Design Agency",
+    "description": "UNIT9 is a London-headquartered production studio whose public website functions as a portfolio storefront for film, digital, games, VR/AR, experiential and real-time VFX work. The visual language is restrained and editorial: black backgrou…",
+    "design_md": "../websites/unit9/design.md",
+    "sample": "html/unit9/index.html"
+  },
+  {
+    "slug": "wonderland",
+    "name": "Wonderland",
+    "category": "Design Agency",
+    "description": "WONDERLAND is the public website of **Wonderland**, an Amsterdam-based brand and digital studio whose pitch is \"creating meaningful value for people and the planet.\" The home page is a single-screen, full-bleed WebGL experience: a Three.js …",
+    "design_md": "../websites/wonderland/design.md",
+    "sample": "html/wonderland/index.html"
+  },
+  {
+    "slug": "zhenyary",
+    "name": "Zhenya Rynzhuk",
+    "category": "Portfolio",
+    "description": "`zhenyary.com` is the personal portfolio of Zhenya Rynzhuk, an award-winning art director who frames his work across product / visual design, mobile and web projects, branding, typography, and animations. The site is a single-page cinematic…",
+    "design_md": "../websites/zhenyary/design.md",
+    "sample": "html/zhenyary/index.html"
+  }
+]

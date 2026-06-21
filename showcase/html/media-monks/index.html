@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monks — sample</title>
+  <meta name="description" content="Faithful rebuild of the Monks (media.monks.com) homepage from design.md." />
+  <meta name="theme-color" content="#2D2D2D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&family=Caveat:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../css/media-monks/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============================================================ -->
+  <!-- 1. Primary nav (data-component="n1-navigation")              -->
+  <!-- ============================================================ -->
+  <header class="nav" data-component="n1-navigation" aria-label="Primary navigation" data-logo-animation="monks-launch.lottie">
+    <div class="nav__inner grid-gutter">
+      <a class="nav__logo" href="#" aria-label="Monks home">
+        <svg class="wordmark" viewBox="0 0 99 21" aria-hidden="true">
+          <use href="#wordmark-monks" />
+        </svg>
+      </a>
+
+      <nav class="nav__links" aria-label="Sections">
+        <a class="nav__link" href="#work">Work</a>
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#thinking">Thinking</a>
+        <a class="nav__link" href="#connect">Connect</a>
+      </nav>
+
+      <a class="cf-m1-button nav__cta" href="#connect" data-icon="arrow" data-hover-behaviour="move-icon">
+        <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+          <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 35 H56" />
+            <path d="M40 19 L56 35 L40 51" />
+          </svg>
+        </span>
+        <span class="cf-m1-button__label">Get in touch</span>
+      </a>
+
+      <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================ -->
+    <!-- 2. Hero (data-component="cf-a1-heading")                     -->
+    <!-- ============================================================ -->
+    <section class="hero" data-component="cf-a1-heading" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__video" role="img" aria-label="Background film placeholder">
+          <span class="hero__video-badge">idle-video placeholder</span>
+        </div>
+        <div class="hero__poster" role="img" aria-label="Long-form reel placeholder">
+          <span class="hero__poster-badge">full-video placeholder</span>
+        </div>
+        <div class="hero__letterbox hero__letterbox--top"></div>
+        <div class="hero__letterbox hero__letterbox--bottom"></div>
+      </div>
+
+      <div class="hero__inner grid-gutter">
+        <span class="hero__label fs-label" data-component="component-label">A creative &amp; tech collective</span>
+
+        <h1 id="hero-title" class="hero__title fs-display-l" data-split="words">
+          Sharpen your edge in a world that won't wait.
+        </h1>
+
+        <div class="hero__m" data-component="monk-logo" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="hero__m-outline">
+            <path d="M30 170 V60 L100 140 L170 60 V170" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" />
+          </svg>
+          <svg viewBox="0 0 200 200" class="hero__m-filled">
+            <path d="M30 170 V60 L100 140 L170 60 V170" fill="currentColor" />
+          </svg>
+        </div>
+
+        <p class="hero__tagline font-handwritten">
+          We design, build and ship the work that keeps the world's most ambitious brands
+          one step ahead of the next thing.
+        </p>
+
+        <div class="hero__cta">
+          <a class="cf-m1-button" href="#work" data-icon="arrow" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 35 H56" />
+                <path d="M40 19 L56 35 L40 51" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">Explore work</span>
+          </a>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#work" aria-label="Scroll to work">
+        <span class="hero__scroll-pill">
+          <span class="hero__scroll-arrow"></span>
+        </span>
+        <span class="fs-label">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. Tagline copy                                              -->
+    <!-- ============================================================ -->
+    <section class="tagline" aria-hidden="false">
+      <div class="grid-gutter tagline__inner">
+        <p class="tagline-copy tagline__copy" data-allow-outlines="true">
+          One collective, every discipline — production, media, data, engineering and design
+          working as a single team so the work moves at the speed of the audience.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. Featured work (c21-featured-content + c23-latest-work)    -->
+    <!-- ============================================================ -->
+    <section id="work" class="work" data-component="c21-featured-content" aria-labelledby="work-title">
+      <div class="grid-gutter">
+        <header class="o17-header-content" data-component="o17-header-content">
+          <div class="o17-header-content__row">
+            <span class="component-label fs-body-l">Featured work</span>
+            <h2 id="work-title" class="component-title fs-display-l" data-split="words">
+              Recent stories from the studio
+            </h2>
+          </div>
+          <p class="subtext fs-body-l">
+            A small slice of what shipped this quarter — brands re-shaping how people
+            shop, listen, watch and talk back.
+          </p>
+        </header>
+
+        <ul class="work__grid" role="list">
+          <li class="work__tile" data-component="c23-latest-work">
+            <a class="work__link" href="#case-orchestration">
+              <div class="cf-a3-image work__poster" aria-hidden="true">
+                <span class="work__poster-tile work__poster-tile--orchestration"></span>
+              </div>
+              <div class="work__meta">
+                <span class="fs-label work__cat">Marketing orchestration</span>
+                <h3 class="fs-display-s work__title">One brain, every channel</h3>
+                <span class="cf-m1-button work__more" data-icon="arrow" data-hover-behaviour="move-icon">
+                  <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 35 H56" />
+                      <path d="M40 19 L56 35 L40 51" />
+                    </svg>
+                  </span>
+                  <span class="cf-m1-button__label">Read more</span>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <li class="work__tile" data-component="c23-latest-work">
+            <a class="work__link" href="#case-hatch">
+              <div class="cf-a3-image work__poster" aria-hidden="true">
+                <span class="work__poster-tile work__poster-tile--hatch"></span>
+              </div>
+              <div class="work__meta">
+                <span class="fs-label work__cat">GlassBox × Hatch</span>
+                <h3 class="fs-display-s work__title">A new lens on connected TV</h3>
+                <span class="cf-m1-button work__more" data-icon="arrow" data-hover-behaviour="move-icon">
+                  <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 35 H56" />
+                      <path d="M40 19 L56 35 L40 51" />
+                    </svg>
+                  </span>
+                  <span class="cf-m1-button__label">Read more</span>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <li class="work__tile" data-component="c23-latest-work">
+            <a class="work__link" href="#case-mustard">
+              <div class="cf-a3-image work__poster" aria-hidden="true">
+                <span class="work__poster-tile work__poster-tile--mustard"></span>
+              </div>
+              <div class="work__meta">
+                <span class="fs-label work__cat">Real-time brand</span>
+                <h3 class="fs-display-s work__title">Mustard, on the beat</h3>
+                <span class="cf-m1-button work__more" data-icon="arrow" data-hover-behaviour="move-icon">
+                  <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 35 H56" />
+                      <path d="M40 19 L56 35 L40 51" />
+                    </svg>
+                  </span>
+                  <span class="cf-m1-button__label">Read more</span>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <li class="work__tile" data-component="c23-latest-work">
+            <a class="work__link" href="#case-transformation">
+              <div class="cf-a3-image work__poster" aria-hidden="true">
+                <span class="work__poster-tile work__poster-tile--transformation"></span>
+              </div>
+              <div class="work__meta">
+                <span class="fs-label work__cat">Tech transformation</span>
+                <h3 class="fs-display-s work__title">A platform that ships with the team</h3>
+                <span class="cf-m1-button work__more" data-icon="arrow" data-hover-behaviour="move-icon">
+                  <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 35 H56" />
+                      <path d="M40 19 L56 35 L40 51" />
+                    </svg>
+                  </span>
+                  <span class="cf-m1-button__label">Read more</span>
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5. Monk-quote (c11c-monk-quote) — circular video mask        -->
+    <!-- ============================================================ -->
+    <section class="quote" data-component="c11c-monk-quote" aria-labelledby="quote-title">
+      <div class="grid-gutter quote__grid">
+        <figure class="quote__media" data-component="o22-monk-quote-video">
+          <div class="video-mask" role="img" aria-label="Leadership reel placeholder">
+            <span class="video-mask__badge">idle-video placeholder</span>
+            <button class="m23-progress-button" type="button" aria-label="Play leadership reel">
+              <svg viewBox="0 0 100 100" class="progress" aria-hidden="true">
+                <circle class="total" cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2" opacity="0.2" />
+                <circle class="time" cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-dasharray="289.03" stroke-dashoffset="289.03" transform="rotate(-90 50 50)" />
+              </svg>
+              <span class="m23-progress-button__icon" aria-hidden="true">
+                <svg viewBox="0 0 70 70"><polygon points="26,18 26,52 56,35" fill="currentColor" /></svg>
+              </span>
+            </button>
+          </div>
+        </figure>
+
+        <div class="quote__body">
+          <span class="component-label fs-body-l">A note from the studio</span>
+          <blockquote class="quote__text" id="quote-title">
+            <p data-allow-outlines="true" class="fs-display-m">
+              The work we make is the work we'd want to be inside of — fast, surprising,
+              and built to last more than one campaign.
+            </p>
+          </blockquote>
+          <figcaption class="quote__cite">
+            <span class="quote__name">A. Sample</span>
+            <span class="quote__role">Head of creative operations</span>
+          </figcaption>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 6. Services / bundle grid (c13-bundle)                       -->
+    <!-- ============================================================ -->
+    <section id="services" class="services" data-component="c13-bundle" aria-labelledby="services-title">
+      <div class="grid-gutter">
+        <header class="o17-header-content">
+          <div class="o17-header-content__row">
+            <span class="component-label fs-body-l">What we do</span>
+            <h2 id="services-title" class="component-title fs-display-m" data-split="words">
+              A full-stack studio, in one room
+            </h2>
+          </div>
+        </header>
+
+        <ul class="services__grid" role="list">
+          <li class="services__card c38-text-and-visual" data-tone="light">
+            <span class="services__num fs-label">01</span>
+            <h3 class="fs-display-s">Brand &amp; experience</h3>
+            <p class="fs-body-m">Identity systems, motion language and the small details that turn a brand into a place.</p>
+            <div class="services__visual services__visual--brand" aria-hidden="true"></div>
+          </li>
+          <li class="services__card c38-text-and-visual" data-tone="light">
+            <span class="services__num fs-label">02</span>
+            <h3 class="fs-display-s">Content &amp; production</h3>
+            <p class="fs-body-m">From a one-shot social clip to a global rollout — a production arm that doesn't blink at scale.</p>
+            <div class="services__visual services__visual--content" aria-hidden="true"></div>
+          </li>
+          <li class="services__card c38-text-and-visual" data-tone="light">
+            <span class="services__num fs-label">03</span>
+            <h3 class="fs-display-s">Media &amp; measurement</h3>
+            <p class="fs-body-m">Planning, buying and a measurement layer that closes the loop between the brief and the result.</p>
+            <div class="services__visual services__visual--media" aria-hidden="true"></div>
+          </li>
+          <li class="services__card c38-text-and-visual" data-tone="light">
+            <span class="services__num fs-label">04</span>
+            <h3 class="fs-display-s">Engineering &amp; data</h3>
+            <p class="fs-body-m">The platforms, pipelines and models that keep the work moving once it ships.</p>
+            <div class="services__visual services__visual--data" aria-hidden="true"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 7. Content grid (c22-content-grid) — case-study thumbs       -->
+    <!-- ============================================================ -->
+    <section class="cases" data-component="c22-content-grid" aria-labelledby="cases-title">
+      <div class="grid-gutter">
+        <header class="o17-header-content">
+          <div class="o17-header-content__row">
+            <span class="component-label fs-body-l">Latest work</span>
+            <h2 id="cases-title" class="component-title fs-display-m" data-split="words">
+              A few things that shipped lately
+            </h2>
+          </div>
+        </header>
+
+        <ul class="cases__grid" role="list">
+          <li class="cases__tile cases__tile--wide">
+            <a class="cases__link" href="#case-sms">
+              <div class="cf-a3-image cases__poster" aria-hidden="true">
+                <span class="cases__poster-tile cases__poster-tile--sms"></span>
+              </div>
+              <div class="cases__overlay">
+                <span class="fs-label">CRM</span>
+                <h3 class="fs-display-s">Personalization that texts back</h3>
+              </div>
+            </a>
+          </li>
+          <li class="cases__tile">
+            <a class="cases__link" href="#case-dna">
+              <div class="cf-a3-image cases__poster" aria-hidden="true">
+                <span class="cases__poster-tile cases__poster-tile--dna"></span>
+              </div>
+              <div class="cases__overlay">
+                <span class="fs-label">Brand</span>
+                <h3 class="fs-display-s">A colourful strand of identity</h3>
+              </div>
+            </a>
+          </li>
+          <li class="cases__tile">
+            <a class="cases__link" href="#case-screen">
+              <div class="cf-a3-image cases__poster" aria-hidden="true">
+                <span class="cases__poster-tile cases__poster-tile--screen"></span>
+              </div>
+              <div class="cases__overlay">
+                <span class="fs-label">Product</span>
+                <h3 class="fs-display-s">A control room for one</h3>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 8. Featured thoughts (c26-featured-thoughts)                 -->
+    <!-- ============================================================ -->
+    <section id="thinking" class="thoughts" data-component="c26-featured-thoughts" aria-labelledby="thoughts-title">
+      <div class="grid-gutter">
+        <header class="o17-header-content">
+          <div class="o17-header-content__row">
+            <span class="component-label fs-body-l">Thinking</span>
+            <h2 id="thoughts-title" class="component-title fs-display-m" data-split="words">
+              Notes from the studio floor
+            </h2>
+          </div>
+          <a class="cf-m1-button thoughts__all" href="#thinking-all" data-icon="arrow" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 35 H56" />
+                <path d="M40 19 L56 35 L40 51" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">All articles</span>
+          </a>
+        </header>
+
+        <ul class="thoughts__grid" role="list">
+          <li class="thoughts__card">
+            <a class="thoughts__link" href="#post-1">
+              <div class="cf-a3-image thoughts__poster" aria-hidden="true">
+                <span class="thoughts__poster-tile thoughts__poster-tile--1"></span>
+              </div>
+              <div class="thoughts__meta">
+                <span class="fs-label">Field notes</span>
+                <h3 class="fs-display-s">The short, busy life of an attention economy</h3>
+                <span class="fs-body-m">Why the next five years of marketing will be written in milliseconds, not minutes.</span>
+              </div>
+            </a>
+          </li>
+          <li class="thoughts__card">
+            <a class="thoughts__link" href="#post-2">
+              <div class="cf-a3-image thoughts__poster" aria-hidden="true">
+                <span class="thoughts__poster-tile thoughts__poster-tile--2"></span>
+              </div>
+              <div class="thoughts__meta">
+                <span class="fs-label">Engineering</span>
+                <h3 class="fs-display-s">Shipping the model, not just the demo</h3>
+                <span class="fs-body-m">A practical look at putting machine-learning into a production system without losing the team.</span>
+              </div>
+            </a>
+          </li>
+          <li class="thoughts__card">
+            <a class="thoughts__link" href="#post-3">
+              <div class="cf-a3-image thoughts__poster" aria-hidden="true">
+                <span class="thoughts__poster-tile thoughts__poster-tile--3"></span>
+              </div>
+              <div class="thoughts__meta">
+                <span class="fs-label">Design</span>
+                <h3 class="fs-display-s">A motion language for the next ten brands</h3>
+                <span class="fs-body-m">How a single set of timings and easings can hold an entire identity together.</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 9. Monk contact (c16-monk-contact)                           -->
+    <!-- ============================================================ -->
+    <section id="connect" class="contact" data-component="c16-monk-contact" aria-labelledby="contact-title">
+      <div class="grid-gutter contact__inner">
+        <span class="component-label fs-body-l">Start something</span>
+        <h2 id="contact-title" class="fs-display-l contact__title" data-split="words">
+          Have a brief, a hunch, or a hard problem?
+        </h2>
+        <div class="contact__cta">
+          <a class="cf-m1-button" href="mailto:hello@example.com" data-icon="arrow" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 35 H56" />
+                <path d="M40 19 L56 35 L40 51" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">Connect with us</span>
+          </a>
+          <a class="cf-m1-button contact__secondary" href="#work" data-icon="arrow" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 35 H56" />
+                <path d="M40 19 L56 35 L40 51" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">See the work</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 10. Newsletter signup (c29-newsletter-signup)                -->
+    <!-- ============================================================ -->
+    <section class="newsletter" data-component="c29-newsletter-signup" data-animation="newsletter.lottie" aria-labelledby="newsletter-title">
+      <div class="grid-gutter newsletter__inner">
+        <div class="newsletter__copy">
+          <span class="component-label fs-body-l">Newsletter</span>
+          <h2 id="newsletter-title" class="fs-display-m" data-split="words">
+            A short, infrequent dispatch
+          </h2>
+          <p class="fs-body-m">
+            One letter a month. New work, sharp opinions, and the occasional
+            field note from inside a brief.
+          </p>
+
+          <form class="newsletter__form" action="#thanks" novalidate>
+            <label class="cl-m2-input-field">
+              <span class="input-label fs-label">Email address</span>
+              <span class="input-field-wrapper">
+                <input type="email" name="email" required autocomplete="email" placeholder="you@studio.com" />
+              </span>
+            </label>
+            <button class="cf-m1-button newsletter__submit" type="submit" data-icon="arrow" data-hover-behaviour="move-icon">
+              <span class="cf-a2-icon" data-name="arrow" aria-hidden="true">
+                <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 35 H56" />
+                  <path d="M40 19 L56 35 L40 51" />
+                </svg>
+              </span>
+              <span class="cf-m1-button__label">Subscribe</span>
+            </button>
+          </form>
+        </div>
+
+        <figure class="newsletter__art" aria-hidden="true">
+          <div class="newsletter__art-canvas">
+            <span class="newsletter__art-label">newsletter.lottie placeholder</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- 11. Footer (n2-footer)                                         -->
+  <!-- ============================================================ -->
+  <footer class="footer" data-component="n2-footer">
+    <div class="grid-gutter footer__inner">
+      <div class="footer__brand">
+        <svg class="wordmark wordmark--dark" viewBox="0 0 99 21" aria-hidden="true">
+          <use href="#wordmark-monks" />
+        </svg>
+        <p class="fs-label copyright-copy">© 2026 Sample rebuild — for design-spec proof only</p>
+      </div>
+
+      <nav class="navigation-links" aria-label="Footer navigation">
+        <ul class="footer__links" role="list">
+          <li><a class="fs-label" href="#work">Work</a></li>
+          <li><a class="fs-label" href="#services">Services</a></li>
+          <li><a class="fs-label" href="#thinking">Thinking</a></li>
+          <li><a class="fs-label" href="#connect">Connect</a></li>
+          <li><a class="fs-label" href="#privacy">Privacy</a></li>
+        </ul>
+      </nav>
+
+      <ul class="footer__social" role="list" data-component="cf-m1-button-group">
+        <li>
+          <a class="cf-m1-button footer__social-btn" href="#" aria-label="Instagram" data-icon="instagram" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="instagram" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="14" y="14" width="42" height="42" rx="10" />
+                <circle cx="35" cy="35" r="10" />
+                <circle cx="49" cy="21" r="2.2" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a class="cf-m1-button footer__social-btn" href="#" aria-label="LinkedIn" data-icon="linkedin" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="linkedin" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="currentColor">
+                <rect x="14" y="26" width="9" height="30" />
+                <circle cx="18.5" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.5" />
+                <path d="M30 26 H39 V32 C41 27 46 25 51 25 C58 25 60 30 60 38 V56 H51 V40 C51 36 49 34 46 34 C42 34 39 37 39 41 V56 H30 Z" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a class="cf-m1-button footer__social-btn" href="#" aria-label="Twitter" data-icon="twitter" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="twitter" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="currentColor">
+                <path d="M18 16 H30 L40 32 L52 16 H58 L42 36 L60 54 H48 L36 36 L24 54 H18 L36 32 Z" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a class="cf-m1-button footer__social-btn" href="#" aria-label="TikTok" data-icon="tiktok" data-hover-behaviour="move-icon">
+            <span class="cf-a2-icon" data-name="tiktok" aria-hidden="true">
+              <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M40 14 V46 C40 52 35 56 29 56 C23 56 18 52 18 46 C18 40 23 36 29 36" />
+                <path d="M40 14 C42 22 50 28 58 28" />
+              </svg>
+            </span>
+            <span class="cf-m1-button__label">TikTok</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- shared symbol: monks wordmark with the period dot -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="wordmark-monks" viewBox="0 0 99 21">
+      <g fill="currentColor">
+        <path d="M2 3 H6 V11 L13 3 H18 L10 11.5 L19 18 H13.5 L6 12 V18 H2 Z" />
+        <path d="M22 3 H26 V11.5 L31 3 H36 L29.5 12.5 L36.5 18 H31 L26 13 V18 H22 Z" />
+        <path d="M40 3 H49 C53 3 55 5 55 8 C55 10 54 11.5 52 12.5 L55.5 18 H51 L48 13 H44 V18 H40 Z M44 7 V10 H48.5 C50 10 50.5 9.5 50.5 8.5 C50.5 7.5 50 7 48.5 7 Z" />
+        <path d="M58 3 H70 V7 H62 V9 H69 V12.5 H62 V14.5 H70 V18 H58 Z" />
+        <path d="M73 3 H77 V14.5 H84 V18 H73 Z" />
+        <circle cx="92" cy="17" r="3.2" />
+      </g>
+    </symbol>
+  </svg>
+
+  <script src="../../js/media-monks/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>North Kingdom — Sample</title>
+  <meta name="description" content="Sample implementation of the North Kingdom design language. North Kingdom is a Swedish creative agency. Placeholder content." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' d='M16 1l13 4v11c0 8-6 13-13 15C9 29 3 24 3 16V5l13-4z'/%3E%3Cpath fill='%23050311' d='M14 9h4l-1 5h3l-5 9 1-6h-3l1-8z'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../../css/northkingdom/style.css" />
+</head>
+<body>
+
+  <!-- Initial page-load overlay — fades once JS reports ready -->
+  <div class="page-overlay" id="pageOverlay" aria-hidden="true"></div>
+
+  <!-- =========== HEADER (sticky, transparent over hero) =========== -->
+  <header class="header" id="header" data-is-visible="true">
+    <a class="header__logo" href="#" aria-label="North Kingdom home">
+      <!-- Shield logo, 66x86 viewBox per design.md §Iconography -->
+      <svg viewBox="0 0 66 86" aria-hidden="true">
+        <path d="M33 1l32 9v25c0 23-14 41-32 50C15 76 1 58 1 35V10L33 1z" fill="currentColor"/>
+        <path d="M28 23h10l-3 14h8L31 60l3-16h-8l2-21z" fill="#050311"/>
+      </svg>
+    </a>
+    <nav class="header__nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="header__menu-btn" type="button" aria-label="Open menu" data-menu-open>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <line x1="3" y1="8"  x2="21" y2="8" />
+        <line x1="3" y1="16" x2="21" y2="16" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- =========== FULLSCREEN MENU (modal overlay) =========== -->
+  <div class="menu" id="menu" data-is-menu-open="false" aria-hidden="true">
+    <div class="menu__overlay" data-menu-close></div>
+    <div class="menu__content" role="dialog" aria-label="Site menu">
+      <button class="menu__close" type="button" aria-label="Close menu" data-menu-close>
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.5" fill="none" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/>
+          <line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+      <a class="menu__item" href="#work">
+        <svg class="menu__item-arrow" viewBox="0 0 28 49" fill="currentColor" aria-hidden="true">
+          <path d="M14 0v21h14v7H14v21H7V28H0v-7h7V0z"/>
+        </svg>
+        Work
+      </a>
+      <a class="menu__item" href="#about">
+        <svg class="menu__item-arrow" viewBox="0 0 28 49" fill="currentColor" aria-hidden="true">
+          <path d="M14 0v21h14v7H14v21H7V28H0v-7h7V0z"/>
+        </svg>
+        About
+      </a>
+      <a class="menu__item" href="#careers">
+        <svg class="menu__item-arrow" viewBox="0 0 28 49" fill="currentColor" aria-hidden="true">
+          <path d="M14 0v21h14v7H14v21H7V28H0v-7h7V0z"/>
+        </svg>
+        Careers
+      </a>
+      <a class="menu__item" href="#contact">
+        <svg class="menu__item-arrow" viewBox="0 0 28 49" fill="currentColor" aria-hidden="true">
+          <path d="M14 0v21h14v7H14v21H7V28H0v-7h7V0z"/>
+        </svg>
+        Contact
+      </a>
+    </div>
+  </div>
+
+  <main class="layout">
+
+    <!-- =========== HOME HERO (100vh, centered display title) =========== -->
+    <section class="hero" id="top">
+      <div class="hero__canvas" aria-hidden="true">
+        <div class="hero__shield"></div>
+        <svg class="hero__shield-mark" viewBox="0 0 66 86" aria-hidden="true">
+          <path d="M33 1l32 9v25c0 23-14 41-32 50C15 76 1 58 1 35V10L33 1z" fill="rgba(255,255,255,0.9)"/>
+          <path d="M28 23h10l-3 14h8L31 60l3-16h-8l2-21z" fill="#050311"/>
+        </svg>
+      </div>
+
+      <div class="hero__title-wrap">
+        <h1 class="hero__title" id="heroTitle">North&nbsp;Kingdom</h1>
+      </div>
+      <p class="hero__mobile-title">North Kingdom</p>
+
+      <button class="play-btn" type="button" aria-label="Play showreel" data-play-showreel>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 3v18l16-9L5 3z"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- =========== FEATURED CASES (2-col grid, 8 cards) =========== -->
+    <section class="cases" id="work" aria-labelledby="casesHeading">
+      <h2 class="sr-only" id="casesHeading">Selected work</h2>
+      <div class="cases__grid">
+
+        <article class="case-card" data-tone="0">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">AFM</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Armed Forces Museum</h3>
+            <p class="case-card__project">A virtual exploration of naval history</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="1">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">AB</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Absolut</h3>
+            <p class="case-card__project">A multi-sensory brand world</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="2">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">EA</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Electronic Arts</h3>
+            <p class="case-card__project">A highlighter for live gameplay moments</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="3">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">SC</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Supercell</h3>
+            <p class="case-card__project">A creator partnership platform</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="4">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">SC</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Supercell</h3>
+            <p class="case-card__project">A live-ops dashboard for global teams</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="5">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">KT</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Kotex</h3>
+            <p class="case-card__project">A period-positive education experience</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="6">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">RG</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">Riot Games</h3>
+            <p class="case-card__project">A community-driven esports identity</p>
+          </div>
+        </article>
+
+        <article class="case-card" data-tone="7">
+          <div class="case-card__thumb-wrap">
+            <div class="case-card__thumb" aria-hidden="true">10C</div>
+            <div class="case-card__glow" aria-hidden="true"></div>
+          </div>
+          <div class="case-card__content">
+            <h3 class="case-card__client">10 Chambers</h3>
+            <p class="case-card__project">A launch experience for a co-op thriller</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========== FEATURED VIDEO (20-year showreel) =========== -->
+    <section class="featured-video" aria-labelledby="showreelTitle">
+      <div class="featured-video__media" aria-hidden="true"></div>
+      <div class="featured-video__overlay">
+        <h2 class="featured-video__title" id="showreelTitle">
+          <span class="reveal-line"><span>Twenty years</span></span>
+          <span class="reveal-line"><span>of building worlds.</span></span>
+        </h2>
+        <p class="featured-video__caption">Showreel · 2026</p>
+        <div class="featured-video__text-block">
+          <p class="featured-video__body">A two-decade retrospective of immersive work for the world's most ambitious gaming and entertainment brands.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== TEXT BLOCK #1 (dark, single column) =========== -->
+    <section class="text-block" id="about">
+      <p class="text-block__body" data-reveal>
+        <span class="reveal-line"><span>North Kingdom is the creative agency</span></span>
+        <span class="reveal-line"><span>for the world of gaming.</span></span>
+        <span class="reveal-line"><span>We connect players and brands through</span></span>
+        <span class="reveal-line"><span>unforgettable experiences and engaging platforms.</span></span>
+      </p>
+    </section>
+
+    <!-- =========== IMAGE MARQUEE (infinite, sticky) =========== -->
+    <section class="marquee" aria-label="Selected clients">
+      <div class="marquee__sticky">
+        <div class="marquee__row">
+          <div class="marquee__track">
+            <div class="marquee__item">Riot&nbsp;Games</div>
+            <div class="marquee__item">Supercell</div>
+            <div class="marquee__item">Netflix</div>
+            <div class="marquee__item">Disney</div>
+            <div class="marquee__item">Meta</div>
+            <div class="marquee__item">Google</div>
+            <div class="marquee__item">EA</div>
+            <div class="marquee__item">Embark</div>
+            <div class="marquee__item">Mojang</div>
+            <div class="marquee__item">Lego</div>
+            <div class="marquee__item">Beats</div>
+            <div class="marquee__item">On</div>
+          </div>
+          <div class="marquee__track" aria-hidden="true">
+            <div class="marquee__item">Riot&nbsp;Games</div>
+            <div class="marquee__item">Supercell</div>
+            <div class="marquee__item">Netflix</div>
+            <div class="marquee__item">Disney</div>
+            <div class="marquee__item">Meta</div>
+            <div class="marquee__item">Google</div>
+            <div class="marquee__item">EA</div>
+            <div class="marquee__item">Embark</div>
+            <div class="marquee__item">Mojang</div>
+            <div class="marquee__item">Lego</div>
+            <div class="marquee__item">Beats</div>
+            <div class="marquee__item">On</div>
+          </div>
+        </div>
+        <div class="marquee__row">
+          <div class="marquee__track">
+            <div class="marquee__item">Absolut</div>
+            <div class="marquee__item">Kotex</div>
+            <div class="marquee__item">10&nbsp;Chambers</div>
+            <div class="marquee__item">Ubisoft</div>
+            <div class="marquee__item">Bandai</div>
+            <div class="marquee__item">Spotify</div>
+            <div class="marquee__item">HBO</div>
+            <div class="marquee__item">Niantic</div>
+            <div class="marquee__item">Capcom</div>
+            <div class="marquee__item">Wargaming</div>
+            <div class="marquee__item">Tonic</div>
+            <div class="marquee__item">Rare</div>
+          </div>
+          <div class="marquee__track" aria-hidden="true">
+            <div class="marquee__item">Absolut</div>
+            <div class="marquee__item">Kotex</div>
+            <div class="marquee__item">10&nbsp;Chambers</div>
+            <div class="marquee__item">Ubisoft</div>
+            <div class="marquee__item">Bandai</div>
+            <div class="marquee__item">Spotify</div>
+            <div class="marquee__item">HBO</div>
+            <div class="marquee__item">Niantic</div>
+            <div class="marquee__item">Capcom</div>
+            <div class="marquee__item">Wargaming</div>
+            <div class="marquee__item">Tonic</div>
+            <div class="marquee__item">Rare</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== TEXT BLOCK #2 (light, two-column) =========== -->
+    <section class="text-block text-block--light" id="approach" aria-labelledby="approachHeading">
+      <h2 class="section-heading text-block__heading" id="approachHeading">
+        <span class="reveal-line"><span>Creativity &amp; Innovation</span></span>
+        <span class="reveal-line"><span>since 2003</span></span>
+      </h2>
+      <div class="text-block__grid">
+        <div class="text-block__left">
+          <p class="text-block__body" data-reveal>
+            <span class="reveal-line"><span>We've worked with clients big and small,</span></span>
+            <span class="reveal-line"><span>all of them leaders in their industries.</span></span>
+          </p>
+        </div>
+        <div class="text-block__right" data-reveal>
+          <p class="text-block__body">
+            <span class="reveal-line"><span>With over twenty years of expertise,</span></span>
+            <span class="reveal-line"><span>we blend storytelling, design, and technology</span></span>
+            <span class="reveal-line"><span>to craft captivating gamified experiences.</span></span>
+            <span class="reveal-line"><span>Our multidisciplinary approach ensures every</span></span>
+            <span class="reveal-line"><span>interaction leaves a powerful and lasting impression.</span></span>
+          </p>
+          <a class="text-block__link" href="#about">Read more →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== AWARDS / CLIENTS ROW =========== -->
+    <section class="awards" id="careers" aria-labelledby="awardsHeading">
+      <h2 class="sr-only" id="awardsHeading">Recognition</h2>
+      <p class="awards__caption">Recognition · Awards · 2003 — 2026</p>
+      <div class="awards__row">
+        <div class="awards__cell">Cannes Lions</div>
+        <div class="awards__cell">D&amp;AD</div>
+        <div class="awards__cell">Webby</div>
+        <div class="awards__cell">FWA</div>
+        <div class="awards__cell">Lovie</div>
+        <div class="awards__cell">Effie</div>
+        <div class="awards__cell">Clio</div>
+        <div class="awards__cell">ADC</div>
+      </div>
+    </section>
+
+    <!-- =========== CONTACT STRIP =========== -->
+    <section class="contact-strip" id="contact">
+      <a class="contact-strip__email" href="mailto:hello@example.com">hello@nk.example</a>
+      <p class="contact-strip__caption">Skellefteå · Stockholm · Tallinn</p>
+    </section>
+
+  </main>
+
+  <!-- =========== FOOTER (sticky bottom, large wordmark) =========== -->
+  <footer class="footer" id="footer">
+    <div class="footer__wordmark" aria-hidden="true">NORTH&nbsp;KINGDOM</div>
+    <div class="footer__row">
+      <span>A member of the NoA family</span>
+      <button class="footer__cta" type="button" data-scroll-top aria-label="Back to top">
+        ↑ Back to north
+        <span class="footer__cta-arrow" id="footerArrow" aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../../js/northkingdom/script.js" defer></script>
+</body>
+</html>

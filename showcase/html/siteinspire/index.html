@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Siteinspire — A gallery of the web's finest work</title>
+  <meta name="description" content="A curated, regularly updated index of well-crafted websites and interactive work." />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="../../css/siteinspire/style.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="portal-host" aria-hidden="true"></div>
+  <next-route-announcer style="position: absolute;" aria-hidden="true"></next-route-announcer>
+
+  <header class="site-header" data-testid="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo-link" aria-label="Siteinspire home">
+        <span class="logo-circle" aria-hidden="true"></span>
+        <span class="wordmark" aria-hidden="true">
+          <svg viewBox="0 0 280 58" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Siteinspire">
+            <title>Siteinspire</title>
+            <g fill="currentColor">
+              <path d="M14 6h6v46h-6z" />
+              <path d="M28 18h5l1 4c2-3 5-5 9-5 6 0 10 4 10 11v24h-6V30c0-4-2-7-6-7s-7 3-7 8v21h-6V18z" />
+              <path d="M62 32c0-9 6-15 14-15s13 5 13 13v3H68c.5 4 3 7 8 7 3 0 6-1 7-3l4 3c-2 3-6 5-11 5-9 0-14-6-14-13zm6-3h15c-.5-4-3-6-7-6s-7 2-8 6z" />
+              <path d="M97 32c0-9 6-15 14-15 7 0 12 4 12 11v24h-6v-4c-2 3-5 5-9 5-7 0-12-5-12-12s5-12 13-12c4 0 7 1 8 3v-3c0-4-3-7-7-7-3 0-6 1-7 3l-6-3zm6 8c0 4 3 7 7 7s8-3 8-7-3-7-8-7-7 3-7 7z" />
+              <path d="M134 18h5l1 4c2-3 5-5 9-5 6 0 10 4 10 11v24h-6V30c0-4-2-7-6-7s-7 3-7 8v21h-6V18z" />
+              <path d="M170 18h6v4l1-1c2-2 5-4 9-4l-1 6c-5 0-9 3-9 9v20h-6V18z" />
+              <path d="M188 32c0-9 6-15 14-15s14 6 14 15-6 15-14 15-14-6-14-15zm6 0c0 6 3 10 8 10s8-4 8-10-3-10-8-10-8 4-8 10z" />
+              <path d="M225 6h6v14c2-2 5-3 8-3 8 0 14 6 14 15s-6 15-14 15c-3 0-6-1-8-3v3h-6V6zm6 26c0 6 3 10 8 10s8-4 8-10-3-10-8-10-8 4-8 10z" />
+            </g>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main">
+        <a href="/websites" class="nav-pill">Websites</a>
+        <a href="/profiles" class="nav-pill">Profiles</a>
+        <a href="/about" class="nav-pill">About</a>
+        <button type="button" class="nav-pill" aria-haspopup="dialog" aria-controls="subscribe-dialog">Subscribe</button>
+
+        <form class="search-form" role="search" action="/search">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <label for="site-search" class="visually-hidden">Search</label>
+          <input id="site-search" name="query" type="search" class="search-input" placeholder="Search sites" autocomplete="off" />
+        </form>
+      </nav>
+
+      <a href="/signin" class="signin-btn" data-testid="signin-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="18" cy="15" r="3"></circle>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M2 21a7 7 0 0 1 14 0"></path>
+        </svg>
+        <span>Sign In</span>
+      </a>
+
+      <button type="button" class="mobile-menu" aria-label="Open menu" data-mobile-menu>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         Hero / Slideshow
+         ============================================================ -->
+    <section class="hero" aria-label="Featured sites">
+      <h1 class="hero-title">A showcase of the web's finest design + talent</h1>
+
+      <div class="slideshow" data-slideshow data-slide-count="6" data-active-index="0">
+        <div class="slideshow-track" data-slideshow-track>
+          <article class="slide" aria-roledescription="slide" aria-label="Slide 1 of 6">
+            <div class="slide-frame">
+              <div class="slide-thumb placeholder-thumb" data-tone="1" aria-label="Project Aurora"></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="Slide 2 of 6">
+            <div class="slide-frame">
+              <div class="slide-thumb placeholder-thumb" data-tone="2" aria-label="Studio Helix"></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="Slide 3 of 6">
+            <div class="slide-frame">
+              <div class="slide-thumb placeholder-thumb" data-tone="3" aria-label="Field Notes Folio"></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="Slide 4 of 6">
+            <div class="slide-frame">
+              <div class="slide-thumb placeholder-thumb" data-tone="4" aria-label="Polaris Editorial"></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="Slide 5 of 6">
+            <div class="slide-frame">
+              <div class="slide-thumb placeholder-thumb" data-tone="5" aria-label="Atlas Type Foundry"></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="Slide 6 of 6">
+            <div class="slide-frame">
+              <div class="slide-thumb placeholder-thumb" data-tone="6" aria-label="Halftone Bureau"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="slideshow-controls">
+          <div class="slideshow-dots" role="tablist" aria-label="Slideshow">
+            <button class="dot is-active" type="button" data-slide-go="0" aria-label="Go to slide 1"></button>
+            <button class="dot" type="button" data-slide-go="1" aria-label="Go to slide 2"></button>
+            <button class="dot" type="button" data-slide-go="2" aria-label="Go to slide 3"></button>
+            <button class="dot" type="button" data-slide-go="3" aria-label="Go to slide 4"></button>
+            <button class="dot" type="button" data-slide-go="4" aria-label="Go to slide 5"></button>
+            <button class="dot" type="button" data-slide-go="5" aria-label="Go to slide 6"></button>
+          </div>
+          <a class="slideshow-caption" href="#">Project Aurora</a>
+          <div class="slideshow-nav">
+            <button class="slideshow-btn" type="button" data-slide-action="prev" aria-label="Previous slide">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="slideshow-btn" type="button" data-slide-action="next" aria-label="Next slide">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Filter (5 tabs, 5 lists)
+         ============================================================ -->
+    <section class="filter" data-filter aria-label="Category filter">
+      <div class="filter-inner">
+        <div class="filter-tabs" role="tablist" aria-label="Filter categories">
+          <button class="filter-tab" type="button" role="tab" data-filter-tab="popular" aria-selected="true" aria-controls="filter-panel-popular" id="filter-tab-popular">Popular Categories</button>
+          <button class="filter-tab" type="button" role="tab" data-filter-tab="styles" aria-selected="false" aria-controls="filter-panel-styles" id="filter-tab-styles" tabindex="-1">Styles</button>
+          <button class="filter-tab" type="button" role="tab" data-filter-tab="types" aria-selected="false" aria-controls="filter-panel-types" id="filter-tab-types" tabindex="-1">Types</button>
+          <button class="filter-tab" type="button" role="tab" data-filter-tab="subjects" aria-selected="false" aria-controls="filter-panel-subjects" id="filter-tab-subjects" tabindex="-1">Subjects</button>
+          <button class="filter-tab" type="button" role="tab" data-filter-tab="platforms" aria-selected="false" aria-controls="filter-panel-platforms" id="filter-tab-platforms" tabindex="-1">Platforms</button>
+        </div>
+
+        <button type="button" class="filter-toggle" data-filter-toggle aria-label="Collapse filter" aria-expanded="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <polyline points="6 15 12 9 18 15"></polyline>
+          </svg>
+        </button>
+
+        <div class="filter-panels" data-filter-panels>
+          <div class="filter-panel is-active" role="tabpanel" id="filter-panel-popular" aria-labelledby="filter-tab-popular">
+            <div class="filter-list-wrap">
+              <ul class="filter-list">
+                <li><a class="filter-link" href="#">Big Type <span class="count">2,343</span></a></li>
+                <li><a class="filter-link" href="#">Use of Animation <span class="count">1,872</span></a></li>
+                <li><a class="filter-link" href="#">Minimal <span class="count">1,540</span></a></li>
+                <li><a class="filter-link" href="#">Unusual Layout <span class="count">987</span></a></li>
+                <li><a class="filter-link" href="#">Horizontal Layout <span class="count">621</span></a></li>
+                <li><a class="filter-link" href="#">E-Commerce <span class="count">498</span></a></li>
+                <li><a class="filter-link" href="#">Web &amp; Interactive Design <span class="count">412</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-panel" role="tabpanel" id="filter-panel-styles" aria-labelledby="filter-tab-styles" hidden>
+            <div class="filter-list-wrap">
+              <ul class="filter-list">
+                <li><a class="filter-link" href="#">Editorial <span class="count">812</span></a></li>
+                <li><a class="filter-link" href="#">Playful <span class="count">645</span></a></li>
+                <li><a class="filter-link" href="#">Brutalist <span class="count">329</span></a></li>
+                <li><a class="filter-link" href="#">Geometric <span class="count">291</span></a></li>
+                <li><a class="filter-link" href="#">Retro <span class="count">207</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-panel" role="tabpanel" id="filter-panel-types" aria-labelledby="filter-tab-types" hidden>
+            <div class="filter-list-wrap">
+              <ul class="filter-list">
+                <li><a class="filter-link" href="#">Portfolio <span class="count">1,205</span></a></li>
+                <li><a class="filter-link" href="#">Agency <span class="count">980</span></a></li>
+                <li><a class="filter-link" href="#">Product <span class="count">752</span></a></li>
+                <li><a class="filter-link" href="#">Magazine <span class="count">418</span></a></li>
+                <li><a class="filter-link" href="#">Shop <span class="count">302</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-panel" role="tabpanel" id="filter-panel-subjects" aria-labelledby="filter-tab-subjects" hidden>
+            <div class="filter-list-wrap">
+              <ul class="filter-list">
+                <li><a class="filter-link" href="#">Design &amp; Art Direction <span class="count">689</span></a></li>
+                <li><a class="filter-link" href="#">Fashion &amp; Apparel <span class="count">512</span></a></li>
+                <li><a class="filter-link" href="#">Architecture <span class="count">324</span></a></li>
+                <li><a class="filter-link" href="#">Music <span class="count">281</span></a></li>
+                <li><a class="filter-link" href="#">Food <span class="count">198</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-panel" role="tabpanel" id="filter-panel-platforms" aria-labelledby="filter-tab-platforms" hidden>
+            <div class="filter-list-wrap">
+              <ul class="filter-list">
+                <li><a class="filter-link" href="#">Web <span class="count">3,210</span></a></li>
+                <li><a class="filter-link" href="#">Mobile <span class="count">1,486</span></a></li>
+                <li><a class="filter-link" href="#">Tablet <span class="count">412</span></a></li>
+                <li><a class="filter-link" href="#">Wearable <span class="count">87</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Website grid
+         ============================================================ -->
+    <section class="website-grid-section" aria-label="Latest websites">
+      <div class="website-grid-wrap">
+        <div class="website-grid" data-grid>
+          <!-- 1 -->
+          <article class="website-card" aria-label="Website card for Project Aurora">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="1"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Project Aurora</a>
+                <time class="card-date" datetime="2026-05-15T11:19:28Z">3 days ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Project Aurora">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Project Aurora website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Studio Helix</a></div>
+            </div>
+          </article>
+
+          <!-- 2 (sponsored ghost) -->
+          <article class="website-card website-card--ghost" aria-label="Sponsored slot">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="ghost"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Reference Library — Sponsored</a>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <a class="card-tool" href="#" aria-label="Visit Reference Library">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">A large mobile &amp; web reference library</a></div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="website-card" aria-label="Website card for Field Notes Folio">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="3"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Field Notes Folio</a>
+                <time class="card-date" datetime="2026-05-11T08:02:00Z">a week ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Field Notes Folio">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Field Notes Folio website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Northbound Press</a></div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="website-card" aria-label="Website card for Polaris Editorial">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="4"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Polaris Editorial</a>
+                <time class="card-date" datetime="2026-05-08T16:30:00Z">a week ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Polaris Editorial">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Polaris Editorial website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Polaris</a> · <a href="#">Studio Mira</a></div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="website-card" aria-label="Website card for Atlas Type Foundry">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="5"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Atlas Type Foundry</a>
+                <time class="card-date" datetime="2026-05-05T10:00:00Z">2 weeks ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Atlas Type Foundry">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Atlas Type Foundry website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Atlas Foundry</a></div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="website-card" aria-label="Website card for Halftone Bureau">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="6"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Halftone Bureau</a>
+                <time class="card-date" datetime="2026-04-29T13:45:00Z">3 weeks ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Halftone Bureau">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Halftone Bureau website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Bureau 14</a></div>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="website-card" aria-label="Website card for Liminal">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="2"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Liminal</a>
+                <time class="card-date" datetime="2026-04-22T09:20:00Z">a month ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Liminal">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Liminal website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Liminal Studio</a></div>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="website-card" aria-label="Website card for Quiet Hours">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="1"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Quiet Hours</a>
+                <time class="card-date" datetime="2026-04-18T11:00:00Z">a month ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Quiet Hours">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Quiet Hours website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Quiet Hours Co.</a></div>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="website-card" aria-label="Website card for Tessera">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="4"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Tessera</a>
+                <time class="card-date" datetime="2026-04-12T15:30:00Z">2 months ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Tessera">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Tessera website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Tessera &amp; Co.</a></div>
+            </div>
+          </article>
+
+          <!-- 10 (sponsored ghost — the design inserts these at 2nd, 4th, 6th slots at lg) -->
+          <article class="website-card website-card--ghost" aria-label="Sponsored slot">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="ghost"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Sponsored — Reference Library</a>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <a class="card-tool" href="#" aria-label="Visit Reference Library">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Browse curated mobile &amp; web patterns</a></div>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="website-card" aria-label="Website card for Veridian">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="3"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Veridian</a>
+                <time class="card-date" datetime="2026-04-05T08:00:00Z">2 months ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Veridian">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Veridian website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Veridian Co.</a></div>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="website-card" aria-label="Website card for Northbound">
+            <a href="#" class="card-image-wrapper" tabindex="-1" aria-hidden="true">
+              <div class="card-image placeholder-thumb" data-tone="5"></div>
+            </a>
+            <div class="card-caption">
+              <div class="card-title-row">
+                <a href="#" class="card-title">Northbound</a>
+                <time class="card-date" datetime="2026-03-28T12:00:00Z">2 months ago</time>
+              </div>
+              <div class="card-toolbar" role="group" aria-label="Actions">
+                <button class="card-tool" type="button" aria-label="Bookmark Northbound">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <a class="card-tool" href="#" aria-label="Visit Northbound website">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <div class="card-credits"><a href="#">Northbound Press</a></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Pages">
+          <button class="page-btn" type="button" data-page-action="prev" aria-label="Previous page" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <a class="page-num is-active" href="#" aria-current="page">1</a>
+          <a class="page-num" href="#">2</a>
+          <a class="page-num" href="#">3</a>
+          <a class="page-num" href="#">4</a>
+          <a class="page-num" href="#">5</a>
+          <a class="page-btn is-next" href="#" data-page-action="next" aria-label="Next page" rel="next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Newsletter band
+         ============================================================ -->
+    <section class="newsletter" aria-label="Newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-copy">
+          <h2>Subscribe to the Weekly Digest</h2>
+          <p>One curated email each week. Unsubscribe at any time.</p>
+        </div>
+        <form class="newsletter-form" action="/subscribe" method="post" data-newsletter>
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input id="newsletter-email" class="newsletter-input" type="email" name="email" required placeholder="you@domain.com" />
+          <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       Footer (4 columns at lg+)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-statement">
+        <p>A showcase of the web's finest design + talent.</p>
+      </div>
+      <nav class="footer-col footer-col--main" aria-label="Main site navigation">
+        <ul>
+          <li><a href="#">Website Gallery</a></li>
+          <li><a href="#">Designer &amp; Agency Profiles</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Sponsorship</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col footer-col--secondary" aria-label="Secondary site navigation">
+        <ul>
+          <li><a href="#">Today's Best</a></li>
+          <li><a href="#">This Week</a></li>
+          <li><a href="#">This Month</a></li>
+          <li><a href="#">This Year</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col footer-col--social" aria-label="Social media links">
+        <ul>
+          <li><a href="#" rel="noreferrer nofollow" target="_blank">Twitter</a></li>
+          <li><a href="#" rel="noreferrer nofollow" target="_blank">Instagram</a></li>
+          <li><a href="#" rel="noreferrer nofollow" target="_blank">Threads</a></li>
+          <li><a href="#" rel="noreferrer nofollow" target="_blank">Pinterest</a></li>
+          <li><a href="#" rel="noreferrer nofollow" target="_blank">Bluesky</a></li>
+          <li><a href="#" rel="noreferrer nofollow" target="_blank">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Sonner-style toast region (visually empty) -->
+  <div class="toast-region" role="region" aria-label="Notifications (F8)" tabindex="-1">
+    <ol></ol>
+  </div>
+
+  <script src="../../js/siteinspire/script.js" defer></script>
+</body>
+</html>

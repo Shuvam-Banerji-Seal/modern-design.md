@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bruno Simon — Creative Developer</title>
+<meta name="description" content="Sample reconstruction of bruno-simon.com design language — dark plum theme, condensed display face, WebGL-style demo placeholder.">
+<!--
+  Sample reconstruction of bruno-simon.com (websites/bruno-simon/design.md).
+  Bruno's custom "Pally" family is substituted with "Bebas Neue"
+  (Google Fonts) — a similar tall condensed display face available
+  under the SIL Open Font License.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bebas+Neue&family=Nunito:wght@400;700;900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="../../css/bruno-simon/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <div class="hero-meta">
+    <span class="dot" aria-hidden="true"></span>
+    <span>Portfolio &middot; 2025 edition</span>
+  </div>
+  <h1 class="hero-name">Bruno<br>Simon</h1>
+  <p class="hero-role">Creative developer building interactive worlds on the open web.</p>
+  <div class="hero-cta">
+    <a href="#demo" class="button button--primary">
+      <span class="button-inner">
+        <span class="button-label">Play the demo</span>
+        <svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h12M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+    <a href="#about" class="button button--ghost">
+      <span class="button-label">About</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="demo" class="demo" aria-labelledby="demo-title">
+    <div class="demo-frame">
+      <span class="demo-corner demo-corner--tl" aria-hidden="true"></span>
+      <span class="demo-corner demo-corner--tr" aria-hidden="true"></span>
+      <span class="demo-corner demo-corner--bl" aria-hidden="true"></span>
+      <span class="demo-corner demo-corner--br" aria-hidden="true"></span>
+      <div class="demo-canvas" id="demoCanvas" role="img" aria-label="Placeholder for the WebGL driving demo">
+        <div class="demo-scene" aria-hidden="true">
+          <div class="demo-road"></div>
+          <div class="demo-car"></div>
+          <div class="demo-star demo-star--a"></div>
+          <div class="demo-star demo-star--b"></div>
+          <div class="demo-star demo-star--c"></div>
+        </div>
+        <div class="demo-overlay">
+          <p class="demo-eyebrow">WebGL demo lives here</p>
+          <h2 id="demo-title" class="demo-title">Drive a low-poly car across a hand-modelled island.</h2>
+          <div class="demo-progress" aria-hidden="true">
+            <div class="demo-progress-bar" id="demoProgress"></div>
+          </div>
+          <p class="demo-status" id="demoStatus">Loading the island&hellip;</p>
+        </div>
+      </div>
+    </div>
+    <p class="demo-foot">The original site streams a 4.86 MB Three.js bundle as the page itself. This panel stands in for the canvas only.</p>
+  </section>
+
+  <section id="controls" class="panel" aria-labelledby="controls-title">
+    <header class="panel-header">
+      <h2 id="controls-title" class="panel-title">Controls</h2>
+      <p class="panel-sub">Drive with the keyboard, jump with space, post a whisper with T.</p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Input device">
+      <button class="tab is-active" role="tab" aria-selected="true" data-tab="keyboard">
+        <span class="tab-label">Keyboard</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="gamepad">
+        <span class="tab-label">Gamepad</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="touch">
+        <span class="tab-label">Touch</span>
+      </button>
+    </div>
+
+    <table class="bindings">
+      <caption class="visually-hidden">Default key bindings for the driving demo</caption>
+      <tbody id="bindingsBody">
+        <tr><th scope="row">Steer</th><td><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span> or arrow keys</td></tr>
+        <tr><th scope="row">Boost</th><td><span class="key">Shift</span></td></tr>
+        <tr><th scope="row">Brake</th><td><span class="key">Ctrl</span> or <span class="key">B</span></td></tr>
+        <tr><th scope="row">Jump</th><td><span class="key">Space</span></td></tr>
+        <tr><th scope="row">Interact</th><td><span class="key">Enter</span></td></tr>
+        <tr><th scope="row">Map</th><td><span class="key">M</span></td></tr>
+        <tr><th scope="row">Respawn</th><td><span class="key">R</span></td></tr>
+        <tr><th scope="row">Whisper</th><td><span class="key">T</span></td></tr>
+        <tr><th scope="row">Mute</th><td><span class="key">L</span></td></tr>
+        <tr><th scope="row">Honk</th><td><span class="key">H</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="about" class="panel panel--about" aria-labelledby="about-title">
+    <header class="panel-header">
+      <h2 id="about-title" class="panel-title">About</h2>
+    </header>
+    <div class="about-grid">
+      <p>A creative developer based in Paris, focused on interactive 3D for the browser. The work leans on Three.js, custom shaders, and a healthy amount of physics.</p>
+      <p>This portfolio doubles as the demo: every region of the island reveals a different chapter of the work, the controls, the credits, and the small games tucked inside.</p>
+      <p>The build is hand-rolled &mdash; Vite, Three.js, Rapier for the vehicle, Howler.js for the audio. No framework, just classes and a single render loop.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="panel" aria-labelledby="projects-title">
+    <header class="panel-header">
+      <h2 id="projects-title" class="panel-title">Recent projects</h2>
+      <p class="panel-sub">A short selection of things shipped in the last year.</p>
+    </header>
+    <ol class="projects">
+      <li class="project">
+        <span class="project-year">2025</span>
+        <div class="project-body">
+          <h3 class="project-title">Folio template</h3>
+          <p>The same 3D playground shipped as a reusable starter for client portfolios.</p>
+        </div>
+      </li>
+      <li class="project">
+        <span class="project-year">2025</span>
+        <div class="project-body">
+          <h3 class="project-title">Three.js course update</h3>
+          <p>New chapters on TSL, WebGPU, and the latest Three.js rendering pipeline.</p>
+        </div>
+      </li>
+      <li class="project">
+        <span class="project-year">2024</span>
+        <div class="project-body">
+          <h3 class="project-title">Hetic classroom tools</h3>
+          <p>Real-time dashboards for a French coding school &mdash; live tiles, custom layouts.</p>
+        </div>
+      </li>
+      <li class="project">
+        <span class="project-year">2024</span>
+        <div class="project-body">
+          <h3 class="project-title">Uzik configurator</h3>
+          <p>A product configurator for a furniture studio, built on WebGPU.</p>
+        </div>
+      </li>
+      <li class="project">
+        <span class="project-year">2024</span>
+        <div class="project-body">
+          <h3 class="project-title">Immersive Garden demo</h3>
+          <p>An in-browser garden walkthrough rendered for an agency pitch.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-row">
+    <span class="footer-mark" aria-hidden="true">B.</span>
+    <span class="footer-meta">Hand-built with Three.js, GSAP, Rapier, and a lot of coffee.</span>
+  </div>
+  <nav class="socials" aria-label="Social links">
+    <a class="social" href="#" rel="noopener">GitHub</a>
+    <a class="social" href="#" rel="noopener">X / Twitter</a>
+    <a class="social" href="#" rel="noopener">YouTube</a>
+    <a class="social" href="#" rel="noopener">Three.js course</a>
+    <a class="social" href="#" rel="noopener">Discord</a>
+    <a class="social" href="#" rel="noopener">Email</a>
+  </nav>
+  <p class="footer-fine">&copy; 2025 Bruno Simon. Sample reconstruction only &mdash; all work shown is for demonstration.</p>
+</footer>
+
+<script src="../../js/bruno-simon/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miranda — Paper Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../css/niccolomiranda/style.css" />
+</head>
+<body class="index">
+  <div class="paper-background" aria-hidden="true"></div>
+
+  <canvas id="below-canvas" class="gl-canvas below" aria-hidden="true"></canvas>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <div class="nav-block left">
+        <span class="n-text">Amsterdam, NL</span>
+      </div>
+
+      <a href="#" class="nav-head" aria-label="Miranda — Home">
+        <span class="nav-mark">MIRANDA</span>
+      </a>
+
+      <div class="nav-block right">
+        <button class="nav-link" aria-label="Open menu" type="button">
+          <span class="nav-lines">
+            <span class="nav-line up"></span>
+            <span class="nav-line bottom"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu-grid">
+      <a href="#" class="menu-title m1" aria-current="page">Index<span class="f-span">.</span></a>
+      <a href="#" class="menu-title m2">Work<span class="f-span">.</span></a>
+      <a href="#" class="menu-title m3">About<span class="f-span">.</span></a>
+    </div>
+    <span class="m-active index" aria-hidden="true"></span>
+  </div>
+
+  <main class="app" id="app" data-scroll-container>
+    <section class="hero">
+      <div class="hero-grid">
+        <h1 class="miranda-wordmark">Miranda</h1>
+
+        <div class="hero-side">
+          <span class="kicker">Amsterdam, NL — 2026</span>
+        </div>
+
+        <div class="avatar-wrap">
+          <div class="avatar avatar-set1" aria-hidden="true"></div>
+          <div class="avatar avatar-set2" aria-hidden="true"></div>
+        </div>
+
+        <div class="role-stack">
+          <h2 class="h-head ex">
+            <span class="word">digital art director</span>
+          </h2>
+          <h2 class="h-head ex">
+            <span class="word">Int<span class="f-span">e</span>ractive Designer</span>
+          </h2>
+          <h2 class="h-head ex">
+            <span class="word">cr<span class="f-span">e</span>ative developer</span>
+          </h2>
+          <h2 class="h-head ex">
+            <span class="word">bas<span class="f-span">e</span>d in Amsterdam, NL.</span>
+          </h2>
+        </div>
+
+        <a class="cta-pill" href="#" aria-label="See all work">
+          <span class="cta-text">All Work<span class="f-span space">&nbsp;</span></span>
+          <svg class="arrow" viewBox="0 0 123 38" width="123" height="38" aria-hidden="true">
+            <path d="M2 19 L110 19 M95 4 L118 19 L95 34" fill="none" stroke="#1D1D1B" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="featured-card">
+        <h2 class="featured-title">Website</h2>
+        <div class="featured-lines" aria-hidden="true">
+          <span class="aw-line"></span>
+          <span class="aw-line"></span>
+          <span class="aw-line"></span>
+          <span class="aw-line"></span>
+          <span class="aw-line"></span>
+        </div>
+        <p class="featured-body">
+          Fresh entry — A selected work from the latest digital releases. <em>Click on the image to explore.</em>
+        </p>
+        <div class="featured-image" aria-hidden="true"></div>
+        <span class="tip">Tip!</span>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="projects-track" id="projects-track">
+        <article class="project-card" data-butter-container>
+          <div class="item">
+            <div class="item-img-w">
+              <div class="item-img" aria-hidden="true"></div>
+            </div>
+            <div class="item-meta">
+              <h3 class="item-title">Studio AVROKO</h3>
+              <span class="item-tag">Hospitality</span>
+              <span class="badge new">NEW</span>
+            </div>
+            <p class="item-desc">A digital flagship for a hospitality design firm.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="item">
+            <div class="item-img-w">
+              <div class="item-img alt-2" aria-hidden="true"></div>
+            </div>
+            <div class="item-meta">
+              <h3 class="item-title">Books of Ye</h3>
+              <span class="item-tag">NFT · Editorial</span>
+            </div>
+            <p class="item-desc">An on-chain archive of reimagined manuscripts.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="item">
+            <div class="item-img-w">
+              <div class="item-img alt-3" aria-hidden="true"></div>
+            </div>
+            <div class="item-meta">
+              <h3 class="item-title">Om Swami</h3>
+              <span class="item-tag">Publishing</span>
+            </div>
+            <p class="item-desc">A reading platform for a contemplative teacher.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="item">
+            <div class="item-img-w">
+              <div class="item-img alt-4" aria-hidden="true"></div>
+            </div>
+            <div class="item-meta">
+              <h3 class="item-title">The Roger Hub</h3>
+              <span class="item-tag">Sportswear</span>
+              <span class="badge new">NEW</span>
+            </div>
+            <p class="item-desc">A capsule microsite for a tennis collaboration.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="item">
+            <div class="item-img-w">
+              <div class="item-img alt-5" aria-hidden="true"></div>
+            </div>
+            <div class="item-meta">
+              <h3 class="item-title">Unexpected Time</h3>
+              <span class="item-tag">Gamification</span>
+            </div>
+            <p class="item-desc">A retro-futurist release built around play.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-init">Site of the Day</span>
+          <span class="stat-num">9</span>
+          <span class="stat-label">awarded</span>
+        </div>
+        <div class="stat">
+          <span class="stat-init">Site of the Month</span>
+          <span class="stat-num">1</span>
+          <span class="stat-label">honored</span>
+        </div>
+        <div class="stat">
+          <span class="stat-init">FWA</span>
+          <span class="stat-num">6</span>
+          <span class="stat-label">shortlisted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-init">Mentions</span>
+          <span class="stat-num">8</span>
+          <span class="stat-label">in press</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stacked-headline">
+      <h2 class="stacked-line">Think<span class="f-span">,</span></h2>
+      <h2 class="stacked-line">Cr<span class="f-span">e</span>ate<span class="f-span">.</span></h2>
+      <h2 class="stacked-line stacked-artisan">The pixel perfect artisan</h2>
+      <h2 class="stacked-line stacked-artisan-b" aria-hidden="true">.</h2>
+    </section>
+
+    <section class="testimonials">
+      <article class="testimonial s-1">
+        <div class="dash" aria-hidden="true"></div>
+        <svg class="testimonial-qa" viewBox="0 0 130 314" aria-hidden="true">
+          <path d="M65 20 C40 50 30 80 30 110 C30 140 50 160 65 170 L65 220 L25 220 L25 260 L105 260 L105 220 L65 220 C80 200 95 180 95 145 C95 100 80 60 65 20 Z" fill="#000"/>
+        </svg>
+        <p class="testimonial-desc">
+          A reliable partner for the whole journey — from the first sketch through the final hand-off.
+        </p>
+        <div class="testimonial-foot">
+          <span class="testimonial-box" aria-hidden="true"></span>
+          <div>
+            <span class="testimonial-name">Sam Day</span>
+            <span class="testimonial-role">Creative Director</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial s-2">
+        <div class="dash" aria-hidden="true"></div>
+        <svg class="testimonial-qa" viewBox="0 0 130 314" aria-hidden="true">
+          <path d="M65 20 C40 50 30 80 30 110 C30 140 50 160 65 170 L65 220 L25 220 L25 260 L105 260 L105 220 L65 220 C80 200 95 180 95 145 C95 100 80 60 65 20 Z" fill="#000"/>
+        </svg>
+        <p class="testimonial-desc">
+          Editorial precision, restraint, and a quiet confidence — exactly the register we were after.
+        </p>
+        <div class="testimonial-foot">
+          <span class="testimonial-box" aria-hidden="true"></span>
+          <div>
+            <span class="testimonial-name">Sofia Papadopoulou</span>
+            <span class="testimonial-role">Brand Lead</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial s-3">
+        <div class="dash" aria-hidden="true"></div>
+        <svg class="testimonial-qa" viewBox="0 0 130 314" aria-hidden="true">
+          <path d="M65 20 C40 50 30 80 30 110 C30 140 50 160 65 170 L65 220 L25 220 L25 260 L105 260 L105 220 L65 220 C80 200 95 180 95 145 C95 100 80 60 65 20 Z" fill="#000"/>
+        </svg>
+        <p class="testimonial-desc">
+          The motion work was the moment our site stopped feeling like a brief and started feeling like a brand.
+        </p>
+        <div class="testimonial-foot">
+          <span class="testimonial-box" aria-hidden="true"></span>
+          <div>
+            <span class="testimonial-name">Bruno Arizio</span>
+            <span class="testimonial-role">Studio BA</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial s-4">
+        <div class="dash" aria-hidden="true"></div>
+        <svg class="testimonial-qa" viewBox="0 0 130 314" aria-hidden="true">
+          <path d="M65 20 C40 50 30 80 30 110 C30 140 50 160 65 170 L65 220 L25 220 L25 260 L105 260 L105 220 L65 220 C80 200 95 180 95 145 C95 100 80 60 65 20 Z" fill="#000"/>
+        </svg>
+        <p class="testimonial-desc">
+          A rare mix of craft and taste — someone who holds the whole composition in their head.
+        </p>
+        <div class="testimonial-foot">
+          <span class="testimonial-box" aria-hidden="true"></span>
+          <div>
+            <span class="testimonial-name">Enea Rossi</span>
+            <span class="testimonial-role">Adoratorio</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-inner">
+      <div class="marquee-content">
+        <span class="f-news">Let&rsquo;s create something together &mdash;</span>
+        <a class="marquee-link" href="mailto:hello@example.test"><span class="marquee-text">Email Me</span></a>
+      </div>
+      <div class="marquee-content">
+        <span class="f-news">Let&rsquo;s create something together &mdash;</span>
+        <a class="marquee-link" href="mailto:hello@example.test"><span class="marquee-text">Email Me</span></a>
+      </div>
+      <div class="marquee-content">
+        <span class="f-news">Let&rsquo;s create something together &mdash;</span>
+        <a class="marquee-link" href="mailto:hello@example.test"><span class="marquee-text">Email Me</span></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="f-info">
+      <span class="f-title">Miranda&copy;</span>
+      <a class="f-li legal" href="#">Legal</a>
+      <div class="f-li socials">
+        <a href="#">twitt<span class="f-span">e</span>r</a>
+        <span class="dot">&middot;</span>
+        <a href="#">insta<span class="f-span">g</span>ram</a>
+        <span class="dot">&middot;</span>
+        <a href="#">dribbble</a>
+        <span class="dot">&middot;</span>
+        <a href="#">behan<span class="f-span">c</span>e</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/niccolomiranda/script.js" defer></script>
+</body>
+</html>

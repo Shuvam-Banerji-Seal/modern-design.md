@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample Showcase — Art Direction Reel</title>
+  <meta name="description" content="A typographic, motion-driven portfolio reel for an art director." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500&display=swap"
+  />
+  <link rel="stylesheet" href="../../css/zhenyary/style.css" />
+</head>
+<body class="no-touch">
+
+  <!-- ============================================================
+       Loader — full-bleed black veil with two accent circles
+       ============================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__bg"></div>
+    <svg class="loader__circle loader__circle--red" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="20" fill="#F93700"></circle>
+    </svg>
+    <svg class="loader__circle loader__circle--pink" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="20" fill="#F9DDDD"></circle>
+    </svg>
+    <span class="loader__greet">Hey!</span>
+  </div>
+
+  <!-- ============================================================
+       Custom cursor follower (no-touch only)
+       ============================================================ -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <svg viewBox="0 0 100 100" class="cursor__ring">
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#191919" stroke-width="2"></circle>
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       Fixed top nav
+       ============================================================ -->
+  <nav class="topnav nude" id="topnav">
+    <a href="#home" class="topnav__mark" aria-label="Home">
+      <svg viewBox="0 0 20 21" aria-hidden="true">
+        <path d="M2 2 L18 19" stroke="#191919" stroke-width="2" fill="none" />
+        <path d="M18 2 L2 19" stroke="#191919" stroke-width="2" fill="none" />
+      </svg>
+    </a>
+    <ul class="topnav__links">
+      <li>
+        <a href="#work" class="topnav__link">
+          <span class="topnav__label">Work</span>
+          <span class="topnav__caption">Selected cases</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="topnav__link">
+          <span class="topnav__label">About</span>
+          <span class="topnav__caption">Practice</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="topnav__link">
+          <span class="topnav__label">Contact</span>
+          <span class="topnav__caption">Say hello</span>
+        </a>
+      </li>
+    </ul>
+    <span class="topnav__spacer" aria-hidden="true"></span>
+  </nav>
+
+  <!-- ============================================================
+       Hero — full-screen portrait with split-screen H1 reveal
+       ============================================================ -->
+  <article class="home" id="home">
+    <div class="home__portrait" aria-hidden="true">
+      <div class="home__img"></div>
+    </div>
+    <h1 class="home__title">
+      <span class="home__title-half home__title-half--left"><span>Art&nbsp;direction</span></span>
+      <span class="home__title-half home__title-half--right"><span>that&nbsp;moves.</span></span>
+    </h1>
+    <button class="home__play" type="button">
+      <svg viewBox="0 0 100 100" class="home__play-ring" aria-hidden="true">
+        <circle cx="50" cy="50" r="49" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+      </svg>
+      <span class="home__play-label">Play Showreel</span>
+    </button>
+    <div class="home__hint" aria-hidden="true">
+      <svg viewBox="0 0 48 48" class="star">
+        <path d="M20.078 14.026L24.157 0l5.02 14.026L43.2 14l-9.61 11.06L43.2 36.12l-14.023-.026L24.157 50.12l-5.02-14.026L5.114 36.12l9.61-11.06L5.114 14z" fill="#F93700"/>
+      </svg>
+      <span class="home__hint-text">Click click</span>
+    </div>
+
+    <footer class="hero-footer">
+      <button class="toggle toggle--red" type="button">In Red</button>
+      <ul class="socials">
+        <li><a href="#" rel="noopener">Dribbble</a></li>
+        <li><a href="#" rel="noopener">Behance</a></li>
+        <li><a href="#" rel="noopener">Twitter</a></li>
+      </ul>
+      <button class="toggle toggle--nude" type="button">In Light</button>
+    </footer>
+  </article>
+
+  <!-- ============================================================
+       Services / Gems — per-character reveal
+       ============================================================ -->
+  <article class="gems" id="services">
+    <p class="gems__caption">My main services</p>
+    <div class="gems__lines">
+      <p class="gems__line" data-text="Art direction"></p>
+      <p class="gems__line" data-text="Product design"></p>
+      <p class="gems__line" data-text="Visual design"></p>
+      <p class="gems__line" data-text="Mobile & web"></p>
+      <p class="gems__line" data-text="Interaction"></p>
+      <p class="gems__line" data-text="Animation"></p>
+      <p class="gems__line" data-text="Branding"></p>
+    </div>
+  </article>
+
+  <!-- ============================================================
+       Works — two case studies, 50/50 split
+       ============================================================ -->
+  <article class="works" id="work">
+    <section class="work work--a">
+      <div class="work__pane work__pane--left">
+        <div class="work__img work__img--a" role="img" aria-label="Case study A"></div>
+        <h3 class="work__h3">Case A</h3>
+        <p class="work__type">Identity &amp; product system</p>
+      </div>
+      <div class="work__pane work__pane--right work__pane--cool">
+        <div class="work__letter" aria-hidden="true">A</div>
+        <div class="work__text">
+          <p class="work__title">A short framing sentence that earns the click.</p>
+          <ul class="work__roles">
+            <li>Art direction</li>
+            <li>Identity</li>
+            <li>Web</li>
+          </ul>
+          <p class="work__intro">A one-line summary of the project's outcome in plain language.</p>
+          <a class="work__link" href="#">View full case <span class="work__plus">+</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="work work--b">
+      <div class="work__pane work__pane--left work__pane--linen">
+        <div class="work__img work__img--b" role="img" aria-label="Case study B"></div>
+        <h3 class="work__h3">Case B</h3>
+        <p class="work__type">Portfolio &amp; typography</p>
+      </div>
+      <div class="work__pane work__pane--right work__pane--red">
+        <div class="work__letter work__letter--invert" aria-hidden="true">B</div>
+        <div class="work__text work__text--invert">
+          <p class="work__title">A second framing sentence in a contrasting voice.</p>
+          <ul class="work__roles work__roles--invert">
+            <li>Art direction</li>
+            <li>Typography</li>
+            <li>Web</li>
+          </ul>
+          <p class="work__intro">A second summary line that mirrors the first without echoing it.</p>
+          <a class="work__link work__link--invert" href="#">View full case <span class="work__plus">+</span></a>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <!-- ============================================================
+       WorksLink — large CTA link
+       ============================================================ -->
+  <div class="workslink">
+    <a href="#" class="workslink__a">View all / cases</a>
+  </div>
+
+  <!-- ============================================================
+       Thanks — italic credit
+       ============================================================ -->
+  <article class="thanks" id="about">
+    <p class="thanks__p">
+      Site built with care by a friend who treats every transition like a piece of type. Cheers.
+    </p>
+  </article>
+
+  <!-- ============================================================
+       Contact — full-screen red panel
+       ============================================================ -->
+  <article class="contact" id="contact">
+    <div class="contact__lines">
+      <div class="contact__line contact__line--face">
+        <svg viewBox="0 0 165 165" class="smiley" aria-hidden="true">
+          <circle cx="82.5" cy="82.5" r="80" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+          <path d="M40 90 Q82.5 150 125 90" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div class="contact__line">
+        <p class="contact__big">Let&rsquo;s build <em>something</em> memorable.</p>
+      </div>
+      <div class="contact__line contact__line--mail">
+        <a href="mailto:hello@example.com" class="contact__mail">
+          <span class="contact__mail-text">hello@example.com</span>
+          <svg viewBox="0 0 132 89" class="contact__arrow contact__arrow--a" aria-hidden="true">
+            <path d="M2 44 L110 44 M70 4 L110 44 L70 84" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+          </svg>
+          <svg viewBox="0 0 132 89" class="contact__arrow contact__arrow--b" aria-hidden="true">
+            <path d="M2 44 L110 44 M70 4 L110 44 L70 84" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+          </svg>
+          <svg viewBox="0 0 132 89" class="contact__arrow contact__arrow--c" aria-hidden="true">
+            <path d="M2 44 L110 44 M70 4 L110 44 L70 84" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+          </svg>
+        </a>
+      </div>
+      <div class="contact__line">
+        <p class="contact__big contact__big--sm">for / collaborations.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================================================
+       Site footer
+       ============================================================ -->
+  <footer class="sitefoot">
+    <p>Sample showcase &middot; tokens from <code>websites/zhenyary/design.md</code></p>
+  </footer>
+
+  <script src="../../js/zhenyary/script.js" defer></script>
+</body>
+</html>

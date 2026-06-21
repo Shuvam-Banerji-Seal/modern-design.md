@@ -1,0 +1,52 @@
+name: Deploy showcase to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, queuing newer runs and skipping older ones.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build showcase manifest
+        run: |
+          # Generate a JSON manifest of all per-site sample pages so the
+          # landing page can render the grid from a single source of truth.
+          python3 tools/build_manifest.py > showcase/assets/manifest.json
+
+      - name: Parse design.md files
+        run: |
+          # Extract colors, fonts, components, animations from every design.md
+          # so the landing-page modal can render previews without re-parsing.
+          python3 tools/parse_designs.py
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: showcase
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

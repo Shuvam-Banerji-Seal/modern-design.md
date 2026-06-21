@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-flip="false">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>basement.studio — A digital studio making work that performs</title>
+  <meta name="description" content="An independent interactive and branding studio. Websites, identity, and experiential work for ambitious teams." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/basement/style.css" />
+</head>
+<body>
+  <!-- Fixed top navigation -->
+  <nav class="nav" id="nav" aria-label="Primary">
+    <div class="grid-layout nav__inner">
+      <a class="nav__wordmark" href="#" aria-label="basement.studio home">
+        <svg viewBox="0 0 107 15" height="15" aria-hidden="true">
+          <title>basement.studio</title>
+          <path fill="currentColor" d="M2.2 11.6V3.7h1.6v6.4h3.7v1.5H2.2zm6.5 0V3.7h1.6v7.9H8.7zm3.6-5.4V4.7h1.5v1.5h-1.5zm0 5.4V7.2h1.5v4.4h-1.5zm3.5 0V3.7h1.6l2.6 4.4V3.7h1.6v7.9h-1.6L17.4 7v4.6h-1.6zm7.4-5.4V4.7h4.6v1.5h-1.5v4.4h-1.6V6.2h-1.5zm6.1 5.4V3.7h5.3v1.5h-3.7v1.6h3.4v1.5h-3.4v1.8h3.8v1.5h-5.4zm7.0 0V3.7h1.6l2.6 4.4V3.7h1.6v7.9H40L37.4 7v4.6h-1.5zm7.4-5.4V4.7h4.6v1.5h-1.5v4.4h-1.6V6.2h-1.5zm6.1 5.4V3.7h1.6v7.9h-1.6zm3.5 0V3.7h1.6l2.6 4.4V3.7h1.6v7.9H55L52.4 7v4.6h-1.5zm7.5 0V3.7h1.6v6.4h3.7v1.5h-5.3zm6.6 0V3.7h5.3v1.5h-3.7v1.6h3.4v1.5h-3.4v1.8h3.8v1.5h-5.4zm7.0 0V3.7h1.6l2.6 4.4V3.7h1.6v7.9h-1.6L70.5 7v4.6h-1.6zm7.4-5.4V4.7h4.6v1.5h-1.5v4.4h-1.6V6.2h-1.5zM82.4 14.5l1.3-3.4-2.4-7.4h1.7l1.5 5.1 1.5-5.1h1.7l-3.6 10.8h-1.7zM92 11.6V3.7h5.3v1.5h-3.7v1.6h3.4v1.5h-3.4v1.8h3.8v1.5H92zm7.0 0V3.7h1.6v7.9H99zM103 11.6l1.3-3.4-2.4-7.4h1.7l1.5 5.1 1.5-5.1h1.7l-3.6 10.8H103z"/>
+        </svg>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a class="actionable" href="#home"><span class="actionable__label">Home</span></a></li>
+        <li><a class="actionable" href="#services"><span class="actionable__label">Services</span></a></li>
+        <li><a class="actionable" href="#work"><span class="actionable__label">Showcase</span></a></li>
+        <li><a class="actionable" href="#people"><span class="actionable__label">People</span></a></li>
+        <li><a class="actionable" href="#lab"><span class="actionable__label">Lab</span></a></li>
+      </ul>
+
+      <div class="nav__utility">
+        <button class="actionable nav__audio" id="audioToggle" aria-label="Turn music on" type="button">
+          <span class="actionable__label">
+            <svg viewBox="0 0 22 15" width="22" height="15" aria-hidden="true">
+              <rect x="0" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="5" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="10" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="15" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="20" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="0" y="10" width="2" height="2" fill="currentColor"/>
+              <rect x="5" y="10" width="2" height="2" fill="currentColor"/>
+              <rect x="10" y="10" width="2" height="2" fill="currentColor"/>
+              <rect x="15" y="10" width="2" height="2" fill="currentColor"/>
+              <rect x="20" y="10" width="2" height="2" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+        <a class="actionable" href="#contact"><span class="actionable__label">Contact Us</span></a>
+      </div>
+
+      <button class="nav__menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" type="button">
+        <span class="nav__menu-label">Menu</span>
+        <span class="nav__menu-bars" aria-hidden="true">
+          <span class="nav__menu-bar nav__menu-bar--top"></span>
+          <span class="nav__menu-bar nav__menu-bar--bot"></span>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero 3D canvas (placeholder for R3F scene) -->
+  <div class="canvas-container" id="home">
+    <canvas id="heroCanvas" class="canvas-container__canvas" aria-hidden="true"></canvas>
+    <div class="canvas-container__overlay" id="canvasOverlay" hidden>
+      <button class="canvas-container__close" id="canvasClose" type="button" aria-label="Close [ESC]">
+        <svg viewBox="0 0 22 15" width="22" height="15" aria-hidden="true">
+          <rect x="0" y="6.5" width="22" height="1.5" fill="currentColor" class="bar bar--a"/>
+          <rect x="0" y="6.5" width="22" height="1.5" fill="currentColor" class="bar bar--b"/>
+        </svg>
+        <span>Close [ESC]</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main page content -->
+  <main class="layout-container" id="main">
+    <!-- Hero copy -->
+    <section class="section section--hero">
+      <div class="grid-layout">
+        <h1 class="h1">
+          We build brands<br/>
+          and the websites<br/>
+          that ship them.
+        </h1>
+        <p class="lede">
+          A small, technical studio crafting interactive experiences, identity systems, and
+          brand work for the teams defining what comes next on the web.
+        </p>
+      </div>
+    </section>
+
+    <!-- Trusted by -->
+    <section class="section section--trusted" id="services">
+      <div class="grid-layout">
+        <header class="section__head">
+          <h2 class="eyebrow">Trusted by Visionaries</h2>
+        </header>
+        <ul class="trusted__grid" role="list">
+          <li><a class="logo-cell" href="#" title="Vercel"><span class="logo-cell__label">Vercel</span></a></li>
+          <li><a class="logo-cell" href="#" title="Linear"><span class="logo-cell__label">Linear</span></a></li>
+          <li><a class="logo-cell" href="#" title="Cursor"><span class="logo-cell__label">Cursor</span></a></li>
+          <li><a class="logo-cell" href="#" title="Scale"><span class="logo-cell__label">Scale</span></a></li>
+          <li><a class="logo-cell" href="#" title="Eleven Labs"><span class="logo-cell__label">Eleven Labs</span></a></li>
+          <li><a class="logo-cell" href="#" title="Harvey"><span class="logo-cell__label">Harvey</span></a></li>
+          <li><a class="logo-cell" href="#" title="Apollo"><span class="logo-cell__label">Apollo</span></a></li>
+          <li><a class="logo-cell" href="#" title="Replicate"><span class="logo-cell__label">Replicate</span></a></li>
+          <li><a class="logo-cell" href="#" title="Solana"><span class="logo-cell__label">Solana</span></a></li>
+          <li><a class="logo-cell" href="#" title="Daylight"><span class="logo-cell__label">Daylight</span></a></li>
+          <li><a class="logo-cell" href="#" title="MrBeast"><span class="logo-cell__label">MrBeast</span></a></li>
+          <li><a class="logo-cell" href="#" title="Cal.com"><span class="logo-cell__label">Cal.com</span></a></li>
+          <li><a class="logo-cell" href="#" title="World Labs"><span class="logo-cell__label">World Labs</span></a></li>
+          <li><a class="logo-cell" href="#" title="Mintlify"><span class="logo-cell__label">Mintlify</span></a></li>
+          <li><a class="logo-cell" href="#" title="Profound"><span class="logo-cell__label">Profound</span></a></li>
+          <li><a class="logo-cell" href="#" title="Factory"><span class="logo-cell__label">Factory</span></a></li>
+          <li><a class="logo-cell" href="#" title="Baseten"><span class="logo-cell__label">Baseten</span></a></li>
+          <li><a class="logo-cell" href="#" title="Black Forest Labs"><span class="logo-cell__label">Black Forest Labs</span></a></li>
+          <li><a class="logo-cell" href="#" title="Krea"><span class="logo-cell__label">Krea</span></a></li>
+          <li><a class="logo-cell" href="#" title="Trunk"><span class="logo-cell__label">Trunk</span></a></li>
+          <li><a class="logo-cell" href="#" title="Spiral"><span class="logo-cell__label">Spiral</span></a></li>
+          <li><a class="logo-cell" href="#" title="Graphite"><span class="logo-cell__label">Graphite</span></a></li>
+          <li><a class="logo-cell" href="#" title="Flox"><span class="logo-cell__label">Flox</span></a></li>
+          <li><a class="logo-cell" href="#" title="Rox"><span class="logo-cell__label">Rox</span></a></li>
+          <li><a class="logo-cell" href="#" title="Speakeasy"><span class="logo-cell__label">Speakeasy</span></a></li>
+          <li><a class="logo-cell" href="#" title="Zero Matter"><span class="logo-cell__label">Zero Matter</span></a></li>
+          <li><a class="logo-cell" href="#" title="Xbow"><span class="logo-cell__label">Xbow</span></a></li>
+          <li><a class="logo-cell" href="#" title="KidSuper"><span class="logo-cell__label">KidSuper</span></a></li>
+          <li><a class="logo-cell" href="#" title="Until Labs"><span class="logo-cell__label">Until Labs</span></a></li>
+          <li><a class="logo-cell" href="#" title="Applied Compute"><span class="logo-cell__label">Applied Compute</span></a></li>
+          <li><a class="logo-cell" href="#" title="EDGLRD"><span class="logo-cell__label">EDGLRD</span></a></li>
+          <li><a class="logo-cell" href="#" title="Next.js"><span class="logo-cell__label">Next.js</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Featured Projects (sticky stack) -->
+    <section class="section section--work" id="work">
+      <div class="grid-layout">
+        <header class="section__head section__head--split">
+          <h2 class="section__title">Featured Projects</h2>
+          <span class="section__count">(04)</span>
+        </header>
+      </div>
+
+      <ul class="projects" role="list">
+        <li class="project project--1">
+          <a class="project__link" href="#" aria-label="Open case study: Vercel Ship — A home for innovation">
+            <div class="grid-layout project__inner">
+              <div class="project__media">
+                <div class="project__thumb project__thumb--vercel" aria-hidden="true"></div>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title project__title--mobile">Vercel Ship</h3>
+                <p class="project__desc">A home for innovation. A landing system for the most-watched event in shipping.</p>
+                <span class="project__tag">Websites & Features</span>
+              </div>
+              <h3 class="project__title project__title--desktop">
+                <span class="actionable project__cta">
+                  <span class="actionable__label">Vercel Ship</span>
+                  <span class="project__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" width="20" height="20">
+                      <path fill="currentColor" d="M11.1075 14.2752 4.2763 4.29004h4.9546L17.13 14.2752h-6.0225zm0-8.57h6.0225L11.1075 15.71l1.46 1.46 8.024-8.024-8.024-8.025-1.46 1.46 6.022 6.024H11.1075v-1.4z"/>
+                    </svg>
+                  </span>
+                </span>
+              </h3>
+            </div>
+          </a>
+        </li>
+
+        <li class="project project--2">
+          <a class="project__link" href="#" aria-label="Open case study: Daylight — Simplicity in motion">
+            <div class="grid-layout project__inner">
+              <div class="project__media">
+                <div class="project__thumb project__thumb--daylight" aria-hidden="true"></div>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title project__title--mobile">Daylight</h3>
+                <p class="project__desc">Simplicity in motion. A product story for the first true-blue-light-free computer.</p>
+                <span class="project__tag">Websites & Features</span>
+              </div>
+              <h3 class="project__title project__title--desktop">
+                <span class="actionable project__cta">
+                  <span class="actionable__label">Daylight</span>
+                  <span class="project__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" width="20" height="20">
+                      <path fill="currentColor" d="M11.1075 14.2752 4.2763 4.29004h4.9546L17.13 14.2752h-6.0225zm0-8.57h6.0225L11.1075 15.71l1.46 1.46 8.024-8.024-8.024-8.025-1.46 1.46 6.022 6.024H11.1075v-1.4z"/>
+                    </svg>
+                  </span>
+                </span>
+              </h3>
+            </div>
+          </a>
+        </li>
+
+        <li class="project project--3">
+          <a class="project__link" href="#" aria-label="Open case study: KidSuper — Breaking the norm">
+            <div class="grid-layout project__inner">
+              <div class="project__media">
+                <div class="project__thumb project__thumb--kidsuper" aria-hidden="true"></div>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title project__title--mobile">KidSuper</h3>
+                <p class="project__desc">Breaking the norm. A storefront that wears its personality on the page.</p>
+                <span class="project__tag">Visual Branding</span>
+              </div>
+              <h3 class="project__title project__title--desktop">
+                <span class="actionable project__cta">
+                  <span class="actionable__label">KidSuper</span>
+                  <span class="project__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" width="20" height="20">
+                      <path fill="currentColor" d="M11.1075 14.2752 4.2763 4.29004h4.9546L17.13 14.2752h-6.0225zm0-8.57h6.0225L11.1075 15.71l1.46 1.46 8.024-8.024-8.024-8.025-1.46 1.46 6.022 6.024H11.1075v-1.4z"/>
+                    </svg>
+                  </span>
+                </span>
+              </h3>
+            </div>
+          </a>
+        </li>
+
+        <li class="project project--4">
+          <a class="project__link" href="#" aria-label="Open case study: MrBeast — Built to handle the beast">
+            <div class="grid-layout project__inner">
+              <div class="project__media">
+                <div class="project__thumb project__thumb--mrbeast" aria-hidden="true"></div>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title project__title--mobile">MrBeast</h3>
+                <p class="project__desc">Built to handle the beast. A storefront engineered for the biggest audience on the planet.</p>
+                <span class="project__tag">IRL Experience Design</span>
+              </div>
+              <h3 class="project__title project__title--desktop">
+                <span class="actionable project__cta">
+                  <span class="actionable__label">MrBeast</span>
+                  <span class="project__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" width="20" height="20">
+                      <path fill="currentColor" d="M11.1075 14.2752 4.2763 4.29004h4.9546L17.13 14.2752h-6.0225zm0-8.57h6.0225L11.1075 15.71l1.46 1.46 8.024-8.024-8.024-8.025-1.46 1.46 6.022 6.024H11.1075v-1.4z"/>
+                    </svg>
+                  </span>
+                </span>
+              </h3>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="section section--capabilities" id="capabilities">
+      <div class="grid-layout">
+        <header class="section__head">
+          <h2 class="eyebrow">Capabilities</h2>
+        </header>
+
+        <div class="capabilities">
+          <article class="capability">
+            <h3 class="capability__title"><a class="actionable" href="#"><span class="actionable__label">Websites &amp; Features</span></a></h3>
+            <p class="capability__body">Marketing sites, product launches, interactive features, and immersive pages that ship on time and load fast.</p>
+            <ul class="capability__tags" role="list">
+              <li class="chip" title="Next.js">Next.js</li>
+              <li class="chip" title="WebGL / Three.js">WebGL / Three.js</li>
+              <li class="chip" title="Framer Motion equivalent">Motion</li>
+              <li class="chip" title="GSAP-free custom timelines">Custom timelines</li>
+            </ul>
+          </article>
+
+          <article class="capability">
+            <h3 class="capability__title"><a class="actionable" href="#"><span class="actionable__label">Visual Branding</span></a></h3>
+            <p class="capability__body">Identity systems, art direction, type, and the small details that make a brand feel inevitable rather than assembled.</p>
+            <ul class="capability__tags" role="list">
+              <li class="chip" title="Identity">Identity</li>
+              <li class="chip" title="Typography">Typography</li>
+              <li class="chip" title="Art direction">Art direction</li>
+              <li class="chip" title="Brand systems">Brand systems</li>
+            </ul>
+          </article>
+
+          <article class="capability">
+            <h3 class="capability__title"><a class="actionable" href="#"><span class="actionable__label">IRL Experience Design</span></a></h3>
+            <p class="capability__body">Spatial installations, screens, projection, and environments that translate the digital language to physical rooms.</p>
+            <ul class="capability__tags" role="list">
+              <li class="chip" title="Installations">Installations</li>
+              <li class="chip" title="Spatial audio">Spatial audio</li>
+              <li class="chip" title="Live events">Live events</li>
+            </ul>
+          </article>
+
+          <article class="capability">
+            <h3 class="capability__title"><a class="actionable" href="#"><span class="actionable__label">Marketing Execution</span></a></h3>
+            <p class="capability__body">Launches, campaigns, and the unglamorous plumbing that turns a release week into a measured moment.</p>
+            <ul class="capability__tags" role="list">
+              <li class="chip" title="Campaigns">Campaigns</li>
+              <li class="chip" title="SEO">SEO</li>
+              <li class="chip" title="Analytics">Analytics</li>
+              <li class="chip" title="PostHog / Vercel">PostHog / Vercel</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--contact" id="contact">
+      <div class="grid-layout">
+        <header class="section__head">
+          <h2 class="eyebrow">Contact</h2>
+        </header>
+        <p class="contact__line">
+          <a class="contact__email actionable" href="mailto:hello@basement.studio">
+            <span class="actionable__label">hello@basement.studio</span>
+            <span class="contact__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 20" width="20" height="20">
+                <path fill="currentColor" d="M11.1075 14.2752 4.2763 4.29004h4.9546L17.13 14.2752h-6.0225zm0-8.57h6.0225L11.1075 15.71l1.46 1.46 8.024-8.024-8.024-8.025-1.46 1.46 6.022 6.024H11.1075v-1.4z"/>
+              </svg>
+            </span>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- People -->
+    <section class="section section--people" id="people">
+      <div class="grid-layout">
+        <header class="section__head">
+          <h2 class="eyebrow">People</h2>
+        </header>
+        <p class="lede">A small team of engineers, designers, and writers in Brooklyn. We pick up the phone for the right project.</p>
+      </div>
+    </section>
+
+    <!-- Lab -->
+    <section class="section section--lab" id="lab">
+      <div class="grid-layout">
+        <header class="section__head">
+          <h2 class="eyebrow">Lab</h2>
+        </header>
+        <p class="lede">Side projects, prototypes, and the occasional piece of software we let loose on the open web.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="grid-layout footer__top">
+      <div class="footer__wordmark" aria-hidden="true">
+        <svg viewBox="0 0 356 46" class="footer__wordmark-mobile">
+          <path fill="currentColor" d="M2 36V3h12v33H2zm20-21V8h9v7h-9zm0 21V19h9v17h-9zm15 0V3h11l15 25V3h11v33h-11L48 11v25H37zm34-21V8h26v7h-9v26h-8V15h-9zm36 21V3h30v7h-22v6h20v7h-20v6h22v7h-30zm40 0V3h11l15 25V3h11v33h-11L150 11v25h-11zm38-21V8h26v7h-9v26h-8V15h-9zm36 21V3h11v33h-11zm18 0V3h11l15 25V3h11v33h-11L254 11v25h-11zm38 0V3h11v26h22v7h-33zm42 0V3h30v7h-22v6h20v7h-20v6h22v7h-30zm40 0V3h11l15 25V3h11v33h-11L339 11v25h-11z"/>
+        </svg>
+        <svg viewBox="0 0 1673 149" class="footer__wordmark-desktop">
+          <path fill="currentColor" d="M2 138V11h48v127H2zm79-79V31h36v28h-36zm0 79V75h36v63h-36zm59 0V11h44l58 96V11h44v127h-44L200 38v100h-60zm131-79V31h101v28h-36v100h-31V59h-34zm141 79V11h118v28h-86v22h79v27h-79v23h87v27H412zm159 0V11h44l58 96V11h44v127h-44L551 38v100h-59zm151-79V31h101v28h-36v100h-31V59h-34zm141 79V11h44v127h-44zm74 0V11h44l58 96V11h44v127h-44L858 38v100h-60zm151 0V11h44v100h87v27h-131zm168 0V11h118v28h-86v22h79v27h-79v23h87v27h-118zm159 0V11h44l58 96V11h44v127h-44L1379 38v100h-60z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="grid-layout footer__body">
+      <ul class="footer__nav" role="list">
+        <li><a class="actionable" href="#home"><span class="actionable__label">Home</span></a></li>
+        <li><a class="actionable" href="#services"><span class="actionable__label">Services</span></a></li>
+        <li><a class="actionable" href="#work"><span class="actionable__label">Showcase</span> <span class="actionable-opacity">(25)</span></a></li>
+        <li><a class="actionable" href="#people"><span class="actionable__label">People</span></a></li>
+        <li><a class="actionable" href="#blog"><span class="actionable__label">Blog</span> <span class="actionable-opacity">(28)</span></a></li>
+        <li><a class="actionable" href="#lab"><span class="actionable__label">Lab</span></a></li>
+      </ul>
+
+      <form class="footer__newsletter" onsubmit="event.preventDefault();" aria-label="Newsletter signup">
+        <p class="footer__newsletter-copy">Ready to tap into the basement vibe? Sign up for our newsletter and stay plugged into all the cool stuff we're cooking up.</p>
+        <div class="footer__newsletter-row">
+          <input class="footer__newsletter-input" type="email" placeholder="your@email.com" aria-label="Email address" required />
+          <button class="footer__newsletter-submit actionable" type="submit">
+            <span class="actionable__label">Roll Me In →</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="footer__meta">
+        <p class="footer__social">
+          <a class="footer__social-link" href="#">x.com</a>,
+          <a class="footer__social-link" href="#">instagram</a>,
+          <a class="footer__social-link" href="#">github</a>,
+          <a class="footer__social-link" href="#">linkedin</a>
+        </p>
+        <p class="footer__copyright">© basement.studio LLC 2026 — all rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/basement/script.js"></script>
+</body>
+</html>

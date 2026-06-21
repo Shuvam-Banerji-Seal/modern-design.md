@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-template="home" data-has-quicknav="false" class="has-no-js is-loading">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K72 — Agence créative</title>
+  <meta name="description" content="Une agence qui pense chaque action pour nourrir la marque. Demain, dans cinq mois, dans cinq ans.">
+  <link rel="stylesheet" href="../../css/k72/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="is-loading">
+
+  <!-- SVG sprite (inlined; design.md specifies a custom sprite with these ids) -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- K72 monogram (7 hand-tuned rectangles in 103x44 viewBox) -->
+      <symbol id="logo" viewBox="0 0 103 44">
+        <g fill="currentColor">
+          <rect x="0"  y="0"  width="6"  height="44"/>
+          <rect x="12" y="0"  width="6"  height="44"/>
+          <rect x="6"  y="19" width="6"  height="6"/>
+          <rect x="24" y="0"  width="6"  height="22"/>
+          <rect x="24" y="22" width="13" height="6"/>
+          <rect x="31" y="28" width="6"  height="16"/>
+          <rect x="37" y="28" width="13" height="6"/>
+          <rect x="44" y="34" width="6"  height="10"/>
+        </g>
+      </symbol>
+      <symbol id="burger" viewBox="0 0 63 10">
+        <path d="M0 1h56M0 9h48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="close" viewBox="0 0 139 139">
+        <path d="M10 10l119 119M129 10L10 129" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 12 12">
+        <path d="M1 6h10M7 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="big-arrow" viewBox="0 0 24 24">
+        <path d="M2 12h18M14 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="heart" viewBox="0 0 70 83">
+        <path d="M35 79C12 60 2 45 2 28 2 14 13 3 27 3c8 0 14 4 18 10 4-6 10-10 18-10 14 0 25 11 25 25 0 17-10 32-33 51l-10 8-10-8z" fill="currentColor"/>
+      </symbol>
+      <symbol id="globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="currentColor"/>
+      </symbol>
+      <symbol id="quote-fr" viewBox="0 0 35 35">
+        <path d="M4 24V14c0-6 4-10 10-10v4c-4 0-6 3-6 6h6v10H4zm18 0V14c0-6 4-10 10-10v4c-4 0-6 3-6 6h6v10H22z" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Loader: 5 black columns scale up + EQ spinner (design.md c-loader) -->
+  <div class="c-loader" aria-hidden="true">
+    <div class="c-loader_col c-loader_col-1"></div>
+    <div class="c-loader_col c-loader_col-2"></div>
+    <div class="c-loader_col c-loader_col-3"></div>
+    <div class="c-loader_col c-loader_col-4"></div>
+    <div class="c-loader_col c-loader_col-5"></div>
+    <div class="c-loader_spinner">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Site wrapper -->
+  <div data-load-container class="o-wrapper">
+
+    <!-- ========== HEADER ========== -->
+    <header class="c-header">
+      <a href="#" class="c-header_logo" aria-label="K72 — accueil">
+        <svg class="c-header_logo-svg" aria-hidden="true"><use href="#logo"/></svg>
+        <span class="u-screen-reader-text">K72</span>
+      </a>
+
+      <nav class="c-header_quicknav" aria-label="Accès rapide">
+        <a href="#projets" class="c-header_quicknav_item c-header_link">
+          <span class="c-header_quicknav_label">Projets</span>
+          <span class="c-header_quicknav_count">(17)</span>
+        </a>
+        <a href="#manifeste" class="c-header_quicknav_item c-header_link">
+          <span class="c-header_quicknav_label">Agence</span>
+        </a>
+      </nav>
+
+      <button type="button" class="c-header_menu-btn c-button" data-header="menu-toggler" aria-controls="primary-menu" aria-expanded="false">
+        <svg class="c-header_menu-icon" aria-hidden="true"><use href="#burger"/></svg>
+        <span class="c-header_menu-label">Menu</span>
+      </button>
+    </header>
+
+    <!-- ========== PRIMARY MENU (full-screen overlay) ========== -->
+    <div id="primary-menu" class="c-menu" aria-hidden="true" role="dialog" aria-label="Menu principal">
+      <div class="c-menu_bg">
+        <div class="c-menu_bg_col"></div>
+        <div class="c-menu_bg_col"></div>
+        <div class="c-menu_bg_col"></div>
+        <div class="c-menu_bg_col"></div>
+        <div class="c-menu_bg_col"></div>
+      </div>
+
+      <div class="c-menu_langswitcher" aria-label="Langue">
+        <span class="c-menu_langswitcher_item -active" aria-current="true">fr</span>
+        <a href="#en" class="c-menu_langswitcher_item -link" data-load="false">en</a>
+      </div>
+
+      <button type="button" class="c-menu_close" data-header="menu-toggler" aria-label="Fermer le menu">
+        <svg aria-hidden="true"><use href="#close"/></svg>
+      </button>
+
+      <nav class="c-menu_main-nav" aria-label="Navigation principale">
+        <a href="#projets" class="c-menu_main-nav_item" data-main-nav="link">
+          <span class="c-menu_main-nav_link">
+            <span class="c-menu_main-nav_link_label">Projets</span>
+            <div class="c-menu_main-nav_link_overlay">
+              <div class="c-menu_main-nav_link_overlay_inner">
+                <span class="c-pill-image" aria-hidden="true"></span>
+                <span>Projets</span>
+                <span class="c-pill-image" aria-hidden="true"></span>
+                <span>Projets</span>
+              </div>
+            </div>
+          </span>
+        </a>
+        <a href="#manifeste" class="c-menu_main-nav_item" data-main-nav="link">
+          <span class="c-menu_main-nav_link">
+            <span class="c-menu_main-nav_link_label">Agence</span>
+            <div class="c-menu_main-nav_link_overlay">
+              <div class="c-menu_main-nav_link_overlay_inner">
+                <span class="c-pill-image" aria-hidden="true"></span>
+                <span>Agence</span>
+                <span class="c-pill-image" aria-hidden="true"></span>
+                <span>Agence</span>
+              </div>
+            </div>
+          </span>
+        </a>
+        <a href="#contact" class="c-menu_main-nav_item" data-main-nav="link">
+          <span class="c-menu_main-nav_link">
+            <span class="c-menu_main-nav_link_label">Contact</span>
+            <div class="c-menu_main-nav_link_overlay">
+              <div class="c-menu_main-nav_link_overlay_inner">
+                <svg class="c-menu_main-nav_link_heart" aria-hidden="true"><use href="#heart"/></svg>
+                <span>Contact</span>
+                <svg class="c-menu_main-nav_link_heart" aria-hidden="true"><use href="#heart"/></svg>
+                <span>Contact</span>
+              </div>
+            </div>
+          </span>
+        </a>
+        <a href="#blogue" class="c-menu_main-nav_item" data-main-nav="link">
+          <span class="c-menu_main-nav_link">
+            <span class="c-menu_main-nav_link_label">Blogue</span>
+            <div class="c-menu_main-nav_link_overlay">
+              <div class="c-menu_main-nav_link_overlay_inner">
+                <span class="c-pill-image" aria-hidden="true"></span>
+                <span>Blogue</span>
+                <span class="c-pill-image" aria-hidden="true"></span>
+                <span>Blogue</span>
+              </div>
+            </div>
+          </span>
+        </a>
+      </nav>
+
+      <footer class="c-menu_footer">
+        <ul class="c-menu_footer_legals" aria-label="Liens légaux">
+          <li><a href="#" class="c-menu_footer_legals_link">Politique de confidentialité</a></li>
+          <li><a href="#" class="c-menu_footer_legals_link">Avis de confidentialité</a></li>
+          <li><a href="#" class="c-menu_footer_legals_link" target="_blank" rel="noopener">Rapport éthique</a></li>
+        </ul>
+        <div class="c-clock c-menu_footer_clock" aria-label="Heure locale">
+          <svg aria-hidden="true"><use href="#globe"/></svg>
+          <span data-module-time>MONTREAL_00:00:00</span>
+        </div>
+        <ul class="c-socials" aria-label="Réseaux sociaux">
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">Facebook</span><span aria-hidden="true">FB</span></a></li>
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">Instagram</span><span aria-hidden="true">IG</span></a></li>
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">LinkedIn</span><span aria-hidden="true">IN</span></a></li>
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">Behance</span><span aria-hidden="true">BE</span></a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="c-home" aria-label="Introduction">
+      <figure class="c-home_background" aria-hidden="true">
+        <!-- Placeholder gradient stand-in for the live video poster (no live assets used) -->
+        <div class="c-home_background-placeholder"></div>
+      </figure>
+
+      <div class="c-home_content">
+        <h1 class="c-home_punchline">
+          <span class="c-text-lines_item">
+            <span class="c-text-lines_item_outer"><span class="c-text-lines_item_inner">Le geste qui</span></span>
+          </span>
+          <span class="c-text-lines_item">
+            <span class="c-text-lines_item_outer"><span class="c-text-lines_item_inner">façonne l'imaginaire</span></span>
+          </span>
+        </h1>
+
+        <p class="c-home_text">
+          Nous cherchons le point de friction où naît l'étincelle. Chaque projet devient un terrain d'exploration — pour dire sans filtre, pour faire sans détour. Voilà notre manière de penser la marque&nbsp;: avec rigueur, avec patience, avec audace.
+        </p>
+
+        <ul class="c-home_ctas" aria-label="Actions principales">
+          <li class="c-home_ctas_item"><a href="#projets" class="c-button -thicker c-home_ctas_link">Projets</a></li>
+          <li class="c-home_ctas_item"><a href="#manifeste" class="c-button -thicker c-home_ctas_link">Agence</a></li>
+        </ul>
+
+        <div class="c-clock c-home_clock" aria-label="Heure locale de Montréal">
+          <svg aria-hidden="true"><use href="#globe"/></svg>
+          <span data-module-time>MONTREAL_00:00:00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="c-section c-projects" id="projets" aria-label="Projets sélectionnés">
+      <header class="o-container c-projects_head">
+        <p class="o-text -micro u-anim-scroll">Projets récents</p>
+        <h2 class="c-heading -h2 u-anim-scroll">Dix-sept terrains d'exploration</h2>
+      </header>
+
+      <ul class="o-container c-projects_list" aria-label="Liste des projets">
+        <li class="c-work-thumb u-anim-scroll">
+          <a href="#" class="c-work-thumb_link">
+            <div class="c-work-thumb_media c-block-image -rounded">
+              <div class="c-work-thumb_visual c-projects_visual c-projects_visual-1"></div>
+            </div>
+            <div class="c-work-thumb_meta">
+              <h3 class="c-work-thumb_title">Café Saint-Henri</h3>
+              <p class="c-work-thumb_subtitle">Identité de marque</p>
+            </div>
+          </a>
+        </li>
+        <li class="c-work-thumb u-anim-scroll">
+          <a href="#" class="c-work-thumb_link">
+            <div class="c-work-thumb_media c-block-image -rounded">
+              <div class="c-work-thumb_visual c-projects_visual c-projects_visual-2"></div>
+            </div>
+            <div class="c-work-thumb_meta">
+              <h3 class="c-work-thumb_title">Musée d'Art Contemporain</h3>
+              <p class="c-work-thumb_subtitle">Design d'exposition</p>
+            </div>
+          </a>
+        </li>
+        <li class="c-work-thumb u-anim-scroll">
+          <a href="#" class="c-work-thumb_link">
+            <div class="c-work-thumb_media c-block-image -rounded">
+              <div class="c-work-thumb_visual c-projects_visual c-projects_visual-3"></div>
+            </div>
+            <div class="c-work-thumb_meta">
+              <h3 class="c-work-thumb_title">Théâtre du Quartier</h3>
+              <p class="c-work-thumb_subtitle">Plateforme culturelle</p>
+            </div>
+          </a>
+        </li>
+        <li class="c-work-thumb u-anim-scroll">
+          <a href="#" class="c-work-thumb_link">
+            <div class="c-work-thumb_media c-block-image -rounded">
+              <div class="c-work-thumb_visual c-projects_visual c-projects_visual-4"></div>
+            </div>
+            <div class="c-work-thumb_meta">
+              <h3 class="c-work-thumb_title">Cyclo Nord-Sud</h3>
+              <p class="c-work-thumb_subtitle">Campagne annuelle</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Banner marquee (lime, rotates -5deg; flips to +5deg on scroll-up per design.md) -->
+      <aside class="c-banner" data-banner aria-hidden="true">
+        <div class="c-banner_inner">
+          <span>Discutons de votre prochain défi</span>
+          <span aria-hidden="true">—</span>
+          <span>Discutons de votre prochain défi</span>
+          <span aria-hidden="true">—</span>
+          <span>Discutons de votre prochain défi</span>
+          <span aria-hidden="true">—</span>
+          <span>Discutons de votre prochain défi</span>
+          <span aria-hidden="true">—</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ========== MANIFESTO ========== -->
+    <section class="c-section c-manifesto" id="manifeste" aria-label="Manifeste">
+      <div class="o-container -medium c-manifesto_inner">
+        <p class="o-text -micro u-anim-scroll">Manifeste</p>
+        <h2 class="c-heading -h1-big u-anim-scroll">
+          Le détail compte.<br>
+          La rigueur reste.<br>
+          Le geste parle.
+        </h2>
+
+        <div class="c-manifesto_text o-wysiwyg u-anim-scroll u-indent">
+          <p>
+            Nous croyons qu'une marque se construit dans la durée — par la cohérence des gestes, par la répétition des intentions, par la patience des finitions. Nous travaillons lentement quand il le faut, vite quand il le faut, et toujours avec la même exigence&nbsp;: dire ce qui doit être dit, faire ce qui doit être fait, sans filtre et sans détour.
+          </p>
+          <p>
+            Notre métier consiste à trouver le point de friction. Là où l'idée cède, là où la posture vacille, là où le silence devient bavard. C'est de ce frottement que naît l'étincelle — et c'est cet instant que nous cherchons, projet après projet, marque après marque.
+          </p>
+        </div>
+
+        <figure class="c-blockquote u-anim-scroll">
+          <svg class="c-blockquote_icon" aria-hidden="true"><use href="#quote-fr"/></svg>
+          <blockquote class="c-blockquote_content">
+            «&nbsp;On ne convainc pas avec des arguments, on convainc avec des preuves.&nbsp;»
+          </blockquote>
+          <figcaption class="c-blockquote-author">— Note interne, Montréal, 2026</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="c-section c-contact" id="contact" aria-label="Contact">
+      <div class="o-container -medium c-contact_inner">
+        <p class="o-text -micro u-anim-scroll">Contact</p>
+        <h2 class="c-heading -h1 c-contact_punchline u-anim-scroll">
+          Parlons<br>de votre<br>marque.
+        </h2>
+
+        <ul class="c-contact_infos" aria-label="Coordonnées">
+          <li class="c-contact_infos_item u-anim-scroll">
+            <span class="o-text -small">Courriel</span>
+            <a href="mailto:bonjour@k72.local" class="c-contact_infos_link">bonjour@k72.local</a>
+          </li>
+          <li class="c-contact_infos_item u-anim-scroll">
+            <span class="o-text -small">Téléphone</span>
+            <a href="tel:+15145550172" class="c-contact_infos_link">+1 514 555 0172</a>
+          </li>
+          <li class="c-contact_infos_item u-anim-scroll">
+            <span class="o-text -small">Adresse</span>
+            <address class="c-contact_infos_address">Montréal, Québec<br>Canada</address>
+          </li>
+        </ul>
+
+        <form class="c-form u-anim-scroll" novalidate>
+          <div class="c-form_row">
+            <label class="c-form_label" for="c-form_name">Nom</label>
+            <input class="c-form_input" id="c-form_name" name="name" type="text" required>
+          </div>
+          <div class="c-form_row">
+            <label class="c-form_label" for="c-form_email">Courriel</label>
+            <input class="c-form_input" id="c-form_email" name="email" type="email" required>
+          </div>
+          <div class="c-form_row">
+            <label class="c-form_label" for="c-form_message">Votre projet</label>
+            <textarea class="c-form_input" id="c-form_message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="c-button -thicker c-form_submit">Envoyer</button>
+        </form>
+
+        <ul class="c-socials c-contact_socials" aria-label="Réseaux sociaux">
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">Facebook</span><span aria-hidden="true">FB</span></a></li>
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">Instagram</span><span aria-hidden="true">IG</span></a></li>
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">LinkedIn</span><span aria-hidden="true">IN</span></a></li>
+          <li class="c-socials_item"><a href="#" class="c-button c-socials_link"><span class="u-screen-reader-text">Behance</span><span aria-hidden="true">BE</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="c-footer" aria-label="Pied de page">
+      <div class="o-container c-footer_head u-anim-scroll">
+        <p class="c-footer_brand">Une agence qui pense chaque action pour nourrir la marque.</p>
+      </div>
+
+      <div class="o-container c-footer_foot">
+        <ul class="c-footer_legals" aria-label="Liens légaux">
+          <li><a href="#" class="c-footer_legals_link">Politique de confidentialité</a></li>
+          <li><a href="#" class="c-footer_legals_link">Avis de confidentialité</a></li>
+          <li><a href="#" class="c-footer_legals_link" target="_blank" rel="noopener">Rapport éthique</a></li>
+          <li><button type="button" class="c-footer_legals_link c-footer_consent">Options de consentement</button></li>
+        </ul>
+
+        <div class="c-clock c-footer_clock" aria-label="Heure locale">
+          <svg aria-hidden="true"><use href="#globe"/></svg>
+          <span data-module-time>MONTREAL_00:00:00</span>
+        </div>
+
+        <button type="button" class="c-button -dark-hover c-footer_top-btn" data-scroll-to="#top">
+          Haut de page
+        </button>
+      </div>
+
+      <p class="c-footer_fineprint">
+        <span>&copy; 2026 — Agence créative fictive — showcase design.md</span>
+      </p>
+    </footer>
+
+  </div><!-- /data-load-container -->
+
+  <!-- Custom 11px scrollbar (Locomotive-style) -->
+  <div class="c-scrollbar" data-scrollbar aria-hidden="true">
+    <div class="c-scrollbar_thumb" data-scrollbar-thumb></div>
+  </div>
+
+  <script src="../../js/k72/script.js" defer></script>
+</body>
+</html>

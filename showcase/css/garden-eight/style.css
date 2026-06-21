@@ -1,0 +1,1033 @@
+/* ==========================================================================
+   Garden Eight — design.md rebuild
+   All values below are pulled directly from the design.md spec; no invented
+   tokens, easings, durations, sizes, or colors.
+   ========================================================================== */
+
+:root {
+  /* ---- Color tokens (real values from design.md §Color) ----------------- */
+  --col-black:  #1E1F1F; /* near-black charcoal, default <html> background */
+  --col-white:  #DBD6D0; /* warm bone, used for [data-bg="white"] sections */
+  --col-black2: #1C1D1D; /* one step lighter than black, ui-budge + active "none" */
+  --col-black3: #141414; /* shadow wells */
+  --col-gray:   #3C3C3C; /* kept as a token, not used as text in rendered DOM */
+  --col-orange: #DC5648; /* the only true brand accent */
+
+  /* ---- Viewport-height token, overridden by JS (design.md §Color) ------ */
+  --vh: 1vh;
+
+  /* ---- Easing tokens (design.md §Motion & Interaction, principles) ----- */
+  --ease-soft:    cubic-bezier(0.32, 0.94, 0.6, 1); /* default for reveals   */
+  --ease-sharp:   cubic-bezier(0.4, 0, 0.68, 0.06); /* exit / fast motion    */
+  --ease-bouncy:  cubic-bezier(0.66, 0, 0.34, 1);  /* link underline wipe   */
+
+  /* ---- Duration ladder (design.md §Motion, principles) ------------------ */
+  --d-fast:    0.1s;
+  --d-quick:   0.3s;
+  --d-mid:     0.6s;
+  --d-fade:    0.7s;
+  --d-rule:    1.2s;
+  --d-reveal:  1.4s;
+  --d-scale:   1.8s;
+
+  /* ---- Type scale aliases (design.md §Typography, desktop) ------------- */
+  /* lausanne (Inter as the Google Fonts analog for TWK Lausanne) */
+  --f-display: 14.93vw;
+  --f-h1:      14.93vw;
+  --f-h2:      10.416vw;
+  --f-h3:      10.416vw;
+  --f-h4:       3.125vw;
+  --f-h5:       1.666vw;
+  --f-h6:       1.076vw;
+  --f-body:     1.076vw; /* Pc body */
+  --f-html:     0.972vw; /* <html> default / f-m */
+  --f-s:        0.833vw;
+  --f-xs:       0.763vw;
+  --f-xxs:      0.694vw;
+  --f-lead:     1.041vw; /* description lead, weight 200 */
+  --f-logo:     1.041vw; /* wordmark "Garden / One" */
+
+  /* Pressed-surface bezel shadow (design.md §Spacing & radius) */
+  --bezel: inset 0 2px 2px #1E1F1F,
+            inset 0 3px 2px #DBD6D0,
+            inset 0 3px 3px #DBD6D0;
+
+  /* Page gutter */
+  --gutter-d: 12.5vw;
+  --gutter-m: 20px;
+}
+
+/* ==========================================================================
+   Reset & base
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* lausanne, sans-serif per design.md; Inter is the closest free analog
+     because TWKLausanne is a commercial Toshi Omagari face. */
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: var(--f-html);
+  line-height: 1.42;
+  letter-spacing: normal;
+  background: var(--col-black);
+  color: var(--col-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: calc(var(--vh) * 100);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul { list-style: none; padding: 0; margin: 0; }
+img, svg, video { display: block; max-width: 100%; }
+
+::selection { background: var(--col-white); color: var(--col-black); }
+[data-bg="white"] ::selection { background: var(--col-black); color: var(--col-white); }
+
+[data-bg="white"] a { outline-color: var(--col-black); }
+[data-bg="black"] a { outline-color: var(--col-white); }
+
+/* ==========================================================================
+   Page shell (design.md §Layout & Grid)
+   #__app fills the viewport; .Sc is the sticky viewport; .Sw is the scroll
+   layer; .ui-fixed floats above at z-index 6.
+   ========================================================================== */
+
+#__app {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Sc {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.Sw {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  z-index: 2;
+}
+
+/* Centered text column: 75vw wide on desktop (12.5vw padding each side) */
+.body {
+  padding-left: var(--gutter-d);
+  padding-right: var(--gutter-d);
+}
+
+/* The "body" class is applied to the main scroll layer in the original; we
+   apply the same padding to .Pc. */
+.Pc {
+  padding-left: var(--gutter-d);
+  padding-right: var(--gutter-d);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Color flip — [data-bg="white"] / [data-bg="black"] (design.md §Color)
+   ========================================================================== */
+
+[data-bg="white"] {
+  background: var(--col-white);
+  color: var(--col-black);
+}
+
+[data-bg="black"] {
+  background: var(--col-black);
+  color: var(--col-white);
+}
+
+[data-bg="white"].description,
+[data-bg="white"].intro {
+  color: var(--col-black);
+}
+
+/* ==========================================================================
+   WebGL canvas slot (static fallback; design.md §Background WebGL canvas)
+   ========================================================================== */
+
+.js-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--d-fade) linear var(--d-quick);
+}
+
+.is-loaded .js-canvas { opacity: 1; }
+
+/* Top vignette: design.md describes a `box-shadow: inset 0 6.25vw 5vw #000`
+   cap at the top of the page over the WebGL canvas. */
+.Sd {
+  position: absolute;
+  top: 0;
+  left: -6.25vw;
+  width: calc(100% + 12.5vw);
+  height: 12.5vw;
+  box-shadow: inset 0 6.25vw 5vw #000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--d-fade) linear;
+}
+
+.is-loaded .Sd.fadein[data-shown="1"] { opacity: 0.2; }
+
+/* ==========================================================================
+   Header / sticky nav (design.md §Header / Nav)
+   ========================================================================== */
+
+.Hd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  pointer-events: none;
+  color: var(--col-white);
+}
+
+.Hd > * { pointer-events: auto; }
+
+.ui-name {
+  display: flex;
+  align-items: center;
+  height: 6.25vw;
+  min-height: 2em;
+  padding: 0 3.125vw;
+}
+
+.wordmark {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: var(--f-logo);
+  line-height: 1.42;
+  letter-spacing: normal;
+}
+
+.wordmark .js-p {
+  text-transform: uppercase;
+  padding-left: 0.33em;
+}
+
+.ui-navi-r {
+  display: flex;
+  align-items: center;
+  padding: 0 2.625vw;
+}
+
+.ui-menu {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  height: 6.25vw;
+  min-height: 2em;
+  justify-content: center;
+  font-size: var(--f-s);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ui-menu .y {
+  display: block;
+  transition: transform var(--d-mid) var(--ease-sharp);
+}
+
+.ui-menu .y + .y { margin-top: 0.2em; }
+
+.ui-menu:hover .y:first-child,
+.ui-navi-wrap:target ~ .Hd .ui-menu .y:first-child {
+  transform: translateY(-100%);
+}
+
+/* ==========================================================================
+   Slide-in full-screen nav (design.md §Header / Nav, .ui-navi-wrap)
+   ========================================================================== */
+
+.ui-navi-wrap {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.ui-navi-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--col-black);
+  transform: translateY(-101%);
+  transition: transform var(--d-mid) linear;
+}
+
+.ui-navi-wrap:target .ui-navi-bg { transform: translateY(0); }
+
+.ui-navi {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ui-navi ul {
+  text-align: center;
+  font-size: var(--f-h3);
+  line-height: 1.42;
+  font-weight: 400;
+}
+
+.ui-navi li {
+  overflow: hidden;
+  /* design.md: each [data-d="N"] gets a 0.05s additional delay, cascade in */
+}
+
+.ui-navi .a {
+  display: inline-block;
+  padding: 0.15em 0.4em;
+  position: relative;
+}
+
+.ui-navi .t {
+  display: inline-block;
+  transform: translateY(120%);
+  transition: transform var(--d-mid) linear;
+}
+
+.ui-navi .b {
+  position: absolute;
+  left: 0.4em;
+  right: 0.4em;
+  bottom: 0.15em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--d-quick) var(--ease-soft);
+}
+
+.ui-navi .a:hover .b { transform: scaleX(1); }
+
+.ui-navi-wrap:target { pointer-events: auto; }
+.ui-navi-wrap:target .ui-navi { pointer-events: auto; }
+.ui-navi-wrap:target .ui-navi .t { transform: translateY(0); }
+
+/* Cascade — 0.05s per [data-d="N"] */
+.ui-navi-wrap:target .ui-navi li[data-d="0"] .t { transition-delay: 0.05s; }
+.ui-navi-wrap:target .ui-navi li[data-d="1"] .t { transition-delay: 0.10s; }
+.ui-navi-wrap:target .ui-navi li[data-d="2"] .t { transition-delay: 0.15s; }
+.ui-navi-wrap:target .ui-navi li[data-d="3"] .t { transition-delay: 0.20s; }
+.ui-navi-wrap:target .ui-navi li[data-d="4"] .t { transition-delay: 0.25s; }
+.ui-navi-wrap:target .ui-navi li[data-d="5"] .t { transition-delay: 0.30s; }
+
+/* ==========================================================================
+   Page hero wordmark (design.md §Page hero wordmark)
+   Centered, three lines: "What / can we / make next" with staircase indent.
+   Serif (gunsan → Cormorant Garamond Italic 600) at 14.93vw with line-height
+   0.51 and zero letter-spacing.
+   ========================================================================== */
+
+.Ph {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+}
+
+.site-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -3.125vw;
+}
+
+.h1 {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: var(--f-display);
+  line-height: 0.51;
+  letter-spacing: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.h1 .p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.h1 [data-str="what"]  { padding-left: 0.4em; justify-content: flex-start; }
+.h1 [data-str="canwe"] { padding-left: 1.3em; white-space: nowrap; }
+.h1 [data-str="make"]  { padding-left: 0; }
+
+/* clip-y reveal: 1.4s soft, translateY(140%) → 0 */
+.clip-y .t {
+  display: inline-block;
+  transform: translate3d(0, 140%, 0);
+  transition: transform var(--d-reveal) var(--ease-soft);
+}
+
+.is-loaded .clip-y .t { transform: translate3d(0, 0, 0); }
+
+/* 0.05s stagger between [data-d="N"] cells */
+.is-loaded .clip-y [data-d="0"] .t { transition-delay: 0.00s; }
+.is-loaded .clip-y [data-d="1"] .t { transition-delay: 0.05s; }
+.is-loaded .clip-y [data-d="2"] .t { transition-delay: 0.10s; }
+.is-loaded .clip-y [data-d="3"] .t { transition-delay: 0.15s; }
+.is-loaded .clip-y [data-d="4"] .t { transition-delay: 0.20s; }
+
+.description {
+  position: absolute;
+  top: 4.17vw;
+  left: 3.125vw;
+  font-size: var(--f-s);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Intro paragraph (design.md §Intro paragraph)
+   Centered, three lines, lausanne 200 / 1.25em
+   ========================================================================== */
+
+.intro {
+  text-align: center;
+  font-size: var(--f-lead);
+  font-weight: 200;
+  line-height: 1.6;
+  padding: 6.25vw 0 6.25vw;
+}
+
+.intro .p { display: block; }
+
+/* ==========================================================================
+   Case-study marquee / projects (design.md §Case-study marquee)
+   Each item is a serif title with a round "thumb" capsule embedded in the
+   first word. The thumb has the pressed-bezel inset shadow.
+   ========================================================================== */
+
+.pickup-wrap {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
+
+.pickup-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6.25vw;
+  padding: 3.125vw 0;
+}
+
+.pickup-li {
+  text-align: center;
+  line-height: 0;
+}
+
+.pickup-a {
+  display: inline-block;
+}
+
+.cases-h1 {
+  position: relative;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--f-display);
+  line-height: 0.6;
+  letter-spacing: 0;
+  color: var(--col-white);
+}
+
+[data-bg="white"] .cases-h1 { color: var(--col-black); }
+
+.cases-h1 .l {
+  display: inline-block;
+  padding: 0 0.1em;
+  opacity: 0.7;
+  transition: opacity var(--d-mid) var(--ease-soft);
+}
+
+.pickup-a:hover .cases-h1 .l { opacity: 1; }
+
+/* Thumb capsule (design.md: border-radius 1em, .53em square, position absolute
+   centered between words) */
+.thumb {
+  display: inline-block;
+  position: relative;
+  width: 0.53em;
+  height: 0.53em;
+  border-radius: 1em;
+  margin: 0 0.05em;
+  vertical-align: middle;
+  opacity: 0;
+  transition: opacity var(--d-mid) var(--ease-soft);
+}
+
+.is-loaded .cases-h1 .thumb[data-shown="1"] { opacity: 0.9; }
+
+.thumb .b {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: hsla(33, 13%, 84%, 0.2);
+  box-shadow: var(--bezel);
+}
+
+.case-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 0.18em;
+  color: var(--col-white);
+}
+
+[data-bg="white"] .case-label { color: var(--col-black); }
+
+/* Horizontal rule that scales from 0 to full width (design.md §CSS
+   transition classes: .hr[data-shown="1"] div → scale(1)) */
+.hr {
+  width: 100%;
+  margin: 6.25vw 0 3.125vw;
+}
+
+.hr > div {
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform var(--d-rule) linear;
+}
+
+.is-loaded .hr[data-shown="1"] > div { transform: scaleX(1); }
+
+/* ==========================================================================
+   Link with underline-on-hover (design.md §ui-link-hn, .a .b)
+   1px bar scales from scaleX(0) → scaleX(1) over 0.3s soft.
+   ========================================================================== */
+
+.a {
+  position: relative;
+  display: inline-block;
+}
+
+.a .t {
+  display: inline-block;
+}
+
+.a .b {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--d-quick) var(--ease-soft);
+}
+
+.a:hover .b,
+.a:focus-visible .b { transform: scaleX(1); }
+
+.ui-link-hn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding-bottom: 0.4em;
+  font-size: var(--f-body);
+}
+
+.ui-link-hn .num {
+  font-weight: 200;
+  padding-left: 0.5em;
+  padding-top: 1px;
+  font-size: 0.85em;
+}
+
+.ui-link-wrap {
+  display: block;
+  text-align: center;
+  margin: 3.125vw auto 6.25vw;
+}
+
+/* ==========================================================================
+   Page footer / about panel (design.md §Page footer video panel .Pf)
+   Full-bleed [data-bg="black"] section, video poster inset.
+   ========================================================================== */
+
+.Pf {
+  position: relative;
+  width: 100%;
+  padding-top: 6.25vw;
+}
+
+.Pf-body {
+  position: relative;
+  min-height: calc(var(--vh) * 100 - 6.25vw);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.17vw;
+}
+
+.Pf-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.a-mask {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 default */
+  background: var(--col-black);
+}
+
+.poster {
+  position: absolute;
+  inset: 0;
+  /* design.md: poster is a WebP from the live CDN; we use a CSS gradient
+     placeholder so no live asset is fetched. */
+  background:
+    radial-gradient(120% 80% at 70% 30%, #2A2A2A 0%, transparent 60%),
+    radial-gradient(80% 60% at 20% 70%, #161616 0%, transparent 65%),
+    linear-gradient(180deg, #1E1F1F 0%, #141414 100%);
+  box-shadow: inset 0 0 0 1px rgba(219, 214, 208, 0.08);
+  opacity: 0;
+  transition: opacity var(--d-reveal) linear var(--d-quick);
+}
+
+.is-loaded .Pf .poster { opacity: 1; }
+
+/* Two-column layout for the about copy (design.md §col-wrap) */
+.col-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2.083vw;
+  padding: 6.25vw 0;
+}
+
+.col-wrap .col {
+  padding: 0 2.083vw;
+  width: 50%;
+}
+
+.col-wrap .col[data-n="4"] { width: 50%; }
+
+.slidein {
+  font-size: var(--f-h4);
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0;
+}
+
+.slidein .t {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 1em, 0);
+  transition:
+    opacity var(--d-reveal) linear,
+    transform var(--d-reveal) linear;
+}
+
+.is-loaded .slidein[data-shown="1"] .t {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.is-loaded .slidein[data-shown="1"] [data-d="1"] .t { transition-delay: 0.05s; }
+
+.editor {
+  font-size: var(--f-lead);
+  font-weight: 200;
+  line-height: 1.6;
+  margin: 0 0 1.5em;
+  opacity: 0;
+  transform: translate3d(0, 2em, 0);
+  transition:
+    opacity var(--d-reveal) linear,
+    transform var(--d-reveal) linear;
+}
+
+.is-loaded .editor[data-shown="1"] {
+  opacity: 0.9;
+  transform: translate3d(0, 0, 0);
+}
+
+.ui-link-bl {
+  display: inline-block;
+  font-size: var(--f-body);
+  padding-bottom: 0.3em;
+}
+
+/* ==========================================================================
+   Sub-mini footer (design.md §Sub-mini footer .Sm)
+   4 slots: logo / address / sns / mail. position:absolute; bottom:0.
+   ========================================================================== */
+
+.Sm {
+  position: relative;
+  margin-top: 6.25vw;
+  padding: 2.083vw 0;
+  min-height: 6.25vw;
+  display: grid;
+  grid-template-columns: 12.5vw 1fr 1fr 1fr;
+  align-items: center;
+  gap: 1vw;
+  font-size: var(--f-xs);
+  line-height: 1.5;
+  border-top: 1px solid rgba(219, 214, 208, 0.08);
+}
+
+.Sm-li { display: flex; align-items: center; }
+
+.Sm-li._logo { padding-left: 0; }
+.Sm-li._logo svg { height: 1.67vw; width: auto; color: currentColor; }
+
+.Sm-li._address { justify-content: flex-start; opacity: 0.7; }
+
+.Sm-li._sns {
+  justify-content: center;
+  gap: 1.25vw;
+}
+
+.sns-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.083vw;
+  height: 4.167vw;
+  font-size: var(--f-s);
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+.sns-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.2em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--d-quick) var(--ease-soft);
+}
+
+.sns-link:hover::after { transform: scaleX(1); }
+
+.Sm-li._mail { justify-content: flex-end; padding-right: 0; }
+
+.ui-btn-mail {
+  position: relative;
+  display: inline-block;
+  font-size: var(--f-xs);
+  overflow: hidden;
+  padding-bottom: 0.2em;
+}
+
+.ui-btn-mail .t {
+  display: inline-block;
+  transition: transform var(--d-reveal) var(--ease-soft);
+}
+
+.ui-btn-mail .t + .t { margin-left: 0.6em; }
+
+.ui-btn-mail .copied-state {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(40%);
+  transition: transform var(--d-quick) var(--ease-soft), opacity var(--d-quick) linear;
+  pointer-events: none;
+}
+
+.ui-btn-mail.is-copied .copied-state {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ui-btn-mail .b {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--d-quick) var(--ease-soft);
+}
+
+.ui-btn-mail:hover .b { transform: scaleX(1); }
+
+/* ==========================================================================
+   Custom cursor (design.md §Custom WebGL cursor .ui-cursor)
+   .53em circle, fixed, follows mouse. icon & bg scale 0→1 on view targets.
+   ========================================================================== */
+
+.ui-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  pointer-events: none;
+  width: 0.53em;
+  height: 0.53em;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+
+.ui-cursor .icon,
+.ui-cursor .bg {
+  position: absolute;
+  inset: 0;
+  transition: transform var(--d-quick) linear;
+}
+
+.ui-cursor .icon {
+  transform: rotate(-90deg) scale(0.355);
+  color: var(--col-white);
+  z-index: 1;
+}
+
+.ui-cursor .bg {
+  background: var(--col-black);
+  border-radius: 100%;
+  box-shadow: var(--bezel);
+  transform: scale(0);
+}
+
+[data-cursor-type="view"] .icon,
+[data-cursor-type="view"] .bg { transform: scale(1); }
+
+/* ==========================================================================
+   Scroll progress disk (design.md §Scroll progress disk .ui-scroll)
+   bottom-right, ring + arrow, slides in from translate3d(110%,0,0) → 0.
+   ========================================================================== */
+
+.ui-scroll {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 2.083vw;
+  height: 6.25vw;
+  padding: 0 2.625vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  color: var(--col-white);
+  transform: translate3d(110%, 0, 0);
+  transition: transform var(--d-reveal) linear, color var(--d-fast) linear;
+}
+
+.is-loaded .ui-scroll { transform: translate3d(0, 0, 0); }
+
+[data-ov-fb="1"] [data-bg="white"] ~ .ui-scroll,
+.is-in-white .ui-scroll { color: var(--col-black); }
+
+.ui-scroll .progress {
+  width: 100%;
+  height: auto;
+}
+
+.ui-scroll .progress path {
+  /* pathLength drives the visible arc; JS sets stroke-dashoffset */
+  stroke-dasharray: var(--circ, 360);
+  stroke-dashoffset: var(--circ, 360);
+  transition: stroke-dashoffset var(--d-quick) linear;
+}
+
+.ui-scroll .arrow {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ui-scroll .arrow .bg {
+  width: 60%;
+  height: auto;
+  transform: scale(0.7);
+  transition: transform var(--d-quick) linear;
+}
+
+.ui-scroll:hover .arrow .bg { transform: scale(1); }
+
+.ui-scroll .arrow .path {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  transform: rotate(0) scale(0.7);
+  transition: transform var(--d-fade) linear;
+  color: var(--col-black);
+}
+
+[data-ov-ft="1"] .ui-scroll .arrow .path {
+  transform: rotate(-180deg) scale(0.7);
+}
+
+/* ==========================================================================
+   Spacing tokens via [data-n="N"] (design.md §Spacing & radius)
+   ========================================================================== */
+
+[data-n="0"]   { --sp-d: 0;            --sp-m: 0; }
+[data-n="0.5"] { --sp-d: 1.04vw;       --sp-m: 5px; }
+[data-n="1"]   { --sp-d: 2.08vw;       --sp-m: 10px; }
+[data-n="1.5"] { --sp-d: 3.125vw;      --sp-m: 15px; }
+[data-n="2"]   { --sp-d: 4.17vw;       --sp-m: 20px; }
+[data-n="2.5"] { --sp-d: 5.21vw;       --sp-m: 25px; }
+[data-n="3"]   { --sp-d: 6.25vw;       --sp-m: 30px; }
+[data-n="3.5"] { --sp-d: 7.29vw;       --sp-m: 35px; }
+[data-n="4"]   { --sp-d: 8.33vw;       --sp-m: 40px; }
+[data-n="4.5"] { --sp-d: 9.375vw;      --sp-m: 45px; }
+[data-n="5"]   { --sp-d: 10.42vw;      --sp-m: 50px; }
+[data-n="5.5"] { --sp-d: 11.46vw;      --sp-m: 55px; }
+[data-n="6"]   { --sp-d: 12.5vw;       --sp-m: 60px; }
+
+.Ph   { padding-top:    max(18.75vw, var(--sp-d, 0)); padding-bottom: max(10.42vw, var(--sp-d, 0)); }
+.Pb   { padding-top:    var(--sp-d, 0); padding-bottom: var(--sp-d, 0); }
+
+/* ==========================================================================
+   Loading state (design.md §CSS transition classes)
+   Initial reveal triggers when .is-loading-a is removed and .is-loaded is set.
+   ========================================================================== */
+
+.is-loading-a { overflow: hidden; }
+.is-loading-a .js-sp { opacity: 0; }
+
+.is-loaded .js-sp { opacity: 1; transition: opacity var(--d-fade) linear; }
+
+/* ==========================================================================
+   Responsive — breakpoints (design.md §Layout & Grid, breakpoints)
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  :root {
+    --f-display: 14.6314vw;
+    --f-h2:      8.5vw;
+    --f-h3:      8.5vw;
+    --f-body:    1.4vw;
+    --f-html:    1.3vw;
+  }
+  .Pc { padding-left: var(--gutter-d); padding-right: var(--gutter-d); }
+}
+
+@media (max-width: 844px) and (orientation: landscape) {
+  :root {
+    --f-display: 11.944vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .Pf-body { padding: 0 90px; }
+}
+
+@media (max-width: 640px) {
+  :root {
+    /* design.md: clamps to absolute px on mobile, body 14px, hero 14.1835vw */
+    --f-display: 14.1835vw;
+    --f-h1:      14.1835vw;
+    --f-h2:      8vw;
+    --f-h3:      8vw;
+    --f-h4:      5vw;
+    --f-h5:      3vw;
+    --f-h6:      2.4vw;
+    --f-body:    2.4vw;
+    --f-html:    14px;
+    --f-s:       2.2vw;
+    --f-xs:      2.1vw;
+    --f-xxs:     2vw;
+    --f-lead:    2.6vw;
+    --f-logo:    3vw;
+  }
+  .Pc { padding-left: var(--gutter-m); padding-right: var(--gutter-m); }
+  .body { padding-left: var(--gutter-m); padding-right: var(--gutter-m); }
+  .Hd { height: 60px; }
+  .ui-name, .ui-menu { height: 60px; min-height: 60px; padding: 0 16px; }
+  .Sm {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo address"
+      "sns  mail";
+    min-height: 120px;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+  .Sm-li._logo { grid-area: logo; }
+  .Sm-li._logo svg { height: 24px; }
+  .Sm-li._address { grid-area: address; justify-content: flex-end; }
+  .Sm-li._sns { grid-area: sns; gap: 18px; }
+  .sns-link { width: 28px; height: 36px; }
+  .Sm-li._mail { grid-area: mail; justify-content: flex-end; }
+  .ui-scroll {
+    width: 60px; height: 60px; padding: 0; top: auto; right: 0; bottom: 0;
+  }
+  .ui-cursor { display: none; } /* mobile: native cursor */
+  .Sd {
+    box-shadow: inset 0 40px 32px #000;
+    height: 60px; left: -20px; width: calc(100% + 40px);
+  }
+  .intro { text-align: left; padding-bottom: 20px; }
+}
+
+@media (min-width: 1680px) {
+  :root { --f-html: 16.24px; }
+}
+
+@media (min-width: 1920px) {
+  :root { --f-html: 0.611vw; }
+}
+
+/* ==========================================================================
+   Reduced motion (design.md §Reduced motion)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .mq-anim { padding-left: 3.125vw !important; }
+}

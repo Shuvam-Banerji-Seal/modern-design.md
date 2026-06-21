@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resn &middot; Creative Studio &mdash; design.md showcase</title>
+  <meta name="description" content="A New Zealand creative studio shaping digital brand, content, and interactive experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&family=Inter:wght@200;300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="../../css/resn/style.css" />
+</head>
+<body class="shell">
+  <div class="background-shards" aria-hidden="true">
+    <canvas id="bg-canvas"></canvas>
+  </div>
+
+  <svg class="spritemap" aria-hidden="true" focusable="false">
+    <symbol id="icon-drop" viewBox="0 0 36.21 50">
+      <path d="M18.1 0C18.1 14.5 0 24.4 0 36.2 0 43.9 5.3 50 18.1 50S36.2 43.9 36.2 36.2C36.2 24.4 18.1 14.5 18.1 0z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 18 18">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square">
+        <line x1="0" y1="4"  x2="18" y2="4"/>
+        <line x1="0" y1="9"  x2="18" y2="9"/>
+        <line x1="0" y1="14" x2="18" y2="14"/>
+      </g>
+    </symbol>
+    <symbol id="icon-reel" viewBox="0 0 15 17">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square">
+        <polygon points="2,1 13,8 2,15"/>
+        <line x1="13" y1="1" x2="13" y2="15"/>
+      </g>
+    </symbol>
+    <symbol id="icon-audio-on" viewBox="0 0 24 16">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square">
+        <line x1="1"  y1="8"  x2="1"  y2="8"/>
+        <line x1="4"  y1="6"  x2="4"  y2="10"/>
+        <line x1="7"  y1="3"  x2="7"  y2="13"/>
+        <line x1="10" y1="5"  x2="10" y2="11"/>
+        <line x1="13" y1="2"  x2="13" y2="14"/>
+        <line x1="16" y1="5"  x2="16" y2="11"/>
+        <line x1="19" y1="3"  x2="19" y2="13"/>
+        <line x1="22" y1="7"  x2="22" y2="9"/>
+      </g>
+    </symbol>
+    <symbol id="icon-audio-off" viewBox="0 0 24 16">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square">
+        <line x1="1"  y1="8"  x2="1"  y2="8"/>
+        <line x1="4"  y1="6"  x2="4"  y2="10"/>
+        <line x1="7"  y1="3"  x2="7"  y2="13"/>
+        <line x1="22" y1="0"  x2="0"  y2="16"/>
+      </g>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 12">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square">
+        <line x1="0" y1="6" x2="22" y2="6"/>
+        <polyline points="17,1 22,6 17,11"/>
+      </g>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 18 18">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="square">
+        <line x1="1" y1="1" x2="17" y2="17"/>
+        <line x1="17" y1="1" x2="1" y2="17"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <header class="shell-nav" aria-label="Primary">
+    <button class="shell-btn shell-btn--drop" type="button" data-action="drop" aria-label="Enter the drop experience">
+      <span class="btn-hitarea" aria-hidden="true"></span>
+      <span class="btn-icon" aria-hidden="true">
+        <svg class="icon" width="18" height="24"><use href="#icon-drop"/></svg>
+      </span>
+      <span class="btn-text">Drop</span>
+    </button>
+
+    <button class="shell-btn shell-btn--menu" type="button" data-action="menu" aria-label="Open the discover menu" aria-expanded="false">
+      <span class="btn-hitarea" aria-hidden="true"></span>
+      <span class="btn-icon" aria-hidden="true">
+        <svg class="icon" width="18" height="18"><use href="#icon-menu"/></svg>
+      </span>
+      <span class="btn-text">Discover</span>
+    </button>
+
+    <button class="shell-btn shell-btn--reel" type="button" data-action="reel" aria-label="Open the showreel">
+      <span class="btn-hitarea" aria-hidden="true"></span>
+      <span class="btn-icon" aria-hidden="true">
+        <svg class="icon" width="15" height="17"><use href="#icon-reel"/></svg>
+      </span>
+      <span class="btn-text">Showreel</span>
+    </button>
+
+    <button class="shell-btn shell-btn--audio" type="button" data-action="audio" aria-label="Toggle ambient audio" aria-pressed="false">
+      <span class="btn-hitarea" aria-hidden="true"></span>
+      <span class="btn-icon" aria-hidden="true">
+        <svg class="icon icon--on"  width="24" height="16"><use href="#icon-audio-on"/></svg>
+        <svg class="icon icon--off" width="24" height="16"><use href="#icon-audio-off"/></svg>
+      </span>
+      <span class="btn-text">Audio</span>
+    </button>
+
+    <div class="award-ticker" role="status" aria-live="off">
+      <span class="ticker-prefix">Awards &middot;</span>
+      <span class="ticker-number" data-target="248">0</span>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <section class="hero" id="hero" aria-labelledby="tagline">
+      <h1 class="tagline" id="tagline">
+        <span class="tagline-line">
+          <span class="t-letter">R</span><span class="t-letter">e</span><span class="t-letter">s</span><span class="t-letter">n</span>
+          <span class="t-dot">&middot;</span>
+          <span class="t-letter">C</span><span class="t-letter">r</span><span class="t-letter">e</span><span class="t-letter">a</span><span class="t-letter">t</span><span class="t-letter">i</span><span class="t-letter">v</span><span class="t-letter">e</span>
+          <span class="t-space"> </span>
+          <span class="t-letter">S</span><span class="t-letter">t</span><span class="t-letter">u</span><span class="t-letter">d</span><span class="t-letter">i</span><span class="t-letter">o</span>
+        </span>
+        <span class="tagline-line tagline-line--sub">
+          <span class="t-letter">E</span><span class="t-letter">s</span><span class="t-letter">t</span><span class="t-dot">.</span>
+          <span class="t-space"> </span>
+          <span class="t-letter">2</span><span class="t-letter">0</span><span class="t-letter">0</span><span class="t-letter">4</span>
+        </span>
+      </h1>
+
+      <div class="interactive-bar" aria-hidden="false">
+        <div class="ib-track"></div>
+        <div class="ib-knob" data-frame="0">
+          <span class="ib-knob-dot"></span>
+        </div>
+        <div class="ib-counter">
+          <span class="ib-digit" data-num="0">0</span>
+          <span class="ib-divider"></span>
+          <span class="ib-digit ib-digit--max">05</span>
+        </div>
+        <p class="ib-msg">interactive / cycle scenes</p>
+      </div>
+    </section>
+
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Featured Project</p>
+      <h2 class="featured-title" id="featured-title">Tracing <em>Art</em></h2>
+      <p class="featured-meta">Getty &middot; 2025 &middot; Desktop, Tablet, Mobile</p>
+      <div class="featured-art" role="img" aria-label="A wireframe ribbon sculpture drawn across a museum floor.">
+        <div class="featured-grid"></div>
+        <div class="featured-ribbon"></div>
+        <div class="featured-grain"></div>
+        <span class="featured-corner featured-corner--tl"></span>
+        <span class="featured-corner featured-corner--tr"></span>
+        <span class="featured-corner featured-corner--bl"></span>
+        <span class="featured-corner featured-corner--br"></span>
+      </div>
+      <a class="featured-cta" href="#work">
+        <span>Open Case Study</span>
+        <svg class="icon" width="24" height="12" aria-hidden="true"><use href="#icon-arrow"/></svg>
+      </a>
+    </section>
+
+    <section class="work" id="work" aria-labelledby="work-title">
+      <header class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>Selected Work</p>
+        <h2 class="section-title" id="work-title">A field of <em>nine</em> practices.</h2>
+        <p class="section-sub">We build interactive brand systems, motion identities, and live web pieces. Every project is a single long take, not a deck.</p>
+      </header>
+
+      <ul class="work-grid" role="list">
+        <li class="work-card" data-cat="Activation" tabindex="0">
+          <span class="work-card-no">01</span>
+          <h3 class="work-card-title">Pioneer</h3>
+          <p class="work-card-meta">Sound System &middot; 2024</p>
+          <span class="work-card-cat">Activation</span>
+        </li>
+        <li class="work-card" data-cat="Animation" tabindex="0">
+          <span class="work-card-no">02</span>
+          <h3 class="work-card-title">Sheer Cupidity</h3>
+          <p class="work-card-meta">Nike &middot; 2023</p>
+          <span class="work-card-cat">Animation</span>
+        </li>
+        <li class="work-card" data-cat="Branding" tabindex="0">
+          <span class="work-card-no">03</span>
+          <h3 class="work-card-title">Lucid</h3>
+          <p class="work-card-meta">Lucid Motors &middot; 2024</p>
+          <span class="work-card-cat">Branding</span>
+        </li>
+        <li class="work-card" data-cat="Content" tabindex="0">
+          <span class="work-card-no">04</span>
+          <h3 class="work-card-title">Brandcast</h3>
+          <p class="work-card-meta">YouTube &middot; 2022</p>
+          <span class="work-card-cat">Content</span>
+        </li>
+        <li class="work-card" data-cat="Strategy" tabindex="0">
+          <span class="work-card-no">05</span>
+          <h3 class="work-card-title">VanMoof</h3>
+          <p class="work-card-meta">Bicycles &middot; 2023</p>
+          <span class="work-card-cat">Creative Strategy</span>
+        </li>
+        <li class="work-card" data-cat="Design" tabindex="0">
+          <span class="work-card-no">06</span>
+          <h3 class="work-card-title">World of la Mer</h3>
+          <p class="work-card-meta">La Mer &middot; 2024</p>
+          <span class="work-card-cat">Design</span>
+        </li>
+        <li class="work-card" data-cat="Development" tabindex="0">
+          <span class="work-card-no">07</span>
+          <h3 class="work-card-title">Apeel</h3>
+          <p class="work-card-meta">Apeel Sciences &middot; 2025</p>
+          <span class="work-card-cat">Development</span>
+        </li>
+        <li class="work-card" data-cat="Games" tabindex="0">
+          <span class="work-card-no">08</span>
+          <h3 class="work-card-title">Sculpting Harmony</h3>
+          <p class="work-card-meta">Alpine Bio &middot; 2024</p>
+          <span class="work-card-cat">Games</span>
+        </li>
+        <li class="work-card" data-cat="Motion" tabindex="0">
+          <span class="work-card-no">09</span>
+          <h3 class="work-card-title">Zentry</h3>
+          <p class="work-card-meta">Zentry &middot; 2023</p>
+          <span class="work-card-cat">Motion</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <header class="section-head section-head--row">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>About the Studio</p>
+        <h2 class="section-title" id="about-title">We make things that <em>move</em>.</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-lede">
+          <p>Resn is an independent interactive studio based in Wellington, New Zealand. Since 2004 we have been building the kind of work that lives on a single URL and a long screen &mdash; sites, identities, motion systems, and live experiments for the brands and inventors we admire.</p>
+          <p>We are deliberately small. We write our own tools, we draw our own frames, and we ship the whole thing. The studio is part workshop, part theatre, part observatory.</p>
+        </div>
+
+        <dl class="about-stats">
+          <div class="stat">
+            <dt>Founded</dt>
+            <dd>2004</dd>
+          </div>
+          <div class="stat">
+            <dt>Made in</dt>
+            <dd>Wellington, NZ</dd>
+          </div>
+          <div class="stat">
+            <dt>Team</dt>
+            <dd>~20 humans</dd>
+          </div>
+          <div class="stat">
+            <dt>Discipline</dt>
+            <dd>Design &middot; Code &middot; Motion</dd>
+          </div>
+          <div class="stat">
+            <dt>Awards</dt>
+            <dd class="stat--accent" data-counter="248">248</dd>
+          </div>
+          <div class="stat">
+            <dt>Stack</dt>
+            <dd>WebGL, GLSL, GSAP, custom</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Branding</span><span class="marquee-sep">&middot;</span>
+          <span>Interactive</span><span class="marquee-sep">&middot;</span>
+          <span>Motion</span><span class="marquee-sep">&middot;</span>
+          <span>WebGL</span><span class="marquee-sep">&middot;</span>
+          <span>Identity Systems</span><span class="marquee-sep">&middot;</span>
+          <span>Live Experiments</span><span class="marquee-sep">&middot;</span>
+          <span>Branding</span><span class="marquee-sep">&middot;</span>
+          <span>Interactive</span><span class="marquee-sep">&middot;</span>
+          <span>Motion</span><span class="marquee-sep">&middot;</span>
+          <span>WebGL</span><span class="marquee-sep">&middot;</span>
+          <span>Identity Systems</span><span class="marquee-sep">&middot;</span>
+          <span>Live Experiments</span><span class="marquee-sep">&middot;</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot" id="contact">
+    <div class="foot-grid">
+      <div class="foot-block foot-block--brand">
+        <p class="foot-mark">Resn</p>
+        <p class="foot-line">Creative Studio &middot; Est. 2004</p>
+      </div>
+
+      <div class="foot-block">
+        <p class="foot-label">Studios</p>
+        <p>Wellington, NZ</p>
+        <p>Te Whanganui-a-Tara</p>
+      </div>
+
+      <div class="foot-block">
+        <p class="foot-label">Contact</p>
+        <p><a class="foot-link" href="mailto:info@resn.co.nz">info@resn.co.nz</a></p>
+        <p>+64 (0)4 385 9013</p>
+      </div>
+
+      <div class="foot-block">
+        <p class="foot-label">Awards</p>
+        <p>FWA &middot; Awwwards &middot; CSSDA</p>
+        <p>Cannes Lion &middot; D&amp;AD &middot; Webby</p>
+      </div>
+    </div>
+
+    <div class="foot-bar">
+      <p class="foot-fine">&copy; 2024 Resn Limited. All work shown by permission of the clients.</p>
+      <p class="foot-meta">v2026.06 &middot; design.md showcase</p>
+    </div>
+  </footer>
+
+  <aside class="discover-menu" id="discover" data-open="false" aria-label="Discover" aria-hidden="true">
+    <button class="discover-close" type="button" data-action="menu-close" aria-label="Close menu">
+      <span class="btn-hitarea" aria-hidden="true"></span>
+      <span class="btn-text">Close</span>
+      <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#icon-close"/></svg>
+    </button>
+    <ul class="discover-list" role="list">
+      <li><a class="discover-link" href="#work"><span class="discover-num">01</span><span class="discover-label">Activation</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">02</span><span class="discover-label">Animation</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">03</span><span class="discover-label">Branding</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">04</span><span class="discover-label">Content</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">05</span><span class="discover-label">Creative Strategy</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">06</span><span class="discover-label">Design</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">07</span><span class="discover-label">Development</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">08</span><span class="discover-label">Games</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+      <li><a class="discover-link" href="#work"><span class="discover-num">09</span><span class="discover-label">Motion</span><span class="discover-underline"><span class="discover-underline-fill"></span></span></a></li>
+    </ul>
+    <a class="discover-cta" href="#work">
+      <span>View All Projects</span>
+      <svg class="icon" width="24" height="12" aria-hidden="true"><use href="#icon-arrow"/></svg>
+    </a>
+  </aside>
+
+  <div class="reel-page" id="reel" data-open="false" aria-label="Showreel" aria-hidden="true">
+    <div class="reel-stage">
+      <div class="reel-poster" role="img" aria-label="Showreel poster">
+        <span class="reel-bar"></span>
+        <span class="reel-bar"></span>
+        <span class="reel-bar"></span>
+        <span class="reel-bar"></span>
+        <span class="reel-bar"></span>
+        <span class="reel-bar"></span>
+      </div>
+      <button class="reel-play" type="button" aria-label="Play the showreel">
+        <span class="reel-play-disc"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-reel"/></svg></span>
+        <span class="reel-play-label">Play Reel &middot; 02:18</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-bar">
+      <div class="loader-bar-track"></div>
+      <div class="loader-bar-fill" id="loader-fill"></div>
+    </div>
+    <div class="loader-ring" aria-hidden="true">
+      <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 38"/></svg>
+    </div>
+    <span class="loader-pct" id="loader-pct">00</span>
+  </div>
+
+  <script src="../../js/resn/script.js" defer></script>
+</body>
+</html>

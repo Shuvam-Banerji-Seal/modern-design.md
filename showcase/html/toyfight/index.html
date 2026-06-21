@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ToyFight — Bold creative studio (rebuild showcase)</title>
+  <meta name="description" content="A rebuilt reference of the ToyFight design language using only values from design.md." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Roboto+Condensed:wght@400;500&family=Space+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="../../css/toyfight/style.css" />
+</head>
+<body>
+
+  <!--
+    NOTE: This file is a stand-alone reconstruction of the visual + interaction
+    language described in websites/toyfight/design.md. No copy or assets are
+    taken from the live site. Typefaces declared in the CSS use the names from
+    the spec (FKRasterGrotesk / SpeziaCondensed / SpeziaMono); the only network
+    resource pulled is a Google Fonts CSS, providing visually-close fallbacks
+    (Archivo / Roboto Condensed / Space Mono).
+  -->
+
+  <!-- Fixed CRT vignette + scanlines; visible only when html.crt is set -->
+  <div class="crt" aria-hidden="true">
+    <span class="crt-corner crt-corner--tl"></span>
+    <span class="crt-corner crt-corner--tr"></span>
+    <span class="crt-corner crt-corner--bl"></span>
+    <span class="crt-corner crt-corner--br"></span>
+  </div>
+
+  <!-- Page transition mask; toggled on by JS during route change simulation -->
+  <div class="transition-mask" id="transition-mask" aria-hidden="true">
+    <div class="transition-mask__bars">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="transition-mask__pill">
+      <span>LOADING</span><span>PLS</span><span>WAIT</span>
+    </div>
+  </div>
+
+  <!-- HEADER (fixed, transparent over hero) -->
+  <header class="site-header" data-lenis-prevent>
+    <a class="logo-pill" href="#top" aria-label="ToyFight home">
+      <span class="logo-pill__cursor" aria-hidden="true"></span>
+      <span class="logo-pill__row">
+        <span class="logo-pill__text">TOYFIGHT</span>
+        <span class="logo-pill__text" aria-hidden="true">TOYFIGHT</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="#work"><span><span>Work</span><span>Work</span></span></a>
+      <a class="nav__link" href="#services"><span><span>Services</span><span>Services</span></span></a>
+      <a class="nav__link" href="#studio"><span><span>Studio</span><span>Studio</span></span></a>
+      <a class="nav__link" href="#journal"><span><span>Journal</span><span>Journal</span></span></a>
+    </nav>
+
+    <a class="cta-pill" href="#work">
+      <span class="cta-pill__inner">
+        <span class="cta-pill__labels">
+          <span>See work</span>
+          <span>See work</span>
+        </span>
+        <span class="cta-pill__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </span>
+    </a>
+
+    <button class="mobile-toggle" id="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="mobile-toggle__inner">
+        <span class="mobile-toggle__labels"><span>Menu</span><span>Close</span></span>
+      </span>
+    </button>
+  </header>
+
+  <!-- Mobile nav (off-canvas) -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav__list">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#contact" class="mobile-nav__cta">Say hello</a></li>
+    </ul>
+    <div class="mobile-nav__meta">
+      <span>hello@toyfight.studio</span>
+      <span>Brighton, UK</span>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO (100vh, three H1 word chips) -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__spline" aria-hidden="true">
+        <!-- Spline canvas placeholder: pure CSS gradient scene to evoke the canvas -->
+        <div class="hero__spline-scene"></div>
+      </div>
+
+      <div class="container">
+        <h1 class="hero__words" data-reveal>
+          <span class="chip chip--lavender" data-reveal-child><span>Bold</span></span>
+          <span class="chip chip--glass"   data-reveal-child><span>creative</span></span>
+          <span class="chip chip--pink"    data-reveal-child><span>studio</span></span>
+        </h1>
+
+        <span class="hero__year" id="hero-year" data-reveal data-reveal-delay="200">2025</span>
+      </div>
+
+      <a href="#contact" class="say-hello" data-reveal data-reveal-delay="400">
+        <span class="say-hello__chip">
+          <span class="say-hello__inner">
+            <span class="say-hello__labels"><span>say hello</span><span>say hello</span></span>
+          </span>
+        </span>
+      </a>
+    </section>
+
+    <!-- INTRO (dark, pinned-on-wide, copy + media) -->
+    <section class="intro" id="studio" data-pinned aria-label="Intro">
+      <div class="container intro__inner">
+        <p class="intro__copy" data-reveal>
+          We are a small craft-led studio. We make bold digital things
+          for brands that want to feel like people. Slow thinking, fast
+          hands, lots of opinions.
+        </p>
+
+        <div class="intro__media" data-reveal data-reveal-delay="150">
+          <div class="intro__video" role="img" aria-label="Showreel placeholder">
+            <span class="intro__video-label">SHOWREEL · LOOPING</span>
+          </div>
+        </div>
+
+        <ul class="intro__meta">
+          <li data-reveal data-reveal-delay="250"><span>EST. 2014</span></li>
+          <li data-reveal data-reveal-delay="320"><span>BRIGHTON · UK</span></li>
+          <li data-reveal data-reveal-delay="390"><span>9 PEOPLE</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS (pinned 3-tile grid on wide, stack on mobile) -->
+    <section class="projects" id="work" data-pinned aria-label="Featured work">
+      <header class="projects__head container">
+        <h2 class="projects__title" data-reveal>
+          <span class="projects__title-row"><span>Selected</span><span class="chip chip--peach"><span>work</span></span></h2>
+        <p class="projects__lede" data-reveal data-reveal-delay="100">
+          A few recent things we made with people we like.
+        </p>
+      </header>
+
+      <div class="projects__grid container">
+        <article class="tile tile--primary" data-reveal>
+          <div class="tile__media" role="img" aria-label="Project Atlas poster">
+            <span class="tile__poster tile__poster--a"></span>
+            <button class="play-btn" type="button" aria-label="Play showreel">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+          <span class="tag tag--lemon"><span>BRAND</span></span>
+          <h4 class="tile__title">Atlas — A new voice for sleep</h4>
+          <p class="tile__caption">Identity · Web · Direction</p>
+        </article>
+
+        <article class="tile" data-reveal data-reveal-delay="120">
+          <div class="tile__media" role="img" aria-label="Project Nova poster">
+            <span class="tile__poster tile__poster--b"></span>
+            <button class="play-btn" type="button" aria-label="Play showreel">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+          <span class="tag tag--peach"><span>PRODUCT</span></span>
+          <h4 class="tile__title">Nova — Tools that get out of the way</h4>
+          <p class="tile__caption">UI · Motion · Engineering</p>
+        </article>
+
+        <article class="tile" data-reveal data-reveal-delay="240">
+          <div class="tile__media" role="img" aria-label="Project Echo poster">
+            <span class="tile__poster tile__poster--c"></span>
+            <button class="play-btn" type="button" aria-label="Play showreel">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+          <span class="tag tag--lavender"><span>FILM</span></span>
+          <h4 class="tile__title">Echo — A short about listening</h4>
+          <p class="tile__caption">Direction · Edit · Sound</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT (services-style block: image / heading / tag chips / list) -->
+    <section class="about" id="services" aria-label="Services">
+      <div class="container about__hero">
+        <h2 class="about__hero-title" data-reveal>
+          We make <span class="chip chip--yellow"><span>brands</span></span>,
+          <span class="chip chip--glass"><span>products</span></span>
+          and the things in between.
+        </h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="about__row container">
+        <div class="about__media" data-reveal>
+          <span class="about__poster about__poster--a" role="img" aria-label="Brand work placeholder"></span>
+        </div>
+        <div class="about__copy">
+          <h3 class="about__h3" data-reveal>
+            <span class="about__h3-num">01</span>
+            Brand
+          </h3>
+          <p data-reveal data-reveal-delay="80">
+            Identity systems, voice, and the small print. We like a brand
+            you can pick out of a lineup.
+          </p>
+          <ul class="chips" data-reveal data-reveal-delay="160">
+            <li><span class="chip-mono">NAMING</span></li>
+            <li><span class="chip-mono">IDENTITY</span></li>
+            <li><span class="chip-mono">VOICE</span></li>
+            <li><span class="chip-mono">PRINT</span></li>
+          </ul>
+          <ul class="meta-list" data-reveal data-reveal-delay="220">
+            <li>Atlas</li><li>North &amp; Co</li><li>Marlow</li><li>Field</li><li>Pattern</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about__row about__row--reverse container">
+        <div class="about__media" data-reveal>
+          <span class="about__poster about__poster--b" role="img" aria-label="Product work placeholder"></span>
+        </div>
+        <div class="about__copy">
+          <h3 class="about__h3" data-reveal>
+            <span class="about__h3-num">02</span>
+            Product
+          </h3>
+          <p data-reveal data-reveal-delay="80">
+            Interfaces, motion, and the bits under the hood. Designed
+            with engineers, not at them.
+          </p>
+          <ul class="chips" data-reveal data-reveal-delay="160">
+            <li><span class="chip-mono">UI</span></li>
+            <li><span class="chip-mono">MOTION</span></li>
+            <li><span class="chip-mono">PROTOTYPE</span></li>
+            <li><span class="chip-mono">WEB</span></li>
+          </ul>
+          <ul class="meta-list" data-reveal data-reveal-delay="220">
+            <li>Nova</li><li>Studio OK</li><li>Quiet</li><li>Lumen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT band -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <div class="container contact__inner">
+        <p class="contact__lede" data-reveal>Got a thing to make?</p>
+        <a class="contact__cta" href="mailto:hello@toyfight.studio" data-reveal data-reveal-delay="80">
+          <span class="contact__chip">
+            <span class="contact__chip-inner">
+              <span class="contact__chip-labels"><span>say hello</span><span>say hello</span></span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Footer">
+
+    <div class="footer-tagline container" aria-hidden="true">
+      <span class="footer-tagline__chip">
+        <span class="footer-tagline__chip-inner">
+          <span class="footer-tagline__word" id="tagline-word">studio</span>
+          <span class="footer-tagline__word">— for the long game.</span>
+        </span>
+      </span>
+    </div>
+
+    <div class="container site-footer__cols">
+      <div class="site-footer__col">
+        <h5 class="site-footer__h">Studio</h5>
+        <ul>
+          <li><a class="text-link" href="#work"><span><span>Work</span><span>Work</span></span></a></li>
+          <li><a class="text-link" href="#services"><span><span>Services</span><span>Services</span></span></a></li>
+          <li><a class="text-link" href="#studio"><span><span>About</span><span>About</span></span></a></li>
+          <li><a class="text-link" href="#journal"><span><span>Journal</span><span>Journal</span></span></a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h5 class="site-footer__h">Contact</h5>
+        <ul>
+          <li><a class="text-link" href="mailto:hello@toyfight.studio"><span><span>hello@toyfight.studio</span><span>hello@toyfight.studio</span></span></a></li>
+          <li><a class="text-link" href="#contact"><span><span>+44 1273 000 000</span><span>+44 1273 000 000</span></span></a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h5 class="site-footer__h">Socials</h5>
+        <ul>
+          <li><a class="text-link" href="#"><span><span>Instagram</span><span>Instagram</span></span></a></li>
+          <li><a class="text-link" href="#"><span><span>X / Twitter</span><span>X / Twitter</span></span></a></li>
+          <li><a class="text-link" href="#"><span><span>Are.na</span><span>Are.na</span></span></a></li>
+          <li><a class="text-link" href="#"><span><span>LinkedIn</span><span>LinkedIn</span></span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container site-footer__bar">
+      <span class="site-footer__legal">© ToyFight — made in Brighton.</span>
+      <span class="site-footer__legal">All work shown is placeholder.</span>
+    </div>
+
+  </footer>
+
+  <!-- CRT debug trigger (hidden, activates easter-egg filter on html) -->
+  <button class="crt-trigger" id="crt-trigger" type="button" aria-label="Toggle CRT effect">
+    <span>CRT</span>
+  </button>
+
+  <script src="../../js/toyfight/script.js" defer></script>
+</body>
+</html>

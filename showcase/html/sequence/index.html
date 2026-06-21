@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sequence — design.md showcase</title>
+  <meta name="description" content="A reconstructed showcase of the Sequence marketing surface built from a written design spec." />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect x='2' y='2' width='24' height='24' rx='6' fill='%236C00F6'/><path d='M9 18 V10 H14 a3 3 0 0 1 0 6 H11' stroke='white' stroke-width='2' stroke-linecap='round' fill='none'/><path d='M15 14 L19 18 M19 14 L15 18' stroke='white' stroke-width='2' stroke-linecap='round'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400&display=swap" />
+  <link rel="stylesheet" href="../../css/sequence/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement" role="region" aria-label="Announcement">
+    <div class="announcement__inner">
+      <span>A new wallet-and-payments integration just shipped — see what the next chapter of on-chain UX looks like.</span>
+      <a href="#" class="announcement__link">Read the note</a>
+    </div>
+  </div>
+
+  <header class="site-header" data-component="nav">
+    <div class="site-header__inner">
+      <a href="#" class="brand" aria-label="Sequence home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28" width="28" height="28">
+            <rect x="2" y="2" width="24" height="24" rx="6" fill="#6C00F6"/>
+            <path d="M9 18 V10 H14 a3 3 0 0 1 0 6 H11" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M15 14 L19 18 M19 14 L15 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__word">sequence</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Main">
+        <ul class="primary-nav__list">
+          <li><a href="#wallets" class="primary-nav__link">Wallets</a></li>
+          <li><a href="#payments" class="primary-nav__link">Payments</a></li>
+          <li><a href="#indexer" class="primary-nav__link">Indexer</a></li>
+          <li><a href="#verticals" class="primary-nav__link">Solutions</a></li>
+          <li><a href="#" class="primary-nav__link">Chains</a></li>
+          <li><a href="#" class="primary-nav__link">Docs</a></li>
+          <li><a href="#" class="primary-nav__link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-utility">
+        <button type="button" class="theme-toggle" aria-label="Toggle theme" data-theme-toggle>
+          <span class="theme-toggle__dot" aria-hidden="true"></span>
+          <span class="theme-toggle__label">Theme</span>
+        </button>
+        <a href="#" class="btn btn--bold btn--sm">Start free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" data-section="hero">
+      <div class="hero__matrix" aria-hidden="true" data-matrix>
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="heroGlow" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#6C00F6" stop-opacity="0.18"/>
+              <stop offset="55%" stop-color="#4F46E5" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+            <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.4" fill="#6C00F6" fill-opacity="0.18"/>
+            </pattern>
+          </defs>
+          <rect width="1600" height="900" fill="url(#heroGlow)"/>
+          <rect width="1600" height="900" fill="url(#dotGrid)"/>
+        </svg>
+      </div>
+
+      <div class="hero__inner">
+        <span class="popbadge popbadge--violet" data-component="popbadge" data-variant="color-violet">
+          <span class="popbadge__dot" aria-hidden="true"></span>
+          Now live
+        </span>
+
+        <h1 class="hero__title h1">
+          Smart wallets for ecosystems and developers.
+        </h1>
+
+        <p class="hero__lede body-18 text-low">
+          One modular stack for smart-contract wallets, cross-chain checkout, and a multi-chain data layer — wired to a single API and shipped with the SDKs your team already uses.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#" class="btn btn--bold">Get started</a>
+          <a href="#" class="btn btn--outline">Read the docs</a>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <svg viewBox="0 0 600 360" width="100%" height="100%">
+            <defs>
+              <linearGradient id="cardPink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FB64B6"/>
+                <stop offset="100%" stop-color="#2B7FFF"/>
+              </linearGradient>
+              <linearGradient id="cardMint" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D492"/>
+                <stop offset="100%" stop-color="#615FFF"/>
+              </linearGradient>
+              <linearGradient id="cardSky" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#51A2FF"/>
+                <stop offset="100%" stop-color="#8B5CF6"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="50" width="160" height="100" rx="20" fill="url(#cardPink)" opacity="0.95"/>
+            <rect x="220" y="40" width="170" height="110" rx="20" fill="url(#cardMint)" opacity="0.95"/>
+            <rect x="410" y="60" width="150" height="100" rx="20" fill="url(#cardSky)" opacity="0.95"/>
+            <rect x="120" y="190" width="200" height="120" rx="20" fill="#FFFFFF" stroke="#00000026" stroke-width="1"/>
+            <rect x="350" y="200" width="170" height="110" rx="20" fill="#FFFFFF" stroke="#00000026" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-proof" aria-label="Social proof">
+      <p class="body-14 text-low social-proof__line">
+        Powering millions of blockchain interactions across leading apps and chains.
+      </p>
+    </section>
+
+    <section class="product" id="wallets" data-section="wallets">
+      <div class="card-raised" data-component="card" data-variant="raised" data-theme="wallets">
+        <div class="card-raised__art" aria-hidden="true">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g-wallets" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FB64B6"/>
+                <stop offset="100%" stop-color="#2B7FFF"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="400" fill="url(#g-wallets)" opacity="0.18"/>
+            <rect x="180" y="100" width="240" height="200" rx="20" fill="#FFFFFF" stroke="#00000026"/>
+            <rect x="200" y="130" width="200" height="14" rx="7" fill="#6C00F6"/>
+            <rect x="200" y="160" width="120" height="10" rx="5" fill="#00000026"/>
+            <rect x="200" y="240" width="200" height="40" rx="20" fill="#6C00F6"/>
+          </svg>
+        </div>
+        <div class="card-raised__body">
+          <span class="popbadge popbadge--violet" data-component="popbadge" data-variant="color-violet">Wallets</span>
+          <h2 class="h2">Smart wallets</h2>
+          <p class="body-18 text-low">
+            Drop-in smart-account wallets with passkey sign-in, social recovery, and gasless transactions — embeddable in any web or mobile app.
+          </p>
+          <ul class="card-raised__list body-16">
+            <li>Passkey + social login</li>
+            <li>Gasless transactions</li>
+            <li>Session keys for games</li>
+          </ul>
+          <a href="#" class="btn btn--bold">Start free</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product" id="payments" data-section="payments">
+      <div class="card-raised" data-component="card" data-variant="raised" data-theme="payments">
+        <div class="card-raised__art" aria-hidden="true">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g-payments" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D492"/>
+                <stop offset="100%" stop-color="#615FFF"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="400" fill="url(#g-payments)" opacity="0.18"/>
+            <rect x="120" y="110" width="360" height="180" rx="20" fill="#FFFFFF" stroke="#00000026"/>
+            <rect x="150" y="140" width="120" height="10" rx="5" fill="#00000026"/>
+            <rect x="150" y="170" width="220" height="22" rx="6" fill="#0F172A"/>
+            <rect x="150" y="220" width="120" height="36" rx="18" fill="#615FFF"/>
+            <rect x="290" y="220" width="120" height="36" rx="18" fill="none" stroke="#00000026"/>
+          </svg>
+        </div>
+        <div class="card-raised__body">
+          <span class="popbadge popbadge--violet" data-component="popbadge" data-variant="color-violet">Payments</span>
+          <h2 class="h2">Universal checkout</h2>
+          <p class="body-18 text-low">
+            One-click cross-chain payments. Take any token, settle anywhere — with fraud checks, refunds, and a hosted checkout you can theme.
+          </p>
+          <ul class="card-raised__list body-16">
+            <li>Any-to-any swap routing</li>
+            <li>Hosted or embedded checkout</li>
+            <li>Fiat on-ramp coverage</li>
+          </ul>
+          <a href="#" class="btn btn--bold">Start free</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product" id="indexer" data-section="indexer">
+      <div class="card-raised" data-component="card" data-variant="raised" data-theme="indexer">
+        <div class="card-raised__art" aria-hidden="true">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g-indexer" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#51A2FF"/>
+                <stop offset="100%" stop-color="#8B5CF6"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="400" fill="url(#g-indexer)" opacity="0.18"/>
+            <rect x="100" y="80" width="400" height="240" rx="16" fill="#FFFFFF" stroke="#00000026"/>
+            <rect x="120" y="100" width="80" height="10" rx="5" fill="#00000026"/>
+            <rect x="120" y="130" width="360" height="14" rx="4" fill="#0F172A" opacity="0.06"/>
+            <rect x="120" y="150" width="300" height="14" rx="4" fill="#0F172A" opacity="0.06"/>
+            <rect x="120" y="170" width="340" height="14" rx="4" fill="#0F172A" opacity="0.06"/>
+            <rect x="120" y="220" width="100" height="60" rx="8" fill="#51A2FF" opacity="0.4"/>
+            <rect x="240" y="220" width="100" height="60" rx="8" fill="#8B5CF6" opacity="0.4"/>
+            <rect x="360" y="220" width="100" height="60" rx="8" fill="#615FFF" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="card-raised__body">
+          <span class="popbadge popbadge--violet" data-component="popbadge" data-variant="color-violet">Indexer</span>
+          <h2 class="h2">Reliable, multi-chain data</h2>
+          <p class="body-18 text-low">
+            A unified GraphQL and REST layer over every supported chain — token, balance, transaction, and event history with sub-second latency.
+          </p>
+          <ul class="card-raised__list body-16">
+            <li>GraphQL + REST endpoints</li>
+            <li>Webhooks + web socket streams</li>
+            <li>Historical depth to genesis</li>
+          </ul>
+          <a href="#" class="btn btn--bold">Start free</a>
+
+          <div class="marquee" data-component="marquee" data-animate="true" style="--speed: 26s; --offset: 0px;">
+            <div class="marquee__track" aria-hidden="true">
+              <span class="marquee__chip">Arbitrum</span>
+              <span class="marquee__chip">Avalanche</span>
+              <span class="marquee__chip">Base</span>
+              <span class="marquee__chip">Polygon</span>
+              <span class="marquee__chip">Immutable</span>
+              <span class="marquee__chip">SKALE</span>
+              <span class="marquee__chip">Xsolla</span>
+              <span class="marquee__chip">Take-Two</span>
+              <span class="marquee__chip">Ubisoft</span>
+              <span class="marquee__chip">Qorpo</span>
+              <span class="marquee__chip">Tapnation</span>
+              <span class="marquee__chip">Google Cloud</span>
+            </div>
+            <div class="marquee__track" aria-hidden="true">
+              <span class="marquee__chip">Arbitrum</span>
+              <span class="marquee__chip">Avalanche</span>
+              <span class="marquee__chip">Base</span>
+              <span class="marquee__chip">Polygon</span>
+              <span class="marquee__chip">Immutable</span>
+              <span class="marquee__chip">SKALE</span>
+              <span class="marquee__chip">Xsolla</span>
+              <span class="marquee__chip">Take-Two</span>
+              <span class="marquee__chip">Ubisoft</span>
+              <span class="marquee__chip">Qorpo</span>
+              <span class="marquee__chip">Tapnation</span>
+              <span class="marquee__chip">Google Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="verticals" id="verticals" data-section="verticals">
+      <header class="verticals__header">
+        <h2 class="h2">Solutions for every vertical</h2>
+        <p class="body-18 text-low">From game studios to fintechs, the same primitives power very different products.</p>
+      </header>
+      <div class="verticals__grid">
+        <article class="vertical-card" data-theme="chains">
+          <span class="vertical-card__swatch" aria-hidden="true"></span>
+          <h3 class="h6">DeFi</h3>
+          <p class="body-16 text-low">Wallets, swaps, and routing that meet the bar for permissionless money.</p>
+        </article>
+        <article class="vertical-card" data-theme="defi">
+          <span class="vertical-card__swatch" aria-hidden="true"></span>
+          <h3 class="h6">Gaming</h3>
+          <p class="body-16 text-low">Session keys, sponsored gas, and inventory primitives for live-service titles.</p>
+        </article>
+        <article class="vertical-card" data-theme="gaming">
+          <span class="vertical-card__swatch" aria-hidden="true"></span>
+          <h3 class="h6">Stablecoins</h3>
+          <p class="body-16 text-low">Send and receive stable value across rails with a single API call.</p>
+        </article>
+        <article class="vertical-card" data-theme="stablecoins">
+          <span class="vertical-card__swatch" aria-hidden="true"></span>
+          <h3 class="h6">Loyalty</h3>
+          <p class="body-16 text-low">Tokenized points, branded collectibles, and on-chain reputation that travels.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" data-section="story" aria-label="Customer story">
+      <div class="story__panel">
+        <div class="story__inner">
+          <span class="popbadge popbadge--violet" data-component="popbadge" data-variant="color-violet">Customer story</span>
+          <blockquote class="story__quote">
+            <p class="h4">Pairing a wallet stack with a high-throughput chain lets us hand builders a complete path from sign-up to first transaction.</p>
+            <footer class="body-14 story__attr">— Customer story, partner quote attributed inline.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="code-block" data-section="code" aria-label="Code example">
+      <div class="code-block__inner">
+        <div class="code-block__copy">
+          <span class="popbadge popbadge--violet" data-component="popbadge" data-variant="color-violet">For developers</span>
+          <h2 class="h2">A wallet in under thirty lines.</h2>
+          <p class="body-18 text-low">Type-safe SDKs, deterministic addresses, and a hosted signer that you can theme, scope, and revoke.</p>
+        </div>
+        <pre class="code-block__code" data-component="code" data-code-font><code data-lang="ts"><span class="tk-c">// 1. Initialise the wallet client</span>
+<span class="tk-k">const</span> wallet = <span class="tk-k">await</span> sequence.<span class="tk-f">initWallet</span>({
+  network: <span class="tk-s">"polygon"</span>,
+  projectAccessKey: process.env.SEQUENCE_KEY,
+});
+
+<span class="tk-c">// 2. Sign in with a passkey</span>
+<span class="tk-k">const</span> session = <span class="tk-k">await</span> wallet.<span class="tk-f">signIn</span>({ idToken });
+
+<span class="tk-c">// 3. Send a sponsored transaction</span>
+<span class="tk-k">const</span> tx = <span class="tk-k">await</span> session.<span class="tk-f">sendTransaction</span>({
+  calls: [{ to, value, data }],
+  sponsored: <span class="tk-k">true</span>,
+});</code></pre>
+      </div>
+    </section>
+
+    <section class="end-cta" data-section="end-cta">
+      <div class="end-cta__inner">
+        <h2 class="h2">Start</h2>
+        <p class="body-18 text-low end-cta__lede">Spin up a project, drop in the SDK, and ship a smart-wallet flow this afternoon.</p>
+        <div class="end-cta__actions">
+          <a href="#" class="btn btn--bold">Start free</a>
+          <a href="#" class="btn btn--subtle">Talk with us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand brand--inverse">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 28 28" width="28" height="28">
+              <rect x="2" y="2" width="24" height="24" rx="6" fill="#6C00F6"/>
+              <path d="M9 18 V10 H14 a3 3 0 0 1 0 6 H11" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M15 14 L19 18 M19 14 L15 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__word">sequence</span>
+        </span>
+        <p class="body-14 site-footer__tag">Powered by Sequence</p>
+      </div>
+
+      <div class="site-footer__cols">
+        <div class="site-footer__col">
+          <h4 class="site-footer__heading">Products</h4>
+          <ul class="site-footer__list">
+            <li><a href="#wallets">Wallets</a></li>
+            <li><a href="#payments">Payments</a></li>
+            <li><a href="#indexer">Indexer</a></li>
+            <li><a href="#">Builder</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__heading">Solutions</h4>
+          <ul class="site-footer__list">
+            <li><a href="#verticals">DeFi</a></li>
+            <li><a href="#verticals">Gaming</a></li>
+            <li><a href="#verticals">Stablecoins</a></li>
+            <li><a href="#verticals">Loyalty</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__heading">Company</h4>
+          <ul class="site-footer__list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__list">
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">SDK overview</a></li>
+            <li><a href="#">API reference</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Partner directory</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__heading">Social</h4>
+          <ul class="site-footer__list">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Medium</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__base">
+      <p class="site-footer__fineprint">We use cookies to measure usage and improve the product. See the <a href="#">Privacy Policy</a> for details.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/sequence/script.js" defer></script>
+</body>
+</html>

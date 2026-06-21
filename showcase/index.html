@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>modern-design.md — open-source library of recreated website designs</title>
+  <meta name="description" content="An open-source library of recreated design.md specifications for modern websites. Each entry covers colors, typography, components, animations, JavaScript libraries, and assets — enough to rebuild the look-and-feel without ever seeing the original site.">
+  <meta name="keywords" content="design,design.md,design system,frontend,web design,interactive design,3d,webgl,open source">
+  <meta name="author" content="Shuvam Banerji Seal">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://shuvam-banerji-seal.github.io/modern-design.md/showcase/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="modern-design.md">
+  <meta property="og:title" content="modern-design.md — open-source library of recreated website designs">
+  <meta property="og:description" content="An open-source library of recreated design.md specifications for modern websites. Each entry is detailed enough that another agent can reproduce the look-and-feel without ever seeing the original.">
+  <meta property="og:url" content="https://shuvam-banerji-seal.github.io/modern-design.md/showcase/">
+  <meta property="og:image" content="https://shuvam-banerji-seal.github.io/modern-design.md/showcase/assets/og.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="modern-design.md — open-source library of recreated website designs">
+  <meta name="twitter:description" content="Open-source library of recreated design.md files for modern websites — colors, typography, components, motion, JS libraries, and assets.">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff5b3a'/%3E%3C/svg%3E">
+
+  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "modern-design.md",
+    "url": "https://shuvam-banerji-seal.github.io/modern-design.md/showcase/",
+    "description": "Open-source library of recreated design.md specifications for modern websites.",
+    "author": {
+      "@type": "Person",
+      "name": "Shuvam Banerji Seal"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-brand" href="./">
+        <span class="dot" aria-hidden="true"></span>
+        modern-design.md
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#grid">Sites</a>
+        <a href="#how">How it works</a>
+        <a class="nav-cta" href="https://github.com/Shuvam-Banerji-Seal/modern-design.md" rel="noopener">GitHub →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="container">
+        <span class="hero-eyebrow">Open-source · MIT · 36 sites</span>
+        <h1>Design specs that <span class="accent">another agent</span> can rebuild from.</h1>
+        <p class="hero-lede">
+          Every entry is a structured <code>design.md</code> — colors, typography, layout,
+          components, animations, JavaScript libraries, and every asset —
+          detailed enough that an LLM can reproduce the look-and-feel without
+          ever seeing the original site. Below: <strong>36 real-world designs</strong>
+          plus an LLM-built sample of each.
+        </p>
+        <div class="hero-stats" aria-label="Repo stats">
+          <div><strong id="result-count">—</strong> <span class="stat-label">design.md files</span></div>
+          <div><strong>~30K</strong> <span class="stat-label">lines of spec</span></div>
+          <div><strong>2-phase</strong> <span class="stat-label">dump → sub-agent pipeline</span></div>
+          <div><strong>MIT</strong> <span class="stat-label">license</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="filter" aria-label="Filter sites">
+      <div class="container">
+        <div class="filter-row">
+          <span class="filter-label">Filter</span>
+          <span id="filter-chips" role="group" aria-label="Category filter"></span>
+          <label class="filter-search" for="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Search name, slug, copy…" autocomplete="off" spellcheck="false">
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section id="grid" class="container" aria-label="All 36 design specs">
+      <div class="grid" aria-live="polite"></div>
+    </section>
+
+    <!-- Details modal: populated at runtime from design-details.json -->
+    <div id="modal" class="modal" hidden aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel" role="dialog" aria-labelledby="modal-title" aria-modal="true" tabindex="-1">
+        <header class="modal-head">
+          <div>
+            <span class="modal-cat" id="modal-cat"></span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc" class="modal-desc"></p>
+          </div>
+          <button class="modal-close" type="button" aria-label="Close" data-close>×</button>
+        </header>
+        <div class="modal-body" id="modal-body"></div>
+        <footer class="modal-foot">
+          <a id="modal-download" class="modal-cta primary" href="#" download>
+            ↓ Download design.md
+          </a>
+          <a id="modal-view" class="modal-cta" href="#" target="_blank" rel="noopener">
+            View raw on GitHub →
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How the pipeline works</h2>
+        <p class="section-lede">
+          Every entry goes through a two-phase pipeline. The lead agent dumps
+          the live site (HTML, CSS, JS, fonts, images, SVGs, 3D models) into
+          a gitignored <code>tmp/&lt;slug&gt;/</code> folder. A sub-agent reads
+          the dump and writes the <code>design.md</code>. A second sub-agent
+          then reads the <code>design.md</code> alone and produces a working
+          HTML/CSS/JS sample — proving the spec is complete enough to rebuild
+          from.
+        </p>
+        <div class="section-grid">
+          <article class="feature">
+            <h3>Phase 1 — Dump</h3>
+            <p>
+              <code>tools/scrape.py --use-playwright --depth 2</code> walks the
+              live site, downloads every asset into <code>tmp/&lt;slug&gt;/</code>,
+              and writes a <code>manifest.json</code> the sub-agent consumes.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Phase 2 — Specify</h3>
+            <p>
+              A sub-agent reads the dump and writes
+              <code>websites/&lt;slug&gt;/design.md</code> following a strict
+              template: Visual Language, Components, JS &amp; Libraries,
+              Animations Catalog, Assets, Motion, Accessibility.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Phase 3 — Reproduce</h3>
+            <p>
+              Another sub-agent reads <em>only</em> the <code>design.md</code>
+              and produces <code>showcase/html/&lt;slug&gt;/index.html</code>
+              + <code>style.css</code> + <code>script.js</code> — a working
+              sample that embodies the spec.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Deploy</h3>
+            <p>
+              GitHub Actions builds the manifest from <code>websites/</code>,
+              then publishes <code>showcase/</code> to GitHub Pages on every
+              push to <code>main</code>.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        © <span id="year"></span> Shuvam Banerji Seal ·
+        <a href="https://github.com/Shuvam-Banerji-Seal/modern-design.md" rel="noopener">Source on GitHub</a>
+      </div>
+      <div>
+        <a href="https://github.com/Shuvam-Banerji-Seal/modern-design.md/tree/main/AGENTS.md" rel="noopener">AGENTS.md</a> ·
+        <a href="sitemap.xml">Sitemap</a> ·
+        <a href="https://github.com/Shuvam-Banerji-Seal/modern-design.md/blob/main/LICENSE">MIT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js" defer></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

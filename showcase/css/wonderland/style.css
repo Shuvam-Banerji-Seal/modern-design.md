@@ -1,0 +1,946 @@
+/* =========================================================
+   Wonderland — showcase CSS
+   Tokens and values are taken from websites/wonderland/design.md
+   Type families are Google Fonts substitutes (closest match):
+     - "Lay Grotesk"             -> Space Grotesk
+     - "Serifbabe Alpha Trial"   -> Playfair Display (italic)
+     - "NBInternationalPro"      -> Inter
+   Sizes are in vw @ a 1440px reference (per design.md).
+   ========================================================= */
+
+:root {
+  /* ---------- Color (design.md §Color) ---------- */
+  --color-black900: #1A191B;
+  --color-black700: #2F2E31;
+  --color-black500: #484749;
+  --color-black300: #5E5C60;
+  --color-white500: #F7EFE6;
+  --color-white300: #FFFBF5;
+  --color-white700: #ECE4DA;
+  --color-white900: #DED6CB;
+  --color-orange900: #EC6437;
+  --color-orange700: #F86430;
+  --color-orange300: #F59371;
+  --color-selection: #FF7D50;
+  --color-success: #5FE32D;
+  --color-lavender: #BB96DE;
+  --color-aubergine: #33293A;
+
+  /* ---------- Typography (design.md §Typography) ---------- */
+  --font-display: "Space Grotesk", "Lay Grotesk", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Times New Roman", serif;
+  --font-body: "Inter", "NBInternationalPro", -apple-system, sans-serif;
+
+  /* ---------- Spacing scale (vw @ 1440 wide, design.md §Spacing) ---------- */
+  --s-1: 0.208vw;   /* 3px  */
+  --s-2: 0.347vw;   /* 5px  */
+  --s-3: 0.486vw;   /* 7px  */
+  --s-4: 0.555vw;   /* 8px  */
+  --s-5: 0.694vw;   /* 10px */
+  --s-6: 0.833vw;   /* 12px */
+  --s-7: 1.25vw;    /* 18px */
+  --s-8: 1.66vw;    /* 24px */
+  --s-9: 2.08vw;    /* 30px */
+  --s-10: 2.43vw;   /* 35px */
+  --s-11: 2.91vw;   /* 42px */
+  --s-12: 3.54vw;   /* 51px */
+  --s-13: 4.27vw;   /* 61px */
+  --s-14: 5.33vw;   /* 77px */
+  --s-15: 6.4vw;    /* 92px */
+  --s-16: 8.0vw;    /* 115px */
+  --s-17: 8.95vw;   /* 129px */
+  --s-18: 10.67vw;  /* 154px */
+  --s-19: 12.8vw;   /* 184px */
+
+  /* ---------- Radius (design.md §Spacing) ---------- */
+  --r-xs:  0.2778vw;   /* 4px  */
+  --r-sm:  0.6944vw;   /* 10px */
+  --r-md:  0.8333vw;   /* 12px */
+  --r-lg:  2.0833vw;   /* 30px */
+  --r-xl:  2.6667vw;   /* 38px */
+  --r-xxl: 3.2vw;      /* 46px */
+  --r-xxxl:7.4667vw;   /* 108px */
+  --r-round: 8vw;
+  --r-circle: 50%;
+
+  /* ---------- Easing (design.md §Motion) ---------- */
+  --ease-primary: cubic-bezier(.19, 1, .22, 1);
+  --ease-overshoot: cubic-bezier(.22, 1.45, .36, 1);
+  --ease-reveal: cubic-bezier(.165, .84, .44, 1);
+  --ease-load: cubic-bezier(.455, .03, .515, .955);
+
+  /* ---------- Durations ---------- */
+  --d-micro: 0.17s;
+  --d-small: 0.25s;
+  --d-medium: 0.5s;
+  --d-large: 1.0s;
+  --d-xl: 1.2s;
+  --d-xxl: 1.8s;
+}
+
+/* design.md: html { font-size: 2.0833333333vw; line-height: 1.2; letter-spacing: 0.01em } */
+html { font-size: 2.0833vw; line-height: 1.2; letter-spacing: 0.01em; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--color-black900);
+  color: var(--color-white900);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--color-selection); color: var(--color-black900); }
+
+a { color: inherit; text-decoration: none; }
+button { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+ul, ol { list-style: none; padding: 0; margin: 0; }
+img, svg, video, canvas { display: block; max-width: 100%; }
+address { font-style: normal; }
+
+/* accessibility utility (design.md §Accessibility) */
+.hidden-visually {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
+/* =========================================================
+   Type scale (design.md §Typography — desktop values)
+   ========================================================= */
+.h1, .display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 4.0278vw;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.display { font-weight: 500; font-size: 6.1111vw; letter-spacing: -0.02em; }
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.9167vw;
+  line-height: 110%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+}
+.h2 strong { font-family: var(--font-serif); font-weight: 400; font-style: italic; letter-spacing: -0.01em; }
+.h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.2222vw;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+}
+.h3 strong { font-family: var(--font-serif); font-weight: 400; font-style: italic; }
+.h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.6389vw;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  margin: 0;
+}
+.h4 strong { font-family: var(--font-serif); font-weight: 400; font-style: italic; text-transform: uppercase; }
+.h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9722vw;
+  line-height: 120%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.7639vw;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.h7 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.625vw;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.body-xl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.5694vw;
+  line-height: 118%;
+  letter-spacing: 0;
+}
+.body-l {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5278vw;
+  line-height: 148%;
+  letter-spacing: 0;
+}
+.body-m {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+.body-6 {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.1111vw;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+}
+.tdivider {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.6944vw;
+  line-height: 197%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.tbutton {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.7736vw;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   Loading overlay (design.md §Loading overlay & loader)
+   ========================================================= */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-black900);
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  transition: opacity var(--d-medium) ease, visibility var(--d-medium) ease;
+}
+.loading-overlay.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.7639vw;
+  letter-spacing: 0.88px;
+  color: var(--color-orange900);
+  animation: pulse-infinite 1s linear infinite;
+}
+
+/* =========================================================
+   Progress bar (design.md §Color row "Progress bar")
+   ========================================================= */
+.progress {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.progress.is-on { opacity: 1; }
+.progress .inner {
+  display: block;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   Nav (design.md §Nav)
+   ========================================================= */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  padding: var(--s-9) var(--s-9);
+  mix-blend-mode: exclusion;
+  color: var(--color-white900);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.17s linear, visibility 0.17s linear;
+}
+.nav.show { opacity: 1; visibility: visible; }
+.nav__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--s-7);
+}
+
+/* Back link — only renders on non-home routes */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.7639vw;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+  color: var(--color-white900);
+  transition: color 0.17s linear;
+}
+.back-link__arrow {
+  width: 0.7639vw;
+  height: 0.6944vw;
+  transition: transform 0.7s var(--ease-primary), color 0.17s linear;
+}
+.back-link:hover { color: var(--color-orange300); }
+.back-link:hover .back-link__arrow { transform: translateX(-35%); }
+
+/* Logo (design.md §Iconography — viewBox 0 0 180 15) */
+.logo {
+  grid-column: 2;
+  justify-self: center;
+  width: 12.5vw;
+  height: 1.0417vw;
+  color: var(--color-white900);
+  margin-bottom: var(--s-9);
+}
+.logo svg { width: 100%; height: 100%; }
+
+/* Nav links (design.md §Nav — numbered list with .container ring) */
+.nav__links {
+  display: flex;
+  gap: var(--s-7);
+  align-items: center;
+  justify-self: end;
+}
+.nav__item { position: relative; }
+.nav__item .container {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3472vw;
+  padding: 0.3472vw 0.6944vw;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.5556vw;
+  line-height: 120%;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+  color: var(--color-white900);
+}
+.nav__item .container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-white900);
+  border-radius: var(--r-md);
+  opacity: 0;
+  transition: opacity 0.17s linear;
+}
+.nav__item .container:hover::before,
+.nav__item .container.is-active::before { opacity: 1; }
+.nav__item .number { opacity: 0.6; }
+.nav__item .title { display: inline-block; }
+
+/* Anchor point (circle) */
+.anchor-point {
+  width: var(--r-xs);
+  height: var(--r-xs);
+  border-radius: var(--r-circle);
+  background: var(--color-white900);
+  transform: scale(0);
+  transition: transform 0.7s var(--ease-primary);
+}
+.nav__item .container:hover .anchor-point,
+.nav__item .container.is-active .anchor-point { transform: scale(1); }
+
+/* Burger button (design.md §Nav — three lines to X) */
+.burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2083vw;
+  width: 1.7361vw;
+  height: 1.7361vw;
+  padding: 0;
+}
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-white900);
+  transition: transform 0.4s linear, opacity 0.4s linear;
+}
+.burger.is-open .burger__line--top { transform: translateY(0.3472vw) rotate(45deg); }
+.burger.is-open .burger__line--mid { opacity: 0; }
+.burger.is-open .burger__line--bot { transform: translateY(-0.3472vw) rotate(-45deg); }
+
+/* =========================================================
+   Button (design.md §Button)
+   ========================================================= */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    opacity var(--d-medium) ease,
+    background var(--d-medium) ease,
+    color var(--d-medium) ease,
+    visibility var(--d-medium) ease;
+}
+.button:focus { outline: 0; }
+.button:disabled { opacity: 0.5; pointer-events: none; }
+.button .inner.tbutton {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-orange900);
+  color: var(--color-white500);
+  padding: 0.5556vw 1.1111vw;
+  border-radius: var(--r-lg);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.7736vw;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.button .point {
+  width: 0.5556vw;
+  height: 0.5556vw;
+  border-radius: var(--r-circle);
+  background: var(--color-white500);
+  margin-right: var(--s-4);
+  flex: 0 0 auto;
+}
+.button:hover .inner { background-color: var(--color-aubergine); color: var(--color-orange900); }
+.button:hover .point { animation: pulse 0.7s var(--ease-primary) forwards; }
+.button.is-cookie { opacity: 0; }
+.cookie.show .button.is-cookie { opacity: 1; transition: opacity 1s linear 0.2s; }
+
+/* isBig variant */
+.button.isBig .inner {
+  width: 100%;
+  height: 4.5139vw;
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--color-black900);
+  border: 1px solid var(--color-black900);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.button.isBig.noColor .inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-black900);
+  border-radius: var(--r-sm);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+.button.isBig.noColor:hover .inner::before { opacity: 1; }
+.button.isBig.noColor:hover .inner { color: var(--color-white900); }
+
+/* nav-cta in the top-right of the nav */
+.nav__cta { position: absolute; top: var(--s-9); right: var(--s-9); }
+
+/* =========================================================
+   Hero / artwork canvas (design.md §Layout & Grid §1)
+   ========================================================= */
+.artwork {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 70%, #ECE4DA 0%, #D6CCBE 30%, #1A191B 100%);
+  z-index: 0;
+  overflow: hidden;
+}
+#gl-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.discover {
+  position: absolute;
+  left: 50%;
+  bottom: 5.4167vw;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.8333vw;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-black900);
+  opacity: 0;
+}
+.discover.showDiscover { animation: discover-pulse 2s ease 2s 3 forwards; }
+
+/* =========================================================
+   Case studies (design.md §Information Architecture /works)
+   ========================================================= */
+.case-studies {
+  position: relative;
+  z-index: 5;
+  padding: var(--s-17) var(--s-9);
+  background-color: var(--color-black900);
+  color: var(--color-white900);
+}
+.section-header {
+  display: grid;
+  gap: var(--s-7);
+  margin-bottom: var(--s-15);
+  max-width: 60vw;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-11) var(--s-9);
+}
+.project__link {
+  display: grid;
+  gap: var(--s-6);
+}
+.project__cover {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-md);
+  background:
+    radial-gradient(120% 80% at 30% 20%, var(--c2) 0%, transparent 60%),
+    linear-gradient(135deg, var(--c1), var(--c2));
+  overflow: hidden;
+  transition: transform 0.7s var(--ease-primary);
+}
+.project__cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.project__num {
+  position: absolute;
+  top: var(--s-6);
+  left: var(--s-6);
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.9722vw;
+  letter-spacing: 0.04em;
+  color: var(--color-white900);
+  opacity: 0.7;
+}
+.project__link:hover .project__cover { transform: translateY(-0.5556vw); }
+.project__link:hover .project__cover::after { opacity: 0.25; }
+.project__meta { display: grid; gap: var(--s-3); }
+
+/* =========================================================
+   About (design.md §Components — heading reveal)
+   ========================================================= */
+.about {
+  position: relative;
+  z-index: 5;
+  padding: var(--s-17) var(--s-9);
+  background-color: var(--color-black900);
+  color: var(--color-white900);
+}
+.about__grid {
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  gap: var(--s-13);
+  align-items: start;
+}
+.about__body { display: grid; gap: var(--s-7); color: var(--color-white700); }
+
+/* =========================================================
+   Contact (design.md §Footer / heading-email)
+   ========================================================= */
+.contact {
+  position: relative;
+  z-index: 5;
+  padding: var(--s-17) var(--s-9);
+  background-color: var(--color-black900);
+  color: var(--color-white900);
+}
+.contact .section-header { max-width: 50vw; }
+.contact__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-13) var(--s-9);
+  margin-top: var(--s-13);
+}
+.heading-email { display: grid; gap: var(--s-5); }
+.heading-email .title { color: var(--color-white700); }
+.heading-email .text {
+  opacity: 0.5;
+  color: var(--color-white900);
+  cursor: pointer;
+  transition: opacity 0.17s linear;
+  width: fit-content;
+}
+.heading-email .text:hover { opacity: 1; }
+.heading-email.is-copied .text { opacity: 1; color: var(--color-orange300); }
+.input-container { position: relative; display: block; }
+.input-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: var(--color-white900);
+}
+.input-container.isSending::after { animation: load 2s var(--ease-load) infinite; }
+.input {
+  all: unset;
+  width: 100%;
+  opacity: 0.5;
+  cursor: text;
+}
+.input:focus { opacity: 1; }
+.form .input { border-bottom: 1px solid var(--color-white900); padding-bottom: var(--s-3); }
+
+/* =========================================================
+   Footer (design.md §Footer)
+   ========================================================= */
+.footer {
+  position: relative;
+  z-index: 5;
+  background-color: var(--color-white700);
+  color: var(--color-black900);
+  padding: var(--s-17) 0 var(--s-10);
+  margin-top: var(--s-15);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.footer .top {
+  padding-left: 10.7639vw;
+  padding-right: var(--s-9);
+}
+.footer .heading.isFooter {
+  font-size: 4.0278vw;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 var(--s-13);
+  opacity: 0;
+  transform: translate3d(0, 90px, 0);
+  transition:
+    opacity 0.17s linear,
+    transform 1.8s var(--ease-primary);
+}
+.footer.is-revealed .heading.isFooter { opacity: 1; transform: translate3d(0, 0, 0); }
+.footer .heading strong {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 4.0278vw;
+  line-height: 80%;
+  display: inline;
+  perspective: 1000px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.footer .content {
+  display: grid;
+  grid-template-columns: repeat(5, 24.3056vw);
+  gap: var(--s-9);
+  margin-bottom: var(--s-13);
+}
+.footer .content .column .title { margin-bottom: var(--s-3); color: var(--color-black900); }
+.footer .content .column .text { opacity: 0.5; }
+.footer .content .column .text:hover { opacity: 1; color: var(--color-selection); }
+.socials {
+  display: flex;
+  gap: var(--s-7);
+  margin-bottom: var(--s-13);
+}
+.socials a {
+  opacity: 1;
+  transition: opacity 0.17s linear;
+}
+.socials a:hover { opacity: 0.5; }
+.footer .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 var(--s-9);
+}
+.footer .bottom .credits { opacity: 0.5; }
+.footer .bottom .pages { display: grid; gap: var(--s-2); text-align: right; }
+.footer .bottom .page-link {
+  color: var(--color-black900);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.625vw;
+  line-height: 197%;
+  text-transform: uppercase;
+  transition: color 0.17s linear;
+}
+.footer .bottom .page-link:hover { color: var(--color-selection); }
+
+/* =========================================================
+   Cookie banner (design.md §Cookie banner)
+   ========================================================= */
+.cookie {
+  position: fixed;
+  bottom: 1.3889vw;
+  right: 2.7778vw;
+  padding: 1.3889vw 2.7778vw;
+  background: var(--color-white700);
+  color: var(--color-black900);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--s-7);
+  z-index: 10000;
+  border-radius: var(--r-sm);
+  max-width: 30vw;
+}
+.cookie p { margin: 0; opacity: 0.85; }
+
+/* =========================================================
+   Contact modal (design.md §Contact modal)
+   ========================================================= */
+.contact-modal {
+  position: fixed;
+  top: 0.2083vw;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-110%) translateZ(0);
+  opacity: 0;
+  transition:
+    transform 0s var(--ease-primary) 1.2s,
+    opacity 0.5s linear 0s;
+}
+.contact-modal.is-open {
+  pointer-events: auto;
+  transform: translateX(-50%) translateZ(0);
+  opacity: 1;
+  transition:
+    transform 1.2s var(--ease-primary),
+    opacity 0.3s linear;
+}
+.contact-modal .inner { width: 100%; height: 100%; padding: var(--s-1) 1.7361vw; }
+.contact-modal .container {
+  display: flex;
+  width: 71.5972vw;
+  margin: 0 auto;
+  gap: var(--s-1);
+  justify-content: flex-end;
+  height: 100%;
+}
+.contact-modal .left {
+  width: 34.7917vw;
+  background: var(--color-white700);
+  border-radius: var(--r-sm);
+}
+.contact-modal .right {
+  width: 36.5972vw;
+  background: var(--color-white700);
+  color: var(--color-black900);
+  padding: 1.7361vw 3.1944vw;
+  border-radius: var(--r-sm);
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--s-7);
+}
+.contact-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.5vw;
+  line-height: 110%;
+  text-transform: none;
+  margin: 0;
+}
+.contact-words {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  min-width: 6vw;
+}
+.contact-word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 1.4s var(--ease-primary), opacity 1.4s var(--ease-primary);
+}
+.contact-word.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-buttons {
+  display: flex;
+  gap: var(--s-1);
+}
+.close-button {
+  position: absolute;
+  left: 34.8611vw;
+  top: var(--s-9);
+  width: 3.5417vw;
+  height: 3.5417vw;
+  border-radius: var(--r-circle);
+  background: var(--color-white700);
+  color: var(--color-black900);
+  display: grid;
+  place-items: center;
+  transition: transform 1s var(--ease-primary);
+}
+.close-button:hover { transform: rotate(90deg); }
+
+/* =========================================================
+   Word-reveal (design.md §Heading / .heading strong)
+   ========================================================= */
+.word-anim { display: inline-block; overflow: hidden; }
+.word-anim-inner {
+  display: inline-block;
+  will-change: transform;
+  transform: rotateY(-60deg);
+  transition: transform 1.6s var(--ease-reveal);
+}
+.is-revealed .word-anim-inner,
+[data-reveal].is-revealed .word-anim-inner {
+  transform: rotateY(0);
+}
+
+/* =========================================================
+   Generic data-reveal entrance (IntersectionObserver)
+   ========================================================= */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.3889vw);
+  transition: opacity 0.8s linear, transform 1.2s var(--ease-primary);
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   Animations (design.md §Animations)
+   ========================================================= */
+@keyframes discover-pulse {
+  0%, 100% { opacity: 0; }
+  50%      { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);   background: var(--color-white500); }
+  50%  { transform: scale(1.6); background: var(--color-success); }
+  100% { transform: scale(1);   background: var(--color-lavender); }
+}
+
+@keyframes pulse-infinite {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+@keyframes load {
+  0%   { width: 0;   left: 0; }
+  50%  { width: 100%; left: 0; }
+  100% { width: 0;   left: 100%; }
+}
+
+@keyframes loadOpacity {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* =========================================================
+   Mobile breakpoint (design.md §Layout — single 1000px)
+   ========================================================= */
+@media (max-width: 1000px) {
+  .nav { padding: 6.4vw; }
+  .nav__inner { grid-template-columns: 1fr auto; }
+  .logo { width: 48vw; height: 4vw; }
+  .nav__links { display: none; }
+  .h1, .display { font-size: 6.9333vw; }
+  .h2 { font-size: 6.4vw; }
+  .h3 { font-size: 4.8vw; line-height: 110%; }
+  .h4 { font-size: 6.4vw; }
+  .h5 { font-size: 3.2vw; }
+  .h6 { font-size: 2.9333vw; }
+  .body-xl { font-size: 5.8667vw; line-height: 130%; }
+  .body-l { font-size: 4.8vw; line-height: 140%; }
+  .body-m { font-size: 4.2667vw; }
+  .body-6 { font-size: 2.6667vw; }
+  .tbutton { font-size: 2.9707vw; }
+
+  .button .inner.tbutton { font-size: 2.9707vw; padding: 2.4vw 4.8vw; border-radius: 8vw; }
+  .button .point { width: 2vw; height: 2vw; }
+  .button.isBig .inner { height: 12.8vw; border-radius: 2.6667vw; font-size: 3.2vw; }
+
+  .case-studies { padding: var(--s-17) 6.4vw; }
+  .section-header { max-width: 100%; }
+  .projects { grid-template-columns: 1fr; gap: var(--s-13); }
+
+  .about { padding: var(--s-17) 6.4vw; }
+  .about__grid { grid-template-columns: 1fr; gap: var(--s-9); }
+
+  .contact { padding: var(--s-17) 6.4vw; }
+  .contact__columns { grid-template-columns: 1fr; gap: var(--s-9); }
+
+  .footer { padding: 21.3333vw 0 4.2667vw; }
+  .footer .top { padding-left: 6.4vw; padding-right: 6.4vw; }
+  .footer .content { grid-template-columns: 1fr; gap: var(--s-9); }
+  .footer .bottom { flex-direction: column; gap: var(--s-7); padding: 0 6.4vw; }
+  .footer .bottom .pages { text-align: left; }
+
+  .cookie { left: 4vw; right: 5.3333vw; bottom: 4vw; max-width: none; padding: 4vw 5.3333vw; }
+  .discover { bottom: 20.8vw; font-size: 3vw; }
+
+  .contact-modal .container { width: 100%; gap: 2.1333vw; }
+  .contact-modal .left { display: none; }
+  .contact-modal .right { width: 100%; padding: 10.6667vw 6.9333vw 4.2667vw; border-radius: 2.6667vw; }
+  .contact-modal .right .contact-title { font-size: 5.8667vw; }
+  .close-button { left: auto; right: 8.5333vw; top: 2.1333vw; width: 9.6vw; height: 9.6vw; }
+}
+
+/* =========================================================
+   Reduced-motion opt-in (design.md §Reduced motion: body.no-animation)
+   ========================================================= */
+body.no-animation,
+body.no-animation * {
+  transition: none !important;
+  animation: none !important;
+}
+body.no-animation .word-anim-inner { opacity: 1 !important; transform: none !important; }
+body.no-animation [data-reveal] { opacity: 1 !important; transform: none !important; }
+body.no-animation .footer .heading.isFooter { opacity: 1 !important; transform: none !important; }
